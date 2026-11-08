@@ -52,3 +52,9 @@
 
 /* Keep the transition backdrop consistent with the 3D chapter scenes. */
 .dark #slide-content{background-color:#0c0d0f!important}
+
+/* Keep the requirements readable beside the detector model. */
+.slide-requirements .detector-requirements-table{table-layout:fixed;margin-top:4px;font-size:14px}
+.slide-requirements .detector-requirements-table th,.slide-requirements .detector-requirements-table td{padding:8px;line-height:1.35}
+.slide-requirements .detector-requirements-table th:first-child{width:31%}
+.slide-requirements .detector-requirements-table span.inline{display:inline-block;white-space:nowrap}

@@ -76,9 +76,9 @@ Source context: DarkSHINE collaboration detector concept and geometry.
 
 Time: 60 seconds.
 
-Background rejection sets the detector requirements. A thin target limits multiple scattering while retaining sufficient production probability. Precise strip measurements determine the incident and recoil momenta. A soft recoil can curl in a strong field, so the recoil-field profile and acceptance matter together. The ECAL must measure the electromagnetic energy, and the HCAL must catch energy carried by neutral hadrons or muons. Subsystem hardware development is collaboration work. My contribution is the software framework and analysis that propagate the detector response into selected yields. The analysis thresholds are performance assumptions that still need to be demonstrated at the system level.
+These requirements follow from the ways a visible interaction can imitate missing energy. The tagging tracker needs hit precision below ten micrometres; its reference simulation gives momentum resolution below two percent at eight GeV. The tungsten target is only one tenth of a radiation length to limit multiple scattering. Downstream, the recoil tracker must retain soft tracks down to about thirty MeV, with acceptance extending to two GeV. The ECAL must contain electron and photon showers. Its digitised simulation gives a stochastic term below two percent, while leakage into the low-energy tail must be studied separately. For the HCAL, the neutron-veto inefficiency target is below ten to the minus five above roughly two GeV, and below ten to the minus three at lower energies. Those are neutron-veto targets; the event background also depends on the neutron spectrum and the combined selection.
 
-Source context: DarkSHINE detector design and collaboration subsystem studies.
+Source context: PhDThesis/contents/darkshine_detector.tex; Works/DarkSHINE_CDR_Physics_Detector/Detectors/Tracking, ECAL and HCAL. Tracking acceptance follows the dissertation reference study; the CDR also studies recoil momenta down to 50 MeV.
 
 ## 11. Electron-mode signal and background rejection
 
