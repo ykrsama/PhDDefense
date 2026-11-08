@@ -5,7 +5,7 @@ import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
-const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false})
+const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
 const canvas=ref<HTMLCanvasElement>()
 const nav=useNav(); const state={t:5,yaw:-.56,pitch:.28,roll:.20,zoom:1,cx:620,cy:328};let ctx:CanvasRenderingContext2D|null=null,loop:any,camera:any
 const page=computed(()=>nav.currentPage.value)
@@ -98,7 +98,12 @@ function detector(){
    path([showerStart,end],`rgba(240,195,110,${.55*fade})`,.9)
   }
  }
- if(props.labels){label('Tagging tracker',[-1.55,-.1,.16],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.2,.22],-12,45);label('ECAL',props.compact?[.43,.35,0]:[.43,0,-.36],-17,-10);label('HCAL',props.compact?[2.8,2.1,0]:[2.8,0,-2.1],-5,-17);label('Magnet',props.compact?[-1.2,.5,0]:[-1.2,0,-.59],-20,-10)}
+ if(props.labels){
+  if(!props.focus||props.focus==='tracking'){label('Tagging tracker',[-1.55,-.1,.16],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.2,.22],-12,45)}
+  if(!props.focus||props.focus==='ecal')label('ECAL',props.compact?[.43,.35,0]:[.43,0,-.36],-17,-10)
+  if(!props.focus||props.focus==='hcal')label('HCAL',props.compact?[2.8,2.1,0]:[2.8,0,-2.1],-5,-17)
+  if(!props.focus)label('Magnet',props.compact?[-1.2,.5,0]:[-1.2,0,-.59],-20,-10)
+ }
 }
 function sphere(center:P,r:number,col:string,turn=0){for(let j=1;j<12;j++){let b=-Math.PI/2+j*Math.PI/12;path(Array.from({length:65},(_,i):P=>[center[0]+r*Math.cos(b)*Math.cos(i/64*Math.PI*2+turn),center[1]+r*Math.sin(b),center[2]+r*Math.cos(b)*Math.sin(i/64*Math.PI*2+turn)]),col,.6)}for(let j=0;j<12;j++)path(Array.from({length:65},(_,i):P=>{let a=i/64*Math.PI*2,b=j*Math.PI/6+turn;return[center[0]+r*Math.cos(a)*Math.cos(b),center[1]+r*Math.sin(a),center[2]+r*Math.cos(a)*Math.sin(b)]}),col,.6)}
 function clusters(){
@@ -161,14 +166,32 @@ function setCamera(){
   target.cx=(frame[0]+frame[1])/2-(left+right)/2*target.zoom
   target.cy=(frame[2]+frame[3])/2-(top+bottom)/2*target.zoom
   Object.assign(state,saved)
+  if(props.focus){
+   const views:Record<string,{point:P;zoom:number}>={
+    tracking:{point:[-.78,0,0],zoom:1.15},
+    ecal:{point:[.40,0,0],zoom:2.15},
+    hcal:{point:[2.75,0,0],zoom:.62},
+   }
+   const view=views[props.focus]
+   if(view){
+    target.zoom=view.zoom
+    Object.assign(state,{...target,zoom:1,cx:0,cy:0})
+    const anchor=proj(view.point)
+    target.cx=480-anchor[0]*view.zoom
+    target.cy=155-anchor[1]*view.zoom
+    Object.assign(state,saved)
+   }
+  }
  }
- if(isStatic()||props.compact||props.scene!=='detector'){Object.assign(state,target);draw();return}
+ if(isStatic()||(props.compact&&!props.focus)||props.scene!=='detector'){Object.assign(state,target);draw();return}
+ if(props.compact){camera=animate(state,{...target,duration:850,ease:'inOutCubic',onUpdate:draw});return}
  // One deliberate establishing move, then a fixed diagonal hero composition.
  if(!props.persistent||n===1)Object.assign(state,{...target,yaw:.12,pitch:.10,roll:-.08,zoom:target.zoom*.55})
  camera=animate(state,{...target,duration:2800,ease:'outCubic',onUpdate:draw})
 }
 function syncLoop(){loop?.pause();setCamera();if(active.value&&!isStatic())loop=animate(state,{t:[state.t,state.t+360],duration:360000,ease:'linear',loop:true,onUpdate:draw})}
 onMounted(()=>{const c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster')state.t=2;syncLoop();watch([page,active],syncLoop)})
+watch(()=>props.focus,()=>setCamera())
 onBeforeUnmount(()=>{loop?.pause();camera?.pause()})
 </script>
 <template><div class="physics-scene" :class="{compact}"><canvas ref="canvas"/><div v-if="!compact" class="physics-scene-shade"/></div></template>
