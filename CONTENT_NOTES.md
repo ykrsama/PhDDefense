@@ -35,3 +35,7 @@ The candidate explicitly selected **10 MHz** to match the nominal **3 × 10^14 i
 - ACTS reference sequence uses truth-smeared seeds; the optional hit-based adapter and independent sequencer are not described as one fully validated chain.
 
 Publication status and all eight achievements reproduce the supplied List of Research Achievements. No claim of a newer publication status was inferred.
+
+## 90 MeV matrix audit
+
+The nine cells and published totals match `PhDThesis/contents/positron_analysis.tex`, table `tab:benchmark_yields`. They are expected yields at epsilon squared = 1e-12 and 3e14 POT, not integer Monte Carlo counts. Column percentages are computed from the displayed channel entries, not the independently rounded published total. The dominant components are non-resonant annihilation in SR2 (~95%) and resonant annihilation in SR3 (~84%). Nonzero entries do not imply comparable contributions. The revised takeaway explicitly states annihilation dominance and cross-feed.

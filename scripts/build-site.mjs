@@ -13,7 +13,10 @@ for(const [source,target] of [['Defence','defence'],['Backup','backup']]){
  await fs.cp(path.join(root,source,'dist'),path.join(site,target),{recursive:true})
 }
 await fs.mkdir(path.join(site,'pdf'),{recursive:true})
-for(const name of ['DarkSHINE_PhD_Defence.pdf','DarkSHINE_PhD_Defence_Backup.pdf'])await fs.copyFile(path.join(root,'output/pdf',name),path.join(site,'pdf',name))
+for(const name of ['DarkSHINE_PhD_Defence.pdf','DarkSHINE_PhD_Defence_Backup.pdf']){
+ try{await fs.copyFile(path.join(root,'output/pdf',name),path.join(site,'pdf',name))}
+ catch(error){if(error.code!=='ENOENT')throw error;console.log('PDF not yet exported:',name)}
+}
 await fs.copyFile(path.join(root,'scripts/site-index.html'),path.join(site,'index.html'))
 await fs.writeFile(path.join(site,'.nojekyll'),'')
 console.log('Portable static site written to site/. No deployment was performed.')

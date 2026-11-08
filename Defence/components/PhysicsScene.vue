@@ -6,7 +6,7 @@ import { animate } from 'animejs'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false})
 const canvas=ref<HTMLCanvasElement>()
-const nav=useNav(); const state={t:5,yaw:-.56,zoom:1,cx:620,cy:328};let ctx:CanvasRenderingContext2D|null=null,loop:any,camera:any
+const nav=useNav(); const state={t:5,yaw:-.56,pitch:.28,roll:.20,zoom:1,cx:620,cy:328};let ctx:CanvasRenderingContext2D|null=null,loop:any,camera:any
 const page=computed(()=>nav.currentPage.value)
 const context=props.persistent?undefined:useSlideContext()
 const active=computed(()=>props.persistent?page.value<=2:page.value===context?.$page.value)
@@ -16,7 +16,7 @@ function proj(p:P):[number,number,number]{
  const [x,y,z]=p, turn=state.yaw
  const a=x*Math.cos(turn)+z*Math.sin(turn), b=-x*Math.sin(turn)+z*Math.cos(turn)
  // An orthonormal camera basis keeps screen coordinates and depth consistent.
- const pitch=props.original?.433:.28, roll=props.original?0:.20
+ const {pitch,roll}=state
  const vertical=y*Math.cos(pitch)-b*Math.sin(pitch)
  const depth=y*Math.sin(pitch)+b*Math.cos(pitch)
  const horizontal=a*Math.cos(roll)-vertical*Math.sin(roll)
@@ -74,12 +74,40 @@ function clusters(){
 }
 function atom(){sphere([.65,0,0],.19,'rgba(240,195,110,.55)',state.t*.1);for(let i=0;i<35;i++){let a=i*2.4,b=Math.acos(1-2*(i+.5)/35);dot([.65+.16*Math.sin(b)*Math.cos(a),.16*Math.cos(b),.16*Math.sin(b)*Math.sin(a)],3.5,i%2?'#d6b372':'#8da8c0')}
  for(let k=0;k<5;k++){let r=.48+k*.21;const orbit=(a:number):P=>[.65+r*Math.cos(a),r*Math.sin(a)*Math.cos(k*.54),r*Math.sin(a)*Math.sin(k*.54)];path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(119,201,255,.25)',.8);for(let j=0;j<3;j++)dot(orbit(state.t*.3+k+j*2.1),2.5,'#77c9ff')}
- let u=(state.t%8)/8;const vertex:P=[-.50,.25,.13];path([[-2.6,.25,.13],vertex],'rgba(246,156,171,.6)',1.6);if(u<.52){dot([-2.6+2.1*u/.52,.25,.13],4,'#f69cab');dot(vertex,3.5,'#77c9ff')}else{let v=(u-.52)/.48;path([vertex,[2.2,.8,.25]],'rgba(240,195,110,.8)',2,[7,6]);dot([-.50+2.7*v,.25+.55*v,.13+.12*v],3,'#fff0ba');sphere(vertex,.05+v*.32,`rgba(255,221,166,${.6*(1-v)})`);label('A′',[1.9,.78,.25],8,-9)};label('e⁺',[-1.9,.25,.13],0,-14);label('W',[.65,0,0],-6,5)
+ const u=(state.t%8)/8,vertex:P=[-.50,.25,.13],end:P=[2.2,.8,.25]
+ path([[-2.6,.25,.13],vertex],'rgba(246,156,171,.6)',1.6)
+ // Keep the guide visible; the bright trail and label follow the emitted particle.
+ path([vertex,end],'rgba(240,195,110,.30)',1.2,[7,6])
+ if(u<.52){dot([-2.6+2.1*u/.52,.25,.13],4,'#f69cab');dot(vertex,3.5,'#77c9ff')}
+ else{
+  const v=(u-.52)/.48,tip:P=[-.50+2.7*v,.25+.55*v,.13+.12*v]
+  path([vertex,tip],'rgba(240,195,110,.8)',2,[7,6]);dot(tip,3,'#fff0ba')
+  sphere(vertex,.05+v*.32,`rgba(255,221,166,${.6*(1-v)})`)
+
+ }
+ label('A′',end,10,-9)
+ label('e⁺',[-1.9,.25,.13],0,-14);label('W',[.65,0,0],-6,5)
 }
-function draw(){if(!ctx||!canvas.value)return;ctx.clearRect(0,0,980,551.25);if(props.scene==='cluster')clusters();else if(props.scene==='atom')atom();else detector()}
-function setCamera(){if(!active.value)return;const n=page.value;const target=props.persistent&&n===2?{yaw:-.18,zoom:.91,cx:625,cy:340}:props.compact?(props.narrow?{yaw:-.43,zoom:.58,cx:220,cy:150}:props.original?{yaw:-.43,zoom:.88,cx:421,cy:134}:{yaw:-.43,zoom:.86,cx:421,cy:160}):props.scene==='cluster'?{yaw:-.56,zoom:1.12,cx:665,cy:320}:props.scene==='atom'?{yaw:-.56,zoom:1.05,cx:660,cy:320}:{yaw:-.43,zoom:.90,cx:625,cy:345};camera?.pause();if(isStatic()){Object.assign(state,target);draw()}else camera=animate(state,{...target,duration:1900,ease:'inOutQuart',onUpdate:draw})}
+function draw(){if(!ctx||!canvas.value)return;canvas.value.dataset.camera=JSON.stringify({yaw:state.yaw,roll:state.roll,zoom:state.zoom,cx:state.cx,cy:state.cy});ctx.clearRect(0,0,980,551.25);if(props.scene==='cluster')clusters();else if(props.scene==='atom')atom();else detector()}
+function setCamera(){
+ if(!active.value)return
+ camera?.pause()
+ const n=page.value
+ const target=props.compact
+  ? props.narrow?{yaw:-.43,pitch:.28,roll:.20,zoom:.58,cx:220,cy:150}
+   : props.original?{yaw:-.43,pitch:.433,roll:0,zoom:.88,cx:421,cy:134}
+   :{yaw:-.43,pitch:.28,roll:.20,zoom:.86,cx:421,cy:160}
+  : props.scene==='cluster'?{yaw:-.56,pitch:.28,roll:.20,zoom:1.12,cx:665,cy:320}
+  : props.scene==='atom'?{yaw:-.56,pitch:.28,roll:.20,zoom:1.05,cx:660,cy:320}
+  : props.persistent&&n===2?{yaw:-.95,pitch:.20,roll:.85,zoom:1.30,cx:630,cy:330}
+  :{yaw:-.58,pitch:.20,roll:.72,zoom:1.05,cx:620,cy:330}
+ if(isStatic()||props.compact||props.scene!=='detector'){Object.assign(state,target);draw();return}
+ // One deliberate establishing move, then a fixed diagonal hero composition.
+ if(!props.persistent||n===1)Object.assign(state,{...target,yaw:.12,pitch:.10,roll:-.08,zoom:.58})
+ camera=animate(state,{...target,duration:2800,ease:'outCubic',onUpdate:draw})
+}
 function syncLoop(){loop?.pause();setCamera();if(active.value&&!isStatic())loop=animate(state,{t:[state.t,state.t+360],duration:360000,ease:'linear',loop:true,onUpdate:draw})}
-onMounted(()=>{let c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster')state.t=2;setCamera();draw();syncLoop();watch(page,setCamera);watch(active,syncLoop)})
+onMounted(()=>{const c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster')state.t=2;syncLoop();watch([page,active],syncLoop)})
 onBeforeUnmount(()=>{loop?.pause();camera?.pause()})
 </script>
 <template><div class="physics-scene" :class="{compact}"><canvas ref="canvas"/><div v-if="!compact" class="physics-scene-shade"/></div></template>

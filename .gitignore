@@ -3,6 +3,7 @@ node_modules/
 site/
 
 output/
+deliverables/
 
 # OS/editor noise
 .DS_Store

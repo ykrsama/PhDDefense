@@ -21,7 +21,7 @@ Revised and validated locally on 9 November 2026.
 
 ## PDF properties
 
-- Main: 46 pages, 29,631,034 bytes; SHA-256 `e9715c916f14c67473b4afd6083dac5792b75056004a4d51b832ea1ce791847a`.
+- Main: 46 pages, 34,671,492 bytes; SHA-256 `0b32699faed436cbf6f16c99ff1b52f619d9e181f7a643dd152556bf1a7e4981`.
 - Backup: 14 pages, 7,296,014 bytes; SHA-256 `5a2a258914a2ee6bc0435cba81d096529188f1f7c898838177af3c6952054d6c`.
 - Page dimensions: approximately 735 × 414 points (16:9 landscape).
 - Text and scientific SVG graphics retain vector output. Canvas 3D scenes are frozen high-resolution frames; animation is available in the web version. The cover title uses a solid amber accent in PDF to avoid Chromium gradient-text printing artifacts.
@@ -38,3 +38,13 @@ The content conventions and substantive limitations of the prospective physics p
 - Matrix hover exposes 1.74 selected / 1.96 produced in the tested cell; histogram region selection dims the other 12 bars.
 - Follow-up corrections verified on pages 1–4, 9, 10, 14 and 43: corrected perspective direction, preserved blue star-filled cluster identity with slowed motion, no white mats on page 4, restored table/image page 10.
 - The reference presentation was inspected through its full 27-page overview as well as the requested detailed layout pages.
+
+## Camera and interpretation follow-up
+
+Final camera: chapter hero settles at yaw -0.58 rad, roll 0.72 rad and zoom 1.05 after a 2.8-second establishing move. Slides 9 and 10 retain identical camera states at entry and after 3.2 seconds. Browser rechecks of all changed pages and Poppler renders of the nine replaced PDF pages passed.
+
+Slide 34 values were checked against the dissertation benchmark-yield table; relative channel composition is now explicit. Slide 35 includes the unweighted-event axis title. Atom-scene guide and A-prime label remain visible throughout the cycle.
+
+Git history excludes output/ and deliverables/; local artifacts remain available. Deployment workflow generates PDFs from the static site instead of requiring versioned PDF outputs. No push or deployment was run.
+
+A clean `git archive HEAD` checkout with neither generated directory successfully built both decks and the portable site. Missing local PDFs are allowed during this first build; the workflow then exports both PDFs before uploading Pages.

@@ -264,7 +264,7 @@ Source context: Channel-to-region efficiencies from the baseline 1 positron simu
 
 Time: 70 seconds.
 
-At ninety MeV the table makes the migration explicit. Non-resonant annihilation produces about one point nine six events at the illustrative kinetic mixing and contributes primarily to SR2, but it also populates SR1 and SR3. Resonant production mostly enters SR3 and also contributes to SR2. The small bremsstrahlung yield is retained in every category. Summing the contributions gives approximately zero point zero four events in SR1, one point eight two in SR2 and zero point seven one five in SR3. The likelihood uses the individual region predictions. It does not assign an observed candidate to a generator-level origin. Totals are calculated before rounding.
+At ninety MeV the matrix shows expected event yields, not raw Monte Carlo counts. Non-resonant annihilation produces about one point nine six events at the illustrative kinetic mixing and contributes primarily to SR2, but it also populates SR1 and SR3. Resonant production mostly enters SR3 and also contributes to SR2. Bremsstrahlung is numerically negligible at this mass. Non-resonant annihilation supplies about 95 percent of SR2; resonant annihilation supplies about 84 percent of SR3. Summing the contributions gives approximately zero point zero four events in SR1, one point eight two in SR2 and zero point seven one five in SR3. The likelihood uses the individual region predictions. It does not assign an observed candidate to a generator-level origin. Totals are calculated before rounding.
 
 Source context: Benchmark yields at fixed coupling, reproduced from the positron study; totals rounded independently.
 

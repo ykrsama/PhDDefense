@@ -262,7 +262,7 @@
   {
     "slug": "positron",
     "title": "Positron-Beam-Mode<br/>Analysis",
-    "body": "<PhysicsScene scene=\"atom\"/><div class=\"chapter-copy\"><div class=\"chapter-number\">03 / DISSERTATION DEFENCE</div><h1>Positron-Beam-Mode<br/>Analysis</h1><p>Three production mechanisms, three exclusive reconstructed categories</p></div><ChapterRail :active=\"3\"/><div class=\"scene-caption\">Conceptual atomic view. Electron orbits are illustrative.</div>",
+    "body": "<PhysicsScene scene=\"atom\"/><div class=\"chapter-copy\"><div class=\"chapter-number\">03 / DISSERTATION DEFENCE</div><h1>Positron-Beam-Mode<br/>Analysis</h1><p>Three production mechanisms, three exclusive reconstructed categories</p></div><ChapterRail :active=\"3\"/>",
     "notes": "Time: 15 seconds.\n\nI now use the simulation chain to evaluate the positron option. The analysis retains the baseline one detector for a common comparison with the published electron-beam projection.\n\nSource context: Positron-beam-mode analysis, supplied dissertation sources.",
     "section": 3,
     "seconds": 15,
@@ -332,8 +332,8 @@
   {
     "slug": "migration",
     "title": "Migration contributes to the selected signal",
-    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Migration contributes to the selected signal\n\n<div class=\"eyebrow\">90 MeV · ε² = 10⁻¹² · 3 × 10¹⁴ POT</div><YieldMatrix/><div class=\"takeaway\">Every mechanism contributes to every reconstructed category.</div>",
-    "notes": "Time: 70 seconds.\n\nAt ninety MeV the table makes the migration explicit. Non-resonant annihilation produces about one point nine six events at the illustrative kinetic mixing and contributes primarily to SR2, but it also populates SR1 and SR3. Resonant production mostly enters SR3 and also contributes to SR2. The small bremsstrahlung yield is retained in every category. Summing the contributions gives approximately zero point zero four events in SR1, one point eight two in SR2 and zero point seven one five in SR3. The likelihood uses the individual region predictions. It does not assign an observed candidate to a generator-level origin. Totals are calculated before rounding.\n\nSource context: Benchmark yields at fixed coupling, reproduced from the positron study; totals rounded independently.",
+    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Migration contributes to the selected signal\n\n<div class=\"eyebrow\">90 MeV · ε² = 10⁻¹² · 3 × 10¹⁴ POT</div><YieldMatrix/><div class=\"takeaway\">At 90 MeV, annihilation dominates; each reconstructed region retains cross-feed.</div>",
+    "notes": "Time: 70 seconds.\n\nAt ninety MeV the matrix shows expected event yields, not raw Monte Carlo counts. Non-resonant annihilation produces about one point nine six events at the illustrative kinetic mixing and contributes primarily to SR2, but it also populates SR1 and SR3. Resonant production mostly enters SR3 and also contributes to SR2. Bremsstrahlung is numerically negligible at this mass. Non-resonant annihilation supplies about 95 percent of SR2; resonant annihilation supplies about 84 percent of SR3. Summing the contributions gives approximately zero point zero four events in SR1, one point eight two in SR2 and zero point seven one five in SR3. The likelihood uses the individual region predictions. It does not assign an observed candidate to a generator-level origin. Totals are calculated before rounding.\n\nSource context: Benchmark yields at fixed coupling, reproduced from the positron study; totals rounded independently.",
     "section": 3,
     "seconds": 70,
     "source": "",
