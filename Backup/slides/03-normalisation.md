@@ -5,7 +5,7 @@ clicks: 0
 title: "Dedicated sample normalisation"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # Dedicated sample normalisation
 

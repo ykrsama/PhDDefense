@@ -13,5 +13,5 @@ Time: 35 seconds.
 
 I will start with the physics motivation and detector requirements, then describe the simulation and reconstruction framework. The positron analysis uses this framework to combine three production mechanisms in exclusive reconstructed categories. Throughout the talk, I will focus on the experimental questions: how to simulate rare backgrounds efficiently and how to interpret the selected events. I will introduce the theory assumptions needed for that interpretation.
 
-Source context: PhD Dissertation Defence, supplied dissertation sources.
+Source context: PhD Dissertation Pre-Defence, supplied dissertation sources.
 -->

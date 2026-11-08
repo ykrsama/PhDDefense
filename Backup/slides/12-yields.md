@@ -5,7 +5,7 @@ clicks: 0
 title: "Produced and selected benchmark yields"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # Produced and selected benchmark yields
 

@@ -5,7 +5,7 @@ clicks: 0
 title: "Inclusive comparisons and tail-model dependence"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # Inclusive comparisons and tail-model dependence
 

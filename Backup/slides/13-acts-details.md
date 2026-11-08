@@ -5,7 +5,7 @@ clicks: 0
 title: "ACTS interfaces and implementation scope"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # ACTS interfaces and implementation scope
 

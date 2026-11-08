@@ -5,7 +5,7 @@ clicks: 0
 title: "SR3: joint ECAL-threshold extrapolation"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # SR3: joint ECAL-threshold extrapolation
 

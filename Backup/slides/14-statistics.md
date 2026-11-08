@@ -5,7 +5,7 @@ clicks: 0
 title: "Statistical and detector assumptions"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # Statistical and detector assumptions
 

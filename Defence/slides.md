@@ -4,7 +4,7 @@ favicon: ./branding/sjtu.png
 addons:
   - slidev-addon-evenet
 title: Design of DarkSHINE Simulation Framework and Prospective Study of Positron-Beam Mode
-info: PhD Dissertation Defence — Xuliang Zhu — Shanghai Jiao Tong University
+info: PhD Dissertation Pre-Defence — Xuliang Zhu — Shanghai Jiao Tong University
 colorSchema: dark
 transition: fade
 mdc: true

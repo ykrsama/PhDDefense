@@ -5,7 +5,7 @@ clicks: 0
 title: "SR2 background cutflow"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # SR2 background cutflow
 

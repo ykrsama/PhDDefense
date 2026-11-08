@@ -6,7 +6,7 @@ Time: 30 seconds.
 
 Good afternoon, professors. I am Xuliang Zhu. My dissertation covers the DarkSHINE simulation framework and a prospective search using a positron beam. I will first introduce the experimental motivation, then describe the software contributions, and finally discuss the detector-level analysis and its sensitivity.
 
-Source context: PhD Dissertation Defence, supplied dissertation sources.
+Source context: PhD Dissertation Pre-Defence, supplied dissertation sources.
 
 ## 02. Outline
 
@@ -14,7 +14,7 @@ Time: 35 seconds.
 
 I will start with the physics motivation and detector requirements, then describe the simulation and reconstruction framework. The positron analysis uses this framework to combine three production mechanisms in exclusive reconstructed categories. Throughout the talk, I will focus on the experimental questions: how to simulate rare backgrounds efficiently and how to interpret the selected events. I will introduce the theory assumptions needed for that interpretation.
 
-Source context: PhD Dissertation Defence, supplied dissertation sources.
+Source context: PhD Dissertation Pre-Defence, supplied dissertation sources.
 
 ## 03. Physics Motivation and DarkSHINE Experiment
 
@@ -60,7 +60,7 @@ Time: 55 seconds.
 
 SHINE provides the accelerator setting for DarkSHINE. The electron programme uses a dedicated single-particle extraction branch alongside the FEL beamlines. I use the eight GeV reference beam energy and an exposure of three times ten to the fourteen incident particles. The nominal single-particle rate is ten MHz. At this rate the benchmark corresponds approximately to a full calendar year of continuous delivery. Actual running time and duty factor remain separate operational inputs. The positron beamline remains a proposed extension. This analysis evaluates its potential physics benefit.
 
-Source context: SHINE layout: supplied collaboration assets. Rate updated to 10 MHz for this defence.
+Source context: SHINE layout: supplied collaboration assets. Rate updated to 10 MHz for this pre-defence.
 
 ## 09. DarkSHINE detector concept
 

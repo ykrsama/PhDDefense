@@ -5,7 +5,7 @@ clicks: 0
 title: "Reference detector and evolved software geometry"
 ---
 
-<div class="eyebrow">Dissertation defence / backup</div>
+<div class="eyebrow">Dissertation pre-defence / backup</div>
 
 # Reference detector and evolved software geometry
 

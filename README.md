@@ -1,4 +1,4 @@
-# DarkSHINE PhD Dissertation Defence
+# DarkSHINE PhD Dissertation Pre-Defence
 
 **Design of DarkSHINE Simulation Framework and Prospective Study of Positron-Beam Mode**  
 Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University  
