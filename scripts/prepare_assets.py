@@ -1,6 +1,6 @@
 from pathlib import Path
 import shutil,subprocess,json
-R=Path(__file__).resolve().parents[1]; T=R.parent/'PhDThesis/figures'; P=R/'Defence/public/figures';P.mkdir(exist_ok=True)
+R=Path(__file__).resolve().parents[1]; T=R.parent/'PhDThesis/figures'; P=R/'PreDefence/public/figures';P.mkdir(exist_ok=True)
 items={
 'constraints':'ch02_theoretical_background/SummaryPlot_tikz.pdf',
 'shine':'ch03_darkshine_detector/DarkSHINE-Kicker.pdf',

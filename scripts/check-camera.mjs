@@ -4,7 +4,7 @@ const browser=await chromium.launch({headless:true}),page=await browser.newPage(
 const read=async n=>JSON.parse(await page.locator(`[data-slidev-no="${n}"] canvas`).getAttribute('data-camera'))
 const result={};await fs.mkdir('output/camera-revision',{recursive:true})
 for(const n of [9,10,14]){
- await page.goto('http://127.0.0.1:8808/site/defence/#/'+n,{waitUntil:'domcontentloaded'})
+ await page.goto('http://127.0.0.1:8808/site/predefence/#/'+n,{waitUntil:'domcontentloaded'})
  await page.locator(`[data-slidev-no="${n}"] canvas[data-camera]`).waitFor()
  const initial=await read(n);await page.waitForTimeout(3200);const settled=await read(n)
  await page.waitForTimeout(600);const held=await read(n)

@@ -6,18 +6,18 @@ The reference repository was cloned and its implementation files copied into thi
 
 | Local implementation | Reference and treatment |
 |---|---|
-| `Defence/styles/local.css` | Copied byte-for-byte from CCNU_Seminar. SHA-256 `6d461cf5f3ad502b2c7cf772c0530fa6e298f34a307cf8faa0f165cfea797250`. |
-| `Defence/styles/graphite.css` | Copied byte-for-byte. SHA-256 `b89e7d432eb6253428580c049843a92a47edd07df9f6ae304688bda8e917b2c6`. |
-| `Defence/styles/chapters.css` | Copied byte-for-byte. SHA-256 `71e590e6fd08965df17d05afec01bde2e75de69d7ff036865b2eee3871e48969`. |
-| `Defence/assets/fonts/DM-Sans-variable.ttf` | Exact bundled CCNU typeface; served locally. |
+| `PreDefence/styles/local.css` | Copied byte-for-byte from CCNU_Seminar. SHA-256 `6d461cf5f3ad502b2c7cf772c0530fa6e298f34a307cf8faa0f165cfea797250`. |
+| `PreDefence/styles/graphite.css` | Copied byte-for-byte. SHA-256 `b89e7d432eb6253428580c049843a92a47edd07df9f6ae304688bda8e917b2c6`. |
+| `PreDefence/styles/chapters.css` | Copied byte-for-byte. SHA-256 `71e590e6fd08965df17d05afec01bde2e75de69d7ff036865b2eee3871e48969`. |
+| `PreDefence/assets/fonts/DM-Sans-variable.ttf` | Exact bundled CCNU typeface; served locally. |
 | `shared/styles/` and `shared/slidev-addon-evenet/` | Copied upstream design system, page numbers, animation utilities and shared components. KaTeX CSS is imported locally and remote web-font loading is disabled. |
-| `Defence/components/NJUPlot.vue` | Copied CCNU scientific-figure modal, keyboard controls and base-path handling. |
-| `Defence/components/NJUChapter.vue` | Original CCNU chapter component retained. |
-| `Defence/components/ChapterRail.vue` | Adapted CCNU chapter-rail markup and classes, with the four defence section labels. |
-| `Defence/components/PhysicsScene.vue` | Adapted the CCNU chapter-scene projection, canvas layering and lifecycle approach. New metre-based detector geometry and particle paths, cluster merger, and conceptual tungsten atom. Anime.js drives time and camera state. |
-| `Defence/components/FlowDiagram.vue` | Adapted the Anime.js ambient-cycle and animated path-dash pattern from `NJUAnimatedEveNet.vue`. All nodes are visible on entry. |
+| `PreDefence/components/NJUPlot.vue` | Copied CCNU scientific-figure modal, keyboard controls and base-path handling. |
+| `PreDefence/components/NJUChapter.vue` | Original CCNU chapter component retained. |
+| `PreDefence/components/ChapterRail.vue` | Adapted CCNU chapter-rail markup and classes, with the four defence section labels. |
+| `PreDefence/components/PhysicsScene.vue` | Adapted the CCNU chapter-scene projection, canvas layering and lifecycle approach. New metre-based detector geometry and particle paths, cluster merger, and conceptual tungsten atom. Anime.js drives time and camera state. |
+| `PreDefence/components/FlowDiagram.vue` | Adapted the Anime.js ambient-cycle and animated path-dash pattern from `NJUAnimatedEveNet.vue`. All nodes are visible on entry. |
 | `tools/`, package dependencies | Copied upstream multi-deck tooling; new local-only dev wrapper and portable-site packager added. |
-| `Defence/styles/defence.css` | Defence-specific typography, grids, plot mats and tested content spacing, layered after the copied styles. |
+| `PreDefence/styles/defence.css` | Defence-specific typography, grids, plot mats and tested content spacing, layered after the copied styles. |
 
 Anime.js: [juliangarnier/anime](https://github.com/juliangarnier/anime), package version 4.5.0. The chapter scenes are projected 3D coordinates drawn on Canvas with continuously animated Anime.js state; they are not static background SVGs. The cover and outline share one persistent canvas, so the camera interpolates rather than rebuilding the scene.
 

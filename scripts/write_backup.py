@@ -30,9 +30,9 @@ add('acts-details','ACTS interfaces and implementation scope','<div class="formu
 add('statistics','Statistical and detector assumptions','<div class="columns"><div><h2 class="blue">Reported statistical treatment</h2><ul class="small"><li>Expected 90% CL, background-only hypothesis</li><li>Profile likelihood and asymptotic CLs</li><li>Shared signal strength for all production modes</li><li>Background-shape uncertainties uncorrelated by bin</li><li>Normalisation follows the reported Poisson prescription</li></ul></div><div><h2 class="gold">Further validation</h2><ul class="small"><li>Coverage with pseudo-experiments at very low counts</li><li>Uncertainty from sideband continuation</li><li>Bounds on omitted empty-tail components</li><li>HCAL noise and pileup at the 1 MeV cell threshold</li><li>Signal efficiency and background stability with beam energy</li></ul></div></div><div class="takeaway">Mutually exclusive regions do not imply independent detector-systematic uncertainties.</div>')
 D.mkdir(exist_ok=True);(D/'components').mkdir(exist_ok=True)
 for name in ['Plot','NJUPlot','FlowDiagram']:
- (D/'components'/f'{name}.vue').write_text(f'<script setup>\nimport Target from "../../Defence/components/{name}.vue"\n</script>\n<template><Target v-bind="$attrs"/></template>\n')
-(D/'style.ts').write_text("import '../Defence/style.ts'\n")
-shutil.copytree(R/'Defence/public',D/'public',dirs_exist_ok=True)
+ (D/'components'/f'{name}.vue').write_text(f'<script setup>\nimport Target from "../../PreDefence/components/{name}.vue"\n</script>\n<template><Target v-bind="$attrs"/></template>\n')
+(D/'style.ts').write_text("import '../PreDefence/style.ts'\n")
+shutil.copytree(R/'PreDefence/public',D/'public',dirs_exist_ok=True)
 for i,(slug,title,body,note) in enumerate(slides,1):
  body=re.sub(r'(<table[^>]*>)',r'\1<tbody>',body).replace('</table>','</tbody></table>')
  (D/'slides'/f'{i:02}-{slug}.md').write_text(f'---\nlayout: default\nclass: backup-slide backup-{slug}\nclicks: 0\ntitle: {json.dumps(title)}\n---\n\n<div class="eyebrow">Dissertation defence / backup</div>\n\n# {title}\n\n{body}\n<div class="source">Sources: supplied dissertation and positron-study figures. Publication and production assumptions retained.</div>\n\n<!--\n{note}\n-->\n')

@@ -1,7 +1,7 @@
-raise SystemExit("The revised slides are edited directly in Defence/slides/. This initial generator is disabled to protect your revisions.")
+raise SystemExit("The revised slides are edited directly in PreDefence/slides/. This initial generator is disabled to protect your revisions.")
 from pathlib import Path
 import json,shutil,html,re
-R=Path(__file__).resolve().parents[1];D=R/'Defence'; S=[]
+R=Path(__file__).resolve().parents[1];D=R/'PreDefence'; S=[]
 A=json.loads((R/'asset-manifest.json').read_text())
 def L(s):return '<LaTeX formula="'+html.escape(s,quote=True)+'" />'
 def plot(k,caption='',cls='plot-large',plain=False):return '<div class="'+cls+'"><Plot src="'+A[k]['display']+'" caption="'+html.escape(caption,quote=True)+'" '+('plain' if plain else '')+'/></div>'
