@@ -21,7 +21,7 @@ Revised and validated locally on 9 November 2026.
 
 ## PDF properties
 
-- Main: 46 pages, 34,671,492 bytes; SHA-256 `0b32699faed436cbf6f16c99ff1b52f619d9e181f7a643dd152556bf1a7e4981`.
+- Main: 46 pages, 38,978,313 bytes; SHA-256 `a8894272fd60fa074a45807b102f4ea3130599dced6bd90b89b9fd675670df70`.
 - Backup: 14 pages, 7,296,014 bytes; SHA-256 `5a2a258914a2ee6bc0435cba81d096529188f1f7c898838177af3c6952054d6c`.
 - Page dimensions: approximately 735 × 414 points (16:9 landscape).
 - Text and scientific SVG graphics retain vector output. Canvas 3D scenes are frozen high-resolution frames; animation is available in the web version. The cover title uses a solid amber accent in PDF to avoid Chromium gradient-text printing artifacts.
@@ -48,3 +48,7 @@ Slide 34 values were checked against the dissertation benchmark-yield table; rel
 Git history excludes output/ and deliverables/; local artifacts remain available. Deployment workflow generates PDFs from the static site instead of requiring versioned PDF outputs. No push or deployment was run.
 
 A clean `git archive HEAD` checkout with neither generated directory successfully built both decks and the portable site. Missing local PDFs are allowed during this first build; the workflow then exports both PDFs before uploading Pages.
+
+## Detector model beam-axis rotation
+
+All detector instances apply a fixed +90-degree model-space rotation around the incident-beam axis (local +x, physical longitudinal +z) before the unchanged camera projection. Atomic and cluster scenes are unaffected. Camera targets, animation timing and compact-camera behaviour are unchanged. Calorimeter and magnet label anchors are kept clear of the rotated structures.

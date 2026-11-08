@@ -13,7 +13,10 @@ const active=computed(()=>props.persistent?page.value<=2:page.value===context?.$
 const isStatic=()=>typeof location!=='undefined'&&((location.search.includes('static')||location.search.includes('print'))||matchMedia('(prefers-reduced-motion: reduce)').matches)
 type P=[number,number,number]
 function proj(p:P):[number,number,number]{
- const [x,y,z]=p, turn=state.yaw
+ // Beam longitudinal axis is local +x (physical +z). Rotate the model,
+ // including tracks and label anchors, by +90 degrees before camera projection.
+ const [x,y,z]:P=props.scene==='detector'?[p[0],-p[2],p[1]]:p
+ const turn=state.yaw
  const a=x*Math.cos(turn)+z*Math.sin(turn), b=-x*Math.sin(turn)+z*Math.cos(turn)
  // An orthonormal camera basis keeps screen coordinates and depth consistent.
  const {pitch,roll}=state
@@ -50,7 +53,7 @@ function detector(){
  const dark=Array.from({length:65},(_,i):P=>[-.78+i*4.45/64,.015+i/64*.80,-i/64*.32]);path(dark,'#f69cab',1.7,[7,6]);dot([-.78,.015,0],3.5,'#fff0ba')
  const u=(state.t*.65)%1;dot(incoming[Math.floor(u*44)],3,'#d2eeff');dot(recoil[Math.floor(u*41)],2.8,'#fff0ba');dot(dark[Math.floor(u*64)],2.2,'#ffc1d0')
  for(let k=0;k<11;k++){let u=((state.t*.55+k*.073)%1);const x=.24+u*.4;path([[.2,.16,.16],[x,.16+(k-5)*.014*u,.16+(k%3-1)*.05*u]],`rgba(240,195,110,${.18+.15*(1-u)})`,.7)}
- if(props.labels){label('Tagging tracker',[-1.55,-.1,.16],-55,32);label('W target',[-.78,.12,0],-15,-12);label('Recoil tracker',[-.35,-.2,.22],-12,45);label('ECAL',[.43,.35,0],-17,-10);label('HCAL',[2.1,.78,0],-5,-17);label('Magnet',[-1.2,.5,0],-20,-10)}
+ if(props.labels){label('Tagging tracker',[-1.55,-.1,.16],-55,32);label('W target',[-.78,.12,0],-15,-12);label('Recoil tracker',[-.35,-.2,.22],-12,45);label('ECAL',[.43,0,-.36],-17,-10);label('HCAL',[2.1,0,-.88],-5,-17);label('Magnet',[-1.2,0,-.59],-20,-10)}
 }
 function sphere(center:P,r:number,col:string,turn=0){for(let j=1;j<12;j++){let b=-Math.PI/2+j*Math.PI/12;path(Array.from({length:65},(_,i):P=>[center[0]+r*Math.cos(b)*Math.cos(i/64*Math.PI*2+turn),center[1]+r*Math.sin(b),center[2]+r*Math.cos(b)*Math.sin(i/64*Math.PI*2+turn)]),col,.6)}for(let j=0;j<12;j++)path(Array.from({length:65},(_,i):P=>{let a=i/64*Math.PI*2,b=j*Math.PI/6+turn;return[center[0]+r*Math.cos(a)*Math.cos(b),center[1]+r*Math.sin(a),center[2]+r*Math.cos(a)*Math.sin(b)]}),col,.6)}
 function clusters(){
