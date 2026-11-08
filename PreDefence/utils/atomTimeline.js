@@ -25,6 +25,7 @@ export function atomTimeline(time) {
     t, mode, local, after,
     collided: local >= COLLISION_TIME,
     incoming: clamp(local / COLLISION_TIME),
+    outgoing: clamp(after / (ENCOUNTER_DURATION - COLLISION_TIME)),
     vertex: mode === 2 ? NUCLEAR_VERTEX : ANNIHILATION_VERTEX,
     // Restore only the consumed electrons on their continuing orbits before reset.
     electrons: [0, 1, 2].filter(i => !(i === 0 && t >= COLLISION_TIME) && !(i === 2 && t >= ENCOUNTER_DURATION + COLLISION_TIME)),

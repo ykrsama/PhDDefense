@@ -156,12 +156,14 @@ function atom(){
  const incoming:P=[start[0]+(vertex[0]-start[0])*frame.incoming,vertex[1],vertex[2]]
  path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
  if(!frame.collided){dot(incoming,3.5,color('246,156,171'));label('e⁺',incoming,0,-14)}
- // Outgoing particles travel at the same constant speed. Labels follow their
- // own particle; no label or complete outgoing track appears before production.
+ // Equal projected lengths and one shared progress keep every outgoing particle
+ // visible for the same duration, without parking at the end or clipping early.
  const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
   const distance=Math.hypot(...end.map((x,i)=>x-vertex[i]))
-  // Keep flying through the end of the encounter instead of parking at the guide endpoint.
-  const u=after*1.1/distance
+  const a=proj(vertex),b=proj(end),projectedDistance=Math.hypot(b[0]-a[0],b[1]-a[1])
+  const travel=200*frame.outgoing
+  // Invert perspective along the ray to obtain constant speed on the canvas.
+  const u=travel*(10+a[2])/(projectedDistance*(10+b[2])-travel*(b[2]-a[2]))
   const tip=vertex.map((x,i)=>x+(end[i]-x)*u) as P
   if(photon){
    const points=Array.from({length:90},(_,i):P=>{
