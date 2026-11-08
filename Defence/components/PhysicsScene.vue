@@ -89,7 +89,6 @@ function detector(){
  if(particles.blue)dot(particles.blue as P,3,'#d2eeff')
  if(particles.yellow)dot(particles.yellow as P,2.8,'#fff0ba')
  if(particles.red)dot(particles.red as P,2.2,'#ffc1d0')
- if(particles.impact)dot([-.78,.015,0],3.5,'#fff0ba')
  const showerStart=recoil[recoil.length-1]
  if(particles.showerAge>=0&&particles.showerAge<1.1){
   const progress=Math.min(1,particles.showerAge/.45),fade=Math.min(1,(1.1-particles.showerAge)/.45)
