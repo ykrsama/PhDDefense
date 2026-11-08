@@ -83,6 +83,28 @@ function trackerPlane(x:number,width:number,height:number,thickness:number){
  box(x,-height/2,-width/2,thickness,height,width,'rgba(119,201,255,.46)','rgba(77,149,195,.08)')
  for(let k=1;k<8;k++)path([[x,-height/2,-width/2+k*width/8],[x,height/2,-width/2+k*width/8]],'rgba(119,201,255,.23)',.5)
 }
+// Temporary model-coordinate guide while tuning the recoil direction.
+const showDetectorAxes=true
+function detectorAxes(){
+ const origin:P=[geometry.targetX,0,0],start=proj(origin),axisLength=.45
+ const axes:{name:string;end:P;color:string}[]=[
+  {name:'+X',end:[geometry.targetX+axisLength,0,0],color:'#f69cab'},
+  {name:'+Y',end:[geometry.targetX,axisLength,0],color:'#70dcb2'},
+  {name:'+Z',end:[geometry.targetX,0,axisLength],color:'#77c9ff'},
+ ]
+ for(const axis of axes){
+  path([origin,axis.end],axis.color,2)
+  const end=proj(axis.end),angle=Math.atan2(end[1]-start[1],end[0]-start[0])
+  ctx!.save();ctx!.fillStyle=axis.color;ctx!.beginPath();ctx!.moveTo(end[0],end[1])
+  for(const sign of [-1,1])ctx!.lineTo(end[0]-9*Math.cos(angle)+sign*4*Math.sin(angle),end[1]-9*Math.sin(angle)-sign*4*Math.cos(angle))
+  ctx!.closePath();ctx!.fill()
+  const x=end[0]+14*Math.cos(angle),y=end[1]+14*Math.sin(angle)
+  ctx!.font='600 15px "DM Sans",sans-serif';ctx!.textAlign='center';ctx!.textBaseline='middle'
+  ctx!.fillStyle='rgba(12,13,15,.9)';ctx!.fillRect(x-17,y-11,34,22)
+  ctx!.fillStyle=axis.color;ctx!.fillText(axis.name,x,y);ctx!.restore()
+ }
+ dot(origin,3,'#dce2ea')
+}
 function detector(){
  // Beam-axis dimensions follow the annotated simulation geometry reference.
  const {ecalWidth,targetWidth,targetHeight}=geometry
@@ -128,6 +150,7 @@ function detector(){
   if(!props.focus||props.focus==='hcal')label('HCAL',props.compact?[geometry.hcalCenter,2.1,0]:[geometry.hcalCenter,0,-2.1],-5,-17)
   if(!props.focus)label('Magnet',props.compact?[(geometry.magnetFront+geometry.magnetBack)/2,.5,0]:[(geometry.magnetFront+geometry.magnetBack)/2,0,-.59],-20,props.compact?-26:-10)
  }
+ if(showDetectorAxes)detectorAxes()
 }
 function sphere(center:P,r:number,col:string,turn=0){for(let j=1;j<12;j++){let b=-Math.PI/2+j*Math.PI/12;path(Array.from({length:65},(_,i):P=>[center[0]+r*Math.cos(b)*Math.cos(i/64*Math.PI*2+turn),center[1]+r*Math.sin(b),center[2]+r*Math.cos(b)*Math.sin(i/64*Math.PI*2+turn)]),col,.6)}for(let j=0;j<12;j++)path(Array.from({length:65},(_,i):P=>{let a=i/64*Math.PI*2,b=j*Math.PI/6+turn;return[center[0]+r*Math.cos(a)*Math.cos(b),center[1]+r*Math.sin(a),center[2]+r*Math.cos(a)*Math.sin(b)]}),col,.6)}
 function clusters(){
@@ -236,8 +259,8 @@ function setCamera(){
    :{yaw:-.43,pitch:.28,roll:.20,zoom:.86,cx:421,cy:160}
   : props.scene==='cluster'?{yaw:-.56,pitch:.28,roll:.20,zoom:1.12,cx:665,cy:320}
   : props.scene==='atom'?{yaw:-.56,pitch:.28,roll:.20,zoom:1.05,cx:660,cy:320}
-  : props.persistent&&n===2?{yaw:-.95,pitch:.20,roll:.85,zoom:1.70,cx:750,cy:265}
-  :{yaw:-.58,pitch:.20,roll:.72,zoom:1.40,cx:720,cy:275}
+  : props.persistent&&n===2?{yaw:-.95,pitch:.20,roll:.85,zoom:2.80,cx:750,cy:265}
+  :{yaw:-.58,pitch:.20,roll:.72,zoom:2.40,cx:720,cy:275}
  if(props.scene==='detector'&&props.compact){
   const saved={...state};Object.assign(state,target,{zoom:1,cx:0,cy:0})
   const envelope:P[]=[]

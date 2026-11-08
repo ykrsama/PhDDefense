@@ -23,6 +23,7 @@ export const detectorGeometry = Object.freeze({
   hcalLength, hcalFront, hcalBack, hcalCenter: (hcalFront + hcalBack) / 2, hcalWidth: 4,
   magnetFront: tagFront - .03, magnetBack: recoilBack + .02,
   incoming: Array.from({ length: 45 }, (_, i) => [tagFront - .4 + i * (targetX - tagFront + .4) / 44, .015, 0]),
-  recoil: Array.from({ length: 42 }, (_, i) => [targetX + i * (ecalFront - targetX) / 41, .015 + i / 41 * .105, (i / 41) ** 2 * .10]),
+  // A gentle bend in one transverse direction; no vertical recoil deflection.
+  recoil: Array.from({ length: 42 }, (_, i) => [targetX + i * (ecalFront - targetX) / 41, .015, (i / 41) ** 2 * .018]),
   dark: Array.from({ length: 65 }, (_, i) => [targetX + i * (hcalBack - .15 - targetX) / 64, .015 + i / 64 * .80, -i / 64 * .32]),
 })
