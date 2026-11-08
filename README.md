@@ -41,7 +41,7 @@ npm run preview
 
 ## GitHub Pages
 
-已提供手动触发的 `.github/workflows/pages.yml`。将本目录作为仓库根目录推送后，在 GitHub 的 **Settings → Pages → Source** 选择 **GitHub Actions**，再手动运行 **Deploy defence presentation**。工作流重新构建网页，并通过 Chromium 从静态站点生成两个 PDF；PDF 和交付压缩包无需进入 Git。也可直接部署现成的 `site/` 目录。
+`.github/workflows/pages.yml` 在推送到 `main` 分支时自动触发，同时保留手动触发入口。将本目录作为仓库根目录推送后，在 GitHub 的 **Settings → Pages → Source** 选择 **GitHub Actions**，之后每次推送到 `main` 都会自动运行 **Deploy defence presentation**，也可在 Actions 页面手动运行。工作流重新构建网页，并通过 Chromium 从静态站点生成两个 PDF；PDF 和交付压缩包无需进入 Git。也可直接部署现成的 `site/` 目录。
 
 本次未执行 git push，也未触发任何部署。若把项目置于现有仓库的子目录，请相应调整 workflow 的工作目录与上传路径。
 
