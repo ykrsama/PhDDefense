@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-staged-filter
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Generator-level filtering with staged transport"
 ---

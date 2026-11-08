@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-migration
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Migration contributes to the selected signal"
 ---
@@ -10,9 +10,7 @@ title: "Migration contributes to the selected signal"
 
 # Migration contributes to the selected signal
 
-<div class="eyebrow">Benchmark: <LaTeX formula="m_{A^{\prime}}=90\,\mathrm{MeV},\quad\epsilon^2=10^{-12},\quad3\times10^{14}\ \mathrm{POT}" /></div><table><tbody><tr><th>Generated mechanism</th><th>Produced</th><th>SR1</th><th>SR2</th><th>SR3</th></tr><tr><td>Dark bremsstrahlung</td><td>0.00137</td><td>0.000850</td><td>0.000111</td><td>0.000142</td></tr><tr><td>Non-resonant annihilation</td><td>1.96</td><td>0.0389</td><td class="gold">1.74</td><td>0.114</td></tr><tr><td>Resonant annihilation</td><td>0.705</td><td>0.00156</td><td>0.0870</td><td class="rose">0.601</td></tr><tr><td><strong>Total</strong></td><td>2.67</td><td>0.0413</td><td class="gold">1.82</td><td class="rose">0.715</td></tr></tbody></table><div class="formula-band"><LaTeX formula="s_i(m)=\sum_c N_{\mathrm{prod},c}(m)\,\eta_{ic}(m)" /></div><div class="takeaway">A signal-region label specifies an observed topology, not a unique production mechanism.</div>
-<div class="source">Benchmark yields at fixed coupling, reproduced from the positron study; totals rounded independently.</div>
-
+<div class="eyebrow">90 MeV · ε² = 10⁻¹² · 3 × 10¹⁴ POT</div><YieldMatrix/><div class="takeaway">Every mechanism contributes to every reconstructed category.</div>
 <!--
 Time: 70 seconds.
 

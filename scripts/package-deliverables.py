@@ -3,7 +3,7 @@ import zipfile,hashlib,json
 R=Path(__file__).resolve().parents[1]
 O=R/'deliverables';O.mkdir(exist_ok=True)
 source=O/'DarkSHINE_Defence_Source.zip'
-exclude={'node_modules','site','dist','deliverables','__pycache__','.git'}
+exclude={'archive','node_modules','site','dist','deliverables','__pycache__','.git'}
 with zipfile.ZipFile(source,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
  for p in sorted(R.rglob('*')):
   if not p.is_file():continue

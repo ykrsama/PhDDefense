@@ -1,3 +1,4 @@
+raise SystemExit("The revised slides are edited directly in Defence/slides/. This initial generator is disabled to protect your revisions.")
 from pathlib import Path
 import json,shutil,html,re
 R=Path(__file__).resolve().parents[1];D=R/'Defence'; S=[]

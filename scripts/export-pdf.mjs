@@ -6,7 +6,8 @@ const browser=await chromium.launch({headless:true,executablePath:process.env.CH
 const page=await browser.newPage({viewport:{width:980,height:552}}),doc=await PDFDocument.create()
 const errors=[];page.on('pageerror',e=>errors.push(String(e)))
 await fs.mkdir(output.substring(0,output.lastIndexOf('/')),{recursive:true})
-for(let i=1;i<=Number(count);i++){
+const pages=process.env.PDF_SLIDES?process.env.PDF_SLIDES.split(',').map(Number):Array.from({length:Number(count)},(_,i)=>i+1)
+for(const i of pages){
  await page.goto(url+'/?static=1&print=true#/'+i,{waitUntil:'networkidle'})
  await page.emulateMedia({colorScheme:'dark',media:'screen'})
  await page.waitForTimeout(1600);await page.evaluate(()=>document.fonts.ready)

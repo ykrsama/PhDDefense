@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-baseline
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Electron-mode signal and background rejection"
 ---

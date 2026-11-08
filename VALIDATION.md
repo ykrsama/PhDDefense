@@ -1,6 +1,6 @@
 # Validation record
 
-Validated locally on 8 November 2026.
+Revised and validated locally on 9 November 2026.
 
 | Check | Result |
 |---|---|
@@ -21,11 +21,20 @@ Validated locally on 8 November 2026.
 
 ## PDF properties
 
-- Main: 46 pages, 29,047,830 bytes; SHA-256 `6fd4b64562abe919cbb001777fecdb6b9a01b1e29eb694d5b939882bfb3fde10`.
-- Backup: 14 pages, 7,327,583 bytes; SHA-256 `077c371ec04f264b966932081664eedf0176440cf630439142cb15c75c2c0ae3`.
+- Main: 46 pages, 29,631,034 bytes; SHA-256 `e9715c916f14c67473b4afd6083dac5792b75056004a4d51b832ea1ce791847a`.
+- Backup: 14 pages, 7,296,014 bytes; SHA-256 `5a2a258914a2ee6bc0435cba81d096529188f1f7c898838177af3c6952054d6c`.
 - Page dimensions: approximately 735 × 414 points (16:9 landscape).
 - Text and scientific SVG graphics retain vector output. Canvas 3D scenes are frozen high-resolution frames; animation is available in the web version. The cover title uses a solid amber accent in PDF to avoid Chromium gradient-text printing artifacts.
 
 Machine-readable evidence is retained in `output/main-layout-report.json`, `output/interaction-report.json`, `output/static-report.json`, and `output/pdf-report.json`. The working directory also retains page renders under `output/pdf-render/` and browser captures under `output/qa*/`; these large intermediate files are not part of the source archive.
 
 The content conventions and substantive limitations of the prospective physics projection are documented in `CONTENT_NOTES.md` and on the relevant report pages. These are interpretation limits of the supplied study, not export defects.
+
+## Revision verification
+
+- Main: all 46 browser pages checked, with targeted rechecks after changes; no image, script, math, boundary or conclusion-band errors. Backup: 14 pages checked without errors.
+- All 60 final PDF pages rendered with Poppler and reviewed. Main page 10 retains all five subsystem rows, page 24 contains Yifan Zhu credit, and page 46 remains Research Achievements.
+- All transitions use fade. The 45-minute timing remains 2,700 seconds.
+- Matrix hover exposes 1.74 selected / 1.96 produced in the tested cell; histogram region selection dims the other 12 bars.
+- Follow-up corrections verified on pages 1–4, 9, 10, 14 and 43: corrected perspective direction, preserved blue star-filled cluster identity with slowed motion, no white mats on page 4, restored table/image page 10.
+- The reference presentation was inspected through its full 27-page overview as well as the requested detailed layout pages.

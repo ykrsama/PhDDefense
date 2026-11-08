@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-generator-validation
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Signal generation and validation"
 ---
@@ -10,13 +10,10 @@ title: "Signal generation and validation"
 
 # Signal generation and validation
 
-<div class="columns wide"><div><div class="plot-large"><Plot src="figures/generator-comparison.png" caption="External and transport-native signal-generation comparison." /></div></div><div><h2 class="blue">Two connected routes</h2><p>External hard-process generation supplies signal kinematics.</p><p>A Geant4-native process supports transport-based production.</p><div class="rule"></div><h2 class="gold">Checks at several levels</h2><p class="small">Total cross section, recoil energy, angle and transverse momentum.</p><p class="small muted">Agreement of rates and agreement of shapes test different inputs.</p></div></div><div class="takeaway">A common configuration and normalisation are required before comparing generator predictions.</div>
-<div class="source">DarkSHINE signal-generator comparison; collaboration study. Original plot retained.</div>
-
+<div class="columns"><div class="plot-mid"><Plot src="figures/XC_xsection_plot.svg" caption="Production cross sections"/></div><div class="plot-mid"><Plot src="figures/XC_dp_electron_energy.svg" caption="Recoil-electron energy distributions"/></div></div><div class="takeaway">Validate both the production rate and kinematic distributions before applying detector selections.</div>
+<div class="source">Credit: Xiang Chen</div>
 <!--
 Time: 60 seconds.
 
-The software supports external hard-process kinematics and a transport-native dark-photon process. The external route uses matrix-element generators and passes the resulting particles into detector transport. The native route integrates production with Geant4. Generator validation checks the cross section and several recoil distributions. Comparing only the integrated cross section would miss a kinematic disagreement that changes detector acceptance. Conversely, normalised shape agreement does not establish the absolute rate. The beam, target, mass, coupling convention and generation cuts must match in a meaningful comparison. These validation studies are collaboration results that establish the interfaces used by the framework and analysis.
-
-Source context: DarkSHINE signal-generator comparison; collaboration study. Original plot retained.
+The two plots show complementary generator-level checks from Xiang Chen: the production cross section as a function of mediator mass, and recoil-electron energy distributions. Rates set the expected event yield, while kinematics determine detector acceptance. The analysis must retain the same production and response configuration when translating these into selected events.
 -->

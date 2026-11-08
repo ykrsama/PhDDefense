@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-acts
-transition: slide-left
+transition: fade
 clicks: 0
 title: "ACTS integration in DarkSHINE"
 ---

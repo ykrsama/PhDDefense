@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-parallelism
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Parallel event simulation"
 ---
@@ -10,9 +10,7 @@ title: "Parallel event simulation"
 
 # Parallel event simulation
 
-<div class="columns"><div><h2 class="blue">Geant4 multi-threading</h2><ul><li>G4MTRunManager</li><li>Thread-local allocators and singleton state</li><li>Thread-safe primary generation and random-number handling</li><li>Inclusive and rare-process validation</li></ul></div><div><table><tbody><tr><th>Configuration</th><th>Elapsed time</th><th>CPU usage</th></tr><tr><td>8 threads, 1 job</td><td class="gold">15,328 s</td><td>785%</td></tr><tr><td>1 thread, 8 jobs</td><td>16,648 s</td><td>646%</td></tr></tbody></table><div class="big-number" style="margin-top:25px">~8%</div><p class="small">Lower elapsed time for the reported multi-thread comparison.</p></div></div><div class="takeaway">Parallelism complements reduced event cost and selective generation.</div>
-<div class="source">DSS_716, slide 15, INPAC cluster benchmark. Relative time reduction calculated from reported times.</div>
-
+<div class="columns wide"><div class="plot-large"><Plot src="figures/DSS-065.png" caption="Thread-scaling study on the INPAC cluster"/></div><div class="copy"><h2 class="blue">10⁶ simulated events</h2><p>8 threads, 1 job<br/><strong>15,328 s · 785% CPU</strong></p><p>1 thread, 8 jobs<br/><strong>16,648 s · 646% CPU</strong></p><div class="big-number">~8%</div><p class="small">Lower elapsed time with the same eight concurrent execution units.</p></div></div>
 <!--
 Time: 55 seconds.
 

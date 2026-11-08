@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-biasing
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Rare-process biasing and physical normalisation"
 ---

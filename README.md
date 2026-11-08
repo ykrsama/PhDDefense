@@ -49,15 +49,19 @@ npm run preview
 
 直接编辑 `Defence/slides/*.md` 或 `Backup/slides/*.md`，Vue 图形位于 `Defence/components/`，排版微调位于 `Defence/styles/defence.css`。前者已经是可独立构建的源项目，不依赖原始论文目录。
 
-`scripts/write_deck.py`、`scripts/write_backup.py` 是初始内容生成器，运行会覆盖对应 Markdown；修改生成器后再运行时，留意不要覆盖直接编辑的内容。`scripts/prepare_assets.py` 仅在从相邻论文目录重新提取原图时使用，普通构建不需要运行。
+`scripts/write_deck.py` 的初始生成器已停用，以保护逐页修订；请直接编辑 Markdown。`scripts/write_backup.py` 会重建备份册，使用前请保存修改。`scripts/prepare_assets.py` 仅在从相邻论文目录重新提取原图时使用，普通构建不需要运行。
 
-在两个 dev server 运行时可重新导出 PDF：
+先构建静态站点并在另一个终端运行 `npm run preview`，再导出 PDF：
 
 ```sh
 npx playwright install chromium
-node scripts/export-pdf.mjs http://localhost:3046 output/pdf/DarkSHINE_PhD_Defence.pdf 46
-node scripts/export-pdf.mjs http://localhost:3047 output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
+node scripts/export-pdf.mjs http://127.0.0.1:8800/defence output/pdf/DarkSHINE_PhD_Defence.pdf 46
+node scripts/export-pdf.mjs http://127.0.0.1:8800/backup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
 npm run build:site
 ```
 
 如需指定浏览器，可设置 `CHROMIUM_PATH`。PDF 使用 980 × 552 CSS 像素画布，逐页冻结动画后合并；正文可选择复制，物理图来自原 PDF 的矢量转换，3D Canvas 为高分辨率静态帧。修改网页后请同步重新导出 PDF。
+
+## 修订版交互
+
+第 34 页矩阵可用鼠标悬停或键盘聚焦查看生成数与选后数；第 35 页可选择 SR 并悬停柱形读取精确计数。所有单元格与柱形默认完整显示，PDF 保留完整矩阵与直方图。第 10 页保留左表右图的原始结构。

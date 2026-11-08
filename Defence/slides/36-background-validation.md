@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-background-validation
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Normalisation checked in populated sidebands"
 ---
@@ -11,7 +11,7 @@ title: "Normalisation checked in populated sidebands"
 # Normalisation checked in populated sidebands
 
 <div class="columns wide"><div><div class="plot-large"><Plot src="figures/validation.svg" caption="Dedicated rare-process sum compared with inclusive production." /></div></div><div><h2 class="blue">Independent comparison</h2><p class="small">Dedicated samples are normalised using process rates and filter acceptance.</p><p class="small">The inclusive sample tests the populated survival trend.</p><div class="formula-band" style="font-size:19px"><LaTeX formula="N_{\mathrm{POT}}^{\mathrm{eff}}=\frac{N_{\mathrm{attempt}}\epsilon_{\mathrm{gen}}}{\mathcal B}" /></div><p class="small muted">The two routes describe the same backgrounds and are not added together.</p></div></div><div class="takeaway">Sideband agreement supports the production model where simulated events remain.</div>
-<div class="source">Inclusive exposure: 2.5×10⁹ POT. Dedicated sample normalisation follows the campaign convention.</div>
+
 
 <!--
 Time: 65 seconds.

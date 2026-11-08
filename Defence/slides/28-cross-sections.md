@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-cross-sections
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Production mechanisms at 8 GeV"
 ---

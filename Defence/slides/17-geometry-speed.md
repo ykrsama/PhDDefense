@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-geometry-speed
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Geometry and event-record optimisation"
 ---
@@ -11,7 +11,7 @@ title: "Geometry and event-record optimisation"
 # Geometry and event-record optimisation
 
 <div class="columns "><div><div class="eyebrow">Geometry navigation</div><h2 class="blue">Bounding volume hierarchy</h2><p class="small">Group detector volumes into nested bounding volumes to reduce navigation work.</p><div class="statline"><div><b>260 → 42</b><span>ms per event, without / with BVH</span></div></div><div class="big-number" style="margin-top:20px">6.2×</div><p class="small muted">Measured speed-up in the cited benchmark.</p></div><div><div class="eyebrow">Persistent event data</div><h2 class="gold">Record and memory layout</h2><p class="small">Optimise the stored data structure and memory alignment.</p><div class="statline"><div><b>60.1 → 13.7</b><span>KB per event, reported minimum</span></div></div><div class="big-number" style="margin-top:20px">4.4×</div><p class="small muted">Reduction for the cited event-record example.</p></div></div><div class="takeaway">Reduce work per transported event before increasing the scale of production.</div>
-<div class="source">DSS_716, slides 7 and 11. Ratios calculated from the reported values; benchmark configurations differ.</div>
+
 
 <!--
 Time: 65 seconds.

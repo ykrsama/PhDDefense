@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-scope
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Scope of the positron projection"
 ---

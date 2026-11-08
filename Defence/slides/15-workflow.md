@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-workflow
-transition: slide-left
+transition: fade
 clicks: 0
 title: "The DarkSHINE software framework"
 ---

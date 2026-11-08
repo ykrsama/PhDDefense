@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-filter-performance
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Filtering changes the production cost"
 ---
@@ -11,7 +11,7 @@ title: "Filtering changes the production cost"
 # Filtering changes the production cost
 
 <div class="eyebrow">Historical production example: 4 GeV electrons, 10¹¹ incident events, 12,800 cores</div><table><tbody><tr><th>Metric</th><th>Without truth filter</th><th>With truth filter</th><th>Change</th></tr><tr><td>Elapsed time</td><td>~4 days</td><td class="gold">~15 hours</td><td>~6.4× shorter</td></tr><tr><td>Disk write rate</td><td>~9 GB/s</td><td class="blue">~0.23 GB/s</td><td>~39× lower</td></tr><tr><td>Total storage</td><td>~3 PB</td><td class="mint">~2.5 TB</td><td>~1,200× smaller</td></tr></tbody></table><div class="columns" style="margin-top:22px"><div><h2>General filters</h2><p class="small">Early ECAL-energy and missing-momentum vetoes.</p></div><div><h2>Process-specific filters</h2><p class="small">Particle or process requirements in selected volumes and energy intervals.</p></div></div><div class="takeaway">The largest saving comes from avoiding events and information that the target analysis does not need.</div>
-<div class="source">DSS_716, slide 13. Historical example; quoted values are approximate.</div>
+
 
 <!--
 Time: 65 seconds.

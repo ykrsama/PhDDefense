@@ -6,7 +6,7 @@ addons:
 title: Design of DarkSHINE Simulation Framework and Prospective Study of Positron-Beam Mode
 info: PhD Dissertation Defence — Xuliang Zhu — Shanghai Jiao Tong University
 colorSchema: dark
-transition: slide-left
+transition: fade
 mdc: true
 routerMode: hash
 aspectRatio: 16/9

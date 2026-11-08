@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-properties
-transition: slide-left
+transition: fade
 clicks: 0
 title: "What observations constrain"
 ---
@@ -10,9 +10,7 @@ title: "What observations constrain"
 
 # What observations constrain
 
-<div class="columns "><div><h2 class="blue">Properties required by observations</h2><ul><li>Long-lived on cosmological time scales</li><li>Weak electromagnetic interactions</li><li>Sufficiently cold to form small structures</li><li>Self-interactions bounded by cluster dynamics</li></ul></div><div><h2 class="gold">Mass bounds depend on the model</h2><ul><li>Fermionic phase-space bounds</li><li>Free-streaming constraints for thermal relics</li><li>BBN and CMB constraints on light thermal species</li><li>Late annihilation depends on the final state and velocity scaling</li></ul></div></div><div class="takeaway">MeV–GeV dark matter remains a motivated experimental target under specified cosmological assumptions.</div>
-<div class="source">Cosmological and particle constraints summarized in the dissertation; model assumptions retained.</div>
-
+<div class="columns wide"><div class="plot-large"><Plot src="figures/constraints.svg" caption="Dark-matter mass constraints depend on the particle and cosmological model."/></div><div class="copy"><h2 class="blue">Observational requirements</h2><p>Long-lived on cosmological time scales.</p><p>Sufficiently cold to form the observed structures.</p><h2 class="gold">Model-dependent bounds</h2><p>Statistics, thermal history and late energy injection determine the relevant limits.</p></div></div><div class="takeaway">Light dark matter motivates complementary laboratory searches.</div>
 <!--
 Time: 60 seconds.
 

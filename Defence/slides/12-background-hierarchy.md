@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-background-hierarchy
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Standard Model background hierarchy"
 ---
@@ -10,9 +10,7 @@ title: "Standard Model background hierarchy"
 
 # Standard Model background hierarchy
 
-<BackgroundRates/><div class="takeaway">Rare-process generation must preserve the hard-photon origin and the interaction location.</div>
-<div class="source">DarkSHINE collaboration: electron-mode background hierarchy.</div>
-
+<div class="columns wide"><div class="plot-large"><Plot src="figures/DEF-374.png" caption="Electron-beam background hierarchy"/></div><div class="copy"><h2 class="blue">Two origins</h2><p>Electronuclear interactions.</p><p>Hard bremsstrahlung followed by conversion or nuclear interactions.</p><h2 class="gold">Location matters</h2><p>Target and ECAL processes encounter different veto material.</p></div></div>
 <!--
 Time: 55 seconds.
 

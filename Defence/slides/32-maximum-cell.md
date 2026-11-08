@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-maximum-cell
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Maximum-cell energy separates the zero-track sample"
 ---
@@ -11,7 +11,7 @@ title: "Maximum-cell energy separates the zero-track sample"
 # Maximum-cell energy separates the zero-track sample
 
 <div class="columns "><div><div class="plot-large"><Plot src="figures/cell-ann.svg" caption="Non-resonant annihilation: photon deposit depends on mediator mass." /></div></div><div><div class="plot-large"><Plot src="figures/cell-res.svg" caption="Resonant annihilation: predominantly very low ECAL activity." /></div></div></div><div class="takeaway"><LaTeX formula="E_{\mathrm{ECAL}}^{\mathrm{MaxCell}}\geq1\,\mathrm{MeV}" /> defines SR2; <LaTeX formula="E_{\mathrm{ECAL}}^{\mathrm{MaxCell}}&lt;1\,\mathrm{MeV}" /> defines SR3.</div>
-<div class="source">Original maximum-cell distributions; threshold interpretation follows the production assumptions.</div>
+
 
 <!--
 Time: 60 seconds.

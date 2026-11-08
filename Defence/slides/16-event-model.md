@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-event-model
-transition: slide-left
+transition: fade
 clicks: 0
 title: "A common event model: DEvent"
 ---

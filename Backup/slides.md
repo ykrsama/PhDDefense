@@ -5,7 +5,7 @@ addons:
   - slidev-addon-evenet
 title: DarkSHINE PhD Dissertation Defence — Backup
 colorSchema: dark
-transition: slide-left
+transition: fade
 mdc: true
 routerMode: hash
 aspectRatio: 16/9

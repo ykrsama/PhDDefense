@@ -32,3 +32,13 @@ Anime.js: [juliangarnier/anime](https://github.com/juliangarnier/anime), package
 - Software-performance values: supplied `Refs/DSS_716.pptx` and simulation/reconstruction text.
 
 Original physics axes, curves, normalisation labels and benchmark assumptions were retained. Reconstructed tables and diagrams are separately described in `CONTENT_NOTES.md`. The copied upstream files retain their source attribution; no new licence for upstream or collaboration assets is asserted.
+
+## Requested revision
+
+The complete deployed CCNU presentation (27 pages) was reviewed via its slide overview, including the pretraining dashboard, spin matrix, Higgs results and summary. All page transitions now use fade. `YieldMatrix.vue` follows the reference's always-visible matrix with hover/focus emphasis; values are the supplied DarkSHINE yields. `CutflowHistogram.vue` presents the original PN ECAL cutflow counts on a logarithmic axis, with zero-count labels. `DetectionCrossing.vue` implements the user's crossing diagram and Anime.js flow highlights.
+
+The page-nine detector retains its original viewing direction, as explicitly confirmed. Cover and chapter detector scenes use the new direction. All detector scenes use perspective scaling and depth-dependent line softness; the compact detector retains the magnet while cover/chapters omit it. Side HCAL blocks are removed.
+
+Requested replacement images are copied from `defence_backup/public/figures`: DEF-374.png, DSS-065.png, XC_xsection_plot.svg and XC_dp_electron_energy.svg. The initial slide generator is disabled to prevent overwriting the manual revision.
+
+Follow-up corrections: preserve the original blue star-filled spheres and apply slow collision-like motion; let the red component traverse faster. Correct the detector camera depth direction and use a consistent orthonormal projection. Preserve slide 9 viewing direction. Remove the white picture mats from slide 4. Restore slide 10 original subsystem table, conclusion, and two-column layout, replacing only its right image.

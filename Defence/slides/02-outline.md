@@ -6,7 +6,7 @@ clicks: 0
 title: "Outline"
 ---
 
-<div class="eyebrow">45-minute report</div><h1>Outline</h1><div class="outline-list"><div class="outline-row"><b>01</b><span>Physics motivation<br/>and DarkSHINE</span><em>~11 min</em></div><div class="outline-row"><b>02</b><span>Event simulation<br/>and reconstruction</span><em>~13 min</em></div><div class="outline-row"><b>03</b><span>Positron-beam-mode<br/>analysis</span><em>~17 min</em></div><div class="outline-row"><b>04</b><span>Summary and outlook</span><em>~3 min</em></div></div>
+<h1>Outline</h1><div class="outline-list"><div class="outline-row"><b>01</b><span>Physics motivation<br/>and DarkSHINE</span></div><div class="outline-row"><b>02</b><span>Event simulation<br/>and reconstruction</span></div><div class="outline-row"><b>03</b><span>Positron-beam-mode<br/>analysis</span></div><div class="outline-row"><b>04</b><span>Summary and outlook</span></div></div>
 
 <!--
 Time: 35 seconds.

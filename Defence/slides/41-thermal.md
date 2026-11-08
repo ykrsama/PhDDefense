@@ -1,7 +1,7 @@
 ---
 layout: default
 class: content-slide slide-thermal
-transition: slide-left
+transition: fade
 clicks: 0
 title: "Interpretation relative to thermal targets"
 ---
@@ -11,7 +11,7 @@ title: "Interpretation relative to thermal targets"
 # Interpretation relative to thermal targets
 
 <div class="columns wide"><div><div class="fullplot"><Plot src="figures/dm-limits.svg" caption="Thermal targets for the stated dark-sector benchmark." /></div></div><div><h2 class="gold">Additional model assumptions</h2><p><LaTeX formula="m_{A^{\prime}}=3m_\chi" /></p><p><LaTeX formula="\alpha_D=0.5" /></p><div class="formula-band" style="font-size:20px"><LaTeX formula="y=\epsilon^2\alpha_D\left(\frac{m_\chi}{m_{A^{\prime}}}\right)^4" /></div><p class="small">Then <LaTeX formula="y=\epsilon^2/162" />.</p><p class="small">The 90 MeV mediator scale corresponds to <LaTeX formula="m_\chi=30\,\mathrm{MeV}" />.</p><p class="small muted">Thermal curves retain their spin and annihilation assumptions.</p></div></div>
-<div class="source">Original thermal-target plot with mA′/mχ=3 and αD=0.5.</div>
+
 
 <!--
 Time: 65 seconds.
