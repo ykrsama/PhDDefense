@@ -5,6 +5,8 @@ export const ENCOUNTER_DURATION = 6
 export const COLLISION_TIME = 2.4
 export const END_HOLD_DURATION = 1
 export const OUTGOING_DURATION = ENCOUNTER_DURATION - COLLISION_TIME - END_HOLD_DURATION
+// Canvas pixels per second, shared by every incoming and outgoing particle.
+export const PARTICLE_SPEED = 100
 export const ANNIHILATION_VERTEX = [-.50, .25, .13]
 // Place the illustrative nuclear-field encounter outside the drawn nucleus.
 export const NUCLEAR_VERTEX = [.18, .43, .13]

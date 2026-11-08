@@ -4,7 +4,7 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
-import { atomTimeline, outerElectronPosition, COLLISION_TIME, OUTGOING_DURATION, ORBIT_SPEED } from '../utils/atomTimeline.js'
+import { atomTimeline, outerElectronPosition, COLLISION_TIME, OUTGOING_DURATION, PARTICLE_SPEED, ORBIT_SPEED } from '../utils/atomTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
 const canvas=ref<HTMLCanvasElement>()
@@ -162,10 +162,9 @@ function atom(){
   const u=rayFraction(beamGuide,travel)
   return vertex.map((x,i)=>x+(beamGuide[i]-x)*u) as P
  }
- const beamStart=proj(beamGuide),beamEnd=proj(vertex)
- const incomingLength=Math.hypot(beamEnd[0]-beamStart[0],beamEnd[1]-beamStart[1])
- const outgoingLength=incomingLength/COLLISION_TIME*OUTGOING_DURATION
- const start=beamGuide,incoming=beamPoint(incomingLength*(1-frame.incoming))
+ const incomingLength=PARTICLE_SPEED*COLLISION_TIME
+ const outgoingLength=PARTICLE_SPEED*OUTGOING_DURATION
+ const start=beamPoint(incomingLength),incoming=beamPoint(incomingLength*(1-frame.incoming))
  let positronLabelPoint:P|undefined=frame.collided?undefined:incoming
  path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
  if(!frame.collided)dot(incoming,3.5,color('246,156,171'))
