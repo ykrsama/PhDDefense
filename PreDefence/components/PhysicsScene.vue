@@ -184,12 +184,6 @@ function atom(){
   }
  }
  label('W',nucleus,-6,5)
- const captions=[['Resonant annihilation','e⁺ e⁻ → χ χ̄'],['Radiative annihilation','e⁺ e⁻ → γ A′'],['Dark bremsstrahlung','e⁺ N → e⁺ N A′']]
- ctx.save();ctx.globalAlpha=alpha;ctx.textAlign='center'
- ctx.font='12px "DM Sans",sans-serif';ctx.fillStyle='#8d99a9';ctx.fillText(captions[mode][0],745,124)
- ctx.font='18px "DM Sans",sans-serif';ctx.fillStyle='#d8dee8';ctx.fillText(captions[mode][1],745,150)
- for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(731+i*14,170,2,0,Math.PI*2);ctx.fillStyle=i===mode?'#f0c36e':'#48505c';ctx.fill()}
- ctx.restore()
 }
 function draw(){if(!ctx||!canvas.value)return;canvas.value.dataset.camera=JSON.stringify({yaw:state.yaw,roll:state.roll,zoom:state.zoom,cx:state.cx,cy:state.cy});ctx.clearRect(0,0,980,551.25);if(props.scene==='cluster')clusters();else if(props.scene==='atom')atom();else detector()}
 function setCamera(){
