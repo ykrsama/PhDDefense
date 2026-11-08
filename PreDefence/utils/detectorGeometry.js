@@ -2,7 +2,7 @@
 // Visually stretch the tracking assembly by 1.5 along x about the target.
 // Calorimeters retain their dimensions and follow the extended tracking assembly.
 const trackingStretch = 1.5
-const trackingHeightStretch = 1.5
+const trackingHeightStretch = 1.2
 // Local x follows the beam, z is the bending direction, y is vertical.
 const tagLength = .600216 * trackingStretch, recoilLength = .172714 * trackingStretch
 const ecalLength = .3834, hcalLength = 3.03601
