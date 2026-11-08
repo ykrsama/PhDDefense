@@ -70,19 +70,28 @@ function box(x:number,y:number,z:number,dx:number,dy:number,dz:number,color:stri
  }
 }
 function label(s:string,p:P,dx=0,dy=0){const q=proj(p);ctx!.font='14px "DM Sans",sans-serif';ctx!.fillStyle='#cdd5df';ctx!.fillText(s,q[0]+dx,q[1]+dy)}
+function trackerPlane(x:number,width:number,height:number,thickness:number){
+ // Local z is the magnetic bending direction; local y is the narrower vertical axis.
+ box(x,-height/2,-width/2,thickness,height,width,'rgba(119,201,255,.46)','rgba(77,149,195,.08)')
+ for(let k=1;k<8;k++)path([[x,-height/2,-width/2+k*width/8],[x,height/2,-width/2+k*width/8]],'rgba(119,201,255,.23)',.5)
+}
 function detector(){
  // Baseline 1 HCAL: 4 x 4 m transverse, 4.02 m active stack (80 x 3 cm Fe + 162 x 1 cm scintillator).
  // ECAL remains 0.5 x 0.5 x 0.44 m.
  box(.78,-2,-2,4.02,4,4,'rgba(186,165,255,.3)','rgba(62,58,85,.12)',24,true)
 
- box(.18,-.25,-.25,.44,.5,.5,'rgba(112,220,178,.68)','rgba(50,115,97,.15)',10)
+ const ecalWidth=.5
+ box(.18,-ecalWidth/2,-ecalWidth/2,.44,ecalWidth,ecalWidth,'rgba(112,220,178,.68)','rgba(50,115,97,.15)',10)
  // Side veto panels preserve the calorimeter aperture.
  
  // Magnet open bore, two yokes. Tracker planes are intentionally never pixel grids.
  if(props.compact||props.magnet)for(let y of [-.48,.34])box(-1.9,y,-.42,1.65,.14,.84,'rgba(240,195,110,.36)','rgba(125,93,40,.10)')
- for(let i=0;i<7;i++){const x=-1.8+i*.98/6;box(x,-.10,-.15,.009,.20,.30,'rgba(119,201,255,.46)','rgba(77,149,195,.08)');for(let k=1;k<8;k++)path([[x,-.1,-.15+k*.3/8],[x,.1,-.15+k*.3/8]],'rgba(119,201,255,.23)',.5)}
+ for(let i=0;i<7;i++)trackerPlane(-1.8+i*.98/6,ecalWidth*.8,ecalWidth*.4,.009)
  box(-.78,-.10,-.15,.004,.20,.30,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
- for(let i=0;i<6;i++){let x=-.74+i*.86/5,h=.11+i*.018,w=.16+i*.022;box(x,-h,-w,.008,h*2,w*2,'rgba(119,201,255,.46)','rgba(77,149,195,.08)');for(let k=1;k<8;k++)path([[x,-h,-w+k*w*2/8],[x,h,-w+k*w*2/8]],'rgba(119,201,255,.23)',.5)}
+ for(let i=0;i<6;i++){
+  const fraction=i/5,width=ecalWidth*(.64+.36*fraction),height=ecalWidth*(.4+.2*fraction)
+  trackerPlane(-.74+i*.86/5,width,height,.008)
+ }
  const incoming=Array.from({length:45},(_,i):P=>[-2.8+i*2.02/44,.015,0]);path(incoming,'#77c9ff',2)
  const recoil=Array.from({length:42},(_,i):P=>[-.78+i*.96/41,.015+i/41*.105,Math.pow(i/41,2)*.10]);path(recoil,'#f0c36e',2.2)
  const dark=Array.from({length:65},(_,i):P=>[-.78+i*4.45/64,.015+i/64*.80,-i/64*.32]);path(dark,'#f69cab',1.7,[7,6])
@@ -101,7 +110,7 @@ function detector(){
   }
  }
  if(props.labels){
-  if(!props.focus||props.focus==='tracking'){label('Tagging tracker',[-1.55,-.1,.16],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.2,.22],-12,45)}
+  if(!props.focus||props.focus==='tracking'){label('Tagging tracker',[-1.55,-.1,.20],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.15,.25],-12,45)}
   if(!props.focus||props.focus==='ecal')label('ECAL',props.compact?[.43,.35,0]:[.43,0,-.36],-17,-10)
   if(!props.focus||props.focus==='hcal')label('HCAL',props.compact?[2.8,2.1,0]:[2.8,0,-2.1],-5,-17)
   if(!props.focus)label('Magnet',props.compact?[-1.2,.5,0]:[-1.2,0,-.59],-20,-10)
