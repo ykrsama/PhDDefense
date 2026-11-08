@@ -4,7 +4,7 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
-import { atomTimeline, outerElectronPosition, COLLISION_TIME, ENCOUNTER_DURATION, ORBIT_SPEED } from '../utils/atomTimeline.js'
+import { atomTimeline, outerElectronPosition, COLLISION_TIME, OUTGOING_DURATION, ORBIT_SPEED } from '../utils/atomTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
 const canvas=ref<HTMLCanvasElement>()
@@ -164,11 +164,11 @@ function atom(){
  }
  const beamStart=proj(beamGuide),beamEnd=proj(vertex)
  const incomingLength=Math.hypot(beamEnd[0]-beamStart[0],beamEnd[1]-beamStart[1])
- const outgoingLength=incomingLength/COLLISION_TIME*(ENCOUNTER_DURATION-COLLISION_TIME)
+ const outgoingLength=incomingLength/COLLISION_TIME*OUTGOING_DURATION
  const start=beamGuide,incoming=beamPoint(incomingLength*(1-frame.incoming))
  path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
  if(!frame.collided){dot(incoming,3.5,color('246,156,171'));label('e⁺',incoming,0,-14)}
- // Keep the original timing; longer outgoing rays match the incoming speed.
+ // Match the incoming speed, then hold all final-state particles together.
  // Every final-state particle shares the same length and progress.
  const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
   const distance=Math.hypot(...end.map((x,i)=>x-vertex[i]))

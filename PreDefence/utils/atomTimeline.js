@@ -3,6 +3,8 @@
 export const ATOM_PERIOD = 18
 export const ENCOUNTER_DURATION = 6
 export const COLLISION_TIME = 2.4
+export const END_HOLD_DURATION = 1
+export const OUTGOING_DURATION = ENCOUNTER_DURATION - COLLISION_TIME - END_HOLD_DURATION
 export const ANNIHILATION_VERTEX = [-.50, .25, .13]
 // Place the illustrative nuclear-field encounter outside the drawn nucleus.
 export const NUCLEAR_VERTEX = [.02, .55, .13]
@@ -26,7 +28,7 @@ export function atomTimeline(time) {
     t, mode, local, after,
     collided: local >= COLLISION_TIME,
     incoming: clamp(local / COLLISION_TIME),
-    outgoing: clamp(after / (ENCOUNTER_DURATION - COLLISION_TIME)),
+    outgoing: clamp(after / OUTGOING_DURATION),
     vertex: mode === 2 ? NUCLEAR_VERTEX : ANNIHILATION_VERTEX,
     // Restore only the consumed electrons on their continuing orbits before reset.
     electrons: [0, 1, 2].filter(i => !(i === 0 && t >= COLLISION_TIME) && !(i === 2 && t >= ENCOUNTER_DURATION + COLLISION_TIME)),
