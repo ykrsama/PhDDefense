@@ -43,7 +43,7 @@ const lines = computed(() => props.mode === 'brem'
   ? [[30, 45, 110, 75, props.charge === '-' ? 1 : -1], [110, 75, 185, 65, props.charge === '-' ? 1 : -1], [185, 65, 290, 30, props.charge === '-' ? 1 : -1], [30, 167, 145, 167, 1], [145, 167, 290, 167, 1]]
   : props.mode === 'radiative'
     ? [[30, 35, 145, 75, -1], [145, 75, 145, 125, -1], [30, 170, 145, 125, 1]]
-    : [[30, 35, 150, 100, -1], [30, 170, 150, 100, 1]])
+    : [[30, 35, 115, 100, -1], [30, 170, 115, 100, 1], [210, 100, 290, 35, 1], [210, 100, 290, 170, -1]])
 function arrow(line) {
   const [x, y, a, b, direction] = line
   return `translate(${(x + a) / 2},${(y + b) / 2}) rotate(${Math.atan2((b - y) * direction, (a - x) * direction) * 180 / Math.PI})`
@@ -63,9 +63,11 @@ const streams = computed(() => props.mode === 'brem'
         { d: 'M145 125 L285 170', color: '#f69cab', dashed: true },
       ]
     : [
-        { d: 'M30 35 L150 100', color: '#77c9ff' },
-        { d: 'M30 170 L150 100', color: '#77c9ff' },
-        { d: 'M150 100 H285', color: '#f69cab', dashed: true },
+        { d: 'M30 35 L115 100', color: '#77c9ff' },
+        { d: 'M30 170 L115 100', color: '#77c9ff' },
+        { d: 'M115 100 H210', color: '#f69cab', dashed: true },
+        { d: 'M210 100 L290 35', color: '#77c9ff' },
+        { d: 'M210 100 L290 170', color: '#77c9ff' },
       ])
 const dashedRoute = computed(() => streams.value.find(route => route.dashed))
 const streamOffset = index => -100 * (phase.cycle + index * 0.17)
@@ -95,9 +97,10 @@ const streamOffset = index => -100 * (phase.cycle + index * 0.17)
         <text x="292" y="39">γ</text><text x="290" y="178">A′</text>
       </template>
       <template v-else>
-        <path d="M150 100 H285" stroke="#f69cab" stroke-width="1.5" stroke-dasharray="6 4" />
+        <path d="M115 100 H210" stroke="#f69cab" stroke-width="1.5" stroke-dasharray="6 4" />
 
-        <text x="290" y="107">A′</text>
+        <text x="152" y="87">A′</text>
+        <text x="294" y="36">χ</text><text x="294" y="183">χ̄</text>
       </template>
     </template>
     <path v-for="(route, index) in streams" :key="index" class="stream" :d="route.d" :stroke="route.color" :mask="route.dashed ? `url(#${dashMaskId})` : undefined" pathLength="100" fill="none" stroke-width="2.8" stroke-dasharray="6 94" :stroke-dashoffset="streamOffset(index)" />

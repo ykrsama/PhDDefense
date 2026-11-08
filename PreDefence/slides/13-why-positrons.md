@@ -10,7 +10,7 @@ title: "Why a positron beam?"
 
 # Why a positron beam?
 
-<div class="columns thirds diagram-columns"><div><h2 class="blue">Dark bremsstrahlung</h2><FeynmanDiagram mode="brem"/><div class="reaction"><LaTeX formula="e^+N\to e^+NA^{\prime}" /></div><p>A recoil positron remains.</p></div><div><h2 class="gold">Non-resonant annihilation</h2><FeynmanDiagram mode="radiative"/><div class="reaction"><LaTeX formula="e^+e^-\to\gamma A^{\prime}" /></div><p>A photon accompanies the invisible state.</p></div><div><h2 class="rose">Resonant annihilation</h2><FeynmanDiagram mode="resonant"/><div class="reaction"><LaTeX formula="e^+e^-\to A^{\prime}" /></div><p>Very little visible downstream activity.</p></div></div><div class="takeaway"><LaTeX formula="\sqrt{s}\simeq\sqrt{2m_eE_{e^+}}=90.4\,\mathrm{MeV}" /> for an 8 GeV beam and an electron initially at rest.</div>
+<div class="columns thirds diagram-columns"><div><h2 class="blue">Dark bremsstrahlung</h2><FeynmanDiagram mode="brem"/><div class="reaction"><LaTeX formula="e^+N\to e^+NA^{\prime}" /></div><p>A recoil positron remains.</p></div><div><h2 class="gold">Non-resonant annihilation</h2><FeynmanDiagram mode="radiative"/><div class="reaction"><LaTeX formula="e^+e^-\to\gamma A^{\prime}" /></div><p>A photon accompanies the invisible state.</p></div><div><h2 class="rose">Resonant annihilation</h2><FeynmanDiagram mode="resonant"/><div class="reaction"><LaTeX formula="e^+e^-\to A^{\prime}\to\chi\bar{\chi}" /></div><p>Very little visible downstream activity.</p></div></div><div class="takeaway"><LaTeX formula="\sqrt{s}\simeq\sqrt{2m_eE_{e^+}}=90.4\,\mathrm{MeV}" /> for an 8 GeV beam and an electron initially at rest.</div>
 <div class="source">X. Zhu et al., arXiv:2609.05900</div>
 
 <!--
