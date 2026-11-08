@@ -160,7 +160,8 @@ function atom(){
  // own particle; no label or complete outgoing track appears before production.
  const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
   const distance=Math.hypot(...end.map((x,i)=>x-vertex[i]))
-  const u=Math.min(1,after*1.1/distance)
+  // Keep flying through the end of the encounter instead of parking at the guide endpoint.
+  const u=after*1.1/distance
   const tip=vertex.map((x,i)=>x+(end[i]-x)*u) as P
   if(photon){
    const points=Array.from({length:90},(_,i):P=>{
