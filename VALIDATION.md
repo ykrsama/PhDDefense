@@ -14,7 +14,9 @@ Validated locally on 9 November 2026.
 
 ## PDF files
 
-- DarkSHINE_PhD_Defence.pdf: 47 pages, 41,303,753 bytes; SHA-256 `15159fb977d6c76dd11d9726d6497d340f2afcf3ffc0eff06b4dbfaede1ea87b`.
+- DarkSHINE_PhD_Defence.pdf: 47 pages, 44,727,564 bytes; SHA-256 `f0aabf8f08b7bc78241725fa7f114eca02cf673978aab426df5ec1625bcd2630`.
 - DarkSHINE_PhD_Defence_Backup.pdf: 14 pages, 7,402,773 bytes; SHA-256 `1a93cb2aa67814d8c1d6ad28c4f54180416db0928fedecaf6ec83a816c288827`.
 
 Tracker geometry refinement: tagging planes end at x=-0.82 m; target x=-0.78 m; recoil planes span -0.74 to +0.12 m; ECAL begins at +0.18 m. Recoil trajectory ends on that entrance plane and all shower branches start there. Outline retains particle paths and retains the assembled model with the original rotation and close-up camera move.
+
+Particle timeline: one incident blue particle reaches the target before the yellow recoil electron and red dark photon launch together. Both outgoing particles advance at 1.5 model metres per second by polyline arc length. Each disappears at its own endpoint; the next incident particle begins only after both outgoing paths have completed. Shower growth is triggered by recoil arrival at the ECAL surface. Timing and equal-distance assertions passed.

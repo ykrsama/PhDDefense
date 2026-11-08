@@ -3,6 +3,7 @@
 // Anime.js drives the camera and physical-scene animation state. Dimensions are in metres.
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
+import { particleTimeline } from '../utils/particleTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false})
 const canvas=ref<HTMLCanvasElement>()
@@ -83,13 +84,20 @@ function detector(){
  for(let i=0;i<6;i++){let x=-.74+i*.86/5,h=.11+i*.018,w=.16+i*.022;box(x,-h,-w,.008,h*2,w*2,'rgba(119,201,255,.46)','rgba(77,149,195,.08)');for(let k=1;k<8;k++)path([[x,-h,-w+k*w*2/8],[x,h,-w+k*w*2/8]],'rgba(119,201,255,.23)',.5)}
  const incoming=Array.from({length:45},(_,i):P=>[-2.8+i*2.02/44,.015,0]);path(incoming,'#77c9ff',2)
  const recoil=Array.from({length:42},(_,i):P=>[-.78+i*.96/41,.015+i/41*.105,Math.pow(i/41,2)*.10]);path(recoil,'#f0c36e',2.2)
- const dark=Array.from({length:65},(_,i):P=>[-.78+i*4.45/64,.015+i/64*.80,-i/64*.32]);path(dark,'#f69cab',1.7,[7,6]);dot([-.78,.015,0],3.5,'#fff0ba')
- const u=(state.t*.65)%1;dot(incoming[Math.floor(u*44)],3,'#d2eeff');dot(recoil[Math.floor(u*41)],2.8,'#fff0ba');dot(dark[Math.floor(u*64)],2.2,'#ffc1d0')
+ const dark=Array.from({length:65},(_,i):P=>[-.78+i*4.45/64,.015+i/64*.80,-i/64*.32]);path(dark,'#f69cab',1.7,[7,6])
+ const particles=particleTimeline(state.t,incoming,recoil,dark,isStatic())
+ if(particles.blue)dot(particles.blue as P,3,'#d2eeff')
+ if(particles.yellow)dot(particles.yellow as P,2.8,'#fff0ba')
+ if(particles.red)dot(particles.red as P,2.2,'#ffc1d0')
+ if(particles.impact)dot([-.78,.015,0],3.5,'#fff0ba')
  const showerStart=recoil[recoil.length-1]
- for(let k=0;k<11;k++){
-  const u=(state.t*.55+k*.073)%1
-  const end:P=[showerStart[0]+.40*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
-  path([showerStart,end],`rgba(240,195,110,${.25+.25*(1-u)})`,.9)
+ if(particles.showerAge>=0&&particles.showerAge<1.1){
+  const progress=Math.min(1,particles.showerAge/.45),fade=Math.min(1,(1.1-particles.showerAge)/.45)
+  for(let k=0;k<11;k++){
+   const u=progress*(.65+.35*(k%4)/3)
+   const end:P=[showerStart[0]+.40*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
+   path([showerStart,end],`rgba(240,195,110,${.55*fade})`,.9)
+  }
  }
  if(props.labels){label('Tagging tracker',[-1.55,-.1,.16],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.2,.22],-12,45);label('ECAL',props.compact?[.43,.35,0]:[.43,0,-.36],-17,-10);label('HCAL',props.compact?[2.8,2.1,0]:[2.8,0,-2.1],-5,-17);label('Magnet',props.compact?[-1.2,.5,0]:[-1.2,0,-.59],-20,-10)}
 }
