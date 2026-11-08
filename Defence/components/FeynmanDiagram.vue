@@ -1,9 +1,10 @@
 <script setup>
-import { computed, reactive, ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { computed, reactive, ref, onMounted, onBeforeUnmount, watch, useId } from 'vue'
 import { animate } from 'animejs'
 import { useSlideContext } from '@slidev/client'
 
 const props = defineProps({ mode: String, charge: { type: String, default: '+' } })
+const dashMaskId = useId()
 const { $nav, $page, $renderContext } = useSlideContext()
 const phase = reactive({ cycle: 0 })
 const reduced = ref(false)
@@ -52,24 +53,26 @@ const streams = computed(() => props.mode === 'brem'
       { d: 'M30 45 L110 75 L185 65 L290 30', color: '#77c9ff' },
       { d: 'M30 167 L145 167 L290 167', color: '#77c9ff' },
       { d: wave([110,75],[145,167]), color: '#baa5ff' },
-      { d: 'M185 65 L285 112', color: '#f69cab' },
+      { d: 'M185 65 L285 112', color: '#f69cab', dashed: true },
     ]
   : props.mode === 'radiative'
     ? [
         { d: 'M30 35 L145 75 L145 125', color: '#77c9ff' },
         { d: 'M30 170 L145 125', color: '#77c9ff' },
         { d: wave([145,75],[285,35]), color: '#f0c36e' },
-        { d: 'M145 125 L285 170', color: '#f69cab' },
+        { d: 'M145 125 L285 170', color: '#f69cab', dashed: true },
       ]
     : [
         { d: 'M30 35 L150 100', color: '#77c9ff' },
         { d: 'M30 170 L150 100', color: '#77c9ff' },
-        { d: 'M150 100 H285', color: '#f69cab' },
+        { d: 'M150 100 H285', color: '#f69cab', dashed: true },
       ])
+const dashedRoute = computed(() => streams.value.find(route => route.dashed))
 const streamOffset = index => -100 * (phase.cycle + index * 0.17)
 </script>
 <template>
   <svg viewBox="0 0 330 205" class="feynman">
+    <defs><mask :id="dashMaskId" maskUnits="userSpaceOnUse" x="0" y="0" width="330" height="205"><path :d="dashedRoute.d" fill="none" stroke="white" stroke-width="2.8" stroke-dasharray="6 4" /></mask></defs>
     <g v-for="(line, index) in lines" :key="index">
       <path :d="`M${line[0]} ${line[1]} L${line[2]} ${line[3]}`" fill="none" stroke="#77c9ff" stroke-width="1.5" />
 
@@ -97,7 +100,7 @@ const streamOffset = index => -100 * (phase.cycle + index * 0.17)
         <text x="290" y="107">A′</text>
       </template>
     </template>
-    <path v-for="(route, index) in streams" :key="index" class="stream" :d="route.d" :stroke="route.color" pathLength="100" fill="none" stroke-width="2.8" stroke-dasharray="6 94" :stroke-dashoffset="streamOffset(index)" />
+    <path v-for="(route, index) in streams" :key="index" class="stream" :d="route.d" :stroke="route.color" :mask="route.dashed ? `url(#${dashMaskId})` : undefined" pathLength="100" fill="none" stroke-width="2.8" stroke-dasharray="6 94" :stroke-dashoffset="streamOffset(index)" />
   </svg>
 </template>
 <style scoped>
