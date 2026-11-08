@@ -9,7 +9,7 @@ Validated locally on 9 November 2026.
 - New page 34 uses the thesis 50 MeV benchmark. Page 35 retains the 90 MeV benchmark. Matrix hover values and composition percentages checked against the supplied table. Benchmark conditions use case-preserving math and vertical separators.
 - HCAL is 4 x 4 m transverse with a 4.02 m nominal active-stack depth. ECAL and trackers retain their dimensions. Calorimeter segmentation is drawn only on camera-facing faces; every shower branch begins at the recoil endpoint.
 - Compact slides 9 and 10 retain fixed entry cameras and unrotated models. Cover/chapter detector models retain the 90-degree beam-axis rotation. The establishing move is centred on ECAL, with final chapter anchor (720,275), zoom 1.40, yaw -0.58 and roll 0.72; HCAL extends beyond the frame by design. Outline anchor is (750,265), zoom 1.70. Camera movement stops after 2.8 seconds.
-- Main and backup build with relative paths. A clean-source build without output/ or deliverables/ previously passed; the workflow exports PDFs during deployment. Workflow main count is updated to 47.
+- Main and backup build with relative paths. A clean-source build without output/ or deliverables/ previously passed; the deployment workflow now builds and uploads web assets only, without a PDF/browser installation step.
 - output/ and deliverables/ remain ignored and absent from Git history. No push or deployment was run.
 
 ## PDF files

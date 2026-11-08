@@ -10,7 +10,7 @@ Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University
 
 - `Defence/`：主报告 Slidev 源码。
 - `Backup/`：单独备份册源码。
-- `site/`：已构建的静态网站，首页链接主报告、备份册及两个 PDF。
+- `site/`：已构建的静态网站，首页链接主报告和备份册网页。
 - `output/pdf/DarkSHINE_PhD_Defence.pdf`：主报告静态 PDF。
 - `output/pdf/DarkSHINE_PhD_Defence_Backup.pdf`：备份册静态 PDF。
 - `PROVENANCE.md`：直接复用的 EveNet 文件、改编组件和图表来源。
@@ -41,7 +41,7 @@ npm run preview
 
 ## GitHub Pages
 
-`.github/workflows/pages.yml` 在推送到 `main` 分支时自动触发，同时保留手动触发入口。将本目录作为仓库根目录推送后，在 GitHub 的 **Settings → Pages → Source** 选择 **GitHub Actions**，之后每次推送到 `main` 都会自动运行 **Deploy defence presentation**，也可在 Actions 页面手动运行。工作流重新构建网页，并通过 Chromium 从静态站点生成两个 PDF；PDF 和交付压缩包无需进入 Git。也可直接部署现成的 `site/` 目录。
+`.github/workflows/pages.yml` 在推送到 `main` 分支时自动触发，同时保留手动触发入口。将本目录作为仓库根目录推送后，在 GitHub 的 **Settings → Pages → Source** 选择 **GitHub Actions**，之后每次推送到 `main` 都会自动运行 **Deploy defence presentation**，也可在 Actions 页面手动运行。工作流仅构建并部署 Slidev 网页，不安装浏览器，也不生成或上传 PDF；本地 PDF 和交付压缩包不进入 Git。也可直接部署现成的 `site/` 目录。
 
 本次未执行 git push，也未触发任何部署。若把项目置于现有仓库的子目录，请相应调整 workflow 的工作目录与上传路径。
 
@@ -64,6 +64,6 @@ npm run build:site
 
 ## 修订版交互
 
-第 34 页矩阵可用鼠标悬停或键盘聚焦查看生成数与选后数；第 35 页可选择 SR 并悬停柱形读取精确计数。所有单元格与柱形默认完整显示，PDF 保留完整矩阵与直方图。第 10 页保留左表右图的原始结构。
+第 34、35 页矩阵可用鼠标悬停或键盘聚焦查看生成数与选后数；第 36 页可选择 SR 并悬停柱形读取精确计数。所有单元格与柱形默认完整显示，PDF 保留完整矩阵与直方图。第 10 页保留左表右图的原始结构。
 
 `output/`、`deliverables/` 均仅保留在本地并由 `.gitignore` 忽略。重新生成交付压缩包：`python3 scripts/package-deliverables.py`。

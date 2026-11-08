@@ -26,20 +26,6 @@ jobs:
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
       - run: npm run build:site
-      - name: Install PDF browser
-        run: npx playwright install --with-deps chromium
-      - name: Export PDFs from the static site
-        run: |
-          python3 -m http.server 8808 --bind 127.0.0.1 --directory site &
-          server_pid=$!
-          trap 'kill "$server_pid"' EXIT
-          for attempt in $(seq 1 30); do
-            if curl -fsS http://127.0.0.1:8808/ >/dev/null; then break; fi
-            sleep 1
-          done
-          node scripts/export-pdf.mjs http://127.0.0.1:8808/defence output/pdf/DarkSHINE_PhD_Defence.pdf 47
-          node scripts/export-pdf.mjs http://127.0.0.1:8808/backup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
-          cp output/pdf/*.pdf site/pdf/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
