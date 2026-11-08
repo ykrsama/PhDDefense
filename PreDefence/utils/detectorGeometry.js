@@ -20,6 +20,7 @@ export const detectorGeometry = Object.freeze({
   recoilLength, recoilFront, recoilBack, recoilCenter: (recoilFront + recoilBack) / 2,
   recoilThickness: .000214 * trackingStretch,
   recoilWidthFractions: [20, 20, 20, 24, 36, 50].map(width => width / 50),
+  recoilHeights: [10, 10, 10, 11.5, 14, 20].map(height => height / 100),
   // Preserve the non-uniform layer spacing in the simulation reference geometry.
   recoilPlanes: [0, .015, .031, .046, .082, .1725].map(x => recoilFront + x * trackingStretch),
   ecalLength, ecalFront, ecalBack, ecalCenter: (ecalFront + ecalBack) / 2, ecalWidth: .5,

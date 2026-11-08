@@ -117,7 +117,7 @@ function detector(){
  for(const x of geometry.tagPlanes)trackerPlane(x,targetWidth,geometry.trackerHeight,geometry.tagThickness)
  box(geometry.targetX-geometry.targetThickness/2,-targetHeight/2,-targetWidth/2,geometry.targetThickness,targetHeight,targetWidth,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
  geometry.recoilPlanes.forEach((x,i)=>{
-  const width=ecalWidth*geometry.recoilWidthFractions[i],height=geometry.trackerHeight
+  const width=ecalWidth*geometry.recoilWidthFractions[i],height=geometry.recoilHeights[i]
   trackerPlane(x,width,height,geometry.recoilThickness)
  })
  const incoming=geometry.incoming as P[],recoil=geometry.recoil as P[],dark=geometry.dark as P[]
