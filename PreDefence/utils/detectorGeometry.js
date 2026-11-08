@@ -13,12 +13,13 @@ const recoilBack = recoilFront + recoilLength
 const ecalFront = recoilBack + .001, ecalBack = ecalFront + ecalLength
 const hcalFront = ecalBack + .001, hcalBack = hcalFront + hcalLength
 export const detectorGeometry = Object.freeze({
-  targetX, targetThickness, targetWidth: .30, targetHeight: .20,
+  targetX, targetThickness, targetWidth: .20, targetHeight: .20,
   tagLength, tagFront, tagBack, tagCenter: (tagFront + tagBack) / 2,
   tagThickness: .000216 * trackingStretch,
   tagPlanes: Array.from({ length: 7 }, (_, i) => tagFront + i * .1 * trackingStretch),
   recoilLength, recoilFront, recoilBack, recoilCenter: (recoilFront + recoilBack) / 2,
   recoilThickness: .000214 * trackingStretch,
+  recoilWidthFractions: [20, 20, 20, 24, 36, 50].map(width => width / 50),
   // Preserve the non-uniform layer spacing in the simulation reference geometry.
   recoilPlanes: [0, .015, .031, .046, .082, .1725].map(x => recoilFront + x * trackingStretch),
   ecalLength, ecalFront, ecalBack, ecalCenter: (ecalFront + ecalBack) / 2, ecalWidth: .5,
