@@ -4,6 +4,7 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
+import { atomTimeline, outerElectronPosition, COLLISION_TIME, ORBIT_SPEED } from '../utils/atomTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
 const canvas=ref<HTMLCanvasElement>()
@@ -125,25 +126,70 @@ function clusters(){
   }
  }
 }
-function atom(){sphere([.65,0,0],.19,'rgba(240,195,110,.55)',state.t*.1);for(let i=0;i<35;i++){let a=i*2.4,b=Math.acos(1-2*(i+.5)/35);dot([.65+.16*Math.sin(b)*Math.cos(a),.16*Math.cos(b),.16*Math.sin(b)*Math.sin(a)],3.5,i%2?'#d6b372':'#8da8c0')}
- const u=(state.t%8)/8,vertex:P=[-.50,.25,.13],end:P=[2.2,.8,.25]
- // The outer electron follows a circular orbit that passes through the annihilation vertex.
- const dx=vertex[0]-.65,dy=vertex[1],dz=vertex[2],radius=Math.hypot(dx,dy,dz),xy=Math.hypot(dx,dy)
- const boundOrbit=(a:number):P=>[.65+dx*Math.cos(a)-radius*dy/xy*Math.sin(a),dy*Math.cos(a)+radius*dx/xy*Math.sin(a),dz*Math.cos(a)]
- for(let k=0;k<5;k++){let r=.48+k*.21;const orbit=(a:number):P=>k===4?boundOrbit(a):[.65+r*Math.cos(a),r*Math.sin(a)*Math.cos(k*.54),r*Math.sin(a)*Math.sin(k*.54)];path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(119,201,255,.25)',.8);for(let j=0;j<3;j++)if(k!==4||j!==0)dot(orbit(state.t*.3+k+j*2.1),2.5,'#77c9ff')}
- if(u<.52)dot(boundOrbit(.3*((state.t%8)-4.16)),3.5,'#77c9ff')
- path([[-2.6,.25,.13],vertex],'rgba(246,156,171,.6)',1.6)
- // Keep the guide visible; the bright trail and label follow the emitted particle.
- path([vertex,end],'rgba(240,195,110,.30)',1.2,[7,6])
- if(u<.52){dot([-2.6+2.1*u/.52,.25,.13],4,'#f69cab')}
- else{
-  const v=(u-.52)/.48,tip:P=[-.50+2.7*v,.25+.55*v,.13+.12*v]
-  path([vertex,tip],'rgba(240,195,110,.8)',2,[7,6]);dot(tip,3,'#fff0ba')
-  sphere(vertex,.05+v*.32,`rgba(255,221,166,${.6*(1-v)})`)
-
+function atom(){
+ if(!ctx||!canvas.value)return
+ const frame=atomTimeline(state.t),{t,mode,local,after,vertex:origin}=frame
+ const vertex=origin as P
+ canvas.value.dataset.atom=JSON.stringify({mode,local,electrons:frame.electrons.length})
+ canvas.value.style.opacity=String(.95*frame.atomOpacity)
+ // Only the nucleus recoils in the nuclear encounter; the displacement is small.
+ const recoil=mode===2?Math.min(after*.045,.09):0
+ const nucleus:P=[.65+recoil,-recoil*.3,0]
+ sphere(nucleus,.19,'rgba(240,195,110,.42)',t*.1)
+ for(let i=0;i<35;i++){
+  const a=i*2.4,b=Math.acos(1-2*(i+.5)/35)
+  dot([nucleus[0]+.16*Math.sin(b)*Math.cos(a),nucleus[1]+.16*Math.cos(b),.16*Math.sin(b)*Math.sin(a)],3.5,i%2?'#d6b372':'#8da8c0')
  }
- label('A′',end,10,-9)
- label('e⁺',[-1.9,.25,.13],0,-14);label('W',[.65,0,0],-6,5)
+ for(let k=0;k<5;k++){
+  const r=.48+k*.21
+  const orbit=(a:number):P=>k===4
+   ?outerElectronPosition(COLLISION_TIME+a/ORBIT_SPEED,0) as P
+   :[.65+r*Math.cos(a),r*Math.sin(a)*Math.cos(k*.54),r*Math.sin(a)*Math.sin(k*.54)]
+  path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(119,201,255,.25)',.8)
+  if(k<4)for(let j=0;j<3;j++)dot(orbit(t*ORBIT_SPEED+k+j*2*Math.PI/3),2.5,'#77c9ff')
+ }
+ for(const i of frame.electrons)dot(outerElectronPosition(t,i) as P,3,'#77c9ff')
+ // The incoming positron meets the existing orbiting electron at the vertex.
+ const start:P=[-2.6,vertex[1],vertex[2]],alpha=frame.eventOpacity
+ const color=(rgb:string,a=1)=>`rgba(${rgb},${a*alpha})`
+ const incoming:P=[start[0]+(vertex[0]-start[0])*frame.incoming,vertex[1],vertex[2]]
+ path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
+ if(!frame.collided){dot(incoming,3.5,color('246,156,171'));label('e⁺',incoming,0,-14)}
+ // Outgoing particles travel at the same constant speed. Labels follow their
+ // own particle; no label or complete outgoing track appears before production.
+ const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
+  const distance=Math.hypot(...end.map((x,i)=>x-vertex[i]))
+  const u=Math.min(1,after*1.1/distance)
+  const tip=vertex.map((x,i)=>x+(end[i]-x)*u) as P
+  if(photon){
+   const points=Array.from({length:90},(_,i):P=>{
+    const f=i/89*u,wave=.035*Math.sin(f*distance*28)*Math.sin(i/89*Math.PI)
+    return [vertex[0]+(end[0]-vertex[0])*f,vertex[1]+(end[1]-vertex[1])*f+wave,vertex[2]+(end[2]-vertex[2])*f]
+   })
+   path(points,color(rgb,.68),1.4)
+  }else path([vertex,tip],color(rgb,.6),1.5,dashed?[7,6]:[])
+  dot(tip,3,color(rgb,.85))
+  ctx!.save();ctx!.globalAlpha=alpha*Math.min(1,after/.25);label(name,tip,9,name==='χ̄'||name==='γ'?-9:17);ctx!.restore()
+ }
+ if(frame.collided){
+  if(mode===0){
+   emit([2.45,1.12,.28],'194,175,233','χ',true)
+   emit([2.30,-.72,-.20],'194,175,233','χ̄',true)
+  }else if(mode===1){
+   emit([2.45,1.12,.28],'240,195,110','A′',true)
+   emit([2.30,-.72,-.20],'119,201,255','γ',false,true)
+  }else{
+   emit([2.65,1.2,.25],'240,195,110','A′',true)
+   emit([2.65,-.60,-.10],'246,156,171','e⁺')
+  }
+ }
+ label('W',nucleus,-6,5)
+ const captions=[['Resonant annihilation','e⁺ e⁻ → χ χ̄'],['Radiative annihilation','e⁺ e⁻ → γ A′'],['Dark bremsstrahlung','e⁺ N → e⁺ N A′']]
+ ctx.save();ctx.globalAlpha=alpha;ctx.textAlign='center'
+ ctx.font='12px "DM Sans",sans-serif';ctx.fillStyle='#8d99a9';ctx.fillText(captions[mode][0],745,124)
+ ctx.font='18px "DM Sans",sans-serif';ctx.fillStyle='#d8dee8';ctx.fillText(captions[mode][1],745,150)
+ for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(731+i*14,170,2,0,Math.PI*2);ctx.fillStyle=i===mode?'#f0c36e':'#48505c';ctx.fill()}
+ ctx.restore()
 }
 function draw(){if(!ctx||!canvas.value)return;canvas.value.dataset.camera=JSON.stringify({yaw:state.yaw,roll:state.roll,zoom:state.zoom,cx:state.cx,cy:state.cy});ctx.clearRect(0,0,980,551.25);if(props.scene==='cluster')clusters();else if(props.scene==='atom')atom();else detector()}
 function setCamera(){
@@ -194,7 +240,7 @@ function setCamera(){
  camera=animate(state,{...target,duration:2800,ease:'outCubic',onUpdate:draw})
 }
 function syncLoop(){loop?.pause();setCamera();if(active.value&&!isStatic())loop=animate(state,{t:[state.t,state.t+360],duration:360000,ease:'linear',loop:true,onUpdate:draw})}
-onMounted(()=>{const c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster')state.t=2;syncLoop();watch([page,active],syncLoop)})
+onMounted(()=>{const c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster')state.t=2;if(props.scene==='atom')state.t=isStatic()?3.8:0;syncLoop();watch([page,active],syncLoop)})
 watch(()=>props.focus,()=>setCamera())
 onBeforeUnmount(()=>{loop?.pause();camera?.pause()})
 </script>

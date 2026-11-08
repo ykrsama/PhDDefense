@@ -1,0 +1,34 @@
+// Three encounters share one orbital clock: successive outer electrons arrive
+// at the annihilation point six seconds apart, with no capture or teleport.
+export const ATOM_PERIOD = 18
+export const ENCOUNTER_DURATION = 6
+export const COLLISION_TIME = 2.4
+export const ANNIHILATION_VERTEX = [-.50, .25, .13]
+export const NUCLEAR_VERTEX = [.49, .02, .03]
+export const ORBIT_SPEED = 2 * Math.PI / ATOM_PERIOD
+const clamp = x => Math.max(0, Math.min(1, x))
+const smooth = x => { const u = clamp(x); return u * u * (3 - 2 * u) }
+
+export function outerElectronPosition(time, index) {
+  const [dx, dy, dz] = [-1.15, .25, .13]
+  const radius = Math.hypot(dx, dy, dz), xy = Math.hypot(dx, dy)
+  const a = ORBIT_SPEED * (time - COLLISION_TIME) + index * 2 * Math.PI / 3
+  return [.65 + dx * Math.cos(a) - radius * dy / xy * Math.sin(a),
+    dy * Math.cos(a) + radius * dx / xy * Math.sin(a), dz * Math.cos(a)]
+}
+
+export function atomTimeline(time) {
+  const t = ((time % ATOM_PERIOD) + ATOM_PERIOD) % ATOM_PERIOD
+  const mode = Math.floor(t / ENCOUNTER_DURATION), local = t % ENCOUNTER_DURATION
+  const after = Math.max(0, local - COLLISION_TIME)
+  return {
+    t, mode, local, after,
+    collided: local >= COLLISION_TIME,
+    incoming: clamp(local / COLLISION_TIME),
+    vertex: mode === 2 ? NUCLEAR_VERTEX : ANNIHILATION_VERTEX,
+    // Two consumed electrons stay absent until a fresh atom fades in next loop.
+    electrons: [0, 1, 2].filter(i => !(i === 0 && t >= COLLISION_TIME) && !(i === 2 && t >= ENCOUNTER_DURATION + COLLISION_TIME)),
+    atomOpacity: smooth(t / .4) * smooth((ATOM_PERIOD - t) / .4),
+    eventOpacity: smooth(local / .3) * smooth((ENCOUNTER_DURATION - local) / .45),
+  }
+}
