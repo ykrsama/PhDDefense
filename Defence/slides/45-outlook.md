@@ -10,7 +10,7 @@ title: "Outlook"
 
 # Outlook
 
-<div class="timeline"><div><b>Detector response</b><p>Constrain digitisation, calibration and veto thresholds with prototype and beam-test data.</p></div><div><b>Rare backgrounds</b><p>Extend dedicated samples and quantify the stability of sideband extrapolations.</p></div><div><b>Statistical model</b><p>Validate the low-count limit with pseudo-experiments and explicit modelling uncertainties.</p></div><div><b>Beam-energy scan</b><p>Re-evaluate signal, acceptance and backgrounds at additional positron energies.</p></div></div><div class="formula-band" style="margin-top:33px"><LaTeX formula="m_{A^{\prime}}^{\mathrm{ann}}\sim\sqrt{2m_eE_{e^+}}" /></div><div class="takeaway">Changing the beam energy moves the annihilation scale and motivates further detector-level studies.</div>
+<div class="timeline"><div><b>Detector response</b><p>Constrain digitisation, calibration and veto thresholds with prototype and beam-test data.</p></div><div><b>Rare backgrounds</b><p>Extend dedicated samples and quantify the stability of sideband extrapolations.</p></div><div><b>Statistical model</b><p>Validate the low-count limit with pseudo-experiments and explicit modelling uncertainties.</p></div><div><b>Beam-energy scan</b><p>Re-evaluate signal, acceptance and backgrounds at additional positron energies.</p></div></div><div class="formula-band" style="margin-top:33px"><LaTeX formula="m_{A^{\prime}}^{\mathrm{ann}}\sim\sqrt{2m_eE_{e^+}}" /></div><div class="takeaway">The annihilation mass scale varies as the square root of the beam energy.</div>
 
 <!--
 Time: 55 seconds.

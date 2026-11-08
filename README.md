@@ -4,7 +4,7 @@
 Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University  
 10th Nov. 2026
 
-本项目包含英文正式报告 **47 页 / 45:00**，以及独立的 **14 页备份册**。正式报告最后一页为 **Research Achievements**。每页讲稿与配时已写入 Slidev presenter notes，同时提供 `Speaker_Notes.md` 和 `Timing.md`。
+本项目包含英文正式报告 **46 页 / 44:30**，以及独立的 **14 页备份册**。正式报告最后一页为 **Research Achievements**。每页讲稿与配时已写入 Slidev presenter notes，同时提供 `Speaker_Notes.md` 和 `Timing.md`。
 
 ## 交付文件
 
@@ -55,7 +55,7 @@ npm run preview
 
 ```sh
 npx playwright install chromium
-node scripts/export-pdf.mjs http://127.0.0.1:8800/defence output/pdf/DarkSHINE_PhD_Defence.pdf 47
+node scripts/export-pdf.mjs http://127.0.0.1:8800/defence output/pdf/DarkSHINE_PhD_Defence.pdf 46
 node scripts/export-pdf.mjs http://127.0.0.1:8800/backup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
 npm run build:site
 ```

@@ -35,17 +35,16 @@
 | 31 | Momentum and total-energy discrimination | 65 | 29:25 |
 | 32 | Maximum-cell energy separates the zero-track sample | 60 | 30:25 |
 | 33 | Signal efficiency across the mass scan | 70 | 31:35 |
-| 34 | Signal migration at 50 MeV | 40 | 32:15 |
-| 35 | Migration contributes to the selected signal | 30 | 32:45 |
-| 36 | Background rejection in the available simulation | 65 | 33:50 |
-| 37 | Normalisation checked in populated sidebands | 65 | 34:55 |
-| 38 | Residual-background extrapolation | 75 | 36:10 |
-| 39 | Combined statistical interpretation | 70 | 37:20 |
-| 40 | Annihilation drives the gain near 90 MeV | 75 | 38:35 |
-| 41 | Projected reach in mediator mass and kinetic mixing | 80 | 39:55 |
-| 42 | Interpretation relative to thermal targets | 65 | 41:00 |
-| 43 | Scope of the positron projection | 60 | 42:00 |
-| 44 | Summary and Outlook | 15 | 42:15 |
-| 45 | Main results | 65 | 43:20 |
-| 46 | Outlook | 55 | 44:15 |
-| 47 | Research Achievements | 45 | 45:00 |
+| 34 | Signal migration at 90 MeV | 40 | 32:15 |
+| 35 | Background rejection in the available simulation | 65 | 33:20 |
+| 36 | Normalisation checked in populated sidebands | 65 | 34:25 |
+| 37 | Residual-background extrapolation | 75 | 35:40 |
+| 38 | Combined statistical interpretation | 70 | 36:50 |
+| 39 | Annihilation drives the gain near 90 MeV | 75 | 38:05 |
+| 40 | Projected reach in mediator mass and kinetic mixing | 80 | 39:25 |
+| 41 | Interpretation relative to thermal targets | 65 | 40:30 |
+| 42 | Scope of the positron projection | 60 | 41:30 |
+| 43 | Summary and Outlook | 15 | 41:45 |
+| 44 | Main results | 65 | 42:50 |
+| 45 | Outlook | 55 | 43:45 |
+| 46 | Research Achievements | 45 | 44:30 |

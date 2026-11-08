@@ -10,7 +10,7 @@ title: "What observations constrain"
 
 # What observations constrain
 
-<div class="columns wide"><div class="plot-large"><Plot src="figures/constraints.svg" caption="Dark-matter mass constraints depend on the particle and cosmological model."/></div><div class="copy"><h2 class="blue">Observational requirements</h2><p>Long-lived on cosmological time scales.</p><p>Sufficiently cold to form the observed structures.</p><h2 class="gold">Model-dependent bounds</h2><p>Statistics, thermal history and late energy injection determine the relevant limits.</p></div></div><div class="takeaway">Light dark matter motivates complementary laboratory searches.</div>
+<div class="columns wide"><div class="plot-large"><Plot src="figures/constraints.svg" caption="Dark-matter mass constraints depend on the particle and cosmological model."/></div><div class="copy"><h2 class="blue">Observational requirements</h2><p>Long-lived on cosmological time scales.</p><p>Sufficiently cold to form the observed structures.</p><h2 class="gold">Model-dependent bounds</h2><p>Statistics, thermal history and late energy injection determine the relevant limits.</p></div></div>
 <!--
 Time: 60 seconds.
 

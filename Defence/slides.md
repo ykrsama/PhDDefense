@@ -153,57 +153,53 @@ src: ./slides/33-efficiency.md
 ---
 
 ---
-src: ./slides/34-migration-50.md
+src: ./slides/34-migration.md
 ---
 
 ---
-src: ./slides/35-migration.md
+src: ./slides/35-rejection.md
 ---
 
 ---
-src: ./slides/36-rejection.md
+src: ./slides/36-background-validation.md
 ---
 
 ---
-src: ./slides/37-background-validation.md
+src: ./slides/37-background-tail.md
 ---
 
 ---
-src: ./slides/38-background-tail.md
+src: ./slides/38-likelihood.md
 ---
 
 ---
-src: ./slides/39-likelihood.md
+src: ./slides/39-mode-results.md
 ---
 
 ---
-src: ./slides/40-mode-results.md
+src: ./slides/40-reach.md
 ---
 
 ---
-src: ./slides/41-reach.md
+src: ./slides/41-thermal.md
 ---
 
 ---
-src: ./slides/42-thermal.md
+src: ./slides/42-scope.md
 ---
 
 ---
-src: ./slides/43-scope.md
+src: ./slides/43-summary.md
 ---
 
 ---
-src: ./slides/44-summary.md
+src: ./slides/44-conclusions.md
 ---
 
 ---
-src: ./slides/45-conclusions.md
+src: ./slides/45-outlook.md
 ---
 
 ---
-src: ./slides/46-outlook.md
----
-
----
-src: ./slides/47-achievements.md
+src: ./slides/46-achievements.md
 ---

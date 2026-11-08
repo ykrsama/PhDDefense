@@ -10,7 +10,7 @@ title: "Scope of the positron projection"
 
 # Scope of the positron projection
 
-<div class="columns "><div><h2 class="blue">Established within this study</h2><ul><li>Full detector-level signal efficiencies</li><li>Three exclusive categories with migration</li><li>Dedicated and inclusive sideband comparison</li><li>A combined 8 GeV benchmark projection</li></ul></div><div><h2 class="gold">Inputs requiring further validation</h2><ul><li>Background extrapolation into empty tails</li><li>Rare components omitted after zero survivors</li><li>1 MeV HCAL cell threshold with noise and pileup</li><li>Low-count coverage of the asymptotic likelihood</li></ul></div></div><div class="takeaway">The gain is conditional on the production, detector-response and statistical assumptions.</div>
+<div class="columns "><div><h2 class="blue">Established within this study</h2><ul><li>Full detector-level signal efficiencies</li><li>Three exclusive categories with migration</li><li>Dedicated and inclusive sideband comparison</li><li>A combined 8 GeV benchmark projection</li></ul></div><div><h2 class="gold">Inputs requiring further validation</h2><ul><li>Background extrapolation into empty tails</li><li>Rare components omitted after zero survivors</li><li>1 MeV HCAL cell threshold with noise and pileup</li><li>Low-count coverage of the asymptotic likelihood</li></ul></div></div>
 
 <!--
 Time: 60 seconds.

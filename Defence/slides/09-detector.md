@@ -10,7 +10,7 @@ title: "DarkSHINE detector concept"
 
 # DarkSHINE detector concept
 
-<div style="height:245px;margin-top:-12px"><PhysicsScene compact labels original/></div><div class="columns thirds" style="gap:28px;margin-top:-10px"><div><h2 class="blue">Tracking</h2><p class="small">Tag the incoming particle.<br/>Measure recoil momentum and multiplicity.</p></div><div><h2 class="mint">ECAL</h2><p class="small">Measure electromagnetic energy.<br/>Resolve localized deposits.</p></div><div><h2 class="violet">HCAL</h2><p class="small">Veto neutral hadrons and penetrating muons.</p></div></div><div class="takeaway">A thin tungsten target links a known incident particle to a fully instrumented visible final state.</div>
+<div style="height:245px;margin-top:-12px"><PhysicsScene compact labels original/></div><div class="columns thirds" style="gap:28px;margin-top:-10px"><div><h2 class="blue">Tracking</h2><p class="small">Tag the incoming particle.<br/>Measure recoil momentum and multiplicity.</p></div><div><h2 class="mint">ECAL</h2><p class="small">Measure electromagnetic energy.<br/>Resolve localized deposits.</p></div><div><h2 class="violet">HCAL</h2><p class="small">Veto neutral hadrons and penetrating muons.</p></div></div><div class="takeaway">Measure the incident and recoil momenta, then veto visible energy in the calorimeters.</div>
 
 
 <!--

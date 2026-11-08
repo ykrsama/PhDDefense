@@ -10,7 +10,7 @@ title: "The DarkSHINE software framework"
 
 # The DarkSHINE software framework
 
-<FlowDiagram kind="workflow"/><div class="takeaway"><span class="gold">Candidate-led:</span> DSimu, DEvent, rare-process biasing and filtering, and ACTS integration.</div>
+<FlowDiagram kind="workflow"/><div class="takeaway"><span class="gold">My contributions:</span> DSimu, DEvent, rare-process biasing and filtering, and ACTS integration.</div>
 <div class="source">DSS software framework; X. Zhu, Nucl. Part. Phys. Proc. 346 (2024) 57.</div>
 
 <!--
