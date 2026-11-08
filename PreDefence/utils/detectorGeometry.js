@@ -1,7 +1,7 @@
 // Reference dimensions from XLZ-dsimu-geo.png, converted from cm to m.
-// Visually stretch the tracking assembly by 2 along x about the target.
+// Visually stretch the tracking assembly by 1.5 along x about the target.
 // Calorimeters retain their dimensions and follow the extended tracking assembly.
-const trackingStretch = 2
+const trackingStretch = 1.5
 // Local x follows the beam, z is the bending direction, y is vertical.
 const tagLength = .600216 * trackingStretch, recoilLength = .172714 * trackingStretch
 const ecalLength = .3834, hcalLength = 3.03601
