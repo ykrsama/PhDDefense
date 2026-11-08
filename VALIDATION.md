@@ -14,5 +14,7 @@ Validated locally on 9 November 2026.
 
 ## PDF files
 
-- DarkSHINE_PhD_Defence.pdf: 47 pages, 37,359,056 bytes; SHA-256 `d3b75fb20b20bfe241d8658c23ec0e94f0e37ed9555bc51481e55aa52f966d69`.
+- DarkSHINE_PhD_Defence.pdf: 47 pages, 41,303,753 bytes; SHA-256 `15159fb977d6c76dd11d9726d6497d340f2afcf3ffc0eff06b4dbfaede1ea87b`.
 - DarkSHINE_PhD_Defence_Backup.pdf: 14 pages, 7,402,773 bytes; SHA-256 `1a93cb2aa67814d8c1d6ad28c4f54180416db0928fedecaf6ec83a816c288827`.
+
+Tracker geometry refinement: tagging planes end at x=-0.82 m; target x=-0.78 m; recoil planes span -0.74 to +0.12 m; ECAL begins at +0.18 m. Recoil trajectory ends on that entrance plane and all shower branches start there. Outline retains particle paths and retains the assembled model with the original rotation and close-up camera move.
