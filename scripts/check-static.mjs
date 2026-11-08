@@ -4,7 +4,7 @@ const browser=await chromium.launch({headless:true,executablePath:process.env.CH
 const errors=[],external=[],results=[]
 page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url())})
 await page.route('**/*',route=>{const u=new URL(route.request().url());if(!['127.0.0.1','localhost'].includes(u.hostname)){external.push(u.href);return route.abort()}return route.continue()})
-for(const [deck,numbers] of [['predefence',[1,2,3,8,15,23,27,33,34,35,41,46]],['backup',[1,7,10,14]]])for(const i of numbers){
+for(const [deck,numbers] of [['predefence',[1,2,3,8,15,23,27,33,34,35,41,46]],['predefencebackup',[1,7,10,14]]])for(const i of numbers){
  await page.goto('http://127.0.0.1:8808/site/'+deck+'/?static=1#/'+i,{waitUntil:'networkidle'});await page.waitForTimeout(1500)
  const issues=await page.locator('[data-slidev-no="'+i+'"] img').evaluateAll(images=>images.filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src))
  results.push({deck,slide:i,missingImages:issues})

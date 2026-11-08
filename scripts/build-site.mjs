@@ -3,13 +3,14 @@ import fs from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 const root=fileURLToPath(new URL('../',import.meta.url)),site=path.join(root,'site')
-for(const name of ['PreDefence','Backup']){
+for(const name of ['PreDefence','PreDefenceBackup']){
  const result=spawnSync(process.execPath,['tools/slidev.mjs','build',name,'--base','./'],{cwd:root,stdio:'inherit'})
  if(result.status!==0)process.exit(result.status||1)
 }
 await fs.mkdir(site,{recursive:true})
 await fs.rm(path.join(site,'defence'),{recursive:true,force:true})
-for(const [source,target] of [['PreDefence','predefence'],['Backup','backup']]){
+await fs.rm(path.join(site,'backup'),{recursive:true,force:true})
+for(const [source,target] of [['PreDefence','predefence'],['PreDefenceBackup','predefencebackup']]){
  await fs.rm(path.join(site,target),{recursive:true,force:true})
  await fs.cp(path.join(root,source,'dist'),path.join(site,target),{recursive:true})
 }

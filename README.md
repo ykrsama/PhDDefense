@@ -9,7 +9,7 @@ Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University
 ## 交付文件
 
 - `PreDefence/`：主报告 Slidev 源码。
-- `Backup/`：单独备份册源码。
+- `PreDefenceBackup/`：单独备份册源码。
 - `site/`：已构建的静态网站，首页链接主报告和备份册网页。
 - `output/pdf/DarkSHINE_PhD_Defence.pdf`：主报告静态 PDF。
 - `output/pdf/DarkSHINE_PhD_Defence_Backup.pdf`：备份册静态 PDF。
@@ -25,7 +25,7 @@ Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University
 npm ci
 npm run dev -- PreDefence --port 3046
 # 另一终端运行备份册：
-npm run dev -- Backup --port 3047
+npm run dev -- PreDefenceBackup --port 3047
 ```
 
 打开终端显示的 localhost 地址。左右方向键翻页，`f` 全屏，`p` 打开演讲者视图；科学图表可点击放大，`Esc` 关闭。流程图不需要逐项点击。动画尊重系统 reduced-motion 偏好；网址加 `?static=1#/1` 可固定动画。
@@ -47,7 +47,7 @@ npm run preview
 
 ## 编辑与重新导出
 
-直接编辑 `PreDefence/slides/*.md` 或 `Backup/slides/*.md`，Vue 图形位于 `PreDefence/components/`，排版微调位于 `PreDefence/styles/defence.css`。前者已经是可独立构建的源项目，不依赖原始论文目录。
+直接编辑 `PreDefence/slides/*.md` 或 `PreDefenceBackup/slides/*.md`，Vue 图形位于 `PreDefence/components/`，排版微调位于 `PreDefence/styles/defence.css`。前者已经是可独立构建的源项目，不依赖原始论文目录。
 
 `scripts/write_deck.py` 的初始生成器已停用，以保护逐页修订；请直接编辑 Markdown。`scripts/write_backup.py` 会重建备份册，使用前请保存修改。`scripts/prepare_assets.py` 仅在从相邻论文目录重新提取原图时使用，普通构建不需要运行。
 
@@ -56,7 +56,7 @@ npm run preview
 ```sh
 npx playwright install chromium
 node scripts/export-pdf.mjs http://127.0.0.1:8800/predefence output/pdf/DarkSHINE_PhD_Defence.pdf 46
-node scripts/export-pdf.mjs http://127.0.0.1:8800/backup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
+node scripts/export-pdf.mjs http://127.0.0.1:8800/predefencebackup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
 npm run build:site
 ```
 

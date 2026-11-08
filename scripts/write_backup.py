@@ -1,6 +1,6 @@
 from pathlib import Path
 import json,shutil,html,re
-R=Path(__file__).resolve().parents[1];D=R/'Backup';A=json.loads((R/'asset-manifest.json').read_text());slides=[]
+R=Path(__file__).resolve().parents[1];D=R/'PreDefenceBackup';A=json.loads((R/'asset-manifest.json').read_text());slides=[]
 def L(s):return '<LaTeX formula="'+html.escape(s,quote=True)+'" />'
 def plot(k,c='',size='plot-large'):return '<div class="'+size+'"><Plot src="'+A[k]['display']+'" caption="'+html.escape(c,quote=True)+'"/></div>'
 def add(slug,title,body,note=''):slides.append((slug,title,body,note))
