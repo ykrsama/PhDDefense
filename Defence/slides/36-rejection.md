@@ -10,7 +10,7 @@ title: "Background rejection in the available simulation"
 
 # Background rejection in the available simulation
 
-<div class="eyebrow">PN ECAL · cumulative unweighted simulated counts</div><CutflowHistogram/><div class="takeaway">Zero survivors in the sample require a residual-background extrapolation.</div>
+<div class="eyebrow">PN ECAL | cumulative unweighted simulated counts</div><CutflowHistogram/><div class="takeaway">Zero survivors in the sample require a residual-background extrapolation.</div>
 <!--
 Time: 65 seconds.
 

@@ -1,7 +1,7 @@
 import { chromium } from 'playwright-chromium'
 import { PDFDocument } from 'pdf-lib'
 import fs from 'node:fs/promises'
-const [url='http://localhost:3046',output='output/pdf/DarkSHINE_PhD_Defence.pdf',count='46']=process.argv.slice(2)
+const [url='http://localhost:3046',output='output/pdf/DarkSHINE_PhD_Defence.pdf',count='47']=process.argv.slice(2)
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||chromium.executablePath()})
 const page=await browser.newPage({viewport:{width:980,height:552}}),doc=await PDFDocument.create()
 const errors=[];page.on('pageerror',e=>errors.push(String(e)))

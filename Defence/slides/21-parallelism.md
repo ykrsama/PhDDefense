@@ -10,7 +10,7 @@ title: "Parallel event simulation"
 
 # Parallel event simulation
 
-<div class="columns wide"><div class="plot-large"><Plot src="figures/DSS-065.png" caption="Thread-scaling study on the INPAC cluster"/></div><div class="copy"><h2 class="blue">10⁶ simulated events</h2><p>8 threads, 1 job<br/><strong>15,328 s · 785% CPU</strong></p><p>1 thread, 8 jobs<br/><strong>16,648 s · 646% CPU</strong></p><div class="big-number">~8%</div><p class="small">Lower elapsed time with the same eight concurrent execution units.</p></div></div>
+<div class="columns wide"><div class="plot-large"><Plot src="figures/DSS-065.png" caption="Thread-scaling study on the INPAC cluster"/></div><div class="copy"><h2 class="blue">10⁶ simulated events</h2><p>8 threads, 1 job<br/><strong>15,328 s | 785% CPU</strong></p><p>1 thread, 8 jobs<br/><strong>16,648 s | 646% CPU</strong></p><div class="big-number">~8%</div><p class="small">Lower elapsed time with the same eight concurrent execution units.</p></div></div>
 <!--
 Time: 55 seconds.
 

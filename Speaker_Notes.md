@@ -260,15 +260,23 @@ The three panels show the cutflow efficiency of each mechanism in its primary re
 
 Source context: Channel-to-region efficiencies from the baseline 1 positron simulation.
 
-## 34. Migration contributes to the selected signal
+## 34. Signal migration at 50 MeV
 
-Time: 70 seconds.
+Time: 40 seconds.
 
-At ninety MeV the matrix shows expected event yields, not raw Monte Carlo counts. Non-resonant annihilation produces about one point nine six events at the illustrative kinetic mixing and contributes primarily to SR2, but it also populates SR1 and SR3. Resonant production mostly enters SR3 and also contributes to SR2. Bremsstrahlung is numerically negligible at this mass. Non-resonant annihilation supplies about 95 percent of SR2; resonant annihilation supplies about 84 percent of SR3. Summing the contributions gives approximately zero point zero four events in SR1, one point eight two in SR2 and zero point seven one five in SR3. The likelihood uses the individual region predictions. It does not assign an observed candidate to a generator-level origin. Totals are calculated before rounding.
+Before considering the endpoint, take the 50 MeV benchmark. Bremsstrahlung supplies about 96 percent of SR1 and resonant annihilation about 96 percent of SR3. SR2 is a mixture: non-resonant and resonant annihilation each contribute about 48 percent. In particular, the resonant channel gives 0.00438 expected events in SR2, comparable to the non-resonant contribution of 0.00439. The likelihood therefore retains all production mechanisms in each reconstructed region.
 
-Source context: Benchmark yields at fixed coupling, reproduced from the positron study; totals rounded independently.
+Source context: Dissertation table tab:benchmark_yields, 50 MeV benchmark; epsilon squared = 1e-12 and 3e14 POT.
 
-## 35. Background rejection in the available simulation
+## 35. Migration contributes to the selected signal
+
+Time: 30 seconds.
+
+At 90 MeV the production mixture changes strongly. Non-resonant annihilation now supplies about 95 percent of SR2, while resonant annihilation supplies about 84 percent of SR3. Bremsstrahlung is negligible at this benchmark. The off-diagonal contributions remain in the prediction. These are expected event counts at a fixed reference coupling, not raw simulated-event counts or efficiencies.
+
+Source context: Dissertation table tab:benchmark_yields, 90 MeV benchmark.
+
+## 36. Background rejection in the available simulation
 
 Time: 65 seconds.
 
@@ -276,7 +284,7 @@ The cumulative cutflow shows where rejection occurs in one important background,
 
 Source context: Cumulative PN ECAL cutflow from the positron study. Effective exposure: 1.48×10¹¹ POT.
 
-## 36. Normalisation checked in populated sidebands
+## 37. Normalisation checked in populated sidebands
 
 Time: 65 seconds.
 
@@ -284,7 +292,7 @@ The dedicated samples are normalised to their equivalent unbiased exposure using
 
 Source context: Inclusive exposure: 2.5×10⁹ POT. Dedicated sample normalisation follows the campaign convention.
 
-## 37. Residual-background extrapolation
+## 38. Residual-background extrapolation
 
 Time: 75 seconds.
 
@@ -292,7 +300,7 @@ For SR1 and SR2 the dedicated survival curves are fitted as a power law in the n
 
 Source context: Dedicated tail estimates at 3×10¹⁴ POT. SR3 surface is a fit, not a selection boundary.
 
-## 38. Combined statistical interpretation
+## 39. Combined statistical interpretation
 
 Time: 70 seconds.
 
@@ -300,7 +308,7 @@ At each mass the signal prediction sums all three production mechanisms in every
 
 Source context: Statistical prescription reported in arXiv:2609.05900; limitations retained.
 
-## 39. Annihilation drives the gain near 90 MeV
+## 40. Annihilation drives the gain near 90 MeV
 
 Time: 75 seconds.
 
@@ -308,7 +316,7 @@ This comparison retains one production mechanism at a time while keeping all thr
 
 Source context: Expected 90% CL projection at 3×10¹⁴ POT; original mechanism-comparison plot.
 
-## 40. Projected reach in mediator mass and kinetic mixing
+## 41. Projected reach in mediator mass and kinetic mixing
 
 Time: 80 seconds.
 
@@ -316,7 +324,7 @@ The full comparison places the combined positron projection alongside the earlie
 
 Source context: Original comparison figure from the positron study; external curves retain source assumptions and exposure labels.
 
-## 41. Interpretation relative to thermal targets
+## 42. Interpretation relative to thermal targets
 
 Time: 65 seconds.
 
@@ -324,7 +332,7 @@ To relate the mediator search to light-dark-matter thermal targets, I now add a 
 
 Source context: Original thermal-target plot with mA′/mχ=3 and αD=0.5.
 
-## 42. Scope of the positron projection
+## 43. Scope of the positron projection
 
 Time: 60 seconds.
 
@@ -332,7 +340,7 @@ The analysis establishes the detector-level efficiency and migration of the thre
 
 Source context: Positron-beam-mode analysis, supplied dissertation sources.
 
-## 43. Summary and Outlook
+## 44. Summary and Outlook
 
 Time: 15 seconds.
 
@@ -340,7 +348,7 @@ I close by connecting the software and physics results and identifying the next 
 
 Source context: Summary and outlook, supplied dissertation sources.
 
-## 44. Main results
+## 45. Main results
 
 Time: 65 seconds.
 
@@ -348,7 +356,7 @@ The software result is a configurable framework and event model that connect tra
 
 Source context: Summary and outlook, supplied dissertation sources.
 
-## 45. Outlook
+## 46. Outlook
 
 Time: 55 seconds.
 
@@ -356,7 +364,7 @@ The next work follows directly from the limitations. Detector data can constrain
 
 Source context: Summary and outlook, supplied dissertation sources.
 
-## 46. Research Achievements
+## 47. Research Achievements
 
 Time: 45 seconds.
 

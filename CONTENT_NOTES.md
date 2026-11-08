@@ -39,3 +39,11 @@ Publication status and all eight achievements reproduce the supplied List of Res
 ## 90 MeV matrix audit
 
 The nine cells and published totals match `PhDThesis/contents/positron_analysis.tex`, table `tab:benchmark_yields`. They are expected yields at epsilon squared = 1e-12 and 3e14 POT, not integer Monte Carlo counts. Column percentages are computed from the displayed channel entries, not the independently rounded published total. The dominant components are non-resonant annihilation in SR2 (~95%) and resonant annihilation in SR3 (~84%). Nonzero entries do not imply comparable contributions. The revised takeaway explicitly states annihilation dominance and cross-feed.
+
+## Added 50 MeV migration benchmark
+
+The new preceding matrix uses the 50 MeV block of the same thesis table. SR2 receives 0.00439 expected events from non-resonant annihilation and 0.00438 from resonant annihilation; the composition percentages from the displayed entries are 47.6% and 47.5%. Conditions are typeset as math with vertical-bar separators. Across the report and backup, CSS preserves authored case so MeV, GeV and epsilon cannot be uppercased.
+
+## Baseline 1 model envelope
+
+The detector illustration now uses the original HCAL transverse envelope 4 x 4 m and a nominal active depth of 4.02 m, derived from 80 iron plates at 3 cm plus 162 scintillator layers at 1 cm. The source is darkshine_detector.tex, Reference Conceptual Design. ECAL and tracking dimensions are unchanged. This replaces the earlier compact 1.5 x 1.5 x 2.5 m artistic envelope. Displayed layer strokes are schematic subdivisions, not a literal layer count.

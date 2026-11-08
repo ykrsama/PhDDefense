@@ -21,7 +21,7 @@
   },
   {
     "slug": "physics",
-    "title": "Physics Motivation and<br/>DarkSHINE Experiment",
+    "title": "Physics Motivation and DarkSHINE Experiment",
     "body": "<PhysicsScene scene=\"cluster\"/><div class=\"chapter-copy\"><div class=\"chapter-number\">01 / DISSERTATION DEFENCE</div><h1>Physics Motivation and<br/>DarkSHINE Experiment</h1><p>Light dark matter and an accelerator-based missing-energy search</p></div><ChapterRail :active=\"1\"/>",
     "notes": "Time: 15 seconds.\n\nI begin with the physical motivation. The cluster animation illustrates why gravitational evidence motivates an unseen matter component, while the laboratory search still requires a specified interaction model.\n\nSource context: Physics motivation and DarkSHINE, supplied dissertation sources.",
     "section": 1,
@@ -32,7 +32,7 @@
   {
     "slug": "evidence",
     "title": "Evidence for dark matter",
-    "body": "<div class=\"eyebrow\">Physics motivation and DarkSHINE</div>\n\n# Evidence for dark matter\n\n<div class=\"evidence-triptych\"><section><Plot plain src=\"figures/DEF-230.png\" caption=\"Galaxies · rotation curves\"/><h2>Extended mass distributions</h2><p>Orbital velocities remain high beyond the luminous disc.</p></section><section><Plot plain src=\"figures/DEF-218.jpg\" caption=\"Clusters · gravitational lensing\"/><h2>Mass and gas separate</h2><p>Lensing traces gravitating matter beyond the hot gas.</p></section><section><Plot plain src=\"figures/DEF-241.jpg\" caption=\"Cosmology · CMB anisotropies\"/><h2>A non-baryonic component</h2><p>The matter budget is constrained across cosmic scales.</p></section></div><div class=\"takeaway\">Independent observations establish the abundance; the particle identity remains open.</div>\n<div class=\"source\">Clowe et al., ApJ 648 (2006) L109; Planck 2018. Image: supplied reference assets.</div>",
+    "body": "<div class=\"eyebrow\">Physics motivation and DarkSHINE</div>\n\n# Evidence for dark matter\n\n<div class=\"evidence-triptych\"><section><Plot plain src=\"figures/DEF-230.png\" caption=\"Galaxies | rotation curves\"/><h2>Extended mass distributions</h2><p>Orbital velocities remain high beyond the luminous disc.</p></section><section><Plot plain src=\"figures/DEF-218.jpg\" caption=\"Clusters | gravitational lensing\"/><h2>Mass and gas separate</h2><p>Lensing traces gravitating matter beyond the hot gas.</p></section><section><Plot plain src=\"figures/DEF-241.jpg\" caption=\"Cosmology | CMB anisotropies\"/><h2>A non-baryonic component</h2><p>The matter budget is constrained across cosmic scales.</p></section></div><div class=\"takeaway\">Independent observations establish the abundance; the particle identity remains open.</div>\n<div class=\"source\">Clowe et al., ApJ 648 (2006) L109; Planck 2018. Image: supplied reference assets.</div>",
     "notes": "Time: 60 seconds.\n\nThree independent observations establish the gravitational evidence: rotation curves on galaxy scales, lensing and gas separation in clusters, and the cosmic microwave background. These data constrain the abundance and distribution of dark matter, while its particle identity and laboratory coupling remain open.",
     "section": 1,
     "seconds": 60,
@@ -131,7 +131,7 @@
   },
   {
     "slug": "software",
-    "title": "Event Simulation and<br/>Reconstruction in DarkSHINE",
+    "title": "Event Simulation and Reconstruction in DarkSHINE",
     "body": "<PhysicsScene scene=\"detector\"/><div class=\"chapter-copy\"><div class=\"chapter-number\">02 / DISSERTATION DEFENCE</div><h1>Event Simulation and<br/>Reconstruction in DarkSHINE</h1><p>A configurable chain for detector studies and rare-process production</p></div><ChapterRail :active=\"2\"/>",
     "notes": "Time: 15 seconds.\n\nThe framework must connect the detector definition to the analysis while keeping rare-process production computationally manageable. This section presents my software contributions within the collaboration environment.\n\nSource context: Event simulation and reconstruction, supplied dissertation sources.",
     "section": 2,
@@ -202,7 +202,7 @@
   {
     "slug": "parallelism",
     "title": "Parallel event simulation",
-    "body": "<div class=\"eyebrow\">Event simulation and reconstruction</div>\n\n# Parallel event simulation\n\n<div class=\"columns wide\"><div class=\"plot-large\"><Plot src=\"figures/DSS-065.png\" caption=\"Thread-scaling study on the INPAC cluster\"/></div><div class=\"copy\"><h2 class=\"blue\">10⁶ simulated events</h2><p>8 threads, 1 job<br/><strong>15,328 s · 785% CPU</strong></p><p>1 thread, 8 jobs<br/><strong>16,648 s · 646% CPU</strong></p><div class=\"big-number\">~8%</div><p class=\"small\">Lower elapsed time with the same eight concurrent execution units.</p></div></div>",
+    "body": "<div class=\"eyebrow\">Event simulation and reconstruction</div>\n\n# Parallel event simulation\n\n<div class=\"columns wide\"><div class=\"plot-large\"><Plot src=\"figures/DSS-065.png\" caption=\"Thread-scaling study on the INPAC cluster\"/></div><div class=\"copy\"><h2 class=\"blue\">10⁶ simulated events</h2><p>8 threads, 1 job<br/><strong>15,328 s | 785% CPU</strong></p><p>1 thread, 8 jobs<br/><strong>16,648 s | 646% CPU</strong></p><div class=\"big-number\">~8%</div><p class=\"small\">Lower elapsed time with the same eight concurrent execution units.</p></div></div>",
     "notes": "Time: 55 seconds.\n\nGeant4 multi-threading allows several events to be processed within one job. The engineering work includes thread-local allocation and singleton state, as well as random-number and primary-generation handling. In the cited comparison, one eight-thread job takes fifteen thousand three hundred and twenty-eight seconds, compared with sixteen thousand six hundred and forty-eight seconds for eight single-thread jobs. This is an improvement of approximately eight percent in elapsed time for that comparison. It is not a measurement of eight-fold scaling from one core. The validation includes inclusive and rare-process distributions. The physics content must remain consistent as the scheduling and number of workers change.\n\nSource context: DSS_716, slide 15, INPAC cluster benchmark. Relative time reduction calculated from reported times.",
     "section": 2,
     "seconds": 55,
@@ -261,7 +261,7 @@
   },
   {
     "slug": "positron",
-    "title": "Positron-Beam-Mode<br/>Analysis",
+    "title": "Positron-Beam-Mode Analysis",
     "body": "<PhysicsScene scene=\"atom\"/><div class=\"chapter-copy\"><div class=\"chapter-number\">03 / DISSERTATION DEFENCE</div><h1>Positron-Beam-Mode<br/>Analysis</h1><p>Three production mechanisms, three exclusive reconstructed categories</p></div><ChapterRail :active=\"3\"/>",
     "notes": "Time: 15 seconds.\n\nI now use the simulation chain to evaluate the positron option. The analysis retains the baseline one detector for a common comparison with the published electron-beam projection.\n\nSource context: Positron-beam-mode analysis, supplied dissertation sources.",
     "section": 3,
@@ -330,19 +330,29 @@
     "cls": ""
   },
   {
+    "slug": "migration-50",
+    "title": "Signal migration at 50 MeV",
+    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Signal migration at 50 MeV\n\n<div class=\"benchmark-conditions\"><span><LaTeX formula=\"m_{A^\\prime}=50\\,\\mathrm{MeV}\" /></span><span class=\"separator\">|</span><span><LaTeX formula=\"\\epsilon^2=10^{-12}\" /></span><span class=\"separator\">|</span><span><LaTeX formula=\"N_{\\mathrm{POT}}=3\\times10^{14}\" /></span></div><YieldMatrix :mass=\"50\"/><div class=\"takeaway\">SR2 contains comparable non-resonant and resonant contributions; SR labels describe reconstructed topology.</div>",
+    "notes": "Time: 40 seconds.\n\nBefore considering the endpoint, take the 50 MeV benchmark. Bremsstrahlung supplies about 96 percent of SR1 and resonant annihilation about 96 percent of SR3. SR2 is a mixture: non-resonant and resonant annihilation each contribute about 48 percent. In particular, the resonant channel gives 0.00438 expected events in SR2, comparable to the non-resonant contribution of 0.00439. The likelihood therefore retains all production mechanisms in each reconstructed region.\n\nSource context: Dissertation table tab:benchmark_yields, 50 MeV benchmark; epsilon squared = 1e-12 and 3e14 POT.",
+    "section": 3,
+    "seconds": 40,
+    "source": "",
+    "cls": ""
+  },
+  {
     "slug": "migration",
     "title": "Migration contributes to the selected signal",
-    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Migration contributes to the selected signal\n\n<div class=\"eyebrow\">90 MeV · ε² = 10⁻¹² · 3 × 10¹⁴ POT</div><YieldMatrix/><div class=\"takeaway\">At 90 MeV, annihilation dominates; each reconstructed region retains cross-feed.</div>",
-    "notes": "Time: 70 seconds.\n\nAt ninety MeV the matrix shows expected event yields, not raw Monte Carlo counts. Non-resonant annihilation produces about one point nine six events at the illustrative kinetic mixing and contributes primarily to SR2, but it also populates SR1 and SR3. Resonant production mostly enters SR3 and also contributes to SR2. Bremsstrahlung is numerically negligible at this mass. Non-resonant annihilation supplies about 95 percent of SR2; resonant annihilation supplies about 84 percent of SR3. Summing the contributions gives approximately zero point zero four events in SR1, one point eight two in SR2 and zero point seven one five in SR3. The likelihood uses the individual region predictions. It does not assign an observed candidate to a generator-level origin. Totals are calculated before rounding.\n\nSource context: Benchmark yields at fixed coupling, reproduced from the positron study; totals rounded independently.",
+    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Migration contributes to the selected signal\n\n<div class=\"benchmark-conditions\"><span><LaTeX formula=\"m_{A^\\prime}=90\\,\\mathrm{MeV}\" /></span><span class=\"separator\">|</span><span><LaTeX formula=\"\\epsilon^2=10^{-12}\" /></span><span class=\"separator\">|</span><span><LaTeX formula=\"N_{\\mathrm{POT}}=3\\times10^{14}\" /></span></div><YieldMatrix :mass=\"90\"/><div class=\"takeaway\">At 90 MeV, annihilation dominates; each reconstructed region retains cross-feed.</div>",
+    "notes": "Time: 30 seconds.\n\nAt 90 MeV the production mixture changes strongly. Non-resonant annihilation now supplies about 95 percent of SR2, while resonant annihilation supplies about 84 percent of SR3. Bremsstrahlung is negligible at this benchmark. The off-diagonal contributions remain in the prediction. These are expected event counts at a fixed reference coupling, not raw simulated-event counts or efficiencies.\n\nSource context: Dissertation table tab:benchmark_yields, 90 MeV benchmark.",
     "section": 3,
-    "seconds": 70,
+    "seconds": 30,
     "source": "",
     "cls": ""
   },
   {
     "slug": "rejection",
     "title": "Background rejection in the available simulation",
-    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Background rejection in the available simulation\n\n<div class=\"eyebrow\">PN ECAL · cumulative unweighted simulated counts</div><CutflowHistogram/><div class=\"takeaway\">Zero survivors in the sample require a residual-background extrapolation.</div>",
+    "body": "<div class=\"eyebrow\">Positron-beam-mode analysis</div>\n\n# Background rejection in the available simulation\n\n<div class=\"eyebrow\">PN ECAL | cumulative unweighted simulated counts</div><CutflowHistogram/><div class=\"takeaway\">Zero survivors in the sample require a residual-background extrapolation.</div>",
     "notes": "Time: 65 seconds.\n\nThe cumulative cutflow shows where rejection occurs in one important background, photonuclear production in the ECAL. The recoil requirement already separates the one-track and zero-track categories. Their next cuts differ: momentum for SR1, the maximum-cell lower bound for SR2 and total ECAL energy for SR3. The HCAL veto then reduces the sample further, and the final ECAL condition removes all remaining simulated events. These are unweighted counts, not yields at the benchmark exposure. No inclusive or dedicated sample survives a complete region selection. This is strong rejection in the available simulation, but it is not evidence that the physical background is exactly zero.\n\nSource context: Cumulative PN ECAL cutflow from the positron study. Effective exposure: 1.48×10¹¹ POT.",
     "section": 3,
     "seconds": 65,
