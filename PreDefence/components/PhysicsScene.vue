@@ -4,6 +4,7 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
+import { detectorGeometry as geometry } from '../utils/detectorGeometry.js'
 import { atomTimeline, outerElectronPosition, COLLISION_TIME, OUTGOING_DURATION, PARTICLE_SPEED, ORBIT_SPEED } from '../utils/atomTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
@@ -30,7 +31,7 @@ function proj(p:P):[number,number,number]{
  let focusX=0,focusY=0
  if(props.scene==='detector'&&!props.compact){
   // ECAL centre is the fixed screen-space pivot for the chapter establishing move.
-  const fa=.40*Math.cos(turn),fb=-.40*Math.sin(turn),fv=-fb*Math.sin(pitch),fd=fb*Math.cos(pitch),fq=10/(10+fd)
+  const fa=geometry.ecalCenter*Math.cos(turn),fb=-geometry.ecalCenter*Math.sin(turn),fv=-fb*Math.sin(pitch),fd=fb*Math.cos(pitch),fq=10/(10+fd)
   focusX=(fa*Math.cos(roll)-fv*Math.sin(roll))*fq
   focusY=(fa*Math.sin(roll)+fv*Math.cos(roll))*fq
  }
@@ -70,32 +71,34 @@ function box(x:number,y:number,z:number,dx:number,dy:number,dz:number,color:stri
  }
 }
 function label(s:string,p:P,dx=0,dy=0){const q=proj(p);ctx!.font='14px "DM Sans",sans-serif';ctx!.fillStyle='#cdd5df';ctx!.fillText(s,q[0]+dx,q[1]+dy)}
+function detectorCallout(s:string,p:P,dx:number,dy:number){
+ const q=proj(p),x=q[0]+dx,y=q[1]+dy
+ ctx!.save();ctx!.font='14px "DM Sans",sans-serif';ctx!.beginPath();ctx!.moveTo(q[0],q[1])
+ ctx!.lineTo(x+(dx<0?ctx!.measureText(s).width:0),y-5)
+ ctx!.strokeStyle='rgba(174,182,193,.42)';ctx!.lineWidth=.6;ctx!.stroke();ctx!.restore()
+ label(s,p,dx,dy)
+}
 function trackerPlane(x:number,width:number,height:number,thickness:number){
  // Local z is the magnetic bending direction; local y is the narrower vertical axis.
  box(x,-height/2,-width/2,thickness,height,width,'rgba(119,201,255,.46)','rgba(77,149,195,.08)')
  for(let k=1;k<8;k++)path([[x,-height/2,-width/2+k*width/8],[x,height/2,-width/2+k*width/8]],'rgba(119,201,255,.23)',.5)
 }
 function detector(){
- // Baseline 1 HCAL: 4 x 4 m transverse, 4.02 m active stack (80 x 3 cm Fe + 162 x 1 cm scintillator).
- // ECAL remains 0.5 x 0.5 x 0.44 m.
- box(.78,-2,-2,4.02,4,4,'rgba(186,165,255,.3)','rgba(62,58,85,.12)',24,true)
-
- const ecalWidth=.5
- box(.18,-ecalWidth/2,-ecalWidth/2,.44,ecalWidth,ecalWidth,'rgba(112,220,178,.68)','rgba(50,115,97,.15)',10)
- // Side veto panels preserve the calorimeter aperture.
- 
- // Magnet open bore, two yokes. Tracker planes are intentionally never pixel grids.
- if(props.compact||props.magnet)for(let y of [-.48,.34])box(-1.9,y,-.42,1.65,.14,.84,'rgba(240,195,110,.36)','rgba(125,93,40,.10)')
- const targetWidth=.30,targetHeight=.20
- for(let i=0;i<7;i++)trackerPlane(-1.8+i*.98/6,targetWidth,targetHeight,.009)
- box(-.78,-targetHeight/2,-targetWidth/2,.004,targetHeight,targetWidth,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
- for(let i=0;i<6;i++){
+ // Beam-axis dimensions follow the annotated simulation geometry reference.
+ const {ecalWidth,targetWidth,targetHeight}=geometry
+ const hcalHalf=geometry.hcalWidth/2
+ box(geometry.hcalFront,-hcalHalf,-hcalHalf,geometry.hcalLength,geometry.hcalWidth,geometry.hcalWidth,'rgba(186,165,255,.3)','rgba(62,58,85,.12)',24,true)
+ box(geometry.ecalFront,-ecalWidth/2,-ecalWidth/2,geometry.ecalLength,ecalWidth,ecalWidth,'rgba(112,220,178,.68)','rgba(50,115,97,.15)',10)
+ // Magnet open bore; tracker planes retain single-direction strip segmentation.
+ if(props.compact||props.magnet)for(let y of [-.48,.34])box(geometry.magnetFront,y,-.42,geometry.magnetBack-geometry.magnetFront,.14,.84,'rgba(240,195,110,.36)','rgba(125,93,40,.10)')
+ for(const x of geometry.tagPlanes)trackerPlane(x,targetWidth,targetHeight,geometry.tagThickness)
+ box(geometry.targetX-geometry.targetThickness/2,-targetHeight/2,-targetWidth/2,geometry.targetThickness,targetHeight,targetWidth,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
+ geometry.recoilPlanes.forEach((x,i)=>{
   const fraction=i/5,width=ecalWidth*(.64+.36*fraction),height=ecalWidth*(.4+.2*fraction)
-  trackerPlane(-.74+i*.86/5,width,height,.008)
- }
- const incoming=Array.from({length:45},(_,i):P=>[-2.8+i*2.02/44,.015,0]);path(incoming,'#77c9ff',2)
- const recoil=Array.from({length:42},(_,i):P=>[-.78+i*.96/41,.015+i/41*.105,Math.pow(i/41,2)*.10]);path(recoil,'#f0c36e',2.2)
- const dark=Array.from({length:65},(_,i):P=>[-.78+i*4.45/64,.015+i/64*.80,-i/64*.32]);path(dark,'#f69cab',1.7,[7,6])
+  trackerPlane(x,width,height,geometry.recoilThickness)
+ })
+ const incoming=geometry.incoming as P[],recoil=geometry.recoil as P[],dark=geometry.dark as P[]
+ path(incoming,'#77c9ff',2);path(recoil,'#f0c36e',2.2);path(dark,'#f69cab',1.7,[7,6])
  const particles=particleTimeline(state.t,incoming,recoil,dark,isStatic())
  if(particles.blue)dot(particles.blue as P,3,'#d2eeff')
  if(particles.yellow)dot(particles.yellow as P,2.8,'#fff0ba')
@@ -106,15 +109,24 @@ function detector(){
   const progress=Math.min(1,particles.showerAge/.45),fade=Math.min(1,particles.cycleRemaining/.35)
   for(let k=0;k<11;k++){
    const u=progress*(.65+.35*(k%4)/3)
-   const end:P=[showerStart[0]+.40*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
+   const end:P=[showerStart[0]+geometry.ecalLength*.9*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
    path([showerStart,end],`rgba(240,195,110,${.55*fade})`,.9)
   }
  }
  if(props.labels){
-  if(!props.focus||props.focus==='tracking'){label('Tagging tracker',[-1.55,-targetHeight/2,targetWidth/2],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.15,.25],-12,45)}
-  if(!props.focus||props.focus==='ecal')label('ECAL',props.compact?[.43,.35,0]:[.43,0,-.36],-17,-10)
-  if(!props.focus||props.focus==='hcal')label('HCAL',props.compact?[2.8,2.1,0]:[2.8,0,-2.1],-5,-17)
-  if(!props.focus)label('Magnet',props.compact?[-1.2,.5,0]:[-1.2,0,-.59],-20,-10)
+  if(!props.focus||props.focus==='tracking'){
+   label('Tagging tracker',[geometry.tagCenter,-targetHeight/2,targetWidth/2],-75,32)
+   if(props.compact&&!props.focus)detectorCallout('W target',[geometry.targetX,.12,0],-110,-12)
+   else label('W target',[geometry.targetX,.12,0],-28,-12)
+   label('Recoil tracker',[geometry.recoilCenter,-.15,.25],-15,45)
+  }
+  if(!props.focus||props.focus==='ecal'){
+   const p:P=props.compact?[geometry.ecalCenter,.35,0]:[geometry.ecalCenter,0,-.36]
+   if(props.compact&&!props.focus)detectorCallout('ECAL',p,24,-10)
+   else label('ECAL',p,-17,-10)
+  }
+  if(!props.focus||props.focus==='hcal')label('HCAL',props.compact?[geometry.hcalCenter,2.1,0]:[geometry.hcalCenter,0,-2.1],-5,-17)
+  if(!props.focus)label('Magnet',props.compact?[(geometry.magnetFront+geometry.magnetBack)/2,.5,0]:[(geometry.magnetFront+geometry.magnetBack)/2,0,-.59],-20,props.compact?-26:-10)
  }
 }
 function sphere(center:P,r:number,col:string,turn=0){for(let j=1;j<12;j++){let b=-Math.PI/2+j*Math.PI/12;path(Array.from({length:65},(_,i):P=>[center[0]+r*Math.cos(b)*Math.cos(i/64*Math.PI*2+turn),center[1]+r*Math.sin(b),center[2]+r*Math.cos(b)*Math.sin(i/64*Math.PI*2+turn)]),col,.6)}for(let j=0;j<12;j++)path(Array.from({length:65},(_,i):P=>{let a=i/64*Math.PI*2,b=j*Math.PI/6+turn;return[center[0]+r*Math.cos(a)*Math.cos(b),center[1]+r*Math.sin(a),center[2]+r*Math.cos(a)*Math.sin(b)]}),col,.6)}
@@ -229,8 +241,8 @@ function setCamera(){
  if(props.scene==='detector'&&props.compact){
   const saved={...state};Object.assign(state,target,{zoom:1,cx:0,cy:0})
   const envelope:P[]=[]
-  for(const x of [.78,4.8])for(const y of [-2,2])for(const z of [-2,2])envelope.push([x,y,z])
-  envelope.push([-2.8,0,0],[-1.9,-.48,-.42],[-1.9,.48,.42])
+  for(const x of [geometry.hcalFront,geometry.hcalBack])for(const y of [-2,2])for(const z of [-2,2])envelope.push([x,y,z])
+  envelope.push(geometry.incoming[0] as P,[geometry.magnetFront,-.48,-.42],[geometry.magnetBack,.48,.42])
   const projected=envelope.map(proj),xs=projected.map(p=>p[0]),ys=projected.map(p=>p[1])
   const left=Math.min(...xs),right=Math.max(...xs),top=Math.min(...ys),bottom=Math.max(...ys)
   const frame=props.compact?(props.narrow?[10,470,35,275]:[55,900,25,285]):props.persistent&&n===2?[430,955,110,480]:[355,955,110,485]
@@ -240,9 +252,9 @@ function setCamera(){
   Object.assign(state,saved)
   if(props.focus){
    const views:Record<string,{point:P;zoom:number}>={
-    tracking:{point:[-.78,0,0],zoom:1.15},
-    ecal:{point:[.40,0,0],zoom:2.15},
-    hcal:{point:[2.75,0,0],zoom:.62},
+    tracking:{point:[(geometry.tagFront+geometry.ecalBack)/2,0,0],zoom:2.1},
+    ecal:{point:[geometry.ecalCenter,0,0],zoom:2.15},
+    hcal:{point:[geometry.hcalCenter,0,0],zoom:.49},
    }
    const view=views[props.focus]
    if(view){
