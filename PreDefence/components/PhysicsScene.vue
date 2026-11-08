@@ -133,7 +133,8 @@ function detector(){
   for(let k=0;k<11;k++){
    const u=progress*(.65+.35*(k%4)/3)
    const end:P=[showerStart[0]+geometry.ecalLength*.9*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
-   path([showerStart,end],`rgba(119,201,255,${.55*fade})`,.9)
+   const showerColor=k%2===0?'240,195,110':'119,201,255'
+   path([showerStart,end],`rgba(${showerColor},${.55*fade})`,.9)
   }
  }
  if(props.labels){
