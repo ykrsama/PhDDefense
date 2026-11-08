@@ -30,5 +30,5 @@ export const detectorGeometry = Object.freeze({
   incoming: Array.from({ length: 45 }, (_, i) => [tagFront - .4 + i * (targetX - tagFront + .4) / 44, .015, 0]),
   // A gentle bend toward local -z in the xz plane; no vertical recoil deflection.
   recoil: Array.from({ length: 42 }, (_, i) => [targetX + i * (ecalFront - targetX) / 41, .015, (i / 41) ** 2 * -.04]),
-  dark: Array.from({ length: 65 }, (_, i) => [targetX + i * (hcalBack - .15 - targetX) / 64, .015 + i / 64 * .80, -i / 64 * .32]),
+  dark: Array.from({ length: 65 }, (_, i) => [targetX + i * (hcalBack - .15 - targetX) / 64, .015, i / 64 * .16]),
 })
