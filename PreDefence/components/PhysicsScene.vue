@@ -17,8 +17,9 @@ const isStatic=()=>typeof location!=='undefined'&&((location.search.includes('st
 type P=[number,number,number]
 function proj(p:P):[number,number,number]{
  // Beam longitudinal axis is local +x (physical +z). Rotate the model,
- // including tracks and label anchors, by +90 degrees before camera projection.
- const [x,y,z]:P=props.scene==='detector'&&!props.compact?[p[0],-p[2],p[1]]:p
+ // including tracks and label anchors, by -90 degrees before camera projection.
+ // This flips the cover/chapter view 180 degrees around the displayed local X axis.
+ const [x,y,z]:P=props.scene==='detector'&&!props.compact?[p[0],p[2],-p[1]]:p
  const turn=state.yaw
  const a=x*Math.cos(turn)+z*Math.sin(turn), b=-x*Math.sin(turn)+z*Math.cos(turn)
  // An orthonormal camera basis keeps screen coordinates and depth consistent.
@@ -42,7 +43,7 @@ function dot(p:P,r:number,color:string){if(!ctx)return;let a=proj(p);ctx.beginPa
 function cameraEye():P{
  // Invert the camera depth axis, then undo the model rotation.
  const eye:P=[10*Math.sin(state.yaw)*Math.cos(state.pitch),-10*Math.sin(state.pitch),-10*Math.cos(state.yaw)*Math.cos(state.pitch)]
- return props.scene==='detector'&&!props.compact?[eye[0],eye[2],-eye[1]]:eye
+ return props.scene==='detector'&&!props.compact?[eye[0],-eye[2],eye[1]]:eye
 }
 function box(x:number,y:number,z:number,dx:number,dy:number,dz:number,color:string,fill:string,grid=0,layers=false){
  const vs:P[]=[[x,y,z],[x+dx,y,z],[x+dx,y+dy,z],[x,y+dy,z],[x,y,z+dz],[x+dx,y,z+dz],[x+dx,y+dy,z+dz],[x,y+dy,z+dz]]
