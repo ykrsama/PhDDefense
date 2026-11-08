@@ -1,0 +1,228 @@
+{
+  "constraints": {
+    "source": "PhDThesis/figures/ch02_theoretical_background/SummaryPlot_tikz.pdf",
+    "display": "figures/constraints.svg",
+    "original": "figures/constraints.pdf"
+  },
+  "shine": {
+    "source": "PhDThesis/figures/ch03_darkshine_detector/DarkSHINE-Kicker.pdf",
+    "display": "figures/shine.svg",
+    "original": "figures/shine.pdf"
+  },
+  "ecal-resolution": {
+    "source": "PhDThesis/figures/ch03_darkshine_detector/ECAL/ECAL_Resolutions_v1.0_py.pdf",
+    "display": "figures/ecal-resolution.svg",
+    "original": "figures/ecal-resolution.pdf"
+  },
+  "ecal-hardware": {
+    "source": "PhDThesis/figures/ch03_darkshine_detector/ECAL/LYSO_Module.png",
+    "display": "figures/ecal-hardware.png",
+    "original": "figures/ecal-hardware.png"
+  },
+  "field": {
+    "source": "PhDThesis/figures/ch03_darkshine_detector/Magnetic/MagneticStrength.png",
+    "display": "figures/field.png",
+    "original": "figures/field.png"
+  },
+  "hcal-veto": {
+    "source": "PhDThesis/figures/ch03_darkshine_detector/HCAL/VetoInEffBaseline1.pdf",
+    "display": "figures/hcal-veto.svg",
+    "original": "figures/hcal-veto.pdf"
+  },
+  "lut-eff": {
+    "source": "PhDThesis/figures/ch04_simu_reco/QBL-optical-eff-val.png",
+    "display": "figures/lut-eff.png",
+    "original": "figures/lut-eff.png"
+  },
+  "lut-map": {
+    "source": "PhDThesis/figures/ch04_simu_reco/QBL-optical-eff.png",
+    "display": "figures/lut-map.png",
+    "original": "figures/lut-map.png"
+  },
+  "lut-time": {
+    "source": "PhDThesis/figures/ch04_simu_reco/QBL-optical-timing-val.png",
+    "display": "figures/lut-time.png",
+    "original": "figures/lut-time.png"
+  },
+  "waveform": {
+    "source": "PhDThesis/figures/ch04_simu_reco/QBL-digitization-p1.pdf",
+    "display": "figures/waveform.svg",
+    "original": "figures/waveform.pdf"
+  },
+  "fit-comparison": {
+    "source": "PhDThesis/figures/ch04_simu_reco/YFZ-track-fitting.png",
+    "display": "figures/fit-comparison.png",
+    "original": "figures/fit-comparison.png"
+  },
+  "generator-comparison": {
+    "source": "PhDThesis/figures/ch04_simu_reco/XC_compared_generators.png.png",
+    "display": "figures/generator-comparison.png",
+    "original": "figures/generator-comparison.png"
+  },
+  "generator-ratio": {
+    "source": "PhDThesis/figures/ch04_simu_reco/XC_ratio_plot_calchep_based.png",
+    "display": "figures/generator-ratio.png",
+    "original": "figures/generator-ratio.png"
+  },
+  "generator-angle": {
+    "source": "PhDThesis/figures/ch04_simu_reco/XC_dp_electron_angle.pdf",
+    "display": "figures/generator-angle.svg",
+    "original": "figures/generator-angle.pdf"
+  },
+  "xsections": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/cross_sections_plot.pdf",
+    "display": "figures/xsections.svg",
+    "original": "figures/xsections.pdf"
+  },
+  "missing-p": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/brem_missingP.pdf",
+    "display": "figures/missing-p.svg",
+    "original": "figures/missing-p.pdf"
+  },
+  "ecal-brem": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/brem_ECAL_E_total.pdf",
+    "display": "figures/ecal-brem.svg",
+    "original": "figures/ecal-brem.pdf"
+  },
+  "ecal-ann": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/tch_ECAL_E_total.pdf",
+    "display": "figures/ecal-ann.svg",
+    "original": "figures/ecal-ann.pdf"
+  },
+  "cell-ann": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/tch_log10_ECAL_E_max.pdf",
+    "display": "figures/cell-ann.svg",
+    "original": "figures/cell-ann.pdf"
+  },
+  "cell-res": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/sch_log10_ECAL_E_max.pdf",
+    "display": "figures/cell-res.svg",
+    "original": "figures/cell-res.pdf"
+  },
+  "validation": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/validation.pdf",
+    "display": "figures/validation.svg",
+    "original": "figures/validation.pdf"
+  },
+  "sr1-tail": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/bremCut_pn_ecal.pdf",
+    "display": "figures/sr1-tail.svg",
+    "original": "figures/sr1-tail.pdf"
+  },
+  "sr2-tail": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/tchCut_pn_ecal.pdf",
+    "display": "figures/sr2-tail.svg",
+    "original": "figures/sr2-tail.pdf"
+  },
+  "sr3-tail": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/schCut_pn_ecal.pdf",
+    "display": "figures/sr3-tail.svg",
+    "original": "figures/sr3-tail.pdf"
+  },
+  "sr3-target": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/schCut_pn_target.pdf",
+    "display": "figures/sr3-target.svg",
+    "original": "figures/sr3-target.pdf"
+  },
+  "inclusive1": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/bremCut_inclusive.pdf",
+    "display": "figures/inclusive1.svg",
+    "original": "figures/inclusive1.pdf"
+  },
+  "inclusive2": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/tchCut_inclusive.pdf",
+    "display": "figures/inclusive2.svg",
+    "original": "figures/inclusive2.pdf"
+  },
+  "modes": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/limits_mA_modes.pdf",
+    "display": "figures/modes.svg",
+    "original": "figures/modes.pdf"
+  },
+  "limits": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/limits_mA.pdf",
+    "display": "figures/limits.svg",
+    "original": "figures/limits.pdf"
+  },
+  "dm-limits": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/limits_mX.pdf",
+    "display": "figures/dm-limits.svg",
+    "original": "figures/dm-limits.pdf"
+  },
+  "efficiency_brem_tchCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_brem_tchCut.pdf",
+    "display": "figures/efficiency_brem_tchCut.svg",
+    "original": "figures/efficiency_brem_tchCut.pdf"
+  },
+  "efficiency_brem_schCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_brem_schCut.pdf",
+    "display": "figures/efficiency_brem_schCut.svg",
+    "original": "figures/efficiency_brem_schCut.pdf"
+  },
+  "efficiency_brem_bremCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_brem_bremCut.pdf",
+    "display": "figures/efficiency_brem_bremCut.svg",
+    "original": "figures/efficiency_brem_bremCut.pdf"
+  },
+  "efficiency_allChannel_schCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_allChannel_schCut.pdf",
+    "display": "figures/efficiency_allChannel_schCut.svg",
+    "original": "figures/efficiency_allChannel_schCut.pdf"
+  },
+  "efficiency_tch_schCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_tch_schCut.pdf",
+    "display": "figures/efficiency_tch_schCut.svg",
+    "original": "figures/efficiency_tch_schCut.pdf"
+  },
+  "efficiency_sch_schCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_sch_schCut.pdf",
+    "display": "figures/efficiency_sch_schCut.svg",
+    "original": "figures/efficiency_sch_schCut.pdf"
+  },
+  "efficiency_allChannel_tchCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_allChannel_tchCut.pdf",
+    "display": "figures/efficiency_allChannel_tchCut.svg",
+    "original": "figures/efficiency_allChannel_tchCut.pdf"
+  },
+  "efficiency_allChannel_bremCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_allChannel_bremCut.pdf",
+    "display": "figures/efficiency_allChannel_bremCut.svg",
+    "original": "figures/efficiency_allChannel_bremCut.pdf"
+  },
+  "efficiency_sch_tchCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_sch_tchCut.pdf",
+    "display": "figures/efficiency_sch_tchCut.svg",
+    "original": "figures/efficiency_sch_tchCut.pdf"
+  },
+  "efficiency_tch_tchCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_tch_tchCut.pdf",
+    "display": "figures/efficiency_tch_tchCut.svg",
+    "original": "figures/efficiency_tch_tchCut.pdf"
+  },
+  "efficiency_sch_bremCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_sch_bremCut.pdf",
+    "display": "figures/efficiency_sch_bremCut.svg",
+    "original": "figures/efficiency_sch_bremCut.pdf"
+  },
+  "efficiency_tch_bremCut": {
+    "source": "PhDThesis/figures/ch05_positron_analysis/efficiency_tch_bremCut.pdf",
+    "display": "figures/efficiency_tch_bremCut.svg",
+    "original": "figures/efficiency_tch_bremCut.pdf"
+  },
+  "bullet": {
+    "display": "figures/DEF-218.jpg",
+    "source": "Refs/assets/refs/ZhiyuZhao_dessertation_defense_v8/media/DEF-218.jpg"
+  },
+  "rotation": {
+    "display": "figures/DEF-230.png",
+    "source": "Refs/assets/refs/ZhiyuZhao_dessertation_defense_v8/media/DEF-230.png"
+  },
+  "cmb": {
+    "display": "figures/DEF-241.jpg",
+    "source": "Refs/assets/refs/ZhiyuZhao_dessertation_defense_v8/media/DEF-241.jpg"
+  },
+  "facility": {
+    "display": "figures/DEF-364.png",
+    "source": "Refs/assets/refs/ZhiyuZhao_dessertation_defense_v8/media/DEF-364.png"
+  }
+}

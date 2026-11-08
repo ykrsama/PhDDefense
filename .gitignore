@@ -1,0 +1,14 @@
+node_modules/
+**/dist/
+site/
+
+# Local review renders and browser captures; keep final PDFs and deliverables.
+output/qa*/
+output/pdf-render/
+output/*.log
+output/pdf/test*
+output/pdf/retest*
+scripts/.qa-selected-run.mjs
+
+# OS/editor noise
+.DS_Store

@@ -1,0 +1,22 @@
+---
+layout: default
+class: content-slide slide-shine
+transition: slide-left
+clicks: 0
+title: "SHINE facility and DarkSHINE beamline"
+---
+
+<div class="eyebrow">Physics motivation and DarkSHINE</div>
+
+# SHINE facility and DarkSHINE beamline
+
+<div class="columns wide"><div><div class="plot-large"><Plot src="figures/DEF-364.png" caption="SHINE superconducting linac and experimental halls." /></div></div><div><h2 class="blue">A high-repetition-rate source</h2><p>Shanghai High Repetition-Rate XFEL and Extreme Light Facility</p><div class="statline"><div><b>8 GeV</b><span>Reference beam energy</span></div></div><div class="statline"><div><b>10 MHz</b><span>Nominal single-particle rate</span></div></div><p class="small" style="margin-top:20px">Exposure benchmark: <LaTeX formula="3\times10^{14}" /> incident particles.</p></div></div><div class="takeaway">A dedicated extraction branch provides the basis for the electron programme. Positron delivery is a prospective extension.</div>
+<div class="source">SHINE layout: supplied collaboration assets. Rate updated to 10 MHz for this defence.</div>
+
+<!--
+Time: 55 seconds.
+
+SHINE provides the accelerator setting for DarkSHINE. The electron programme uses a dedicated single-particle extraction branch alongside the FEL beamlines. I use the eight GeV reference beam energy and an exposure of three times ten to the fourteen incident particles. The nominal rate shown here is ten MHz, as adopted for this defence, rather than the one MHz value in the older text. At this rate the benchmark corresponds approximately to a full calendar year of continuous delivery. Actual running time and duty factor remain separate operational inputs. The positron analysis studies the physics benefit of an extension; it does not demonstrate an implemented positron beamline.
+
+Source context: SHINE layout: supplied collaboration assets. Rate updated to 10 MHz for this defence.
+-->
