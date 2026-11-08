@@ -107,7 +107,7 @@ function detectorAxes(){
  dot(origin,3,'#dce2ea')
 }
 function detector(){
- // Beam-axis dimensions follow the annotated simulation geometry reference.
+ // Reference geometry with a visual 2x longitudinal stretch of the tracking assembly.
  const {ecalWidth,targetWidth,targetHeight}=geometry
  const hcalHalf=geometry.hcalWidth/2
  box(geometry.hcalFront,-hcalHalf,-hcalHalf,geometry.hcalLength,geometry.hcalWidth,geometry.hcalWidth,'rgba(186,165,255,.3)','rgba(62,58,85,.12)',24,true)
