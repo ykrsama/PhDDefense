@@ -18,6 +18,7 @@ export function particleTimeline(time,incoming,recoil,dark,staticFrame=false){
   red:outgoing>=0&&distance<darkLength?atDistance(dark,distance):null,
   impact:outgoing>=0&&outgoing<.10,
   showerAge:outgoing-recoilLength/speed,
+  cycleRemaining:cycle-elapsed,
   cycle,entryTime:entryLength/speed,recoilTime:recoilLength/speed,darkTime:darkLength/speed,
  }
 }

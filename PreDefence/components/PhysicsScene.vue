@@ -91,8 +91,9 @@ function detector(){
  if(particles.yellow)dot(particles.yellow as P,2.8,'#fff0ba')
  if(particles.red)dot(particles.red as P,2.2,'#ffc1d0')
  const showerStart=recoil[recoil.length-1]
- if(particles.showerAge>=0&&particles.showerAge<1.1){
-  const progress=Math.min(1,particles.showerAge/.45),fade=Math.min(1,(1.1-particles.showerAge)/.45)
+ if(particles.showerAge>=0){
+  // Keep the developed shower visible until the outgoing tracks finish this cycle.
+  const progress=Math.min(1,particles.showerAge/.45),fade=Math.min(1,particles.cycleRemaining/.35)
   for(let k=0;k<11;k++){
    const u=progress*(.65+.35*(k%4)/3)
    const end:P=[showerStart[0]+.40*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
