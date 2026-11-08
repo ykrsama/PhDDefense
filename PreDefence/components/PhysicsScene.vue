@@ -85,7 +85,7 @@ function trackerPlane(x:number,width:number,height:number,thickness:number){
  for(let k=1;k<8;k++)path([[x,-height/2,-width/2+k*width/8],[x,height/2,-width/2+k*width/8]],'rgba(119,201,255,.23)',.5)
 }
 // Temporary model-coordinate guide while tuning the recoil direction.
-const showDetectorAxes=true
+const showDetectorAxes=false
 function detectorAxes(){
  const origin:P=[geometry.targetX,0,0],start=proj(origin),axisLength=.45
  const axes:{name:string;end:P;color:string}[]=[
