@@ -52,22 +52,22 @@ const streams = computed(() => props.mode === 'brem'
   ? [
       { d: 'M30 45 L110 75 L185 65 L290 30', color: '#77c9ff' },
       { d: 'M30 167 L145 167 L290 167', color: '#77c9ff' },
-      { d: wave([110,75],[145,167]), color: '#baa5ff' },
-      { d: 'M185 65 L285 112', color: '#f69cab', dashed: true },
+      { d: wave([110,75],[145,167]), color: '#f0c36e' },
+      { d: 'M185 65 L285 112', color: '#baa5ff', dashed: true },
     ]
   : props.mode === 'radiative'
     ? [
         { d: 'M30 35 L145 75 L145 125', color: '#77c9ff' },
         { d: 'M30 170 L145 125', color: '#77c9ff' },
         { d: wave([145,75],[285,35]), color: '#f0c36e' },
-        { d: 'M145 125 L285 170', color: '#f69cab', dashed: true },
+        { d: 'M145 125 L285 170', color: '#baa5ff', dashed: true },
       ]
     : [
         { d: 'M30 35 L115 100', color: '#77c9ff' },
         { d: 'M30 170 L115 100', color: '#77c9ff' },
-        { d: 'M115 100 H210', color: '#f69cab', dashed: true },
-        { d: 'M210 100 L290 35', color: '#77c9ff' },
-        { d: 'M210 100 L290 170', color: '#77c9ff' },
+        { d: 'M115 100 H210', color: '#baa5ff', dashed: true },
+        { d: 'M210 100 L290 35', color: '#baa5ff' },
+        { d: 'M210 100 L290 170', color: '#baa5ff' },
       ])
 const dashedRoute = computed(() => streams.value.find(route => route.dashed))
 const streamOffset = index => -100 * (phase.cycle + index * 0.17)
@@ -76,14 +76,14 @@ const streamOffset = index => -100 * (phase.cycle + index * 0.17)
   <svg viewBox="0 0 330 205" class="feynman">
     <defs><mask :id="dashMaskId" maskUnits="userSpaceOnUse" x="0" y="0" width="330" height="205"><path :d="dashedRoute.d" fill="none" stroke="white" stroke-width="2.8" stroke-dasharray="6 4" /></mask></defs>
     <g v-for="(line, index) in lines" :key="index">
-      <path :d="`M${line[0]} ${line[1]} L${line[2]} ${line[3]}`" fill="none" stroke="#77c9ff" stroke-width="1.5" />
+      <path :d="`M${line[0]} ${line[1]} L${line[2]} ${line[3]}`" fill="none" :stroke="mode === 'resonant' && index >= 2 ? '#baa5ff' : '#77c9ff'" stroke-width="1.5" />
 
-      <path d="M-5 -3.5 L5 0 L-5 3.5Z" :transform="arrow(line)" fill="#77c9ff" />
+      <path d="M-5 -3.5 L5 0 L-5 3.5Z" :transform="arrow(line)" :fill="mode === 'resonant' && index >= 2 ? '#baa5ff' : '#77c9ff'" />
     </g>
     <template v-if="mode === 'brem'">
-      <path :d="wave([110,75],[145,167])" stroke="#baa5ff" fill="none" stroke-width="1.4" />
+      <path :d="wave([110,75],[145,167])" stroke="#f0c36e" fill="none" stroke-width="1.4" />
 
-      <path d="M185 65 L285 112" stroke="#f69cab" stroke-dasharray="6 4" stroke-width="1.5" />
+      <path d="M185 65 L285 112" stroke="#baa5ff" stroke-dasharray="6 4" stroke-width="1.5" />
 
       <text x="19" y="30">{{charge === '-' ? 'e⁻' : 'e⁺'}}</text><text x="290" y="21">{{charge === '-' ? 'e⁻' : 'e⁺'}}</text><text x="289" y="119">A′</text><text x="15" y="190">N</text><text x="289" y="190">N</text>
     </template>
@@ -92,12 +92,12 @@ const streamOffset = index => -100 * (phase.cycle + index * 0.17)
       <template v-if="mode === 'radiative'">
         <path :d="wave([145,75],[285,35])" stroke="#f0c36e" fill="none" stroke-width="1.5" />
 
-        <path d="M145 125 L285 170" stroke="#f69cab" stroke-width="1.5" stroke-dasharray="6 4" />
+        <path d="M145 125 L285 170" stroke="#baa5ff" stroke-width="1.5" stroke-dasharray="6 4" />
 
         <text x="292" y="39">γ</text><text x="290" y="178">A′</text>
       </template>
       <template v-else>
-        <path d="M115 100 H210" stroke="#f69cab" stroke-width="1.5" stroke-dasharray="6 4" />
+        <path d="M115 100 H210" stroke="#baa5ff" stroke-width="1.5" stroke-dasharray="6 4" />
 
         <text x="152" y="87">A′</text>
         <text x="294" y="36">χ</text><text x="294" y="183">χ̄</text>

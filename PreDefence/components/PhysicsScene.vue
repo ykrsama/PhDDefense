@@ -121,11 +121,11 @@ function detector(){
   trackerPlane(x,width,height,geometry.recoilThickness)
  })
  const incoming=geometry.incoming as P[],recoil=geometry.recoil as P[],dark=geometry.dark as P[]
- path(incoming,'#77c9ff',2);path(recoil,'#f0c36e',2.2);path(dark,'#f69cab',1.7,[7,6])
+ path(incoming,'#77c9ff',2);path(recoil,'#77c9ff',2.2);path(dark,'#baa5ff',1.7,[7,6])
  const particles=particleTimeline(state.t,incoming,recoil,dark,isStatic())
  if(particles.blue)dot(particles.blue as P,3,'#d2eeff')
- if(particles.yellow)dot(particles.yellow as P,2.8,'#fff0ba')
- if(particles.red)dot(particles.red as P,2.2,'#ffc1d0')
+ if(particles.yellow)dot(particles.yellow as P,2.8,'#77c9ff')
+ if(particles.red)dot(particles.red as P,2.2,'#baa5ff')
  const showerStart=recoil[recoil.length-1]
  if(particles.showerAge>=0){
   // Keep the developed shower visible until the outgoing tracks finish this cycle.
@@ -133,7 +133,7 @@ function detector(){
   for(let k=0;k<11;k++){
    const u=progress*(.65+.35*(k%4)/3)
    const end:P=[showerStart[0]+geometry.ecalLength*.9*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
-   path([showerStart,end],`rgba(240,195,110,${.55*fade})`,.9)
+   path([showerStart,end],`rgba(119,201,255,${.55*fade})`,.9)
   }
  }
  if(props.labels){
@@ -238,10 +238,10 @@ function atom(){
    emit([2.45,1.12,.28],'194,175,233','χ',true)
    emit([2.30,-.72,-.20],'194,175,233','χ̄',true)
   }else if(mode===1){
-   emit([2.45,1.12,.28],'240,195,110','A′',true)
-   emit([2.30,-.72,-.20],'119,201,255','γ',false,true)
+   emit([2.45,1.12,.28],'186,165,255','A′',true)
+   emit([2.30,-.72,-.20],'240,195,110','γ',false,true)
   }else{
-   emit([2.34,-.19,0],'240,195,110','A′',true)
+   emit([2.34,-.19,0],'186,165,255','A′',true)
    emit([2.34,1.61,.35],'246,156,171','e⁺')
   }
  }
