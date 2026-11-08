@@ -26,9 +26,10 @@ export function atomTimeline(time) {
     collided: local >= COLLISION_TIME,
     incoming: clamp(local / COLLISION_TIME),
     vertex: mode === 2 ? NUCLEAR_VERTEX : ANNIHILATION_VERTEX,
-    // Two consumed electrons stay absent until a fresh atom fades in next loop.
+    // Restore only the consumed electrons on their continuing orbits before reset.
     electrons: [0, 1, 2].filter(i => !(i === 0 && t >= COLLISION_TIME) && !(i === 2 && t >= ENCOUNTER_DURATION + COLLISION_TIME)),
-    atomOpacity: smooth(t / .4) * smooth((ATOM_PERIOD - t) / .4),
+    returningElectronsOpacity: smooth((t - (ATOM_PERIOD - .8)) / .8),
+    recoilReturn: 1 - smooth((local - 5) / 1),
     eventOpacity: smooth(local / .3) * smooth((ENCOUNTER_DURATION - local) / .45),
   }
 }

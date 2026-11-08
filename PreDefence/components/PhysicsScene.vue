@@ -131,11 +131,10 @@ function atom(){
  const frame=atomTimeline(state.t),{t,mode,local,after,vertex:origin}=frame
  const vertex=origin as P
  canvas.value.dataset.atom=JSON.stringify({mode,local,electrons:frame.electrons.length})
- canvas.value.style.opacity=String(.95*frame.atomOpacity)
  // Only the nucleus recoils in the nuclear encounter; the displacement is small.
- const recoil=mode===2?Math.min(after*.045,.09):0
+ const recoil=mode===2?Math.min(after*.045,.09)*frame.recoilReturn:0
  const nucleus:P=[.65+recoil,-recoil*.3,0]
- sphere(nucleus,.19,'rgba(240,195,110,.42)',t*.1)
+ sphere(nucleus,.19,'rgba(240,195,110,.42)',t*ORBIT_SPEED)
  for(let i=0;i<35;i++){
   const a=i*2.4,b=Math.acos(1-2*(i+.5)/35)
   dot([nucleus[0]+.16*Math.sin(b)*Math.cos(a),nucleus[1]+.16*Math.cos(b),.16*Math.sin(b)*Math.sin(a)],3.5,i%2?'#d6b372':'#8da8c0')
@@ -149,6 +148,8 @@ function atom(){
   if(k<4)for(let j=0;j<3;j++)dot(orbit(t*ORBIT_SPEED+k+j*2*Math.PI/3),2.5,'#77c9ff')
  }
  for(const i of frame.electrons)dot(outerElectronPosition(t,i) as P,3,'#77c9ff')
+ if(frame.returningElectronsOpacity>0)for(const i of [0,2])
+  dot(outerElectronPosition(t,i) as P,3,`rgba(119,201,255,${frame.returningElectronsOpacity})`)
  // The incoming positron meets the existing orbiting electron at the vertex.
  const start:P=[-2.6,vertex[1],vertex[2]],alpha=frame.eventOpacity
  const color=(rgb:string,a=1)=>`rgba(${rgb},${a*alpha})`
