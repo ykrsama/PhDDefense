@@ -4,7 +4,7 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
-import { atomTimeline, outerElectronPosition, COLLISION_TIME, ORBIT_SPEED } from '../utils/atomTimeline.js'
+import { atomTimeline, outerElectronPosition, COLLISION_TIME, ENCOUNTER_DURATION, ORBIT_SPEED } from '../utils/atomTimeline.js'
 import { useNav, useSlideContext } from '@slidev/client'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
 const canvas=ref<HTMLCanvasElement>()
@@ -151,19 +151,28 @@ function atom(){
  if(frame.returningElectronsOpacity>0)for(const i of [0,2])
   dot(outerElectronPosition(t,i) as P,3,`rgba(119,201,255,${frame.returningElectronsOpacity})`)
  // The incoming positron meets the existing orbiting electron at the vertex.
- const start:P=[-2.6,vertex[1],vertex[2]],alpha=frame.eventOpacity
+ const beamGuide:P=[-2.6,vertex[1],vertex[2]],alpha=frame.eventOpacity
  const color=(rgb:string,a=1)=>`rgba(${rgb},${a*alpha})`
- const incoming:P=[start[0]+(vertex[0]-start[0])*frame.incoming,vertex[1],vertex[2]]
+ // Invert perspective along either ray so apparent speed stays constant.
+ const rayFraction=(end:P,travel:number)=>{
+  const a=proj(vertex),b=proj(end),projectedDistance=Math.hypot(b[0]-a[0],b[1]-a[1])
+  return travel*(10+a[2])/(projectedDistance*(10+b[2])-travel*(b[2]-a[2]))
+ }
+ const beamPoint=(travel:number):P=>{
+  const u=rayFraction(beamGuide,travel)
+  return vertex.map((x,i)=>x+(beamGuide[i]-x)*u) as P
+ }
+ const beamStart=proj(beamGuide),beamEnd=proj(vertex)
+ const incomingLength=Math.hypot(beamEnd[0]-beamStart[0],beamEnd[1]-beamStart[1])
+ const outgoingLength=incomingLength/COLLISION_TIME*(ENCOUNTER_DURATION-COLLISION_TIME)
+ const start=beamGuide,incoming=beamPoint(incomingLength*(1-frame.incoming))
  path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
  if(!frame.collided){dot(incoming,3.5,color('246,156,171'));label('e⁺',incoming,0,-14)}
- // Equal projected lengths and one shared progress keep every outgoing particle
- // visible for the same duration, without parking at the end or clipping early.
+ // Keep the original timing; longer outgoing rays match the incoming speed.
+ // Every final-state particle shares the same length and progress.
  const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
   const distance=Math.hypot(...end.map((x,i)=>x-vertex[i]))
-  const a=proj(vertex),b=proj(end),projectedDistance=Math.hypot(b[0]-a[0],b[1]-a[1])
-  const travel=200*frame.outgoing
-  // Invert perspective along the ray to obtain constant speed on the canvas.
-  const u=travel*(10+a[2])/(projectedDistance*(10+b[2])-travel*(b[2]-a[2]))
+  const u=rayFraction(end,outgoingLength*frame.outgoing)
   const tip=vertex.map((x,i)=>x+(end[i]-x)*u) as P
   if(photon){
    const points=Array.from({length:90},(_,i):P=>{
