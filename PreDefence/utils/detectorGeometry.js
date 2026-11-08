@@ -2,6 +2,7 @@
 // Visually stretch the tracking assembly by 1.5 along x about the target.
 // Calorimeters retain their dimensions and follow the extended tracking assembly.
 const trackingStretch = 1.5
+const trackingHeightStretch = 1.5
 // Local x follows the beam, z is the bending direction, y is vertical.
 const tagLength = .600216 * trackingStretch, recoilLength = .172714 * trackingStretch
 const ecalLength = .3834, hcalLength = 3.03601
@@ -13,14 +14,14 @@ const recoilBack = recoilFront + recoilLength
 const ecalFront = recoilBack + .001, ecalBack = ecalFront + ecalLength
 const hcalFront = ecalBack + .001, hcalBack = hcalFront + hcalLength
 export const detectorGeometry = Object.freeze({
-  targetX, targetThickness, targetWidth: .20, targetHeight: .10, trackerHeight: .10,
+  targetX, targetThickness, targetWidth: .20, targetHeight: .10 * trackingHeightStretch, trackerHeight: .10 * trackingHeightStretch,
   tagLength, tagFront, tagBack, tagCenter: (tagFront + tagBack) / 2,
   tagThickness: .000216 * trackingStretch,
   tagPlanes: Array.from({ length: 7 }, (_, i) => tagFront + i * .1 * trackingStretch),
   recoilLength, recoilFront, recoilBack, recoilCenter: (recoilFront + recoilBack) / 2,
   recoilThickness: .000214 * trackingStretch,
   recoilWidthFractions: [20, 20, 20, 24, 36, 50].map(width => width / 50),
-  recoilHeights: [10, 10, 10, 11.5, 14, 20].map(height => height / 100),
+  recoilHeights: [10, 10, 10, 11.5, 14, 20].map(height => height / 100 * trackingHeightStretch),
   // Preserve the non-uniform layer spacing in the simulation reference geometry.
   recoilPlanes: [0, .015, .031, .046, .082, .1725].map(x => recoilFront + x * trackingStretch),
   ecalLength, ecalFront, ecalBack, ecalCenter: (ecalFront + ecalBack) / 2, ecalWidth: .5,
