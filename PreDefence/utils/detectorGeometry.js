@@ -11,6 +11,11 @@ const tagBack = targetX - targetThickness / 2 - targetGap
 const tagFront = tagBack - tagLength
 const recoilFront = targetX + targetThickness / 2 + targetGap
 const recoilBack = recoilFront + recoilLength
+const recoilThickness = .000214 * trackingStretch
+const recoilPlateCoordinates = [-86.25, -71.25, -55.25, -40.25, -4.25, 86.25]
+// Map the reference plate-centre span onto the existing assembly, retaining its thickness.
+const recoilPlateSpan = recoilLength - recoilThickness
+const recoilPlateCenter = recoilFront + recoilPlateSpan / 2
 const ecalFront = recoilBack + .001, ecalBack = ecalFront + ecalLength
 const hcalFront = ecalBack + .001, hcalBack = hcalFront + hcalLength
 export const detectorGeometry = Object.freeze({
@@ -19,11 +24,11 @@ export const detectorGeometry = Object.freeze({
   tagThickness: .000216 * trackingStretch,
   tagPlanes: Array.from({ length: 7 }, (_, i) => tagFront + i * .1 * trackingStretch),
   recoilLength, recoilFront, recoilBack, recoilCenter: (recoilFront + recoilBack) / 2,
-  recoilThickness: .000214 * trackingStretch,
+  recoilThickness,
   recoilWidthFractions: [20, 20, 20, 24, 36, 50].map(width => width / 50),
   recoilHeights: [10, 10, 10, 11.5, 14, 20].map(height => height / 100 * trackingHeightStretch),
-  // Preserve the non-uniform layer spacing in the simulation reference geometry.
-  recoilPlanes: [0, .015, .031, .046, .082, .1725].map(x => recoilFront + x * trackingStretch),
+  // Reference x coordinates are centred on zero with a full span of 2 * 86.25.
+  recoilPlanes: recoilPlateCoordinates.map(x => recoilPlateCenter + x / (2 * 86.25) * recoilPlateSpan),
   ecalLength, ecalFront, ecalBack, ecalCenter: (ecalFront + ecalBack) / 2, ecalWidth: .5,
   // Keep the previously selected transverse aperture; this change follows beam-axis lengths.
   hcalLength, hcalFront, hcalBack, hcalCenter: (hcalFront + hcalBack) / 2, hcalWidth: 4,
