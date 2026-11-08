@@ -6,7 +6,7 @@ clicks: 0
 title: "Outline"
 ---
 
-<h1>Outline</h1><div class="outline-list"><div class="outline-row"><b>01</b><span>Physics motivation<br/>and DarkSHINE</span></div><div class="outline-row"><b>02</b><span>Event simulation<br/>and reconstruction</span></div><div class="outline-row"><b>03</b><span>Positron-beam-mode<br/>analysis</span></div><div class="outline-row"><b>04</b><span>Summary and outlook</span></div></div>
+<h1>Outline</h1><div class="outline-list"><div class="outline-row"><b>01</b><span>Physics Motivation and<br/>DarkSHINE Experiment</span></div><div class="outline-row"><b>02</b><span>Event Simulation and<br/>Reconstruction in DarkSHINE</span></div><div class="outline-row"><b>03</b><span>Positron-Beam-Mode<br/>Analysis</span></div><div class="outline-row"><b>04</b><span>Summary and Outlook</span></div></div>
 
 <!--
 Time: 35 seconds.
