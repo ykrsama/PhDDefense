@@ -34,7 +34,7 @@
 .slide-efficiency .plot-mid{height:260px}.slide-efficiency .formula-band{font-size:19px;margin:12px 0;padding:8px 18px}
 .slide-achievements .achievement{padding:8px 0;font-size:13px;line-height:1.28}.slide-achievements .achievement strong{font-size:14px}.slide-achievements .achievement span{font-size:11px}.slide-achievements .achievement.highlight{padding-left:13px}.slide-achievements .achievements{margin-top:8px;gap:28px}
 
-.slide-shine .statline{display:inline-block;width:48%;border-top:0;margin-top:6px;padding-top:5px}.slide-shine .columns>div:last-child h2{font-size:20px}.slide-shine .columns>div:last-child p{font-size:16px}
+.slide-shine .statline{display:inline-block;width:48%;border-top:0;margin-top:6px;padding-top:5px}.slide-shine .statline span{font-size:11px;white-space:nowrap}.slide-shine .columns>div:last-child h2{font-size:20px}.slide-shine .columns>div:last-child p{font-size:16px}
 .slide-generator-validation .columns>div:last-child p{font-size:17px}.slide-generator-validation .columns>div:last-child p.small{font-size:15px}.slide-generator-validation .rule{margin:13px 0}
 .slide-rejection td,.slide-rejection th{padding:8px 10px}
 
