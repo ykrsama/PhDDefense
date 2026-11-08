@@ -14,7 +14,7 @@ title: "Migration contributes to the selected signal"
 <!--
 Time: 30 seconds.
 
-At 90 MeV the production mixture changes strongly. Non-resonant annihilation now supplies about 95 percent of SR2, while resonant annihilation supplies about 84 percent of SR3. Bremsstrahlung is negligible at this benchmark. The off-diagonal contributions remain in the prediction. These are expected event counts at a fixed reference coupling, not raw simulated-event counts or efficiencies.
+At 90 MeV the production mixture changes strongly. Non-resonant annihilation now supplies about 95 percent of SR2, while resonant annihilation supplies about 84 percent of SR3. Bremsstrahlung is negligible at this benchmark. We retain the off-diagonal contributions in the prediction. The matrix gives expected event counts at a fixed reference coupling. Raw simulation counts and efficiencies are separate quantities.
 
 Source context: Dissertation table tab:benchmark_yields, 90 MeV benchmark.
 -->

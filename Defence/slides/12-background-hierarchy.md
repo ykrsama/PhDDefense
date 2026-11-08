@@ -14,7 +14,7 @@ title: "Standard Model background hierarchy"
 <!--
 Time: 55 seconds.
 
-This diagram preserves the branching hierarchy of the supplied reference. Electronuclear interactions form one branch. Hard bremsstrahlung forms the other, followed by ordinary pair conversion, photonuclear interactions or conversion to muon pairs. Target and ECAL interactions are shown separately because they encounter different veto material and have different rates. The vertical scale is an approximate relative-rate hierarchy from the reference electron study, not the sample-normalisation table for the positron analysis. The extremely small invisible electroweak contribution is separated from the visible leakage backgrounds. The computational challenge is to sample the visible rare branches efficiently without losing their physical normalisation.
+Electronuclear interactions form one branch of the background hierarchy. Hard bremsstrahlung forms the other, followed by ordinary pair conversion, photonuclear interactions or conversion to muon pairs. Target and ECAL interactions are shown separately because they encounter different veto material and have different rates. The vertical scale gives approximate relative rates in the reference electron study. The positron samples use a separate normalisation. The extremely small invisible electroweak contribution is separated from the visible leakage backgrounds. We need to sample these rare visible branches efficiently and retain their physical normalisation.
 
 Source context: DarkSHINE collaboration: electron-mode background hierarchy.
 -->

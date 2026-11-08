@@ -11,7 +11,7 @@ title: "Physics Motivation and DarkSHINE Experiment"
 <!--
 Time: 15 seconds.
 
-I begin with the physical motivation. The cluster animation illustrates why gravitational evidence motivates an unseen matter component, while the laboratory search still requires a specified interaction model.
+Gravitational observations motivate an unseen matter component. To search for it in the laboratory, we need to specify how it interacts with ordinary matter.
 
 Source context: Physics motivation and DarkSHINE, supplied dissertation sources.
 -->

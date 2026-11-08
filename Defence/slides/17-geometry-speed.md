@@ -16,7 +16,7 @@ title: "Geometry and event-record optimisation"
 <!--
 Time: 65 seconds.
 
-Two optimisations address different costs. The bounding volume hierarchy groups detector volumes so Geant4 can reject larger spatial regions before testing individual cells. In the cited software benchmark the time changes from two hundred and sixty to forty-two milliseconds per event, a ratio of about six point two. Event-record optimisation and memory alignment reduce the reported example from sixty point one to a minimum of thirteen point seven kilobytes per event. This factor describes storage for that configuration, not every possible event record. These are historical benchmark results from the software presentation. They should not be multiplied with the optical benchmark or presented as measurements of a single frozen release.
+Two optimisations address different costs. The bounding volume hierarchy groups detector volumes so Geant4 can reject larger spatial regions before testing individual cells. In the cited software benchmark the time changes from two hundred and sixty to forty-two milliseconds per event, a ratio of about six point two. Event-record optimisation and memory alignment reduce the reported example from sixty point one to a minimum of thirteen point seven kilobytes per event. The storage reduction applies to that event-record configuration. These historical software benchmarks use different configurations from the optical study shown later, so their speed-up factors cannot be multiplied or assigned to a single release.
 
 Source context: DSS_716, slides 7 and 11. Ratios calculated from the reported values; benchmark configurations differ.
 -->

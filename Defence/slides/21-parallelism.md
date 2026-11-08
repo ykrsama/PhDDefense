@@ -14,7 +14,7 @@ title: "Parallel event simulation"
 <!--
 Time: 55 seconds.
 
-Geant4 multi-threading allows several events to be processed within one job. The engineering work includes thread-local allocation and singleton state, as well as random-number and primary-generation handling. In the cited comparison, one eight-thread job takes fifteen thousand three hundred and twenty-eight seconds, compared with sixteen thousand six hundred and forty-eight seconds for eight single-thread jobs. This is an improvement of approximately eight percent in elapsed time for that comparison. It is not a measurement of eight-fold scaling from one core. The validation includes inclusive and rare-process distributions. The physics content must remain consistent as the scheduling and number of workers change.
+Geant4 multi-threading allows several events to be processed within one job. The engineering work includes thread-local allocation and singleton state, as well as random-number and primary-generation handling. In the cited comparison, one eight-thread job takes fifteen thousand three hundred and twenty-eight seconds, compared with sixteen thousand six hundred and forty-eight seconds for eight single-thread jobs. Both cases use eight concurrent execution units, giving an elapsed-time reduction of approximately eight percent. This comparison does not measure scaling from one core. The validation uses inclusive and rare-process distributions to check that changes in scheduling and worker count preserve the physics.
 
 Source context: DSS_716, slide 15, INPAC cluster benchmark. Relative time reduction calculated from reported times.
 -->

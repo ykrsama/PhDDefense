@@ -16,7 +16,7 @@ title: "Momentum and total-energy discrimination"
 <!--
 Time: 65 seconds.
 
-The left panel shows the tagging-to-recoil momentum difference for the recoil topology. The background curve already satisfies the loose production filter at one GeV, while the final analysis uses four GeV. Confusing those two thresholds would misstate the signal region. The right panel shows total ECAL energy for the non-resonant channel. Near the mediator endpoint, the accompanying photon becomes soft and the ninety MeV signal can satisfy a low visible-energy condition. This is why an annihilation process with a photon can still improve a missing-energy search. The detector response and acceptance determine the selected distribution, so the cut cannot be understood from the production rate alone.
+The left panel shows the tagging-to-recoil momentum difference for the recoil topology. The background curve already satisfies the loose production filter at one GeV, while the final analysis uses four GeV. The right panel shows total ECAL energy for the non-resonant channel. Near the mediator endpoint, the accompanying photon becomes soft and the ninety MeV signal can satisfy a low visible-energy condition. Even with an accompanying photon, this channel can contribute to the missing-energy search. Detector response and acceptance determine how many events pass the cut.
 
 Source context: Original detector-level distributions; arXiv:2609.05900.
 -->

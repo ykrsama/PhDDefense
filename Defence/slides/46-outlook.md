@@ -15,7 +15,7 @@ title: "Outlook"
 <!--
 Time: 55 seconds.
 
-The next work follows directly from the limitations. Detector data can constrain the response and veto thresholds. Larger rare-process samples can support the tails and help quantify model dependence. Pseudo-experiments can test the statistical approximation where expected backgrounds are extremely small. Finally, varying the beam energy moves the characteristic annihilation mass approximately with the square root of the energy. This suggests a way to investigate other masses, but each energy needs its own kinematics, acceptance and background study. The present result establishes the eight GeV benchmark and supplies a framework in which those extensions can be carried out.
+Detector data can constrain the response and veto thresholds. Larger rare-process samples can constrain the tails and help quantify model dependence. Pseudo-experiments can test the statistical approximation where expected backgrounds are extremely small. Finally, varying the beam energy moves the characteristic annihilation mass approximately with the square root of the energy. A beam-energy scan could therefore probe other masses. Each energy needs its own kinematics, acceptance and background study, using the eight GeV result and simulation framework as a starting point.
 
 Source context: Summary and outlook, supplied dissertation sources.
 -->

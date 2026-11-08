@@ -16,7 +16,7 @@ title: "Combined statistical interpretation"
 <!--
 Time: 70 seconds.
 
-At each mass the signal prediction sums all three production mechanisms in every region. One common signal strength scales those contributions because the same kinetic mixing controls their rates. The analysis uses a binned profile likelihood with nuisance parameters and obtains expected ninety-percent confidence-level limits with CLs under the background-only hypothesis. Shape uncertainties are treated as uncorrelated between bins in the reported construction, and the background normalisation uses its stated Poisson prescription. Region exclusivity prevents double counting of events but does not by itself imply that detector uncertainties are independent. The asymptotic method is used well below one expected background event, and its coverage has not yet been checked with pseudo-experiments.
+At each mass the signal prediction sums all three production mechanisms in every region. One common signal strength scales those contributions because the same kinetic mixing controls their rates. The analysis uses a binned profile likelihood with nuisance parameters and obtains expected ninety-percent confidence-level limits with CLs under the background-only hypothesis. Shape uncertainties are treated as uncorrelated between bins in the reported construction, and the background normalisation uses its stated Poisson prescription. Exclusive regions prevent event double counting. Detector uncertainties can still be correlated across regions. The asymptotic method is used well below one expected background event, and its coverage has not yet been checked with pseudo-experiments.
 
 Source context: Statistical prescription reported in arXiv:2609.05900; limitations retained.
 -->

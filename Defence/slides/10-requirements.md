@@ -15,7 +15,7 @@ title: "Detector requirements for a missing-energy search"
 <!--
 Time: 60 seconds.
 
-The detector requirements are tied to the background problem. A thin target limits multiple scattering while retaining sufficient production probability. Precise strip measurements determine the incident and recoil momenta. A soft recoil can curl in a strong field, so the recoil-field profile and acceptance matter together. The ECAL must measure the electromagnetic energy, and the HCAL must catch energy carried by neutral hadrons or muons. Subsystem hardware development is collaboration work. My contribution is the software framework and analysis that propagate the detector response into selected yields. In particular, a threshold used in the prospective analysis must be distinguished from a demonstrated system-level performance.
+Background rejection sets the detector requirements. A thin target limits multiple scattering while retaining sufficient production probability. Precise strip measurements determine the incident and recoil momenta. A soft recoil can curl in a strong field, so the recoil-field profile and acceptance matter together. The ECAL must measure the electromagnetic energy, and the HCAL must catch energy carried by neutral hadrons or muons. Subsystem hardware development is collaboration work. My contribution is the software framework and analysis that propagate the detector response into selected yields. The analysis thresholds are performance assumptions that still need to be demonstrated at the system level.
 
 Source context: DarkSHINE detector design and collaboration subsystem studies.
 -->

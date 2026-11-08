@@ -13,5 +13,5 @@ title: "Reference detector and evolved software geometry"
 <div class="source">Sources: supplied dissertation and positron-study figures. Publication and production assumptions retained.</div>
 
 <!--
-The reference geometry and the evolved implementation are deliberately kept separate. The positron result uses the same detector basis as the published electron comparison.
+The positron result uses the same detector basis as the published electron comparison. Later geometry developments belong to a separate software configuration.
 -->

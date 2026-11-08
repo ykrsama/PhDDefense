@@ -16,7 +16,7 @@ title: "Residual-background extrapolation"
 <!--
 Time: 75 seconds.
 
-For SR1 and SR2 the dedicated survival curves are fitted as a power law in the numerical total-ECAL threshold in MeV. The resulting nominal backgrounds are zero point zero three events for SR1 and one point three times ten to the minus four for SR2. SR3 needs a two-dimensional continuation because the total and maximum-cell energies are related. Its nominal yield is one point six times ten to the minus four. These are extrapolated predictions. Fit-function dependence, limited tail statistics and components omitted after zero survivors remain limitations. The inclusive one-dimensional comparison uses a different exponential form and does not establish quantitative closure at the final thresholds.
+For SR1 and SR2 the dedicated survival curves are fitted as a power law in the numerical total-ECAL threshold in MeV. The resulting nominal backgrounds are zero point zero three events for SR1 and one point three times ten to the minus four for SR2. SR3 needs a two-dimensional continuation because the total and maximum-cell energies are related. Its nominal yield is one point six times ten to the minus four. These predictions depend on the extrapolation function and limited tail statistics. They also omit components with zero surviving simulated events. The inclusive one-dimensional comparison uses a different exponential form and does not establish quantitative closure at the final thresholds.
 
 Source context: Dedicated tail estimates at 3×10¹⁴ POT. SR3 surface is a fit, not a selection boundary.
 -->

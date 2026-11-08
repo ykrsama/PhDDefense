@@ -16,7 +16,7 @@ title: "Why a positron beam?"
 <!--
 Time: 70 seconds.
 
-A positron keeps the nuclear bremsstrahlung process and adds annihilation on atomic electrons. The non-resonant process produces a photon together with the dark photon. Resonant annihilation can produce the dark photon without an accompanying visible hard particle. For an electron initially at rest, an eight GeV positron gives a centre-of-mass energy of about ninety MeV. This creates a characteristic mass scale that is absent from the electron bremsstrahlung channel. However, larger production rates alone do not establish an improvement. The visible topology, detector efficiency, migration and positron-specific backgrounds all have to be included. The following software section explains the infrastructure that makes that comparison possible.
+A positron keeps the nuclear bremsstrahlung process and adds annihilation on atomic electrons. The non-resonant process produces a photon together with the dark photon. Resonant annihilation can produce the dark photon without an accompanying visible hard particle. For an electron initially at rest, an eight GeV positron gives a centre-of-mass energy of about ninety MeV. This creates a characteristic mass scale that is absent from the electron bremsstrahlung channel. To calculate the sensitivity gain, we also need the visible topology, detector efficiency, migration and positron-specific backgrounds. I will first describe the software used to make that comparison.
 
 Source context: X. Zhu et al., arXiv:2609.05900. Radiative diagram shows one representative tree topology.
 -->

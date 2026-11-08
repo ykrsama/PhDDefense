@@ -14,7 +14,7 @@ title: "What observations constrain"
 <!--
 Time: 60 seconds.
 
-It is useful to distinguish general requirements from model-dependent numerical bounds. Dark matter must survive long enough and must not erase the observed small-scale structure. A phase-space bound applies to fermions, while a thermal free-streaming bound assumes a particular early velocity distribution. BBN and the CMB constrain new species in thermal contact with the Standard Model and any subsequent energy injection. These bounds motivate the light-dark-matter programme, but they should not be combined into a universal exclusion of every particle below one mass. For the remainder of the talk I use a vector-portal benchmark in the MeV to GeV range.
+Some requirements are general; numerical bounds depend on the model. Dark matter must survive long enough and must not erase the observed small-scale structure. A phase-space bound applies to fermions, while a thermal free-streaming bound assumes a particular early velocity distribution. BBN and the CMB constrain new species in thermal contact with the Standard Model and any subsequent energy injection. These bounds motivate searches for light dark matter. Because they rely on different assumptions, they do not give a universal lower mass limit. For the remainder of the talk I use a vector-portal benchmark in the MeV to GeV range.
 
 Source context: Cosmological and particle constraints summarized in the dissertation; model assumptions retained.
 -->

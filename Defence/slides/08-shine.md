@@ -16,7 +16,7 @@ title: "SHINE facility and DarkSHINE beamline"
 <!--
 Time: 55 seconds.
 
-SHINE provides the accelerator setting for DarkSHINE. The electron programme uses a dedicated single-particle extraction branch alongside the FEL beamlines. I use the eight GeV reference beam energy and an exposure of three times ten to the fourteen incident particles. The nominal rate shown here is ten MHz, as adopted for this defence, rather than the one MHz value in the older text. At this rate the benchmark corresponds approximately to a full calendar year of continuous delivery. Actual running time and duty factor remain separate operational inputs. The positron analysis studies the physics benefit of an extension; it does not demonstrate an implemented positron beamline.
+SHINE provides the accelerator setting for DarkSHINE. The electron programme uses a dedicated single-particle extraction branch alongside the FEL beamlines. I use the eight GeV reference beam energy and an exposure of three times ten to the fourteen incident particles. The nominal single-particle rate is ten MHz. At this rate the benchmark corresponds approximately to a full calendar year of continuous delivery. Actual running time and duty factor remain separate operational inputs. The positron beamline remains a proposed extension. This analysis evaluates its potential physics benefit.
 
 Source context: SHINE layout: supplied collaboration assets. Rate updated to 10 MHz for this defence.
 -->

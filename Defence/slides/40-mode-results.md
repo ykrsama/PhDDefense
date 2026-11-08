@@ -16,7 +16,7 @@ title: "Annihilation drives the gain near 90 MeV"
 <!--
 Time: 75 seconds.
 
-This comparison retains one production mechanism at a time while keeping all three measured regions and the same background model. It therefore includes migration even in the individual curves. At ninety MeV, non-resonant annihilation gives the strongest individual projected limit, about seven point three times ten to the minus thirteen in epsilon squared. Resonant annihilation also contributes, and the combination reaches five point three three times ten to the minus thirteen. It would be misleading to attribute the entire improvement simply to the resonant channel. The radiative endpoint and the detector efficiency of the associated photon category make a major contribution.
+This comparison retains one production mechanism at a time while keeping all three measured regions and the same background model. It therefore includes migration even in the individual curves. At ninety MeV, non-resonant annihilation gives the strongest individual projected limit, about seven point three times ten to the minus thirteen in epsilon squared. Resonant annihilation also contributes, and the combination reaches five point three three times ten to the minus thirteen. Much of the gain comes from non-resonant annihilation near the radiative endpoint and the selection efficiency of the associated photon category.
 
 Source context: Expected 90% CL projection at 3×10¹⁴ POT; original mechanism-comparison plot.
 -->

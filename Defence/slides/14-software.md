@@ -11,7 +11,7 @@ title: "Event Simulation and Reconstruction in DarkSHINE"
 <!--
 Time: 15 seconds.
 
-The framework must connect the detector definition to the analysis while keeping rare-process production computationally manageable. This section presents my software contributions within the collaboration environment.
+I will now describe my software contributions: connecting the detector definition to the analysis and reducing the cost of rare-process simulation within the collaboration framework.
 
 Source context: Event simulation and reconstruction, supplied dissertation sources.
 -->

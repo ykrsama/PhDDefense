@@ -11,7 +11,7 @@ title: "Design of DarkSHINE Simulation Framework and Prospective Study of Positr
 <!--
 Time: 30 seconds.
 
-Good afternoon, professors. I am Xuliang Zhu. My dissertation connects the development of the DarkSHINE simulation framework with a prospective search using a positron beam. I will first introduce the experimental motivation, then describe the software contributions, and finally discuss the detector-level analysis and its sensitivity.
+Good afternoon, professors. I am Xuliang Zhu. My dissertation covers the DarkSHINE simulation framework and a prospective search using a positron beam. I will first introduce the experimental motivation, then describe the software contributions, and finally discuss the detector-level analysis and its sensitivity.
 
 Source context: PhD Dissertation Defence, supplied dissertation sources.
 -->

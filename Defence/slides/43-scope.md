@@ -15,7 +15,7 @@ title: "Scope of the positron projection"
 <!--
 Time: 60 seconds.
 
-The analysis establishes the detector-level efficiency and migration of the three mechanisms for the benchmark setup, and it connects them to exclusive reconstructed categories and a combined projection. The main limitations lie in the very small background tails and in the assumed veto response. Larger rare-process samples are needed to constrain extrapolation and omitted components. Prototype measurements must establish threshold performance with realistic noise and pileup. Pseudo-experiments are needed to test the low-count statistical construction. These are distinct validation tasks: success in one does not establish the others. Keeping them explicit defines what is needed to turn the prospective sensitivity into an experimentally supported search.
+The analysis establishes the detector-level efficiency and migration of the three mechanisms for the benchmark setup, and it connects them to exclusive reconstructed categories and a combined projection. The main limitations lie in the very small background tails and in the assumed veto response. Larger rare-process samples are needed to constrain extrapolation and omitted components. Prototype measurements must establish threshold performance with realistic noise and pileup. Pseudo-experiments are needed to test the low-count statistical construction. Each of these checks is needed before the projected sensitivity can support an experimental search.
 
 Source context: Positron-beam-mode analysis, supplied dissertation sources.
 -->

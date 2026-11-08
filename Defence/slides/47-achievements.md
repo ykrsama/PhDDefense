@@ -16,7 +16,7 @@ title: "Research Achievements"
 <!--
 Time: 45 seconds.
 
-These are the research achievements listed in my dissertation. The first two entries are my lead-author works on the positron study and the simulation framework. The remaining publications and reports are collaborative contributions, including the CEPC exotic-Higgs study, DarkSHINE physics prospects and calorimeter design. The simulation and reconstruction manuscript remains in preparation, and the baseline design report is preliminary. Thank you for your attention. I welcome your questions.
+My lead-author works cover the positron study and the simulation framework. The remaining publications and reports are collaborative contributions, including the CEPC exotic-Higgs study, DarkSHINE physics prospects and calorimeter design. The simulation and reconstruction manuscript remains in preparation, and the baseline design report is preliminary. Thank you for your attention. I welcome your questions.
 
 Source context: Publication status reproduced from the supplied List of Research Achievements.
 -->

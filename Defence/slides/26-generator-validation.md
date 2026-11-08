@@ -15,5 +15,5 @@ title: "Signal generation and validation"
 <!--
 Time: 60 seconds.
 
-The two plots show complementary generator-level checks from Xiang Chen: the production cross section as a function of mediator mass, and recoil-electron energy distributions. Rates set the expected event yield, while kinematics determine detector acceptance. The analysis must retain the same production and response configuration when translating these into selected events.
+Xiang Chen performed these generator-level checks: the production cross section as a function of mediator mass, and recoil-electron energy distributions. Rates set the expected event yield, while kinematics determine detector acceptance. The selected-event prediction must use the same production and response configuration.
 -->

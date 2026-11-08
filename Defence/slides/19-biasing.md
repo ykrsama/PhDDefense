@@ -15,7 +15,7 @@ title: "Rare-process biasing and physical normalisation"
 <!--
 Time: 65 seconds.
 
-Biasing increases the frequency of a selected rare interaction in a specified region. This is an importance-sampling operation, so the physical rate must be recovered with the normalisation appropriate to the sample. In generic weighted counting, the sum of weights gives the yield and the sum of squared weights gives its Monte Carlo variance. The effective event count can be substantially smaller than the number of stored events. The positron campaign uses dedicated biasing studies and process cross sections for normalisation rather than the stored transport-weight field. A filter has a different role: it removes phase space. No weight can restore events outside the generated support, so production cuts must remain compatible with the analysis.
+Biasing increases the frequency of a selected rare interaction in a specified region. To recover the physical rate after this importance sampling, we apply the normalisation appropriate to the sample. In generic weighted counting, the sum of weights gives the yield and the sum of squared weights gives its Monte Carlo variance. The effective event count can be substantially smaller than the number of stored events. The positron campaign uses dedicated biasing studies and process cross sections for normalisation rather than the stored transport-weight field. Filters remove phase space. Weighting cannot recover events outside the generated support, so the production cuts must retain the phase space needed by the analysis.
 
 Source context: Event simulation and reconstruction, supplied dissertation sources.
 -->

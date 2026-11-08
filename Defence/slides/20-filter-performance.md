@@ -16,7 +16,7 @@ title: "Filtering changes the production cost"
 <!--
 Time: 65 seconds.
 
-This table illustrates the practical effect at production scale. For ten to the eleven four GeV incident electrons on twelve thousand eight hundred cores, the cited estimate changes from around four days to fifteen hours. The storage changes from roughly three petabytes to two point five terabytes, while the quoted disk write rate also falls. These approximate figures describe different resource measures and should be read independently. The general filters reject events with excessive visible energy or insufficient missing momentum. Dedicated filters additionally require the relevant particle or interaction. The filter is part of the sample definition, so the retained phase-space range and acceptance must accompany the output.
+The cited production example uses four GeV electrons, with ten to the eleven incident particles processed on twelve thousand eight hundred cores. Filtering reduces the estimated elapsed time from around four days to fifteen hours. The storage changes from roughly three petabytes to two point five terabytes, while the quoted disk write rate also falls. Elapsed time, write rate and storage are separate resource measures; the quoted reductions are approximate. The general filters reject events with excessive visible energy or insufficient missing momentum. Dedicated filters also require the relevant particle or interaction. The filter is part of the sample definition, so the retained phase-space range and acceptance must accompany the output.
 
 Source context: DSS_716, slide 13. Historical example; quoted values are approximate.
 -->

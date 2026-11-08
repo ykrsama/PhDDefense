@@ -16,7 +16,7 @@ title: "The DarkSHINE software framework"
 <!--
 Time: 65 seconds.
 
-The workflow separates transport from reconstruction through ROOT event files. DSimu configures the detector and physics and records the simulated event. DEvent defines the shared collections. DAna applies digitisation, reconstruction and analysis processors in the configured order, and DDis provides event inspection. My work led DSimu, the event model, rare-process biasing and staged filtering, and the ACTS integration. DAna, digitisation, the other tracking algorithms, calorimeter reconstruction and generator-validation studies are collaboration contributions. A common event interface lets us follow one event through these stages and change downstream algorithms without repeating transport when the required information has been retained.
+The workflow separates transport from reconstruction through ROOT event files. DSimu configures the detector and physics and records the simulated event. DEvent defines the shared collections. DAna applies digitisation, reconstruction and analysis processors in the configured order, and DDis provides event inspection. I led the work on DSimu, the event model, rare-process biasing and staged filtering, and ACTS integration. DAna, digitisation, the other tracking algorithms, calorimeter reconstruction and generator-validation studies are collaboration contributions. A common event interface lets us follow one event through these stages and change downstream algorithms without repeating transport when the required information has been retained.
 
 Source context: DSS software framework; X. Zhu, Nucl. Part. Phys. Proc. 346 (2024) 57.
 -->

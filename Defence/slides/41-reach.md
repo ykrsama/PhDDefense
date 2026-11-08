@@ -16,7 +16,7 @@ title: "Projected reach in mediator mass and kinetic mixing"
 <!--
 Time: 80 seconds.
 
-The full comparison places the combined positron projection alongside the earlier electron-beam projection and external constraints and prospects. Near ninety MeV the gain is about two orders of magnitude in epsilon squared at matching integrated luminosity. The sharp feature follows the annihilation kinematics; it is not a uniform improvement over the entire mass range. At lower masses bremsstrahlung remains relevant. Existing exclusions and future projections have different experimental status even when they are drawn on the same plane. This result is a prospective detector-level study under a specified exposure, baseline detector and background model, rather than an observed exclusion.
+The full comparison places the combined positron projection alongside the earlier electron-beam projection and external constraints and prospects. Near ninety MeV the gain is about two orders of magnitude in epsilon squared at matching integrated luminosity. The sharp feature follows the annihilation kinematics, with the gain concentrated near that mass scale. At lower masses bremsstrahlung remains relevant. The comparison includes both existing exclusions and future projections. Our curve is an expected detector-level sensitivity for the stated exposure, baseline detector and background model; it is not an observed exclusion.
 
 Source context: Original comparison figure from the positron study; external curves retain source assumptions and exposure labels.
 -->

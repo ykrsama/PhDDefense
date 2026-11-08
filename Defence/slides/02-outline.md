@@ -11,7 +11,7 @@ title: "Outline"
 <!--
 Time: 35 seconds.
 
-The central question is how a rare missing-energy signal can be studied with a reliable and affordable simulation. The first part sets the detector requirements. The second explains how the framework turns these requirements into simulated and reconstructed events. The third combines three positron production mechanisms in exclusive reconstructed categories. I will keep theoretical details to the assumptions needed to interpret the experiment.
+I will start with the physics motivation and detector requirements, then describe the simulation and reconstruction framework. The positron analysis uses this framework to combine three production mechanisms in exclusive reconstructed categories. Throughout the talk, I will focus on the experimental questions: how to simulate rare backgrounds efficiently and how to interpret the selected events. I will introduce the theory assumptions needed for that interpretation.
 
 Source context: PhD Dissertation Defence, supplied dissertation sources.
 -->

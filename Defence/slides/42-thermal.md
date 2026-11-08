@@ -16,7 +16,7 @@ title: "Interpretation relative to thermal targets"
 <!--
 Time: 65 seconds.
 
-To relate the mediator search to light-dark-matter thermal targets, I now add a mass ratio of three and a dark coupling alpha D of zero point five. These assumptions define the vertical variable y and map a ninety MeV mediator to a thirty MeV dark-matter particle. For this benchmark y is epsilon squared divided by one hundred and sixty-two. The transformation changes the coordinates, not the simulated event categories or efficiency. Scalar, Majorana and pseudo-Dirac thermal targets depend on their own spin and annihilation assumptions. The result tests those specified benchmarks. It should not be interpreted as a universal exclusion of every dark-sector model at the same mass.
+To relate the mediator search to light-dark-matter thermal targets, I now add a mass ratio of three and a dark coupling alpha D of zero point five. These assumptions define the vertical variable y and map a ninety MeV mediator to a thirty MeV dark-matter particle. For this benchmark y is epsilon squared divided by one hundred and sixty-two. The simulated event categories and efficiencies stay the same under this change of coordinates. Scalar, Majorana and pseudo-Dirac thermal targets depend on their own spin and annihilation assumptions. The comparison applies to these specified benchmarks; other dark-sector models at the same mass can give different predictions.
 
 Source context: Original thermal-target plot with mA′/mχ=3 and αD=0.5.
 -->

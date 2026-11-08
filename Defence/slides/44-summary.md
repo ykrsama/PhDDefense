@@ -11,7 +11,7 @@ title: "Summary and Outlook"
 <!--
 Time: 15 seconds.
 
-I close by connecting the software and physics results and identifying the next steps.
+I will finish with the software and physics results, followed by the work still needed for an experimental search.
 
 Source context: Summary and outlook, supplied dissertation sources.
 -->
