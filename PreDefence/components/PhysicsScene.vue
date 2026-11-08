@@ -86,8 +86,9 @@ function detector(){
  
  // Magnet open bore, two yokes. Tracker planes are intentionally never pixel grids.
  if(props.compact||props.magnet)for(let y of [-.48,.34])box(-1.9,y,-.42,1.65,.14,.84,'rgba(240,195,110,.36)','rgba(125,93,40,.10)')
- for(let i=0;i<7;i++)trackerPlane(-1.8+i*.98/6,ecalWidth*.8,ecalWidth*.4,.009)
- box(-.78,-.10,-.15,.004,.20,.30,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
+ const targetWidth=.30,targetHeight=.20
+ for(let i=0;i<7;i++)trackerPlane(-1.8+i*.98/6,targetWidth,targetHeight,.009)
+ box(-.78,-targetHeight/2,-targetWidth/2,.004,targetHeight,targetWidth,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
  for(let i=0;i<6;i++){
   const fraction=i/5,width=ecalWidth*(.64+.36*fraction),height=ecalWidth*(.4+.2*fraction)
   trackerPlane(-.74+i*.86/5,width,height,.008)
@@ -110,7 +111,7 @@ function detector(){
   }
  }
  if(props.labels){
-  if(!props.focus||props.focus==='tracking'){label('Tagging tracker',[-1.55,-.1,.20],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.15,.25],-12,45)}
+  if(!props.focus||props.focus==='tracking'){label('Tagging tracker',[-1.55,-targetHeight/2,targetWidth/2],-55,32);label('W target',[-.78,.12,0],-15,props.compact?20:-12);label('Recoil tracker',[-.35,-.15,.25],-12,45)}
   if(!props.focus||props.focus==='ecal')label('ECAL',props.compact?[.43,.35,0]:[.43,0,-.36],-17,-10)
   if(!props.focus||props.focus==='hcal')label('HCAL',props.compact?[2.8,2.1,0]:[2.8,0,-2.1],-5,-17)
   if(!props.focus)label('Magnet',props.compact?[-1.2,.5,0]:[-1.2,0,-.59],-20,-10)
