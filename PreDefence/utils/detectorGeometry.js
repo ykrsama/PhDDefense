@@ -13,7 +13,7 @@ const recoilBack = recoilFront + recoilLength
 const ecalFront = recoilBack + .001, ecalBack = ecalFront + ecalLength
 const hcalFront = ecalBack + .001, hcalBack = hcalFront + hcalLength
 export const detectorGeometry = Object.freeze({
-  targetX, targetThickness, targetWidth: .20, targetHeight: .20, trackerHeight: .10,
+  targetX, targetThickness, targetWidth: .20, targetHeight: .10, trackerHeight: .10,
   tagLength, tagFront, tagBack, tagCenter: (tagFront + tagBack) / 2,
   tagThickness: .000216 * trackingStretch,
   tagPlanes: Array.from({ length: 7 }, (_, i) => tagFront + i * .1 * trackingStretch),
