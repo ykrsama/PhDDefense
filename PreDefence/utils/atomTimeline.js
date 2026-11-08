@@ -4,7 +4,8 @@ export const ATOM_PERIOD = 18
 export const ENCOUNTER_DURATION = 6
 export const COLLISION_TIME = 2.4
 export const ANNIHILATION_VERTEX = [-.50, .25, .13]
-export const NUCLEAR_VERTEX = [.49, .02, .03]
+// Place the illustrative nuclear-field encounter outside the drawn nucleus.
+export const NUCLEAR_VERTEX = [.02, .55, .13]
 export const ORBIT_SPEED = 2 * Math.PI / ATOM_PERIOD
 const clamp = x => Math.max(0, Math.min(1, x))
 const smooth = x => { const u = clamp(x); return u * u * (3 - 2 * u) }
