@@ -126,12 +126,20 @@ function clusters(){
  }
 }
 function atom(){sphere([.65,0,0],.19,'rgba(240,195,110,.55)',state.t*.1);for(let i=0;i<35;i++){let a=i*2.4,b=Math.acos(1-2*(i+.5)/35);dot([.65+.16*Math.sin(b)*Math.cos(a),.16*Math.cos(b),.16*Math.sin(b)*Math.sin(a)],3.5,i%2?'#d6b372':'#8da8c0')}
- for(let k=0;k<5;k++){let r=.48+k*.21;const orbit=(a:number):P=>[.65+r*Math.cos(a),r*Math.sin(a)*Math.cos(k*.54),r*Math.sin(a)*Math.sin(k*.54)];path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(119,201,255,.25)',.8);for(let j=0;j<3;j++)dot(orbit(state.t*.3+k+j*2.1),2.5,'#77c9ff')}
  const u=(state.t%8)/8,vertex:P=[-.50,.25,.13],end:P=[2.2,.8,.25]
+ for(let k=0;k<5;k++){let r=.48+k*.21;const orbit=(a:number):P=>[.65+r*Math.cos(a),r*Math.sin(a)*Math.cos(k*.54),r*Math.sin(a)*Math.sin(k*.54)];path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(119,201,255,.25)',.8);for(let j=0;j<3;j++)if(k!==4||j!==0)dot(orbit(state.t*.3+k+j*2.1),2.5,'#77c9ff')}
+ // One outer-shell electron moves into the vertex as the positron arrives.
+ if(u<.52){
+  const angle=2.15+.57*Math.min(u,.38)/.38,r=1.32
+  const bound:P=[.65+r*Math.cos(angle),r*Math.sin(angle)*Math.cos(2.16),r*Math.sin(angle)*Math.sin(2.16)]
+  const x=Math.max(0,Math.min(1,(u-.38)/.14)),capture=x*x*(3-2*x)
+  const electron=bound.map((v,i)=>v+(vertex[i]-v)*capture) as P
+  dot(electron,3.5,'#77c9ff')
+ }
  path([[-2.6,.25,.13],vertex],'rgba(246,156,171,.6)',1.6)
  // Keep the guide visible; the bright trail and label follow the emitted particle.
  path([vertex,end],'rgba(240,195,110,.30)',1.2,[7,6])
- if(u<.52){dot([-2.6+2.1*u/.52,.25,.13],4,'#f69cab');dot(vertex,3.5,'#77c9ff')}
+ if(u<.52){dot([-2.6+2.1*u/.52,.25,.13],4,'#f69cab')}
  else{
   const v=(u-.52)/.48,tip:P=[-.50+2.7*v,.25+.55*v,.13+.12*v]
   path([vertex,tip],'rgba(240,195,110,.8)',2,[7,6]);dot(tip,3,'#fff0ba')
