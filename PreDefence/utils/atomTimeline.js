@@ -7,7 +7,7 @@ export const END_HOLD_DURATION = 1
 export const OUTGOING_DURATION = ENCOUNTER_DURATION - COLLISION_TIME - END_HOLD_DURATION
 export const ANNIHILATION_VERTEX = [-.50, .25, .13]
 // Place the illustrative nuclear-field encounter outside the drawn nucleus.
-export const NUCLEAR_VERTEX = [.02, .55, .13]
+export const NUCLEAR_VERTEX = [.18, .43, .13]
 export const ORBIT_SPEED = 2 * Math.PI / ATOM_PERIOD
 const clamp = x => Math.max(0, Math.min(1, x))
 const smooth = x => { const u = clamp(x); return u * u * (3 - 2 * u) }

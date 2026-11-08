@@ -166,8 +166,9 @@ function atom(){
  const incomingLength=Math.hypot(beamEnd[0]-beamStart[0],beamEnd[1]-beamStart[1])
  const outgoingLength=incomingLength/COLLISION_TIME*OUTGOING_DURATION
  const start=beamGuide,incoming=beamPoint(incomingLength*(1-frame.incoming))
+ let positronLabelPoint:P|undefined=frame.collided?undefined:incoming
  path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
- if(!frame.collided){dot(incoming,3.5,color('246,156,171'));label('e⁺',incoming,0,-14)}
+ if(!frame.collided)dot(incoming,3.5,color('246,156,171'))
  // Match the incoming speed, then hold all final-state particles together.
  // Every final-state particle shares the same length and progress.
  const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
@@ -181,8 +182,10 @@ function atom(){
    })
    path(points,color(rgb,.68),1.4)
   }else path([vertex,tip],color(rgb,.6),1.5,dashed?[7,6]:[])
-  dot(tip,3,color(rgb,.85))
-  ctx!.save();ctx!.globalAlpha=alpha*Math.min(1,after/.25);label(name,tip,9,name==='χ̄'||name==='γ'?-9:17);ctx!.restore()
+  const continuingPositron=mode===2&&name==='e⁺'
+  dot(tip,continuingPositron?3.5:3,color(rgb,continuingPositron?1:.85))
+  if(continuingPositron)positronLabelPoint=tip
+  else{ctx!.save();ctx!.globalAlpha=alpha*Math.min(1,after/.25);label(name,tip,9,name==='χ̄'||name==='γ'?-9:17);ctx!.restore()}
  }
  if(frame.collided){
   if(mode===0){
@@ -192,10 +195,12 @@ function atom(){
    emit([2.45,1.12,.28],'240,195,110','A′',true)
    emit([2.30,-.72,-.20],'119,201,255','γ',false,true)
   }else{
-   emit([2.18,1.73,.35],'240,195,110','A′',true)
-   emit([2.18,-.07,0],'246,156,171','e⁺')
+   emit([2.34,-.19,0],'240,195,110','A′',true)
+   emit([2.34,1.61,.35],'246,156,171','e⁺')
   }
  }
+ // One label follows the positron through the vertex with the same offset and opacity.
+ if(positronLabelPoint){ctx.save();ctx.globalAlpha=alpha;label('e⁺',positronLabelPoint,0,-14);ctx.restore()}
  label('W',nucleus,-6,5)
 }
 function draw(){if(!ctx||!canvas.value)return;canvas.value.dataset.camera=JSON.stringify({yaw:state.yaw,roll:state.roll,zoom:state.zoom,cx:state.cx,cy:state.cy});ctx.clearRect(0,0,980,551.25);if(props.scene==='cluster')clusters();else if(props.scene==='atom')atom();else detector()}
