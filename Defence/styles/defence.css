@@ -49,3 +49,6 @@
 /* Preserve physical-unit and symbol case throughout both decks. */
 .slidev-layout,.slidev-layout *{text-transform:none!important}
 .benchmark-conditions{display:flex;align-items:center;gap:16px;font-size:15px;color:#b9c4d2;margin:3px 0 15px;letter-spacing:0}.benchmark-conditions .separator{color:#657489}
+
+/* Keep the transition backdrop consistent with the 3D chapter scenes. */
+.dark #slide-content{background-color:#0c0d0f!important}
