@@ -1,6 +1,6 @@
 # Physics output in the simulation and reconstruction chapter
 
-The chapter was revised to put the physical information and output beside the software method. Original plot axes and data are retained; PDF plots are rendered to SVG, and slides from older reports are cropped without redrawing their data.
+The chapter was revised to put the physical information and output beside the software method. Original plot axes and data are unchanged; PDF plots are rendered to SVG, and slides from older reports are cropped without redrawing their data.
 
 | Slide | Asset | Source and interpretation |
 | --- | --- | --- |
@@ -16,7 +16,7 @@ The chapter was revised to put the physical information and output beside the so
 | 22 | `single-pe-pulse.png`, existing waveform | Thesis `QBL-digitization-pulse.png` and `QBL-digitization-p1.pdf`. Single-photoelectron response and cell waveforms. Credit: Qibin Liu. |
 | 23 | `track-momentum.png` | Thesis `YFZ-track-fitting.png`: reconstructed momentum spectra for Riemann / GenFit implementations and truth. This is a spectrum comparison, not a resolution plot. Credit: Yifan Zhu. |
 | 24 | `acts-pull.png` | `Documents/DarkSHINE-Slides/ACTS-DSS.pdf`, page 3; 17 October 2023 truth-assisted fitter integration test. Current sequencer flow is documented in thesis `contents/acts_reconstruction.tex`. The historical plot illustrates a fit diagnostic, not a current CKF seeding-efficiency measurement. Original report copied as `acts-fitter-study.pdf`. |
-| 25 | Existing cross-section / energy distributions | Existing Xiang Chen generator-study assets, retained. |
+| 25 | Existing cross-section / energy distributions | Existing Xiang Chen generator-study assets, unchanged. |
 
 New assets are under `PreDefence/public/physics-output/`.
 

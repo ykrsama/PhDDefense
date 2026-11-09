@@ -112,7 +112,7 @@ function detector(){
  const hcalHalf=geometry.hcalWidth/2
  box(geometry.hcalFront,-hcalHalf,-hcalHalf,geometry.hcalLength,geometry.hcalWidth,geometry.hcalWidth,'rgba(186,165,255,.3)','rgba(62,58,85,.12)',24,true)
  box(geometry.ecalFront,-ecalWidth/2,-ecalWidth/2,geometry.ecalLength,ecalWidth,ecalWidth,'rgba(112,220,178,.68)','rgba(50,115,97,.15)',10)
- // Magnet open bore; tracker planes retain single-direction strip segmentation.
+ // Magnet open bore; tracker planes use single-direction strip segmentation.
  if(props.compact||props.magnet)for(let y of [-.48,.34])box(geometry.magnetFront,y,-.42,geometry.magnetBack-geometry.magnetFront,.14,.84,'rgba(240,195,110,.36)','rgba(125,93,40,.10)')
  for(const x of geometry.tagPlanes)trackerPlane(x,targetWidth,geometry.trackerHeight,geometry.tagThickness)
  box(geometry.targetX-geometry.targetThickness/2,-targetHeight/2,-targetWidth/2,geometry.targetThickness,targetHeight,targetWidth,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')

@@ -44,7 +44,7 @@ We count incident events, eligible events and rare interactions separately. Only
 
 These are the original GMM (photon conversion to a muon pair) scans from the 2024 study. The upper panels show the rare-to-pool probability and the lower panels show the simulation-to-fit ratio. In the target, an eligible photon can escape before interacting. In the ECAL (Electromagnetic Calorimeter), it has more material to cross. This explains why a branching-ratio approximation works differently in the 2 regions. The displayed fit parameters and uncertainties belong to this historical configuration; they are not the positron-campaign calibration.
 
-证据：Biasing study, pp. 6–7; original plots retained.
+证据：Biasing study, pp. 6–7; original plots unchanged.
 
 ### 18. 如何检查 biasing 没有改变物理？这些拟合证明了什么？
 
@@ -52,7 +52,7 @@ These are the original GMM (photon conversion to a muon pair) scans from the 202
 
 PN (photonuclear) interactions show the same rise and saturation. We compare the conditional interaction probability across the bias scan with the fitted model. Agreement here does not by itself validate all secondary-particle spectra or the final background tail. We also compare dedicated samples with inclusive production where there are enough events. The rates on these plots belong to the 2024 study and are not substituted for the positron sample normalisations.
 
-证据：Biasing study, pp. 6–7; original plots retained.
+证据：Biasing study, pp. 6–7; original plots unchanged.
 
 ### 19. biasing 和 inclusive 的一致性能达到什么程度？
 

@@ -9,7 +9,7 @@ const expanded = computed(() => $clicks.value >= 1)
 <template>
   <section class="production-story" :class="{ expanded }" :data-stage="expanded ? 1 : 0">
     <article class="brem-card method-panel tone-blue">
-      <div class="panel-kicker"><span class="ordinal">01</span>Retained from electron running</div>
+      <div class="panel-kicker"><span class="ordinal">01</span>Also occurs with electron beams</div>
       <h2>Dark bremsstrahlung</h2>
       <div class="mechanism-badge">Nuclear scattering</div>
       <FeynmanDiagram mode="brem" />
