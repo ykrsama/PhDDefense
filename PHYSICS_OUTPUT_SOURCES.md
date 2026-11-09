@@ -19,3 +19,12 @@ The chapter was revised to put the physical information and output beside the so
 | 25 | Existing cross-section / energy distributions | Existing Xiang Chen generator-study assets, retained. |
 
 New assets are under `PreDefence/public/physics-output/`.
+
+## Background sub-processes and sample motivation (slide 12)
+
+Source: `Works/Science_China.pdf`, J. Chen et al., Sci. China Phys. Mech. Astron. 66, 211062 (2023). Read against the supplied full text:
+
+- PDF pp. 5–7, Secs. 4, 4.2 and 5, Fig. 8 and Table 2: 8 GeV electron-mode backgrounds; frequent electron-pair conversion identified by tracker/ECAL; PN, EN and gamma-to-muon-pair processes; six dedicated target/ECAL samples alongside 2.5 billion inclusive events; HCAL rejection of hadronic and muonic activity.
+- PDF pp. 8–10, Sec. 6 and Sec. 6.1: limited inclusive statistics in the low-ECAL-energy region; high-statistics dedicated samples, branching-ratio normalisation and process-specific extrapolation. The article finds GMM effectively rejected by HCAL and treats PN/EN residuals separately.
+
+The revised slide and notes paraphrase these passages. They do not attribute a biasing algorithm to this article, which does not describe one explicitly. No numerical branching ratios or final background yields were added to the slide.

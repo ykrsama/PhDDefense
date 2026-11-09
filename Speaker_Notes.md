@@ -52,7 +52,9 @@ Presenter cue: Start with the signal diagram. Click once to introduce the combin
 
 ## 12. Standard Model background hierarchy
 
-Electronuclear interactions are one source of background. Another starts with hard bremsstrahlung, followed by pair conversion, a photonuclear interaction or muon-pair production. I show target and ECAL (Electromagnetic Calorimeter) interactions separately because the available veto material and the rates differ. The vertical scale gives approximate relative rates from the electron-mode study. The positron samples have their own normalisation. The small invisible electroweak contribution is shown separately from backgrounds caused by visible particles escaping detection. For the latter, we need enough simulated events in the rare branches and a way to recover their physical rates.
+Most beam electrons pass through the thin target. Hard bremsstrahlung produces a recoil electron and an energetic photon. Electron–positron conversion is frequent, and tracking and the ECAL can identify those particles. The rarer photonuclear and muon-pair branches put energy into hadrons or muons, making the HCAL veto essential. Electronuclear reactions provide another hadronic source.
+
+After applying the veto, the paper finds muon pairs effectively rejected by HCAL. PN and EN require residual-background estimates in the signal region. This is where the low-energy tails matter and inclusive statistics become insufficient. We therefore simulate six dedicated samples: PN, EN and muon-pair production, each in the target and ECAL, alongside 2.5 billion inclusive events. The rare-process samples are normalised by their branching ratios and used to study rejection and extrapolate the nuclear-background tails. This motivates a framework that can populate and inspect these rare sub-processes efficiently.
 
 ## 13. Event Simulation and Reconstruction in DarkSHINE
 
