@@ -168,7 +168,7 @@ To compare with thermal dark-matter targets, we use a mediator-to-dark-matter ma
 
 ## 42. Scope of the positron projection
 
-This study gives detector-level efficiencies and migration between regions for the 3 production mechanisms in the benchmark setup. We use them to obtain the combined sensitivity. The largest remaining uncertainties are the small background tails and the assumed veto response. Larger rare-process samples would help constrain the extrapolation and the omitted components. Prototype measurements can test the thresholds with realistic noise and pileup. We also need pseudo-experiments to check the statistical treatment at very low event counts. These studies will help assess how closely an experimental search can reach the projection.
+This study gives detector-level efficiencies and migration between regions for the 3 production mechanisms in the benchmark setup. We use them to obtain the combined sensitivity. The largest remaining uncertainties are the small background tails and the assumed veto response. Larger rare-process samples would help constrain the extrapolation and the omitted components. Prototype measurements can test the thresholds with realistic noise and pileup. We also need toy Monte Carlo to check the statistical treatment at very low event counts. These studies will help assess how closely an experimental search can reach the projection.
 
 ## 43. Summary and Outlook
 
@@ -180,7 +180,7 @@ We developed a configurable simulation framework and event model that connect tr
 
 ## 45. Outlook
 
-Detector measurements will help constrain the response and veto thresholds. Larger rare-process samples will improve our estimate of the background tails and their dependence on the fit model. Pseudo-experiments can test the statistical approximation when expected backgrounds are small. Another option is to vary the beam energy. The characteristic annihilation mass changes approximately with the square root of the beam energy, so an energy scan could probe other masses. Each energy would need a study of its kinematics, acceptance and backgrounds. The 8 GeV analysis and the simulation framework provide a starting point.
+Detector measurements will help constrain the response and veto thresholds. Larger rare-process samples will improve our estimate of the background tails and their dependence on the fit model. Toy Monte Carlo can test the statistical approximation when expected backgrounds are small. Another option is to vary the beam energy. The characteristic annihilation mass changes approximately with the square root of the beam energy, so an energy scan could probe other masses. Each energy would need a study of its kinematics, acceptance and backgrounds. The 8 GeV analysis and the simulation framework provide a starting point.
 
 ## 46. Research Achievements
 
