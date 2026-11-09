@@ -249,7 +249,7 @@ html.light {--tdli-blue:#004098!important;--tdli-red:#c9151e!important;--tdli-go
 html.light .slidev-layout{background:#f5f7fb!important}
 html.light .slidev-layout::before{background:radial-gradient(ellipse at 82% 18%,#00409820,transparent 60%),radial-gradient(ellipse at 12% 90%,#65768c0b,transparent 60%)!important}
 html.light .slidev-layout.section-slide{background:#f5f7fb!important}
-html.light .cover-head .accent-title{background:linear-gradient(90deg,#8c682f,#8c682f,#8c682f)!important}
+html.light .cover-head .accent-title{background-image:linear-gradient(90deg,#8c682f,#8c682f,#8c682f)!important}
 html.light .chapter-number,html.light .outline-row b{color:#8c682f!important}
 html.light .plot-mat{box-shadow:0 0 0 1px #65768c20!important}
 html.light html.dark{--presentation-canvas:#f5f7fb!important}
