@@ -15,5 +15,5 @@ title: "Can the software speed-up factors be multiplied?"
 <div class="source">DSS_716, pp. 7, 11, 13, 15; optical study by Qibin Liu.</div>
 
 <!--
-We quote these benchmarks separately because they measure different costs and use different configurations. Geometry navigation changes the transport time per event. Event-record optimisation changes storage. Filtering changes the number of costly events that we finish and write. The thread comparison uses 8 execution units on both sides, so it does not measure scaling from 1 core. The optical result compares full tracking with a lookup table. We can assess the total production cost only with an end-to-end benchmark under a common setup.
+We quote these benchmarks separately because they measure different costs and use different configurations. Geometry navigation changes the Geant4 simulation time per event. Event-record optimisation changes storage. Filtering changes the number of costly events that we finish and write. The thread comparison uses 8 execution units on both sides, so it does not measure scaling from 1 core. The optical result compares full tracking with a lookup table. We can assess the total production cost only with an end-to-end benchmark under a common setup.
 -->

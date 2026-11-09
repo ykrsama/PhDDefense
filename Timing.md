@@ -17,8 +17,8 @@
 | 13 | Event Simulation and Reconstruction in DarkSHINE | 15 | 10:40 |
 | 14 | The DarkSHINE software framework | 65 | 11:45 |
 | 15 | A common event model: DEvent | 55 | 12:40 |
-| 16 | Geometry and event-record optimisation | 65 | 13:45 |
-| 17 | Generator-level filtering with staged transport | 70 | 14:55 |
+| 16 | Geometry navigation and event-record optimisation | 65 | 13:45 |
+| 17 | Generator-level filtering with staged Geant4 tracking | 70 | 14:55 |
 | 18 | Rare-process biasing and physical normalisation | 65 | 16:00 |
 | 19 | Filtering changes the production cost | 65 | 17:05 |
 | 20 | Parallel event simulation | 55 | 18:00 |

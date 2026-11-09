@@ -18,7 +18,7 @@ The annotation in the inclusive SR2 (Signal Region 2) figure does not give the n
 
 ## 15. Why is the bias factor not an event weight?
 
-We scale the rare-process cross section by a bias factor b. The probability of that process happening also depends on competing interactions and the distance available in the material. This 1-dimensional model assumes constant effective cross sections along that distance. We fit the scan and evaluate the probability at b = 1. The pool is the set of eligible particles above the bias-energy cut. The pool fraction then converts the conditional probability into a rate per incident particle. This rate-calibration method is separate from generic transport-weight bookkeeping.
+We scale the rare-process cross section by a bias factor b. The probability of that process happening also depends on competing interactions and the distance available in the material. This 1-dimensional model assumes constant effective cross sections along that distance. We fit the scan and evaluate the probability at b = 1. The pool is the set of eligible particles above the bias-energy cut. The pool fraction then converts the conditional probability into a rate per incident particle. This rate-calibration method is separate from Geant4 track-weight bookkeeping.
 
 ## 16. Which events enter the biasing normalisation?
 
@@ -66,12 +66,12 @@ At fixed mass and with the invisible branching fraction close to 1, the benchmar
 
 ## 27. Can the software speed-up factors be multiplied?
 
-We quote these benchmarks separately because they measure different costs and use different configurations. Geometry navigation changes the transport time per event. Event-record optimisation changes storage. Filtering changes the number of costly events that we finish and write. The thread comparison uses 8 execution units on both sides, so it does not measure scaling from 1 core. The optical result compares full tracking with a lookup table. We can assess the total production cost only with an end-to-end benchmark under a common setup.
+We quote these benchmarks separately because they measure different costs and use different configurations. Geometry navigation changes the Geant4 simulation time per event. Event-record optimisation changes storage. Filtering changes the number of costly events that we finish and write. The thread comparison uses 8 execution units on both sides, so it does not measure scaling from 1 core. The optical result compares full tracking with a lookup table. We can assess the total production cost only with an end-to-end benchmark under a common setup.
 
 ## 28. CalcHEP inputs and detector production
 
-I can show the archived batch settings and the corresponding output headers. We found 8 GeV bremsstrahlung and radiative-annihilation batches requesting 10⁵ events. The calcHEP directory also has an 8 GeV multi-process batch containing a dark-matter-pair process, but it requests only 10 events. The diagramC example is a 4 GeV test. These records verify what those files specify. For detector production, we use the baseline 1, 8 GeV configurations in condor-script. The next page shows how each signal channel enters transport.
+I can show the archived batch settings and the corresponding output headers. We found 8 GeV bremsstrahlung and radiative-annihilation batches requesting 10⁵ events. The calcHEP directory also has an 8 GeV multi-process batch containing a dark-matter-pair process, but it requests only 10 events. The diagramC example is a 4 GeV test. These records verify what those files specify. For detector production, we use the baseline 1, 8 GeV configurations in condor-script. The next page shows how each signal channel is implemented in Geant4.
 
-## 29. How does the signal enter detector transport?
+## 29. Signal implementation in Geant4
 
-I can show an independent 8 GeV job configuration for the resonant channel at 60 MeV. It enables the resonant process, disables the LUT (Lookup Table), and disables visible decay. In the available transport implementation, we create an invisible dark photon along the incoming direction and terminate the positron. Although the class contains a lookup-table reader, the final-state function does not call it. The bremsstrahlung and radiative-annihilation templates use separate 8 GeV tables. The production configurations are stored in condor-script. The CalcHEP rate-test batches and the detector transport have different roles.
+I can show an independent 8 GeV job configuration for the resonant channel at 60 MeV. It enables the resonant process, disables the LUT (Lookup Table), and disables visible decay. In this Geant4 process implementation, we create an invisible dark photon along the incoming direction and terminate the positron. Although the class contains a lookup-table reader, the final-state function does not call it. The bremsstrahlung and radiative-annihilation templates use separate 8 GeV tables. The production configurations are stored in condor-script. The CalcHEP rate-test batches and the Geant4 detector simulation have different roles.

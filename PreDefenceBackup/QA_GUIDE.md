@@ -26,7 +26,7 @@
 
 [Why is the bias factor not an event weight?](slides/15-bias-probability.md)
 
-We scale the rare-process cross section by a bias factor b. The probability of that process happening also depends on competing interactions and the distance available in the material. This 1-dimensional model assumes constant effective cross sections along that distance. We fit the scan and evaluate the probability at b = 1. The pool is the set of eligible particles above the bias-energy cut. The pool fraction then converts the conditional probability into a rate per incident particle. This rate-calibration method is separate from generic transport-weight bookkeeping.
+We scale the rare-process cross section by a bias factor b. The probability of that process happening also depends on competing interactions and the distance available in the material. This 1-dimensional model assumes constant effective cross sections along that distance. We fit the scan and evaluate the probability at b = 1. The pool is the set of eligible particles above the bias-energy cut. The pool fraction then converts the conditional probability into a rate per incident particle. This rate-calibration method is separate from Geant4 track-weight bookkeeping.
 
 证据：X. Zhu, Y. Zhang, Biasing study, 25 Jun. 2024, pp. 3–5, 14.
 
@@ -122,7 +122,7 @@ At fixed mass and with the invisible branching fraction close to 1, the benchmar
 
 [Can the software speed-up factors be multiplied?](slides/27-software-benchmarks.md)
 
-We quote these benchmarks separately because they measure different costs and use different configurations. Geometry navigation changes the transport time per event. Event-record optimisation changes storage. Filtering changes the number of costly events that we finish and write. The thread comparison uses 8 execution units on both sides, so it does not measure scaling from 1 core. The optical result compares full tracking with a lookup table. We can assess the total production cost only with an end-to-end benchmark under a common setup.
+We quote these benchmarks separately because they measure different costs and use different configurations. Geometry navigation changes the Geant4 simulation time per event. Event-record optimisation changes storage. Filtering changes the number of costly events that we finish and write. The thread comparison uses 8 execution units on both sides, so it does not measure scaling from 1 core. The optical result compares full tracking with a lookup table. We can assess the total production cost only with an end-to-end benchmark under a common setup.
 
 证据：DSS_716, pp. 7, 11, 13, 15; optical study by Qibin Liu.
 
@@ -130,7 +130,7 @@ We quote these benchmarks separately because they measure different costs and us
 
 [What do the saved CalcHEP configurations show?](slides/28-generator-config.md)
 
-I can show the archived batch settings and the corresponding output headers. We found 8 GeV bremsstrahlung and radiative-annihilation batches requesting 10⁵ events. The calcHEP directory also has an 8 GeV multi-process batch containing a dark-matter-pair process, but it requests only 10 events. The diagramC example is a 4 GeV test. These records verify what those files specify. For detector production, we use the baseline 1, 8 GeV configurations in condor-script. The next page shows how each signal channel enters transport.
+I can show the archived batch settings and the corresponding output headers. We found 8 GeV bremsstrahlung and radiative-annihilation batches requesting 10⁵ events. The calcHEP directory also has an 8 GeV multi-process batch containing a dark-matter-pair process, but it requests only 10 events. The diagramC example is a 4 GeV test. These records verify what those files specify. For detector production, we use the baseline 1, 8 GeV configurations in condor-script. The next page shows how each signal channel is implemented in Geant4.
 
 证据：Read-only bl0 configuration snapshots, 9 Nov. 2026; see sources/calchep.
 
@@ -147,6 +147,6 @@ I can show the archived batch settings and the corresponding output headers. We 
 
 未新增物理模拟或拟合。第 21 页的 2.30 与 2.76×10⁵ 是明确标注的理想 Poisson 示例；不替代正式似然或 weighted-sample 区间。
 
-## 29. 信号如何进入 detector transport？
+## 29. 信号如何在 Geant4 中实现？
 
-[配置与实现](slides/29-transport-config.md)：新增 baseline1 8 GeV 独立作业配置和不可见共振 transport 的证据。production 目录为用户确认的 suntong/condor-script；配置原文与历史生成器参数记录见 sources/calchep/README.md。
+[配置与实现](slides/29-transport-config.md)：新增 baseline1 8 GeV 独立作业配置和不可见共振信号实现的证据。production 目录为用户确认的 suntong/condor-script；配置原文与历史生成器参数记录见 sources/calchep/README.md。

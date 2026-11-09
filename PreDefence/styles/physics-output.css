@@ -49,7 +49,7 @@
 .filter-outputs .rule{margin:10px 0}
 .observable-tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
 .observable-tags span{font-size:11px;color:var(--panel-accent);padding:5px 8px;background:rgba(var(--panel-rgb),.07);border:1px solid rgba(var(--panel-rgb),.22);border-radius:5px}
-.slide-parallelism .parallel-physics{height:327px;min-height:0;padding:14px 17px!important}
+.slide-parallelism .parallel-physics{height:auto;min-height:327px;padding:14px 17px!important}
 .slide-parallelism .parallel-physics p{font-size:13px;line-height:1.45;margin-bottom:11px}
 .slide-parallelism .parallel-physics .rule{margin:10px 0}
 .slide-parallelism .parallel-physics h2{font-size:18px;padding:7px 9px}
