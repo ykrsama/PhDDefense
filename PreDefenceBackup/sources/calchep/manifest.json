@@ -1,0 +1,140 @@
+[
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramA/E8_0.090GEV_file",
+    "snapshot": "diagramA/E8_0.090GEV_file",
+    "sha256": "57403bea0e2453f3603a4f8334bdd61c5e36bf50ca303494c5d358726cbe5e7e"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramA/models/vars6.mdl",
+    "snapshot": "diagramA/models/vars6.mdl",
+    "sha256": "f2839d31a6049b9b44f696774849743ef6e1d9bcb5bcdfb528d8ff166018cc1b"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramA/models/prtcls6.mdl",
+    "snapshot": "diagramA/models/prtcls6.mdl",
+    "sha256": "9de8f93ad755fb57ac7785150d5885deabaa845c2be5c74b5d633535aa02859b"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramA/models/lgrng6.mdl",
+    "snapshot": "diagramA/models/lgrng6.mdl",
+    "sha256": "165970bd73004f6d65f42c68e708fbaa01c23fabecd1600be47b8e7e5d91169e"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramB/E8_0.090GEV_file",
+    "snapshot": "diagramB/E8_0.090GEV_file",
+    "sha256": "301aa5eb304c657fe8e40023694db8e17c08722ba1b7e476ce18ecc819f7e5db"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramC/batch_file",
+    "snapshot": "diagramC/batch_file",
+    "sha256": "60ed18c39094da0c230f912e68b42c450877244fe54e58450c428f15b00816f4"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramC/E4_0.090GEV_file",
+    "snapshot": "diagramC/E4_0.090GEV_file",
+    "sha256": "231461430fb798a38d46ae3da532008d2e337be1d6c2abede1038ec3865c1159"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramC/run.sh",
+    "snapshot": "diagramC/run.sh",
+    "sha256": "76336aa6ab12644f78996407387b667df9d9bee251f02e83a09fbfc9192101a5"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramC/runbak.sh",
+    "snapshot": "diagramC/runbak.sh",
+    "sha256": "9ed34283ec3bd3a936f1ebc531ec09339811877481437fa6aed1d09c63107a84"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/calcHEP/E8_0.090GEV_file",
+    "snapshot": "calcHEP/E8_0.090GEV_file",
+    "sha256": "6ff20b39952e522c4d91045ed298b892c9f0952de0bb3abe9799624a3730e659"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/calcHEP/run.sh",
+    "snapshot": "calcHEP/run.sh",
+    "sha256": "fd2c7e7e041f61b521806d26784388e8108c1d2415d6e4333e7bab2101d901a9"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/calcHEP/models/vars6.mdl",
+    "snapshot": "calcHEP/models/vars6.mdl",
+    "sha256": "c2cb08da0396d5c4cf5aa39d47f7aeb38a2d44fe78bf55043ad8eb026d5c1d72"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/calcHEP/models/prtcls6.mdl",
+    "snapshot": "calcHEP/models/prtcls6.mdl",
+    "sha256": "057c91381e44a54a76234a5476490c88c3175ba7933406e9cc68fb4a02ae2c09"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/calcHEP/models/lgrng6.mdl",
+    "snapshot": "calcHEP/models/lgrng6.mdl",
+    "sha256": "1388fbde3417025d662d4491650afd657c6caf08fd9f7402171d39f96a568f5e"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramA/batch_results/calchep_E8_0.090GeV_ep1_1e5-single.lhe",
+    "snapshot": "diagramA/output-header.txt",
+    "excerpt": "Header only; at most 700 lines",
+    "sha256": "fd4277477c1fdf5d1bc26d3edc32bf5695da288232879e1f006910c797bb4244"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/diagramB/batch_results/calchep_E8_0.090GeV_ep1_1e5-single.lhe",
+    "snapshot": "diagramB/output-header.txt",
+    "excerpt": "Header only; at most 700 lines",
+    "sha256": "9f63959cf6d42eb6fa30ae680df76cc9cf809b903115b4e5496724246465cd4d"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/calcHEP/batch_results/calchep_E8_0.090GeV_ep1_10-single.lhe",
+    "snapshot": "calcHEP/output-header.txt",
+    "excerpt": "Header only; at most 700 lines",
+    "sha256": "95e9a91352a01eacdb0a8d6de20d70c08bd708f0710fc27f6b51c76e1b79226c"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/jobconf",
+    "snapshot": "condor-script/jobconf",
+    "sha256": "5bd80ed3dd36f69d63c66f03fb9ddb5aa87ded2bbdba337ea0c80308bca6d8c7"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/config/baseline1.0/e+_E8_W_noECALBField/sch.yaml",
+    "snapshot": "condor-script/config/baseline1.0/e+_E8_W_noECALBField/sch.yaml",
+    "sha256": "ed4240f6fd0eaadb6ab7520b05438d4e41c9fddc7c222a117ef618583b925f8d"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/config/baseline1.0/e+_E8_W_noECALBField/tch.yaml",
+    "snapshot": "condor-script/config/baseline1.0/e+_E8_W_noECALBField/tch.yaml",
+    "sha256": "a2a199cedad07cf8f9a3c041b283edee4031e9fcb6a7d184a60816bd359a80c5"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/config/baseline1.0/e+_E8_W_noECALBField/brem.yaml",
+    "snapshot": "condor-script/config/baseline1.0/e+_E8_W_noECALBField/brem.yaml",
+    "sha256": "bde562d563c948da09e2892725f18aa9bbb808ace50fd0f2ccf62a8597c5b61f"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/config/baseline1.0/e+_E8_W_noECALBField/config.txt",
+    "snapshot": "condor-script/config/baseline1.0/e+_E8_W_noECALBField/config.txt",
+    "sha256": "4ef866d5c03a8d58973eea91e06ba3861faa3e965b227c751332c0e2fc31340f"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/run/baseline1.0/e+_E8_W_noECALBField/sch/j14/default.yaml",
+    "snapshot": "condor-script/run/baseline1.0/e+_E8_W_noECALBField/sch/j14/default.yaml",
+    "sha256": "da6b26501f7bd5c24c390718623f48f7827dccc3d4f41d4ea62ab2331640f1d3"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/condor-script/run/baseline1.0/e+_E8_W_noECALBField/sch/j14/config.txt",
+    "snapshot": "condor-script/run/baseline1.0/e+_E8_W_noECALBField/sch/j14/config.txt",
+    "sha256": "81629bb1a8eca8204cbd9bf1c83b15aabdbd7e39d667902efcb7611571cb2545"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/darkshine-simulation/DP_simu/src/DarkPhysics/PositronSchProcess.cc",
+    "snapshot": "darkshine-simulation/DP_simu/src/DarkPhysics/PositronSchProcess.cc",
+    "sha256": "da8e49a5782506b71b579e540d7cacf0618622db2db51ede235caca10bba52f2"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/darkshine-simulation/DP_simu/src/DarkPhysics/PositronSchPhysics.cc",
+    "snapshot": "darkshine-simulation/DP_simu/src/DarkPhysics/PositronSchPhysics.cc",
+    "sha256": "49928259fad3a997d427cdeb69e8d49d66e7e75dec5739dba73e1135f4fc8683"
+  },
+  {
+    "source": "bl0:/lustre/collider/suntong/darkshine-simulation/DP_simu/src/DarkPhysics/PositronTchProcess.cc",
+    "snapshot": "darkshine-simulation/DP_simu/src/DarkPhysics/PositronTchProcess.cc",
+    "sha256": "edef119ce5e0d11d5c7b2b9ebbac400810dccc39bcdb82dddb285bdaff9ccf71"
+  }
+]

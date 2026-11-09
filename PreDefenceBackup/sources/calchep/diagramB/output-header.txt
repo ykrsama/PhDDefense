@@ -1,0 +1,433 @@
+<LesHouchesEvents version="1.0">
+<!--
+File generated with CalcHEP-PYTHIA interface
+-->
+<header>
+<hepml>
+<samples xmlns="http://mcdb.cern.ch/hepml/0.2/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://mcdb.cern.ch/hepml/0.2/ http://mcdb.cern.ch/hepml/0.2/hepml.xsd">
+    <files>
+        <file>
+            <eventsNumber> 100000        </eventsNumber>
+            <crossSection unit="pb">8.0000E+10</crossSection>
+            <fileSize> 67712324         </fileSize>
+            <comments> </comments>
+            <location>
+            </location>
+        </file>
+    </files>
+    <description>
+        <title>  </title>
+        <abstract> </abstract>
+        <authorComments> </authorComments>
+	<experimentGroup>
+	    <experiment> </experiment>
+	    <group> </group>
+	    <responsiblePerson> </responsiblePerson>
+	    <description>  </description>
+	</experimentGroup>
+        <generator>
+            <name>CalcHEP</name>
+            <version> 3.8.10 </version>
+            <homepage>http://theory.sinp.msu.ru/~pukhov/calchep.html</homepage>
+            <description>
+ CalcHEP - a package for calculation of Feynman diagrams
+ integration over multi-particle phase space,
+ generation of events and application of decay processes
+            </description>
+        </generator>
+        <model>
+             <name> </name>
+             <description>DarkPhoton</description>
+            <parameters>
+                <parameter>
+                    <name>EEi</name>
+                    <value>0.313330</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>EE</name>
+                    <value>0.302862</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>SW</name>
+                    <value>0.474000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>Q</name>
+                    <value>100.000000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>MW</name>
+                    <value>80.385000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>Mtp</name>
+                    <value>172.500000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>McMc</name>
+                    <value>1.230000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>MbMb</name>
+                    <value>4.250000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>alphaSMZ</name>
+                    <value>0.118400</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>Ml</name>
+                    <value>1.777000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>Mh</name>
+                    <value>125.000000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>mAp</name>
+                    <value>0.090000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>epsilon</name>
+                    <value>1.000000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>mTg</name>
+                    <value>171.000000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>zTg</name>
+                    <value>74.000000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>aTg</name>
+                    <value>184.000000</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+                <parameter>
+                    <name>Me</name>
+                    <value>0.000510</value>
+			      <notation>
+				      <plain> </plain>
+				      <Latex> </Latex>
+			      </notation>
+			      <description> </description>
+                </parameter>
+            </parameters>
+        </model>
+        <process>
+            <beam1>
+                <particle KFcode="-11">e+</particle>
+                <energy unit="GeV">8.000E+00</energy>
+                <pdf name= "OFF"> </pdf>
+            </beam1>
+            <beam2>
+                <particle KFcode="11">e+</particle>
+                <energy unit="GeV">5.100E-04</energy>
+                <pdf name= "OFF"> </pdf>
+            </beam2>
+	    <finalState>
+		<state>
+                </state>
+		<notation>
+		    <plain>
+                   </plain>
+		    <Latex> </Latex>
+		</notation>
+	    </finalState>
+            <crossSection unit="pb">8.000E+10</crossSection>
+            <subprocesses>
+              <subprocess cutset_id="1" >
+                <notation> E(-11),e(11) -> A(22),Ap(2200) </notation>
+                <crossSection unit="pb"> 7.999984E+10 </crossSection>
+              </subprocess>
+            </subprocesses>
+        </process>
+        <cuts>
+            <cutSet cutset_id="1">
+                <cut>
+                    <object>
+                        <name> </name>
+                        <notation>
+                            <plain> </plain>
+                            <Latex> </Latex>
+                        </notation>
+                    </object>
+                    <minValue> </minValue>
+                    <maxValue> </maxValue>
+                    <logic> </logic>
+                </cut>
+            </cutSet>
+        </cuts>
+        <authors>
+       	   <author>
+       	      <firstName>CalcHEP</firstName>
+              <lastName> </lastName>
+              <email>calchep[at]goolegroups.com</email>  
+              <experiment> </experiment>
+              <group> </group>
+       	      <organization> </organization>
+   	   </author>
+         </authors>
+    </description>
+</samples>
+</hepml>
+<slha>
+BLOCK QNUMBERS 2200 # Ap
+ 1 0
+ 2 3
+ 3 1
+ 4 0
+
+BLOCK QNUMBERS 2201 # Tg
+ 1 3
+ 2 2
+ 3 1
+ 4 1
+
+BLOCK MASS
+ 22    0.000000E+00 # 
+ 2200    9.000000E-02 # 
+ 23    9.129214E+01 # 
+ 21    0.000000E+00 # 
+ 24    8.038500E+01 # 
+ 12    0.000000E+00 # 
+ 11    5.100000E-04 # 
+ 2201    1.710000E+02 # 
+ 14    0.000000E+00 # 
+ 13    0.000000E+00 # 
+ 16    0.000000E+00 # 
+ 15    1.777000E+00 # 
+ 2    0.000000E+00 # 
+ 1    0.000000E+00 # 
+ 4    6.113709E-01 # 
+ 3    5.944387E-02 # 
+ 6    1.725000E+02 # 
+ 5    3.198581E+00 # 
+ 25    1.250000E+02 # 
+
+DECAY 25  3.475613E-03 # h 
+   6.606785E-01  2  5  -5  # b,B 
+   2.171340E-01  2  24  -24  # W+,W- 
+   7.128685E-02  2  15  -15  # l,L 
+   2.644680E-02  2  23  23  # Z,Z 
+   2.422470E-02  2  4  -4  # c,C 
+   2.290457E-04  2  3  -3  # s,S 
+</slha>
+
+<calchep-batch>
+<![CDATA[
+#########################################
+#            Model Info                 #
+#########################################
+Model:     DarkPhoton
+#
+Gauge:     Feynman
+
+
+#########################################
+#            Processes                  #
+#########################################
+Process   :    E,e->Ap,A
+
+#########################################
+#            PDF's                      #
+#########################################
+pdf1 :       OFF
+pdf2 :       OFF
+
+
+#########################################
+#            Momenta                    #
+#########################################
+p1 :         8
+p2 :         0
+
+
+#########################################
+#            Polarization               #
+#########################################
+pol1 :         0
+pol2 :         0
+
+
+#########################################
+#            Parameters                 #
+#########################################
+Parameter:   EEi=0.31333
+Parameter:   EE=0.3028619
+Parameter:   GG=1.117
+Parameter:   SW=0.474
+Parameter:   Q=100
+Parameter:   MW=80.385
+Parameter:   Mtp=172.5
+Parameter:   McMc=1.23
+Parameter:   MbMb=4.25
+Parameter:   alphaSMZ=0.1184
+Parameter:   Ml=1.777
+Parameter:   Mh=125
+Parameter:   mAp=0.090
+Parameter:   epsilon=1
+Parameter:   mTg=171.
+Parameter:   zTg=74
+Parameter:   aTg=184
+Parameter:   Me=0.00051
+
+#########################################
+#            QCD running info           #
+#########################################
+parton dist. alpha : 1
+alpha(MZ)          : 0.1172
+alpha nf           : 5
+alpha order        : 2
+mb(mb)             : 4.2
+Mtop(pole)         : 175
+
+#########################################
+#            Breit-Wigner               #
+#########################################
+Breit Wigner range : 2.7
+T-channel widths   : OFF
+GI in T-channel    : OFF
+GI in S-channel    : OFF
+
+#########################################
+#            Cuts                       #
+#########################################
+
+#########################################
+#            Kinematics                 #
+#########################################
+
+#########################################
+#            Regularization             #
+#########################################
+
+#########################################
+#            Distributions              #
+#########################################
+
+#########################################
+#            Events Generation          #
+#########################################
+Number of events (per run step): 100000
+Max lumi [1/fb]                : 1000000000
+Filename                       : calchep_E8_0.090GeV_ep1_1e5-single
+Cleanup                        : False
+
+#########################################
+#            Parallelization info       #
+#########################################
+Parallelization method : local
+Que                    : 
+Walltime               : 0
+Memory                 : 0
+email                  : 
+Max number of cpus     : 8
+sleep time             : 3
+nice level             : 19
+
+#########################################
+#            Vegas                      #
+#########################################
+nSess_1  : 5
+nCalls_1 : 10000
+nSess_2  : 5
+nCalls_2 : 100000
+
+#########################################
+#           Event Generator             #
+#########################################
+sub-cubes      : 10000
+MAX*N          : 2.000000
+find new MAX   : 50
+
+]]>
+</calchep-batch>
+</header>
+<init>
+   -11    11  8.00000001626E+00  5.10000000000E-04    -1    -1    -1    -1    -4     1
+  7.99998400000E+10  0.00000000000E+00  1.00000000000E+00   1
+</init>
+<event>

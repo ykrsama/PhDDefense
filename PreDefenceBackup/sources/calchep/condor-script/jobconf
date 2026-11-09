@@ -1,0 +1,20 @@
+### General
+JOBS_DIR="${PWD}/run/baseline1.0/e+_E8_W_noECALBField/sch/"
+CONF_DIR="config/baseline1.0/e+_E8_W_noECALBField"
+YAML_PATH="${CONF_DIR}/sch.yaml"
+CONFIG_PATH="${CONF_DIR}/config.txt"
+
+### Run
+CPU_N=8  # Total beam on = CPU_N * BEAM_ON * JOBS_N
+BEAM_ON=12500  # beam On number per CPU. 50000 * 70ms ~ 1h. Don't exceed 2h wall time.
+JOBS_N=50  # total number of submit jobs. Will be replaced in Scan mode
+CONDOR_MAX_MAT=54  # CONDOR_MAX_MATERIALIZE x CPU_N <= 500
+
+### For Scan Mode
+SCAN_TASKS=("signal_mass")  # Scan single variable, or multiple. i.e. ("signal_mass"), ("BiasFactor"), ("signal_mass" "BiasFactor")
+SIGNAL_MASS_LIST=(1 2 3 4 5 6 7 8 9 10 20 30 40 50 60 70 80 90 100 110 120 130 135) #140 200 500 700 1000 1500 2000)  # CPU_N * BEAM_ON Events per mass
+#BIAS_FACTOR_LIST=$(seq 2 0.1 2.0 | awk '{print 10^($1)}')
+
+### Read from simu
+#USE_SIMU_FROM_LIST=""
+#USE_GEOMETRY_FILE="<path-to>"

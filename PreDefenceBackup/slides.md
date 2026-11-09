@@ -70,3 +70,63 @@ src: ./slides/13-acts-details.md
 ---
 src: ./slides/14-statistics.md
 ---
+
+---
+src: ./slides/15-bias-probability.md
+---
+
+---
+src: ./slides/16-bias-counters.md
+---
+
+---
+src: ./slides/17-bias-gmm.md
+---
+
+---
+src: ./slides/18-bias-pn.md
+---
+
+---
+src: ./slides/19-bias-validation.md
+---
+
+---
+src: ./slides/20-normalisation-example.md
+---
+
+---
+src: ./slides/21-empty-samples.md
+---
+
+---
+src: ./slides/22-filter-support.md
+---
+
+---
+src: ./slides/23-annihilation-scale.md
+---
+
+---
+src: ./slides/24-luminosity.md
+---
+
+---
+src: ./slides/25-thresholds.md
+---
+
+---
+src: ./slides/26-coupling-scaling.md
+---
+
+---
+src: ./slides/27-software-benchmarks.md
+---
+
+---
+src: ./slides/28-generator-config.md
+---
+
+---
+src: ./slides/29-transport-config.md
+---

@@ -1,0 +1,32 @@
+Model:         DarkPhoton
+Model changed: False
+Gauge:         Feynman
+Process:       E,Tg->E,Ap,Tg
+pdf1:      OFF
+pdf2:      OFF
+
+p1:        8
+p2:        0
+Parameter : mAp=0.090
+Parameter : epsilon=1
+Parameter : mTg=184
+Parameter : zTg=72
+Parameter : aTg=184
+
+####################
+Kinematics : 12 -> 34 , 5
+Kinematics : 34 -> 3 , 4
+Regularization momentum : 34
+Regularization mass : 0.000511
+Regularization width : 4e-10
+Regularization power : 2
+#####################
+Parallelization method : local
+Max number of cpus : 8
+
+
+Number of events : 100000
+
+Filename: calchep_E8_0.090GeV_ep1_1e5
+Cleanup: False
+

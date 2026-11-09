@@ -1,0 +1,26 @@
+Model:         DarkPhoton
+Model changed: False
+Gauge:         Feynman
+Process:       E,e->dM,DM
+#Decay: Ap->dM,DM
+#Remove: A,Z
+pdf1:      OFF
+pdf2:      OFF
+
+p1:        4
+p2:        0
+Parameter : epsilon=1
+Parameter : mAp=0.090
+Parameter : mDM=0.02999999
+Parameter : wAp=0.00348151 
+
+#####################
+Parallelization method : local
+Max number of cpus : 8
+
+
+Number of events : 2
+
+Filename: calchep_E4_0.090GeV_ep1_2
+Cleanup: False
+

@@ -1,0 +1,22 @@
+Model:         DarkPhoton
+Model changed: False
+Gauge:         Feynman
+Process:       E,e->Ap,A
+pdf1:      OFF
+pdf2:      OFF
+
+p1:        8
+p2:        0
+Parameter : mAp=0.090
+Parameter : epsilon=1
+
+#####################
+Parallelization method : local
+Max number of cpus : 8
+
+
+Number of events : 100000
+
+Filename: calchep_E8_0.090GeV_ep1_1e5
+Cleanup: False
+
