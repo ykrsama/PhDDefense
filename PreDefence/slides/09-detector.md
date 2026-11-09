@@ -3,18 +3,20 @@ layout: default
 class: content-slide slide-detector
 transition: fade
 clicks: 3
-title: "DarkSHINE detector concept"
+title: "DarkSHINE detector conceptual design Baseline 1"
 ---
 
 <div class="eyebrow">Physics motivation and DarkSHINE</div>
 
-# DarkSHINE detector concept
+# DarkSHINE detector conceptual design <span class="baseline-title">Baseline 1</span>
 
-<DetectorTour/><div class="takeaway">Measure the incident and recoil momenta, then veto visible energy in the calorimeters.</div>
-
+<DetectorTour/>
+<ResearchCallout :works="['bdr']"/>
 
 <!--
-Following the beam through the detector, the tagging tracker measures the incoming momentum in the magnetic field. The particle then crosses a thin tungsten target, and the recoil tracker measures the outgoing charged particle. The ECAL (Electromagnetic Calorimeter) measures the remaining electromagnetic energy. The larger HCAL (Hadronic Calorimeter) provides enough material to detect penetrating hadrons and muons and reject those events. The trackers use strips, while the electromagnetic calorimeter uses a segmented crystal array. We use the simulation geometry to study their acceptance and response.
+This is the DarkSHINE detector conceptual design in the Baseline 1 configuration. Baseline 1 uses a non-staggered twenty by twenty by eleven LYSO ECAL and the original uniform-absorber HCAL. It is the common detector benchmark for the electron and positron sensitivity studies. The Baseline Design Report documents the experiment and detector studies.
 
-Click sequence: Tracking, ECAL (Electromagnetic Calorimeter), HCAL (Hadronic Calorimeter).
+Following the beam, the tagging tracker measures the incident electron momentum in the magnetic field. The electron crosses a thin tungsten target, and the recoil tracker measures the outgoing charged particle. The ECAL measures electromagnetic energy and its spatial distribution. The larger HCAL detects hadrons and penetrating muons so that we can reject their visible activity. The trackers use silicon strips, while the ECAL is a segmented crystal array.
+
+Click sequence: Tracking, ECAL, HCAL.
 -->

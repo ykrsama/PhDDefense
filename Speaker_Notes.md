@@ -32,17 +32,19 @@ Presenter cue: Start with production through kinetic mixing. Click once to intro
 
 ## 08. SHINE facility and DarkSHINE beamline
 
-SHINE (Shanghai High Repetition-Rate XFEL (X-ray Free-Electron Laser) and Extreme Light Facility) provides the accelerator for DarkSHINE. The electron programme uses a dedicated single-particle extraction branch alongside the FEL (Free-Electron Laser) beamlines. The reference beam energy is 8 GeV, and the benchmark is 3 × 10¹⁴ EOT. The nominal single-particle rate is 1 MHz. Actual running time depends on SHINE (Shanghai High Repetition-Rate XFEL (X-ray Free-Electron Laser) and Extreme Light Facility) operational inputs. A positron beamline is a proposed extension, and this study evaluates what it could add to the physics reach.
+SHINE stands for Shanghai High Repetition-Rate XFEL and Extreme Light Facility. We take an electron-beam design energy of 8 GeV and a design repetition rate of 1 MHz as inputs to the DarkSHINE conceptual design. The electron programme uses a dedicated extraction branch alongside the free-electron-laser beamlines. The benchmark count is three times ten to the fourteen incident electrons, expressed as EOT, or electrons on target. These are the design parameters and beam count used for the simulation study. Positron delivery is a proposed extension of this electron programme.
 
-## 09. DarkSHINE detector concept
+## 09. DarkSHINE detector conceptual design Baseline 1
 
-Following the beam through the detector, the tagging tracker measures the incoming momentum in the magnetic field. The particle then crosses a thin tungsten target, and the recoil tracker measures the outgoing charged particle. The ECAL (Electromagnetic Calorimeter) measures the remaining electromagnetic energy. The larger HCAL (Hadronic Calorimeter) provides enough material to detect penetrating hadrons and muons and reject those events. The trackers use strips, while the electromagnetic calorimeter uses a segmented crystal array. We use the simulation geometry to study their acceptance and response.
+This is the DarkSHINE detector conceptual design in the Baseline 1 configuration. Baseline 1 uses a non-staggered twenty by twenty by eleven LYSO ECAL and the original uniform-absorber HCAL. It is the common detector benchmark for the electron and positron sensitivity studies. The Baseline Design Report documents the experiment and detector studies.
 
-Click sequence: Tracking, ECAL (Electromagnetic Calorimeter), HCAL (Hadronic Calorimeter).
+Following the beam, the tagging tracker measures the incident electron momentum in the magnetic field. The electron crosses a thin tungsten target, and the recoil tracker measures the outgoing charged particle. The ECAL measures electromagnetic energy and its spatial distribution. The larger HCAL detects hadrons and penetrating muons so that we can reject their visible activity. The trackers use silicon strips, while the ECAL is a segmented crystal array.
+
+Click sequence: Tracking, ECAL, HCAL.
 
 ## 10. Detector requirements for a missing-energy search
 
-These requirements come from the ways an ordinary interaction can look like missing energy. The tagging tracker needs a hit precision below 10 micrometres. Its reference simulation gives a momentum resolution below 2% at 8 GeV. The tungsten target is 0.1 radiation lengths thick to limit multiple scattering. The recoil tracker needs to measure soft tracks down to about 30 MeV, with acceptance extending to 2 GeV. The ECAL (Electromagnetic Calorimeter) contains electron and photon showers. Its digitised simulation gives a stochastic term below 2%; leakage into the low-energy tail needs a separate study. For the HCAL (Hadronic Calorimeter), the neutron-veto inefficiency target is below 10⁻⁵ above roughly 2 GeV and below 10⁻³ at lower energies. The event background also depends on the neutron spectrum and the other selection cuts.
+The Baseline 1 requirements follow from the missing-energy measurement. The tagging tracker needs a hit precision below 10 micrometres and a momentum resolution below 2 percent at 8 GeV. The tungsten target is 0.1 radiation lengths thick to limit multiple scattering. The recoil tracker measures soft charged particles, with the quoted acceptance extending from about 30 MeV to 2 GeV. The ECAL needs high granularity and precise energy measurement to identify localised electromagnetic deposits and events with low visible energy. The HCAL requirements are driven by the neutron background: veto inefficiency below ten to the minus five above roughly 2 GeV, and below ten to the minus three at lower energies. The ECAL and HCAL design papers are collaborative research contributions supporting these subsystem studies.
 
 ## 11. Electron-mode signal and background rejection
 
@@ -62,7 +64,11 @@ I will now describe our work on the simulation framework, from defining the dete
 
 ## 14. The DarkSHINE software framework
 
-The framework connects the incident beam to a physics prediction. DSimu generates particles and simulates their interactions in the detector, DEvent carries the truth and hit collections, and DAna runs digitisation, reconstruction and analysis. DDis lets us inspect individual events. The plots on the right are electron-mode simulation examples from the CDR. The recoil-energy distribution separates the lower-energy signal from the background concentrated near the beam energy. Transverse momentum gives another handle; the plotted pT distribution already requires recoil energy between 50 MeV and 4 GeV. These distributions show the physics questions the software must answer: where signal and background populate phase space, and which detector measurements can distinguish them. I designed the overall software framework and worked on the simulation software, DSimu, the event data structure, DEvent, rare-process biasing and filtering, and ACTS integration.
+The framework connects the incident beam to a physics prediction. DSimu generates particles and simulates their detector interactions. DEvent carries the truth and hit collections. DAna runs digitisation, reconstruction and analysis, and DDis lets us inspect individual events.
+
+The four plots on the right are physical outputs from the CDR electron-mode simulation. The coloured curves correspond to different dark-photon masses. The dark distributions in the energy, transverse-momentum and angle panels show the inclusive background. The recoil-energy plot separates the softer signal electrons from the background concentrated near the beam energy. The transverse-momentum plot gives a complementary discriminant; this panel requires recoil energy between 50 MeV and 4 GeV. Larger recoil angles and the transverse separation at the detector surface connect these kinematics to the tracker acceptance. The separation panel shows the signal mass dependence. These are the observables we need the framework to produce for detector design and event selection.
+
+I contributed to the general framework design and developed the simulation software, DSimu, the event data structure, DEvent, rare-process biasing and filtering, and ACTS integration. I will now explain how we made large simulation samples more practical to produce and store.
 
 ## 15. A common event model: DEvent
 
@@ -70,7 +76,7 @@ DEvent carries several views of the same physical event. Truth particles and ste
 
 ## 16. Geometry navigation and event-record optimisation
 
-The storage optimisation starts from the physics information we need. Particle records store momentum components, energy, mass, production vertices and endpoints. Hits store deposited energy, time, position and detector or cell identifiers. These floating-point fields use float rather than double. We also remove duplicated quantities: the momentum magnitude can be calculated from its components, and the PDG identifier replaces a repeated particle-name string. The historical optimisation restricted step histories to the initial electron in the tracker region, where its trajectory is needed. Together with record and memory-layout changes, the reported event size falls from 60.1 to as little as 13.7 kilobytes. Separately, a bounding volume hierarchy speeds navigation through the segmented detector. It reduces the number of individual volumes Geant4 has to test; the benchmark falls from 260 to 42 milliseconds per event. The two numbers describe different optimisations and configurations.
+After obtaining these physics outputs, we optimised the software for large event production. The changes target event records and Geant4 geometry navigation. The storage optimisation starts from the physics information we need. Particle records store momentum components, energy, mass, production vertices and endpoints. Hits store deposited energy, time, position and detector or cell identifiers. These floating-point fields use float rather than double. We also remove duplicated quantities: the momentum magnitude can be calculated from its components, and the PDG identifier replaces a repeated particle-name string. The historical optimisation restricted step histories to the initial electron in the tracker region, where its trajectory is needed. Together with record and memory-layout changes, the reported event size falls from 60.1 to as little as 13.7 kilobytes. Separately, a bounding volume hierarchy speeds navigation through the segmented detector. It reduces the number of individual volumes Geant4 has to test; the benchmark falls from 260 to 42 milliseconds per event. The two numbers describe different optimisations and configurations.
 
 ## 17. Generator-level filtering with staged Geant4 tracking
 
@@ -100,7 +106,9 @@ Digitisation converts simulated deposits into measurable signals. After scintill
 
 ## 23. Track finding and fitting
 
-Track finding identifies which strip measurements belong to a common trajectory. The legacy finder ranks quick circle candidates and removes accepted hits before continuing. Track fitting then estimates momentum and covariance while accounting for field, material, measurement errors, energy loss and scattering. The framework provides a GenFit Kalman fit and Riemann alternatives. The plot compares their reconstructed momentum spectra with truth. We can see both the beam peak and the broad lower-momentum population, which is relevant to recoil studies. This is a spectrum comparison; detailed resolution studies compare fitted and truth states at the same reference surface. The outputs used by the analysis include track multiplicity and recoil momentum. This tracking work is credited to Yifan Zhu.
+Track finding identifies which strip measurements belong to a common trajectory. The legacy finder ranks circle candidates and removes accepted hits before continuing. Track fitting estimates momentum and covariance while accounting for the magnetic field, material, measurement errors, energy loss and multiple scattering.
+
+The CDR plot shows the recoil tracker's relative momentum resolution as a function of beam energy, for four to ten tracker layers. It is a detector-performance study. At low energies, multiple scattering affects the measurement; at high energies, the small curvature and available lever arm limit the resolution. Six layers provide the Baseline 1 balance between tracking information and material. The reconstructed momentum and track multiplicity then enter the missing-momentum selection. The framework also supports the GenFit and Riemann fitting implementations described in the software study.
 
 ## 24. ACTS integration in DarkSHINE
 
@@ -122,7 +130,7 @@ Nuclear bremsstrahlung covers a broad range of mediator masses. Non-resonant ann
 
 ## 28. Signal and background samples
 
-We simulate 30 bremsstrahlung mass points, 18 non-resonant points and 23 resonant points, with 100,000 events at each point. We calculate efficiencies from these equal-sized samples and apply the physical rates afterwards. For backgrounds, we generate dedicated biased samples of photonuclear, positron-nuclear and muon-pair processes. Production in the target or tracker is separate from production in the ECAL (Electromagnetic Calorimeter). We use the EN (Electronuclear) label for the positron-nuclear sample in this campaign. We also generate ordinary annihilation in the target. An independent inclusive sample contains the equivalent of 2.5 × 10⁹ incident positrons. We use it to check the dedicated predictions without adding it to the background total. All sensitivity results use baseline 1.
+We simulate 30 bremsstrahlung mass points, 18 non-resonant points and 23 resonant points, with 100,000 events at each point. We calculate efficiencies from these equal-sized samples and apply the physical rates afterwards. For backgrounds, we generate dedicated biased samples of photonuclear, positron-nuclear and muon-pair processes. Production in the target or tracker is separate from production in the ECAL (Electromagnetic Calorimeter). We use the EN (Electronuclear) label for the positron-nuclear sample in this campaign. We also generate ordinary annihilation in the target. POT denotes positrons on target. An independent inclusive sample contains the equivalent of 2.5 × 10⁹ incident positrons. We use it to check the dedicated predictions without adding it to the background total. All sensitivity results use baseline 1.
 
 ## 29. Three exclusive signal regions
 
@@ -134,7 +142,7 @@ On the left is missing momentum. The background sample already passes the loose 
 
 ## 31. Maximum-cell energy separates the zero-track sample
 
-For events with no recoil track, the largest ECAL (Electromagnetic Calorimeter) cell helps distinguish a photon deposit from a nearly empty calorimeter. The non-resonant distribution changes with mediator mass because the photon kinematics change. Resonant annihilation usually leaves little activity, although interactions in the tracker material can produce deposits. We also cut on total energy because many small deposits can add up. The 1 MeV cuts assume that the detector can operate at those thresholds; they are not measured noise levels. The campaign does not fully digitise HCAL (Hadronic Calorimeter) noise and pileup, so detector measurements are needed to test this assumption.
+For events with no recoil track, the largest ECAL (Electromagnetic Calorimeter) cell helps distinguish a photon deposit from a nearly empty calorimeter. The non-resonant distribution changes with mediator mass because the photon kinematics change. Resonant annihilation usually leaves little activity, although interactions in the tracker material can produce deposits. We also cut on total energy because many small deposits can add up. The 1 MeV values are selection thresholds in the benchmark detector-response model.
 
 ## 32. Signal efficiency across the mass scan
 
@@ -150,11 +158,11 @@ This cutflow follows photonuclear interactions in the ECAL (Electromagnetic Calo
 
 ## 35. Normalisation checked in populated sidebands
 
-We normalise each dedicated sample to its equivalent unbiased POT using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This checks the rates and shapes in that region. It does not test the much smaller tails at the final cuts. We use the inclusive sample for this cross-check only, since adding it to the dedicated samples would count the same background twice.
+We normalise each dedicated sample to its equivalent unbiased POT using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This comparison checks the normalisation and shapes in the populated sidebands. The dedicated samples provide the residual-background prediction through the extrapolation on the next page. The inclusive sample remains an independent cross-check of that prediction.
 
 ## 36. Residual-background extrapolation
 
-For SR1 (Signal Region 1) and SR2 (Signal Region 2), we fit the dedicated survival curves with a power law in the total-ECAL (Electromagnetic Calorimeter) threshold, expressed in MeV. The nominal predictions are 0.03 events for region 1 and 1.3 × 10⁻⁴ for region 2. SR3 (Signal Region 3) needs a 2-dimensional fit because total energy and maximum-cell energy are correlated. Its nominal prediction is 1.6 × 10⁻⁴ events. These estimates depend on the chosen fit function and the limited tail statistics. They also omit components with no surviving simulated events. The inclusive 1-dimensional comparison uses an exponential fit, so it does not provide a quantitative closure test at the final thresholds.
+For SR1 (Signal Region 1) and SR2 (Signal Region 2), we fit the dedicated survival curves with a power law in the total-ECAL (Electromagnetic Calorimeter) threshold, expressed in MeV. The nominal predictions are 0.03 events for region 1 and 1.3 × 10⁻⁴ for region 2. SR3 (Signal Region 3) needs a 2-dimensional fit because total energy and maximum-cell energy are correlated. Its nominal prediction is 1.6 × 10⁻⁴ events. These are predictions from fitted survival trends, extrapolated from populated sidebands to the final ECAL thresholds. The joint fit in SR3 includes the correlation between the two ECAL observables.
 
 ## 37. Combined statistical interpretation
 
@@ -174,9 +182,11 @@ Here I compare the combined positron projection with the earlier electron-beam p
 
 To compare with thermal dark-matter targets, we use a mediator-to-dark-matter mass ratio of 3 and a dark coupling alpha D of 0.5. A 90 MeV mediator then corresponds to a 30 MeV dark-matter particle. With these choices, the variable y equals epsilon squared divided by 162. This changes the coordinates of the result; the simulated selections and efficiencies stay the same. The scalar, Majorana and pseudo-Dirac targets use different spin and annihilation assumptions. Other models can give different predictions even at the same mass.
 
-## 41. Scope of the positron projection
+## 41. Positron study: results and refinements
 
-This study gives detector-level efficiencies and migration between regions for the 3 production mechanisms in the benchmark setup. We use them to obtain the combined sensitivity. The largest remaining uncertainties are the small background tails and the assumed veto response. Larger rare-process samples would help constrain the extrapolation and the omitted components. Prototype measurements can test the thresholds with realistic noise and pileup. We also need toy Monte Carlo to check the statistical treatment at very low event counts. These studies will help assess how closely an experimental search can reach the projection.
+The positron analysis is complete for the 8 GeV Baseline 1 benchmark. We evaluated each production mechanism in every reconstructed category, included migration, obtained the background predictions and combined the three exclusive regions. The result demonstrates the sensitivity gain from annihilation, especially near 90 MeV.
+
+Further studies can refine the detector-response inputs using measurements, increase the statistics available for rare-background studies, and extend the uncertainty models as new detector and beam configurations are explored. These are directions for developing the analysis beyond the completed benchmark.
 
 ## 42. Summary and Outlook
 
@@ -184,12 +194,16 @@ I will finish with the main software and physics results, then discuss the next 
 
 ## 43. Main results
 
-We developed a configurable simulation framework and event model that connect simulated particle interactions to detector response and reconstruction. Geometry and event-record optimisation reduce the cost per event. Biasing and staged filters make rare-background production more practical, and parallel processing increases the production capacity. We also integrated ACTS (A Common Tracking Software) into the reconstruction framework. Using this simulation chain, we studied positron running with 3 exclusive regions and included migration between them. At 90 MeV, the combined expected limit is 5.33 × 10⁻¹³ in epsilon squared at the 3 × 10¹⁴ POT benchmark. Annihilation gives most of the improvement, especially the non-resonant contribution near its endpoint, under the assumptions discussed earlier.
+My software contributions cover the general framework design, the development of DSimu and DEvent, rare-process biasing and filtering, production optimisation, and ACTS integration. Together with the collaboration's response and reconstruction work, these components connect simulated interactions to the observables used in the physics analysis.
+
+I used this framework to complete a detector-level positron-beam study with three production mechanisms and three exclusive signal regions. The signal calculation includes migration between all channel and region combinations. Combining the regions gives an expected 90 percent confidence-level limit of 5.33 times ten to the minus thirteen in epsilon squared at a mediator mass of 90 MeV and three times ten to the fourteen POT. At the same detector benchmark and matching integrated luminosity, annihilation improves the reach near this mass by about two orders of magnitude relative to the earlier electron-beam projection.
 
 ## 44. Outlook
 
-Detector measurements will help constrain the response and veto thresholds. Larger rare-process samples will improve our estimate of the background tails and their dependence on the fit model. Toy Monte Carlo can test the statistical approximation when expected backgrounds are small. Another option is to vary the beam energy. The characteristic annihilation mass changes approximately with the square root of the beam energy, so an energy scan could probe other masses. Each energy would need a study of its kinematics, acceptance and backgrounds. The 8 GeV analysis and the simulation framework provide a starting point.
+The completed framework and 8 GeV study support several extensions. Prototype and beam-test measurements can provide more detailed response inputs for digitisation, calibration and veto optimisation. Improved rare-process sampling can increase the statistics available for background studies and support more detailed uncertainty models.
+
+A further physics direction is to vary the positron design energy. The characteristic annihilation mass scales approximately as the square root of the beam energy. Studies at additional energies can therefore explore other mediator masses, with selections optimised for the corresponding recoil and photon kinematics. This extends the physics coverage beyond the 8 GeV benchmark.
 
 ## 45. Research Achievements
 
-Our work covers the positron study and the simulation framework. We also contributed to collaborative publications and reports on the CEPC (Circular Electron Positron Collider) exotic-Higgs study, DarkSHINE physics prospects and calorimeter design. The simulation and reconstruction manuscript is in preparation, and the baseline design report is preliminary. Thank you for your attention. I welcome your questions.
+The first two entries are my lead-author publications on the positron study and the simulation framework. The simulation and reconstruction manuscript is collaborative work with Professor Kim-Siang Khaw and the other authors, and is in preparation. The publications and report on the right are collaborative contributions, including the CEPC study, DarkSHINE physics prospects, calorimeter design and the Baseline Design Report. Thank you for your attention. I welcome your questions.

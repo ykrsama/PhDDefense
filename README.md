@@ -4,7 +4,7 @@
 Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University  
 10th Nov. 2026
 
-本项目包含英文正式报告 **45 页 / 43:55**，以及独立的 **29 页备份册**。正式报告最后一页为 **Research Achievements**。每页讲稿与配时已写入 Slidev presenter notes，同时提供 `Speaker_Notes.md` 和 `Timing.md`。
+本项目包含英文正式报告 **45 页 / 44:30**，以及独立的 **29 页备份册**。正式报告最后一页为 **Research Achievements**。每页讲稿与配时已写入 Slidev presenter notes，同时提供 `Speaker_Notes.md` 和 `Timing.md`。
 
 ## 交付文件
 

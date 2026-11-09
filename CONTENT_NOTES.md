@@ -4,7 +4,7 @@ The scientific source is the supplied dissertation and collaboration material. M
 
 ## Adopted beam rate and EOT/POT benchmarks
 
-The candidate confirmed **1 MHz** as the nominal single-particle beam rate. The sensitivity benchmark uses **3 × 10^14 EOT/POT**. EOT refers to electrons and POT to positrons. Running-time estimates depend on the beam rate and operational duty factor.
+The candidate confirmed **1 MHz** as the design repetition rate. The sensitivity benchmark uses **3 × 10^14 EOT/POT**. EOT refers to electrons and POT to positrons. Running-time estimates depend on the beam rate and operational duty factor.
 
 ## Detector and signal interpretation
 
@@ -21,7 +21,7 @@ The candidate confirmed **1 MHz** as the nominal single-particle beam rate. The 
 - Nominal dedicated residual backgrounds at 3 × 10^14 POT: 0.03, 1.3 × 10^-4 and 1.6 × 10^-4 events for SR1–3. Zero simulated survivors do not imply zero physical rate.
 - Dedicated 1D tails use exp(a + b ln x); inclusive comparisons use exp(a + bx), with x numerically in MeV. These forms are not interchangeable.
 - SR3 uses a joint two-threshold extrapolation; total and maximum-cell energies are correlated.
-- Reported expected limits use background-only asymptotic CLs at 90% confidence and profile likelihood. Low-count coverage, tail continuation and the HCAL threshold under noise/pileup require further validation.
+- Reported expected limits use background-only asymptotic CLs at 90% confidence and profile likelihood. The main talk reports the completed benchmark analysis. Detector-response assumptions and extrapolation choices are explained with the method; detailed statistical and detector refinements are supporting questions rather than a prerequisite list in Summary and Outlook.
 - At m(A′) = 90 MeV, epsilon² limits are 1.34 × 10^-9 (bremsstrahlung), 7.29 × 10^-13 (non-resonant), 1.97 × 10^-12 (resonant), and 5.33 × 10^-13 combined. Non-resonant annihilation is the strongest individual mechanism at this point.
 - The thermal-target representation additionally assumes m(A′) = 3m(χ) and alpha_D = 0.5, giving y = epsilon²/162.
 
@@ -47,3 +47,9 @@ The new preceding matrix uses the 50 MeV block of the same thesis table. SR2 rec
 ## Baseline 1 model envelope
 
 The detector illustration now uses the original HCAL transverse envelope 4 x 4 m and a nominal active depth of 4.02 m, derived from 80 iron plates at 3 cm plus 162 scintillator layers at 1 cm. The source is darkshine_detector.tex, Reference Conceptual Design. ECAL and tracking dimensions are unchanged. This replaces the earlier compact 1.5 x 1.5 x 2.5 m artistic envelope. Displayed layer strokes are schematic subdivisions, not a literal layer count.
+
+## Recording 56 revision
+
+Baseline 1 is identified on the detector/setup pages, using the non-staggered 20 × 20 × 11 LYSO ECAL and original uniform-absorber HCAL. The ECAL row on slide 10 states qualitative granularity and energy-precision requirements; it does not attribute the evolved ECAL stochastic term to Baseline 1. First-use research cards link the BDR, ECAL/HCAL design papers, electron prospects and positron paper to the corresponding presentation material. DOI links for Science China and the software proceedings were explicitly approved by the candidate. No earlier CEPC result appears in the DarkSHINE talk, so that publication remains on Research Achievements. The in-preparation software manuscript is identified as collaborative work with Prof. Kim-Siang Khaw and colleagues; the 2024 proceedings remains sole-authored.
+
+By the candidate’s subsequent instruction, slide 14 has no simulation-framework publication-link card. Its scientific output and contribution statement are unchanged.
