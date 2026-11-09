@@ -7,3 +7,5 @@ import './styles/chapters.css'
 import './styles/defence.css'
 
 import './styles/hierarchy.css'
+
+import './styles/physics-output.css'

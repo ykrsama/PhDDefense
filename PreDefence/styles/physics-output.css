@@ -1,0 +1,87 @@
+/* The software chapter connects each operation to a physical observable. */
+.section-label{font-size:11px;line-height:1.35;font-weight:600;margin-bottom:12px;letter-spacing:.025em}
+.workflow-evidence{display:grid;grid-template-columns:minmax(0,1fr) 174px;gap:27px}
+.physics-pair{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:14px;height:298px}
+.content-slide p.output-reading{font-size:12px;line-height:1.4;margin:8px 0 0;color:#b3c2d1}
+.physics-pair .plot-mat{padding:5px}
+.event-observables{display:grid;grid-template-columns:.92fr 1.2fr;gap:30px}
+.event-field{padding:12px 0 14px;border-top:1px solid #ffffff1c}
+.event-field b{display:block;font-size:15px;font-weight:600;margin-bottom:5px}
+.event-field span{display:block;font-size:12px;line-height:1.4;color:#b8c4d2}
+.event-field em{display:block;font-size:12px;line-height:1.4;font-style:normal;color:#e0e7ef;margin-top:7px}
+.event-display{height:235px;background:#0b0c10;border-radius:8px;overflow:hidden}
+.event-readout{border-left:2px solid #77c9ff;padding-left:13px;margin-top:15px}
+.event-readout b{color:#77c9ff;font-size:14px}
+.content-slide .event-readout p{font-size:13px;margin:7px 0 0;line-height:1.45}
+.record-optimisation{display:grid;grid-template-columns:1.35fr 1fr;gap:22px}
+.slide-geometry-speed .record-optimisation .method-panel{min-height:0;padding:13px 16px!important;height:326px}
+.slide-geometry-speed .record-optimisation h2{font-size:17px;padding:6px 9px;margin-bottom:7px!important}
+.slide-geometry-speed .record-optimisation .panel-kicker{font-size:10px;margin-bottom:8px}
+.content-slide .observable-table{margin:0;font-size:12px}
+.content-slide .observable-table td,.content-slide .observable-table th{padding:6px 5px;font-size:11px;line-height:1.3}
+.content-slide .observable-table td:first-child{width:30%;color:#f0c36e;font-weight:500}
+.result-strip{border-top:1px solid #ffffff22;padding-top:10px;margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.result-strip b{font-size:19px;font-weight:600;color:var(--panel-accent)}
+.result-strip span{font-size:10px;color:#a1afbe}
+.geometry-snapshot{height:155px;margin-bottom:9px}
+.slide-geometry-speed .record-optimisation p{font-size:12px;line-height:1.4;margin-bottom:0;min-height:0!important}
+.filter-flow{height:170px;margin-top:-5px;margin-bottom:16px}
+.filter-flow .flow-diagram{height:170px}
+.physics-decisions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:25px}
+.physics-decisions section{border-top:2px solid var(--panel-accent);padding-top:11px}
+.physics-decisions .section-label{margin-bottom:8px;font-size:10px}
+.slide-staged-filter .physics-decisions h2{font-size:17px;line-height:1.25;margin-bottom:8px}
+.slide-staged-filter .physics-decisions p{font-size:13px;line-height:1.5;margin-bottom:0}
+.bias-physics{display:grid;grid-template-columns:1fr 1.1fr;gap:28px}
+.slide-biasing .bias-physics .method-panel{min-height:0;height:326px}
+.slide-biasing .bias-physics li{font-size:14px;line-height:1.45;margin:11px 0}
+.bias-scan{height:238px}
+.bias-normalisation{margin-top:12px;border-left:2px solid #77c9ff;padding-left:12px;color:#77c9ff;font-size:19px}
+.bias-normalisation>.math-explanation{display:block;font-size:10px;color:#b0bdcd;margin-top:7px}
+.sample-banner{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;font-size:12px}
+.sample-banner b{color:#70dcb2;font-weight:550}.sample-banner span{color:#96a7bb;font-size:11px}
+.filter-outputs{display:grid;grid-template-columns:1fr 1fr .8fr;gap:18px;height:278px}
+.filter-outputs .plot-mat{padding:5px}
+.filter-outputs .method-panel{padding:13px 14px!important}
+.filter-outputs .panel-kicker{font-size:10px;margin-bottom:8px}
+.slide-filter-performance .filter-outputs h2{font-size:16px;padding:7px;margin-bottom:10px!important}
+.slide-filter-performance .filter-outputs p{font-size:12px;line-height:1.4;margin-bottom:10px}
+.filter-outputs .rule{margin:10px 0}
+.observable-tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+.observable-tags span{font-size:11px;color:var(--panel-accent);padding:5px 8px;background:rgba(var(--panel-rgb),.07);border:1px solid rgba(var(--panel-rgb),.22);border-radius:5px}
+.slide-parallelism .parallel-physics{height:327px;min-height:0;padding:14px 17px!important}
+.slide-parallelism .parallel-physics p{font-size:13px;line-height:1.45;margin-bottom:11px}
+.slide-parallelism .parallel-physics .rule{margin:10px 0}
+.slide-parallelism .parallel-physics h2{font-size:18px;padding:7px 9px}
+.optical-results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;height:321px}
+.slide-optical-lut .optical-results .method-panel{padding:14px!important}
+.slide-optical-lut .optical-results h2{font-size:18px;line-height:1.3;padding:8px;margin-bottom:14px!important}
+.slide-optical-lut .optical-results p{font-size:13px;line-height:1.45}
+.optical-results .plot-mat{padding:5px}
+.optical-results .result-strip{margin-top:18px}.optical-results .result-strip b{font-size:22px}
+.digit-flow{height:105px;margin-top:-12px;margin-bottom:14px}.digit-flow .flow-diagram{height:105px}
+.digit-results{display:grid;grid-template-columns:1.05fr .8fr 1fr;gap:20px;height:218px}
+.slide-digitisation .digit-results h2{font-size:17px;padding:7px 8px}
+.slide-digitisation .digit-results .panel-kicker{font-size:10px}
+.slide-digitisation .digit-results p{font-size:12px;line-height:1.4;margin-bottom:8px}
+.digit-results .observable-tags{margin:11px 0;gap:5px}.digit-results .observable-tags span{padding:3px 5px;font-size:10px}
+.digit-results .plot-mat{padding:5px}
+.tracking-results{display:grid;grid-template-columns:.9fr 1.25fr;gap:32px;height:326px}
+.tracking-step{border-left:2px solid var(--panel-accent);padding:5px 0 5px 15px;margin-bottom:15px}
+.tracking-step b{font-size:16px;color:var(--panel-accent);font-weight:600}
+.slide-tracking .tracking-step p{font-size:13px;line-height:1.45;margin:7px 0 0}
+.acts-evidence{display:grid;grid-template-columns:1.15fr 1fr;gap:32px}
+.acts-pull{height:243px}.pull-definition{color:#77c9ff;font-size:20px;display:flex;gap:15px;align-items:center;margin-top:12px}
+.pull-definition>.math-explanation{font-size:11px;line-height:1.4;color:#aebdce;max-width:140px}
+/* Explicit figure heights keep intrinsic image ratios from expanding grid rows. */
+.physics-pair>.chart-stage{min-height:0;height:142px}.physics-pair .evidence{width:162px;height:142px;margin-inline:auto;display:flex;gap:0}.physics-pair .plot-mat{height:142px;box-sizing:border-box}.physics-pair .evidence figcaption{font-size:11px;line-height:1.45}
+.tracking-results>.chart-stage{min-height:0;height:326px}.tracking-results .evidence{height:326px}
+.slide-staged-filter .filter-flow .flow-diagram{height:170px}
+.slide-digitisation .digit-flow .flow-diagram{height:105px}
+.optical-results .evidence{height:240px}
+.slide-optical-lut .chart-reading{font-size:12px;line-height:1.45;color:#aebdce;margin:17px 0 0;border-top:1px solid #ffffff18;padding-top:12px}
+
+.slidev-layout.slide-workflow .workflow-evidence .flow-diagram{height:300px}
+.slidev-layout.slide-workflow h1{margin-bottom:18px!important}
+
+.beam-parameters{display:flex;flex-direction:column;gap:3px;margin:0 6px 10px;line-height:1.35}.beam-parameters b{color:#77c9ff;font-size:12px;font-weight:600}.beam-parameters>span{color:#aebdce;font-size:10px}
