@@ -12,3 +12,5 @@ import './styles/physics-output.css'
 import './styles/tdli.css'
 
 import './styles/tdli-light.css'
+
+import './styles/figures.css'

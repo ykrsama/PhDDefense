@@ -11,7 +11,7 @@
     "export": "node tools/slidev.mjs export",
     "build:all": "node tools/build-all.mjs",
     "new": "node tools/new-deck.mjs",
-    "test": "node --test tools/test/decks.test.mjs",
+    "test": "node --test tools/test/decks.test.mjs tools/test/svg-themes.test.mjs",
     "build:site": "node scripts/build-site.mjs",
     "preview": "python3 -m http.server 8800 --bind 127.0.0.1 --directory site"
   },

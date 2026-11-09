@@ -7,3 +7,6 @@ deliverables/
 
 # OS/editor noise
 .DS_Store
+
+# Generated dark/light SVG display variants; originals stay in version control.
+**/public/themed/

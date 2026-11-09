@@ -3,6 +3,7 @@ import { constants } from 'node:os'
 import { existsSync, lstatSync, readdirSync, realpathSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { prepareSvgThemes } from './svg-themes.mjs'
 
 export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 
@@ -45,6 +46,7 @@ export async function runDeck(mode, name, flags = [], { root = repoRoot, spawnIm
   const cli = join(root, 'node_modules/@slidev/cli/bin/slidev.mjs')
   if (!existsSync(cli)) throw new Error('Slidev is not installed. Run npm ci at the repository root first.')
   const args = slidevArgs(mode, flags)
+  prepareSvgThemes(cwd)
   return new Promise((resolveCode, reject) => {
     const child = spawnImpl(process.execPath, [cli, ...args], { cwd, stdio: 'inherit' })
     const interrupt = signal => child.kill(signal)

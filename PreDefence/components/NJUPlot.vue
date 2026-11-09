@@ -1,5 +1,5 @@
 <template>
-  <div class="zoomable-plot-container">
+  <div class="zoomable-plot-container" :class="{'themed-svg':isThemedSvg}">
     <img 
       :src="imageSrc" 
       :alt="alt" 
@@ -35,6 +35,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useDarkMode } from '@slidev/client'
+const { isDark } = useDarkMode()
 
 const props = defineProps({
   src: {
@@ -75,9 +77,11 @@ function getBasePath() {
 
 const baseUrl = getBasePath()
 
+const isThemedSvg = computed(() => /^(?:\/)?(?:figures|physics-output)\/.+\.svg$/i.test(props.src))
+
 // Compute the correct src path with base URL
 const imageSrc = computed(() => {
-  let finalSrc = props.src
+  let finalSrc = isThemedSvg.value ? `themed/${isDark.value?'dark':'light'}/${props.src.replace(/^\//,'')}` : props.src
   
   // If src already starts with baseUrl, use as is
   if (finalSrc.startsWith(baseUrl)) {

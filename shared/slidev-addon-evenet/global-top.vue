@@ -95,14 +95,18 @@ checkPageNumber()
 <style scoped>
 .page-number {
   position: fixed;
-  top: 1.5rem;
-  right: 2rem;
+  top: 12px;
+  right: 48px;
   z-index: 100;
   display: flex;
   align-items: baseline;
-  gap: 0.25rem;
+  gap: 4px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.875rem;
+  font-size: 10px;
+  line-height: 16px;
+  min-width: 44px;
+  justify-content: flex-end;
+  font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
   color: var(--fg-2);
   user-select: none;

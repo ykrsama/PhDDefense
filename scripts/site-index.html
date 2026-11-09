@@ -1,1 +1,73 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DarkSHINE · Xuliang Zhu · PhD Pre-Defence</title><style>*{box-sizing:border-box}body{margin:0;background:#111e31;color:#e5e8ed;font:18px system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:8vw}main{max-width:1050px}small{color:#adb9c8;letter-spacing:.15em;font-size:12px}h1{font-weight:500;font-size:clamp(30px,4vw,58px);line-height:1.13;letter-spacing:-.035em;margin:30px 0}p{color:#bcc5d2;line-height:1.7}nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px}a{padding:15px 22px;border:1px solid #536078;border-radius:7px;color:#e5e8ed;text-decoration:none;background:#1b2c43}a:first-child{background:#ceab6e;color:#111;border-color:#ceab6e}a:hover{filter:brightness(1.15)}footer{border-top:1px solid #353b45;margin-top:50px;padding-top:22px;font-size:13px;color:#8c99ac}</style><main><img src="./predefence/branding/tdli-sjtu-white.png" alt="Shanghai Jiao Tong University / Tsung-Dao Lee Institute" style="height:48px;width:auto;display:block;margin-bottom:24px"><small>SHANGHAI JIAO TONG UNIVERSITY · PHD DISSERTATION DEFENCE</small><h1>Design of DarkSHINE Simulation Framework and Prospective Study of Positron-Beam Mode</h1><p>Xuliang Zhu · Supervisor: Shu Li<br>10th Nov. 2026</p><nav><a href="./predefence/#/1">Pre-Defence Presentation</a><a href="./predefencebackup/#/1">Pre-Defence Backups</a></nav><footer>Use ← / → to navigate. Click figures to enlarge; Esc to close.</footer></main></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DarkSHINE · Xuliang Zhu · PhD Pre-Defence</title>
+<script>
+  const systemTheme = matchMedia('(prefers-color-scheme: dark)')
+  let homeTheme = 'auto'
+  try { homeTheme = localStorage.getItem('darkshine-home-theme') || 'auto' } catch {}
+  function applyHomeTheme() {
+    document.documentElement.dataset.theme = homeTheme === 'auto' ? (systemTheme.matches ? 'dark' : 'light') : homeTheme
+  }
+  applyHomeTheme()
+</script>
+<style>
+*{box-sizing:border-box}
+:root{color-scheme:light;--bg:#f5f7fb;--fg:#172f51;--muted:#52647b;--surface:#fff;--line:#76839550;--accent:#004098;--primary-fg:#fff}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111e31;--fg:#f0f1f3;--muted:#bcc2cb;--surface:#1b2c43;--line:#76839560;--accent:#ceab6e;--primary-fg:#111e31}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:8vw}
+main{width:100%;max-width:1050px}
+.identity{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px}
+.identity img{height:48px;width:auto;max-width:60%;object-fit:contain}
+.logo-dark{display:none}:root[data-theme="dark"] .logo-dark{display:block}:root[data-theme="dark"] .logo-light{display:none}
+.theme-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+button{font:inherit;cursor:pointer;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:7px;padding:8px 12px;font-size:13px}
+#theme-system{border:0;padding:4px 0;font-size:12px}#theme-system[hidden]{display:none}
+button:hover{color:var(--fg);background:var(--surface)}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+small{color:var(--muted);letter-spacing:.15em;font-size:12px}
+h1{font-weight:500;font-size:clamp(30px,4vw,58px);line-height:1.13;letter-spacing:-.035em;margin:30px 0}
+p{color:var(--muted);line-height:1.7}
+nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px}
+a{padding:15px 22px;border:1px solid var(--line);border-radius:7px;color:var(--fg);text-decoration:none;background:var(--surface)}
+a:first-child{background:var(--accent);color:var(--primary-fg);border-color:var(--accent)}a:hover{filter:brightness(1.08)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding-top:22px;font-size:13px;color:var(--muted)}
+@media(max-width:600px){body{padding:7vw}.identity{align-items:flex-start}.identity img{height:36px}.theme-controls{gap:7px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="identity">
+    <img class="logo-light" src="./predefence/branding/tdli-sjtu-blue.png" alt="Shanghai Jiao Tong University / Tsung-Dao Lee Institute">
+    <img class="logo-dark" src="./predefence/branding/tdli-sjtu-white.png" alt="Shanghai Jiao Tong University / Tsung-Dao Lee Institute">
+    <div class="theme-controls"><button id="theme-system" hidden>Use system theme</button><button id="theme-toggle" aria-label="Switch theme"></button></div>
+  </div>
+  <small>SHANGHAI JIAO TONG UNIVERSITY · PHD DISSERTATION DEFENCE</small>
+  <h1>Design of DarkSHINE Simulation Framework and Prospective Study of Positron-Beam Mode</h1>
+  <p>Xuliang Zhu · Supervisor: Shu Li<br>10th Nov. 2026</p>
+  <nav><a href="./predefence/#/1">Pre-Defence Presentation</a><a href="./predefencebackup/#/1">Pre-Defence Backups</a></nav>
+  <footer>Use ← / → to navigate. Click figures to enlarge; Esc to close.</footer>
+</main>
+<script>
+  const toggle = document.querySelector('#theme-toggle')
+  const reset = document.querySelector('#theme-system')
+  function updateControls() {
+    const dark = document.documentElement.dataset.theme === 'dark'
+    toggle.textContent = dark ? '☀ Light' : '☾ Dark'
+    toggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme')
+    reset.hidden = homeTheme === 'auto'
+  }
+  function chooseTheme(theme) {
+    homeTheme = theme
+    try { localStorage.setItem('darkshine-home-theme', theme) } catch {}
+    applyHomeTheme()
+    updateControls()
+  }
+  toggle.addEventListener('click', () => chooseTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'))
+  reset.addEventListener('click', () => chooseTheme('auto'))
+  systemTheme.addEventListener('change', () => { applyHomeTheme(); updateControls() })
+  updateControls()
+</script>
+</body>
+</html>

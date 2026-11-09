@@ -1,0 +1,8 @@
+/* The SVG itself supplies the theme-aware ink; keep its surrounding mat transparent. */
+html.dark .plot-mat.vector-plot,html.light .plot-mat.vector-plot{background:transparent!important;box-shadow:none!important}
+html.dark .fullscreen-overlay{background:#0a1425ed!important}
+html.light .fullscreen-overlay{background:#eaf0f5ed!important}
+html.dark .fullscreen-content{background:#111e31!important;border-color:#76839560!important;box-shadow:0 24px 80px #0005!important}
+html.light .fullscreen-content{background:#f5f7fb!important;border-color:#76839550!important;box-shadow:0 24px 80px #17304a22!important}
+html.dark .close-button{color:#f0f1f3!important;background:#1b2c43!important;border-color:#76839570!important}
+html.light .close-button{color:#33465e!important;background:#fff!important;border-color:#76839550!important}
