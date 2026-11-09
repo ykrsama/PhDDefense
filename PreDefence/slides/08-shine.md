@@ -10,7 +10,7 @@ title: "SHINE facility and DarkSHINE beamline"
 
 # SHINE facility and DarkSHINE beamline
 
-<div class="columns wide"><div><div class="plot-large"><Plot src="figures/DEF-364.png" caption="SHINE superconducting linac and experimental halls." /></div></div><div><h2 class="blue">A high-repetition-rate source</h2><p>Shanghai High Repetition-Rate XFEL and Extreme Light Facility</p><div class="statline"><div><b>8 GeV</b><span>Reference beam energy</span></div></div><div class="statline"><div><b>1~10 MHz</b><span>Nominal single-particle rate</span></div></div><p class="small" style="margin-top:20px">Benchmark: <LaTeX formula="3\times10^{14}" /> incident particles.</p></div></div><div class="takeaway">A dedicated extraction branch provides the basis for the electron programme. Positron delivery is a prospective extension.</div>
+<div class="columns wide"><div><div class="plot-large"><Plot src="figures/DEF-364.png" caption="SHINE superconducting linac and experimental halls." /></div></div><div><h2 class="blue">A high-repetition-rate source</h2><p>Shanghai High Repetition-Rate XFEL and Extreme Light Facility</p><div class="statline"><div><b>8 GeV</b><span>Reference beam energy</span></div></div><div class="statline"><div><b>1 MHz</b><span>Nominal single-particle rate</span></div></div><p class="small" style="margin-top:20px">Benchmark: <LaTeX formula="3\times10^{14}" /> incident particles.</p></div></div><div class="takeaway">A dedicated extraction branch provides the basis for the electron programme. Positron delivery is a prospective extension.</div>
 
 
 <!--
