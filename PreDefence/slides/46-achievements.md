@@ -14,9 +14,5 @@ title: "Research Achievements"
 
 
 <!--
-Time: 45 seconds.
-
-My lead-author works cover the positron study and the simulation framework. The remaining publications and reports are collaborative contributions, including the CEPC exotic-Higgs study, DarkSHINE physics prospects and calorimeter design. The simulation and reconstruction manuscript remains in preparation, and the baseline design report is preliminary. Thank you for your attention. I welcome your questions.
-
-Source context: Publication status reproduced from the supplied List of Research Achievements.
+Our work covers the positron study and the simulation framework. We also contributed to collaborative publications and reports on the CEPC (Circular Electron Positron Collider) exotic-Higgs study, DarkSHINE physics prospects and calorimeter design. The simulation and reconstruction manuscript is in preparation, and the baseline design report is preliminary. Thank you for your attention. I welcome your questions.
 -->

@@ -13,5 +13,5 @@ title: "Reference detector and evolved software geometry"
 
 
 <!--
-The positron result uses the same detector basis as the published electron comparison. Later geometry developments belong to a separate software configuration.
+The positron analysis uses the same baseline detector as the published electron comparison. Later geometry developments use a separate software configuration.
 -->

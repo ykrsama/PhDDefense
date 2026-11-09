@@ -14,9 +14,5 @@ title: "Track finding and fitting"
 
 <div class="source">Credit: Yifan Zhu</div>
 <!--
-Time: 55 seconds.
-
-Track finding determines which hits belong together. The low-multiplicity legacy algorithm uses a fast circle pre-fit to rank candidates and removes accepted hits before finding the next track. The circle score is used for candidate ranking. A full fit then refines the track parameters using the magnetic field, material and measurement errors. The framework supports GenFit-based Kalman fitting and an analytical Riemann alternative. To assess momentum resolution, the fitted state and the reference state must be compared at the same surface. This also matters when comparing tagging and recoil momenta across the target.
-
-Source context: Event simulation and reconstruction, supplied dissertation sources.
+Track finding decides which hits belong to the same track. The legacy algorithm for low-multiplicity events uses a quick circle pre-fit to rank candidates. Once it accepts a track, it removes those hits before looking for another. A full fit then calculates the track parameters using the magnetic field, material and measurement errors. The framework supports Kalman fitting with GenFit and an analytical Riemann fit. When checking momentum resolution, we compare the fitted and reference states at the same surface. We also use this convention when comparing tagging and recoil momenta across the target.
 -->

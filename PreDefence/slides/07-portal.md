@@ -14,9 +14,5 @@ title: "The dark photon as a vector portal"
 
 
 <!--
-Time: 70 seconds.
-
-This equation describes kinetic mixing between the photon and the dark photon. The small parameter epsilon induces a coupling of the dark photon to the electromagnetic current. The mass controls the available kinematics, while epsilon squared approximately rescales the production rate. I assume that the mediator can decay to lighter dark-sector particles and that the invisible branching fraction is close to one. I therefore express the projected limit in mediator mass and kinetic mixing. For the comparison with thermal relic targets later in the talk, I will also specify a mass ratio and dark coupling. The detector-level study does not require a detailed ultraviolet model.
-
-Source context: Vector-portal benchmark and invisible-decay assumptions in the dissertation.
+This equation describes kinetic mixing between the photon and the dark photon. The parameter epsilon gives the dark photon a small coupling to the electromagnetic current. Its mass determines the kinematics, and epsilon squared approximately scales the production rate. We assume that the dark photon can decay to lighter dark-sector particles, with an invisible branching fraction close to 1. I therefore show the projected limits as a function of mediator mass and kinetic mixing. Later, when comparing with thermal relic targets, I will specify the dark coupling and the mass ratio. We do not need to choose a detailed ultraviolet model for this detector study.
 -->

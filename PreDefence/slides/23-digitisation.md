@@ -14,9 +14,5 @@ title: "Digitisation connects deposits to observables"
 <div class="source">Credit: Qibin Liu</div>
 
 <!--
-Time: 60 seconds.
-
-The digitisation chain turns transported energy into the quantities that reconstruction uses. Light production and collection determine how many photons reach the sensor. The SiPM response includes finite pixel occupancy and recovery. Electronics then add the waveform, noise, finite range and digitisation. The framework also provides a parameterised response for campaigns that do not need full optical information. Each production configuration specifies which response model is enabled. Since the positron selection uses both total energy and maximum-cell energy, we need to understand the per-cell response near the selection thresholds.
-
-Source context: DarkSHINE digitisation and waveform study; collaboration contribution.
+Digitisation converts simulated energy deposits into detector signals. Light production and collection determine how many photons reach the sensor. The SiPM (Silicon Photomultiplier) response accounts for finite pixel occupancy and recovery. The electronics model then adds the waveform, noise, finite range and digitisation. We also have a parameterised response for samples that do not need full optical information. The production configuration records which model is used. In the positron analysis, we cut on both total energy and the largest cell deposit, so the response of individual cells near those thresholds matters.
 -->

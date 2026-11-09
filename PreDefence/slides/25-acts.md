@@ -14,9 +14,5 @@ title: "ACTS integration in DarkSHINE"
 <div class="source">My contributions: ACTS sequencer, geometry/field adapters and reconstruction interfaces.</div>
 
 <!--
-Time: 70 seconds.
-
-My ACTS integration provides an independent sequencer as well as optional adapters in the existing Tracking processor. The sequencer converts detector information into tracking surfaces and transforms strip-pair hits into ACTS measurements and source links. Geometry, momentum and field vectors use one consistent coordinate mapping. The reference chain starts with truth-smeared seeds, runs combinatorial Kalman track finding, converts the trajectories and performs vertex finding. Extrapolated recoil tracks can seed ECAL clustering. Because this reference chain uses truth-smeared seeds, it does not measure fully hit-based seeding efficiency. The alternative space-point route still needs completion and validation. These later ACTS developments were not part of the frozen positron-analysis production.
-
-Source context: Candidate contribution: ACTS sequencer, geometry/field adapters and reconstruction interfaces.
+We integrated ACTS (A Common Tracking Software) through an independent sequencer and optional adapters in the existing Tracking processor. The sequencer converts the detector geometry into tracking surfaces and strip-pair hits into measurements and source links. The geometry, momenta and magnetic field all use the same coordinate mapping. The reference chain starts with truth-smeared seeds, runs combinatorial Kalman track finding, converts the trajectories and finds vertices. We can extrapolate recoil tracks to seed ECAL (Electromagnetic Calorimeter) clusters. Since the seeds use truth information, this chain does not give the efficiency of seeding from hits alone. The alternative space-point route still needs work and validation. These later tracking developments were not included in the frozen positron-analysis production.
 -->

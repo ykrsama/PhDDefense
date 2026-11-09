@@ -14,9 +14,5 @@ title: "Optical response with a lookup table"
 <div class="source">Credit: Qibin Liu</div>
 
 <!--
-Time: 65 seconds.
-
-Full optical transport is expensive because a single interaction can generate a very large number of photons. The lookup table replaces repeated scintillation-photon propagation with a conditional response. It stores both a detection probability and a transit-time distribution. In the cited study, the full event takes about two hundred seconds with optical tracking, four seconds with the table, and two seconds without optical photons. The comparison on the left tests detection efficiency and agrees within five percent. This check validates the table for the optical geometry and properties used to construct it. Electronics effects and other detector geometries need separate validation. The digitisation and optical studies are collaboration contributions integrated into the common framework.
-
-Source context: DarkSHINE optical-response study. Single-core Intel Xeon E5-2680v4 benchmark.
+Tracking every optical photon takes time because a single interaction can produce many photons. The lookup table avoids repeating that transport. It stores the detection probability and transit-time distribution for the simulated optical response. In this study, an event takes about 200 seconds with full optical tracking, 4 seconds with the table and 2 seconds without optical photons. The detection efficiencies shown on the left agree within 5%. This tests the table for the geometry and optical properties used to build it. Electronics effects and changes to the geometry need their own checks. The optical-response and digitisation studies are collaboration contributions integrated into the framework.
 -->

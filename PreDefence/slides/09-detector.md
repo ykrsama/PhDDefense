@@ -14,11 +14,7 @@ title: "DarkSHINE detector concept"
 
 
 <!--
-Time: 65 seconds.
+Following the beam through the detector, the tagging tracker measures the incoming momentum in the magnetic field. The particle then crosses a thin tungsten target, and the recoil tracker measures the outgoing charged particle. The ECAL (Electromagnetic Calorimeter) measures the remaining electromagnetic energy. The larger HCAL (Hadronic Calorimeter) provides enough material to detect penetrating hadrons and muons and reject those events. The trackers use strips, while the electromagnetic calorimeter uses a segmented crystal array. We use the simulation geometry to study their acceptance and response.
 
-The detector follows the beam from left to right. The upstream tracker measures the incident momentum in the magnet. A thin tungsten target provides the interaction material, followed by the recoil tracker. The electromagnetic calorimeter measures the remaining electromagnetic energy, and the larger hadronic calorimeter rejects escaping hadrons and muons. Its large volume provides containment for penetrating particles. The tracker uses strip measurements, and the ECAL uses a segmented crystal array. Their acceptance and response are evaluated with the configured simulation geometry.
-
-Click sequence: Tracking → ECAL → HCAL.
-
-Source context: DarkSHINE collaboration detector concept and geometry.
+Click sequence: Tracking, ECAL (Electromagnetic Calorimeter), HCAL (Hadronic Calorimeter).
 -->

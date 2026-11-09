@@ -14,9 +14,5 @@ title: "Geometry and event-record optimisation"
 
 
 <!--
-Time: 65 seconds.
-
-Two optimisations address different costs. The bounding volume hierarchy groups detector volumes so Geant4 can reject larger spatial regions before testing individual cells. In the cited software benchmark the time changes from two hundred and sixty to forty-two milliseconds per event, a ratio of about six point two. Event-record optimisation and memory alignment reduce the reported example from sixty point one to a minimum of thirteen point seven kilobytes per event. The storage reduction applies to that event-record configuration. These historical software benchmarks use different configurations from the optical study shown later, so their speed-up factors cannot be multiplied or assigned to a single release.
-
-Source context: DSS_716, slides 7 and 11. Ratios calculated from the reported values; benchmark configurations differ.
+We have 2 main optimisations compared with the original baseline 1 DarkSHINE software. The first is a BVH (Bounding Volume Hierarchy). It groups detector volumes so Geant4 can rule out a large region before testing individual cells. In this benchmark, the simulation time falls from 260 to 42 milliseconds per event, about a factor of 6.2. The second improves the event record and memory alignment. The reported file size falls from 60.1 to as little as 13.7 kilobytes per event for that configuration. These benchmarks and the optical study shown later use different configurations, so we cannot multiply their speed-up factors together or treat them as results from a single release.
 -->

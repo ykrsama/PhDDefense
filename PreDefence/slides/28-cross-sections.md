@@ -14,9 +14,5 @@ title: "Production mechanisms at 8 GeV"
 <div class="source">X. Zhu et al., arXiv:2609.05900.</div>
 
 <!--
-Time: 70 seconds.
-
-Nuclear bremsstrahlung remains available over a broad mediator-mass range. Non-resonant annihilation is kinematically limited by the centre-of-mass energy, and resonant production is enhanced around the corresponding scale. For an eight GeV positron annihilating with a stationary electron, this is ninety point four MeV. Motion of bound electrons broadens that ideal picture, and the resonant samples extend beyond the stationary value. This study uses on-shell mediator samples rather than a separate off-shell dark-matter-pair calculation. We then apply the detector selection to determine the accepted yield from each mechanism.
-
-Source context: X. Zhu et al., arXiv:2609.05900. Original cross-section plot.
+Nuclear bremsstrahlung covers a broad range of mediator masses. Non-resonant annihilation is limited by the available centre-of-mass energy, and resonant production is enhanced near that energy. An 8 GeV positron annihilating with an electron at rest has a centre-of-mass energy of 90.4 MeV. Bound electrons are moving, which broadens this picture and allows the resonant samples to extend above the stationary-electron value. We generate on-shell mediators in this study. We do not include a separate off-shell dark-matter-pair calculation. We then apply the detector selection to find the accepted yield for each mechanism.
 -->

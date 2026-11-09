@@ -13,9 +13,5 @@ title: "Generator-level filtering with staged transport"
 <FlowDiagram kind="filter"/><div class="takeaway">Reject an event as soon as its production requirements fail, before transporting the full shower.</div>
 
 <!--
-Time: 70 seconds.
-
-The generator-level filter acts during transport, before the complete event is written to disk. At stage zero, only the primary track is urgent and its secondaries wait. This allows the primary interaction or energy-loss condition to be tested first. Stage one processes relevant secondaries in the region of interest, where the required rare interaction is checked. Only an accepted event releases the rest of the shower. An accumulated ECAL energy above an upper bound also permits early termination, since further deposits cannot bring the sum back down. This order avoids processing secondaries that cannot change a rejection decision.
-
-Source context: Event simulation and reconstruction, supplied dissertation sources.
+The generator-level filter runs during transport, before we write the full event to disk. At stage 0, we process only the primary track and keep its secondaries waiting. We can then check the primary interaction or energy loss. At stage 1, we process the relevant secondaries in the chosen region and check for the rare interaction we want. If the event passes, we transport the rest of the shower. We can also stop once the accumulated ECAL (Electromagnetic Calorimeter) energy exceeds an upper bound, because further deposits will only increase it. This saves time on events that we already know will fail the selection.
 -->

@@ -14,9 +14,5 @@ title: "Signal efficiency across the mass scan"
 
 
 <!--
-Time: 70 seconds.
-
-The three panels show the cutflow efficiency of each mechanism in its primary region. Each curve is normalised to the generated sample for that channel and mass. It gives a selection fraction; cross sections are needed to form the physical mixture. All nine channel-to-region curves are included in the separate backup booklet. The expected visible remnant may be lost: a recoil can fail reconstruction, and a photon can escape acceptance or remain below threshold. These events can enter another signal region and contribute to the sensitivity. For example, bremsstrahlung contributes to zero-track regions, with substantial low-activity efficiency toward the upper end of its mass grid. We include these migrations in the full channel-to-region response matrix. The next slide shows how this enters the expected signal yield at 90 MeV.
-
-Source context: Channel-to-region efficiencies from the baseline 1 positron simulation.
+These curves show the cutflow efficiency for each production mechanism in its primary region. Each curve is normalised to the generated sample at that mass. We apply the cross sections later to obtain the expected mixture of processes. The backups contain all 9 channel-to-region efficiency curves. An event can enter a different region if its recoil track is not reconstructed, or if its photon escapes detection or falls below threshold. For example, bremsstrahlung can enter the regions with no recoil track. Its efficiency in the low-activity region becomes substantial toward the upper end of the mass grid. We include these migrations when predicting the signal. The next slide gives the expected yields at 90 MeV.
 -->

@@ -14,9 +14,5 @@ title: "Signal and background samples"
 <div class="source">arXiv:2609.05900</div>
 
 <!--
-Time: 65 seconds.
-
-The signal grid contains thirty bremsstrahlung masses, eighteen non-resonant masses and twenty-three resonant masses, with one hundred thousand generated events at each point. Equal sample sizes separate the efficiency calculation from the relative physical rates. Background production uses dedicated biased samples for photonuclear, positron-nuclear and muon-pair processes, with target or tracker production separated from ECAL production. The retained EN label denotes the positron-nuclear sample in this campaign. An additional target-annihilation sample accounts for ordinary annihilation topologies. The independent inclusive sample represents two point five billion incident positrons. We use it to cross-check the dedicated predictions and keep it separate when calculating the total background. All sensitivity results use baseline one.
-
-Source context: Positron campaign sample definitions and mass grids; arXiv:2609.05900.
+We simulate 30 bremsstrahlung mass points, 18 non-resonant points and 23 resonant points, with 100,000 events at each point. We calculate efficiencies from these equal-sized samples and apply the physical rates afterwards. For backgrounds, we generate dedicated biased samples of photonuclear, positron-nuclear and muon-pair processes. Production in the target or tracker is separate from production in the ECAL (Electromagnetic Calorimeter). The EN (Electronuclear) label is retained for the positron-nuclear sample in this campaign. We also generate ordinary annihilation in the target. An independent inclusive sample contains the equivalent of 2.5 × 10⁹ incident positrons. We use it to check the dedicated predictions without adding it to the background total. All sensitivity results use baseline 1.
 -->

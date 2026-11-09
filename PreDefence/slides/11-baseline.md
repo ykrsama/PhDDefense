@@ -14,9 +14,5 @@ title: "Electron-mode signal and background rejection"
 <div class="source">J. Chen et al., Sci. China Phys. Mech. Astron. 66, 211062 (2023).</div>
 
 <!--
-Time: 65 seconds.
-
-In the baseline electron mode, dark bremsstrahlung produces an invisible dark photon and a visible recoil electron. The recoil tends to carry only part of the original beam energy. Ordinary bremsstrahlung can create a similar soft electron, but the photon should deposit its energy in the ECAL. The dangerous cases are the rare subsequent processes that move this energy into hadrons or muons, or beyond acceptance. This motivates the joint use of momentum, ECAL energy and HCAL vetoes. The simulation must describe the rare shower tails that survive all these requirements, as well as the average electromagnetic response.
-
-Source context: J. Chen et al., Sci. China Phys. Mech. Astron. 66, 211062 (2023).
+In electron mode, dark bremsstrahlung produces a dark photon that decays invisibly, together with a recoil electron. The recoil electron usually carries only part of the beam energy. Ordinary bremsstrahlung can also leave a soft electron, but the photon normally deposits its energy in the ECAL (Electromagnetic Calorimeter). The cases of concern are rare processes that transfer this energy to hadrons or muons, or send it outside the detector acceptance. We use the measured momentum, electromagnetic energy and HCAL (Hadronic Calorimeter) veto together to reject these events. The simulation needs to describe both the usual electromagnetic response and the rare shower tails that pass the cuts.
 -->

@@ -14,9 +14,5 @@ title: "Maximum-cell energy separates the zero-track sample"
 
 
 <!--
-Time: 60 seconds.
-
-Within the zero-recoil-track sample, the largest ECAL cell distinguishes a photon-like deposit from a nearly empty calorimeter. The non-resonant channel changes with mass because the photon kinematics change. Resonant annihilation mostly produces low activity, though interactions in tracking material can leave deposits. The total-energy requirement remains necessary in addition to the largest-cell condition: many small deposits can have a sizeable sum. The one MeV cuts assume that the detector can operate at those thresholds. They are not measurements of the noise level. HCAL noise and pileup are not fully digitised in this campaign, so that assumption still needs experimental validation.
-
-Source context: Original maximum-cell distributions; threshold interpretation follows the production assumptions.
+For events with no recoil track, the largest ECAL (Electromagnetic Calorimeter) cell helps distinguish a photon deposit from a nearly empty calorimeter. The non-resonant distribution changes with mediator mass because the photon kinematics change. Resonant annihilation usually leaves little activity, although interactions in the tracker material can produce deposits. We also cut on total energy because many small deposits can add up. The 1 MeV cuts assume that the detector can operate at those thresholds; they are not measured noise levels. The campaign does not fully digitise HCAL (Hadronic Calorimeter) noise and pileup, so detector measurements are needed to test this assumption.
 -->

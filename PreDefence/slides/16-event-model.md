@@ -13,9 +13,5 @@ title: "A common event model: DEvent"
 <FlowDiagram kind="model"/><div class="takeaway">Collection types distinguish Monte Carlo truth, detector deposits, response and reconstructed objects.</div>
 
 <!--
-Time: 55 seconds.
-
-DEvent carries named collections with explicit roles. McParticle and DStep contain truth information. SimulatedHit records transport deposits, CalorimeterHit describes the detector response, and ReconstructedParticle represents inferred objects. The current AnaEvent name is an alias of DEvent. Truth information helps us understand a background. Experimental selections use measured or reconstructed quantities. Collection names also identify the detector region or response variant, so a change of input collection can change the meaning of a reconstructed energy even when the algorithm is unchanged. The production record should therefore include the event schema and output choices.
-
-Source context: Event simulation and reconstruction, supplied dissertation sources.
+DEvent is a container of physics object collections. McParticle and DStep store truth information, and SimulatedHit stores energy deposits from transport. CalorimeterHit contains the detector response, while ReconstructedParticle holds reconstructed objects. AnaEvent is currently an alias of DEvent. We use truth information to understand how a background event was produced, and measured or reconstructed quantities to select events. Collection names identify detector regions and response variants. Changing the input collection can therefore change what a reconstructed energy means, even with the same algorithm. We record the event schema and output choices with each production configuration.
 -->

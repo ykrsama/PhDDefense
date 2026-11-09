@@ -13,5 +13,5 @@ title: "SR3: joint ECAL-threshold extrapolation"
 
 
 <!--
-Evaluate at x=1 and y=2000. The joint continuation retains the dependence between total and maximum-cell energies; it is not a product of independent one-dimensional efficiencies.
+We evaluate the fit at x = 1 and y = 2000. The 2-dimensional fit accounts for the correlation between total energy and maximum-cell energy. Multiplying independent 1-dimensional efficiencies would miss this correlation.
 -->

@@ -12,9 +12,5 @@ title: "Parallel event simulation"
 
 <div class="columns wide"><div class="plot-large"><Plot src="figures/DSS-065.png" caption="Thread-scaling study on the INPAC cluster"/></div><div class="copy"><h2 class="blue">10⁶ simulated events</h2><p>8 threads, 1 job<br/><strong>15,328 s | 785% CPU</strong></p><p>1 thread, 8 jobs<br/><strong>16,648 s | 646% CPU</strong></p><div class="big-number">~8%</div><p class="small">Lower elapsed time with the same eight concurrent execution units.</p></div></div>
 <!--
-Time: 55 seconds.
-
-Geant4 multi-threading allows several events to be processed within one job. The engineering work includes thread-local allocation and singleton state, as well as random-number and primary-generation handling. In the cited comparison, one eight-thread job takes fifteen thousand three hundred and twenty-eight seconds, compared with sixteen thousand six hundred and forty-eight seconds for eight single-thread jobs. Both cases use eight concurrent execution units, giving an elapsed-time reduction of approximately eight percent. This comparison does not measure scaling from one core. The validation uses inclusive and rare-process distributions to check that changes in scheduling and worker count preserve the physics.
-
-Source context: DSS_716, slide 15, INPAC cluster benchmark. Relative time reduction calculated from reported times.
+Geant4 can process several events in parallel within a single job. This required changes to thread-local allocation, singleton state, random-number handling and primary generation. In this benchmark, 1 job with 8 threads takes 15,328 seconds. Running 8 single-thread jobs takes 16,648 seconds. Both use 8 concurrent execution units, so the multi-thread job reduces elapsed time by about 8%. This is a comparison of job arrangements, rather than a scaling test from 1 core. We also compare inclusive and rare-process distributions to check that changing the worker count and scheduling preserves the physics.
 -->

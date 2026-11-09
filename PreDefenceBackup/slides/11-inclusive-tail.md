@@ -13,5 +13,5 @@ title: "Inclusive comparisons and tail-model dependence"
 
 
 <!--
-The displayed annotation in the inclusive SR2 source figure is not the nominal background estimate at the 2 GeV working point. Nominal inputs come from the dedicated estimates.
+The annotation in the inclusive SR2 (Signal Region 2) figure does not give the nominal background at the 2 GeV cut. We use the dedicated-sample estimates for that input.
 -->

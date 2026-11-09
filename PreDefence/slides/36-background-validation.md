@@ -14,9 +14,5 @@ title: "Normalisation checked in populated sidebands"
 
 
 <!--
-Time: 65 seconds.
-
-The dedicated samples are normalised to their equivalent unbiased exposure using the generation attempts, generator acceptance and physical branching ratio. Generation attempts and stored events have different meanings in this normalisation. After normalisation, their sum can be compared with an unbiased inclusive sample in the populated region. Target annihilation is included in this check. Agreement tests rates and distributions in the populated region. The much smaller tail probability at the final working points remains untested by this comparison. Since inclusive and dedicated routes represent the same physical processes, combining them by simply adding their yields would double count the background.
-
-Source context: Inclusive exposure: 2.5×10⁹ POT. Dedicated sample normalisation follows the campaign convention.
+We normalise each dedicated sample to its equivalent unbiased exposure using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This checks the rates and shapes in that region. It does not test the much smaller tails at the final cuts. We use the inclusive sample for this cross-check only, since adding it to the dedicated samples would count the same background twice.
 -->

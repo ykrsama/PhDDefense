@@ -14,9 +14,5 @@ title: "Combined statistical interpretation"
 <div class="source">arXiv:2609.05900</div>
 
 <!--
-Time: 70 seconds.
-
-At each mass the signal prediction sums all three production mechanisms in every region. One common signal strength scales those contributions because the same kinetic mixing controls their rates. The analysis uses a binned profile likelihood with nuisance parameters and obtains expected ninety-percent confidence-level limits with CLs under the background-only hypothesis. Shape uncertainties are treated as uncorrelated between bins in the reported construction, and the background normalisation uses its stated Poisson prescription. Exclusive regions prevent event double counting. Detector uncertainties can still be correlated across regions.
-
-Source context: Statistical prescription reported in arXiv:2609.05900; limitations retained.
+At each mass, we sum the contributions from all 3 production mechanisms in every region. A common signal-strength parameter scales them because their rates depend on the same kinetic mixing. We use a binned profile likelihood with nuisance parameters to obtain expected 90% CL (Confidence Level) limits using CLs (the modified frequentist confidence-level method) under the background-only hypothesis. The reported construction treats shape uncertainties as uncorrelated between bins and uses a Poisson prescription for background normalisation. The regions do not share events, although detector uncertainties can be correlated between them.
 -->
