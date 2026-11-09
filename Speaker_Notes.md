@@ -50,65 +50,65 @@ In electron mode, dark bremsstrahlung produces a dark photon that decays invisib
 
 Electronuclear interactions are one source of background. Another starts with hard bremsstrahlung, followed by pair conversion, a photonuclear interaction or muon-pair production. I show target and ECAL (Electromagnetic Calorimeter) interactions separately because the available veto material and the rates differ. The vertical scale gives approximate relative rates from the electron-mode study. The positron samples have their own normalisation. The small invisible electroweak contribution is shown separately from backgrounds caused by visible particles escaping detection. For the latter, we need enough simulated events in the rare branches and a way to recover their physical rates.
 
-## 13. Why a positron beam?
-
-A positron can undergo nuclear bremsstrahlung, just like an electron, and it can also annihilate with an atomic electron. Non-resonant annihilation produces a photon and a dark photon. In resonant annihilation, the electron and positron produce a dark photon that decays to a dark-matter pair, with no accompanying hard visible particle. For an electron initially at rest, an 8 GeV positron gives a centre-of-mass energy of about 90 MeV. This provides a mass scale that we do not have in the electron bremsstrahlung channel. To find the sensitivity gain, we also need to account for the visible final state, detector efficiency, migration between selections and positron backgrounds. I will first describe the software used for this study.
-
-## 14. Event Simulation and Reconstruction in DarkSHINE
+## 13. Event Simulation and Reconstruction in DarkSHINE
 
 I will now describe our work on the simulation framework, from defining the detector and recording events to reducing the time needed to simulate rare backgrounds.
 
-## 15. The DarkSHINE software framework
+## 14. The DarkSHINE software framework
 
 DSimu configures the detector and physics, runs the simulation, and writes events to ROOT files. DAna reads these files and runs digitisation, reconstruction and analysis in the chosen order. DEvent defines the collections shared between them, and DDis lets us inspect individual events. Our software work covers DSimu, the event model, rare-process biasing, staged filtering and ACTS (A Common Tracking Software) integration, as well as DAna, digitisation, the other tracking algorithms, calorimeter reconstruction and generator validation. With this common event interface, we can inspect an event at each stage. We can also rerun downstream algorithms without repeating transport, provided the files contain the information those algorithms need.
 
-## 16. A common event model: DEvent
+## 15. A common event model: DEvent
 
 DEvent is a container of physics object collections. McParticle and DStep store truth information, and SimulatedHit stores energy deposits from transport. CalorimeterHit contains the detector response, while ReconstructedParticle holds reconstructed objects. AnaEvent is currently an alias of DEvent. We use truth information to understand how a background event was produced, and measured or reconstructed quantities to select events. Collection names identify detector regions and response variants. Changing the input collection can therefore change what a reconstructed energy means, even with the same algorithm. We record the event schema and output choices with each production configuration.
 
-## 17. Geometry and event-record optimisation
+## 16. Geometry and event-record optimisation
 
 We have 2 main optimisations compared with the original baseline 1 DarkSHINE software. The first is a BVH (Bounding Volume Hierarchy). It groups detector volumes so Geant4 can rule out a large region before testing individual cells. In this benchmark, the simulation time falls from 260 to 42 milliseconds per event, about a factor of 6.2. The second improves the event record and memory alignment. The reported file size falls from 60.1 to as little as 13.7 kilobytes per event for that configuration. These benchmarks and the optical study shown later use different configurations, so we cannot multiply their speed-up factors together or treat them as results from a single release.
 
-## 18. Generator-level filtering with staged transport
+## 17. Generator-level filtering with staged transport
 
-The generator-level filter runs during transport, before we write the full event to disk. At stage 0, we process only the primary track and keep its secondaries waiting. We can then check the primary interaction or energy loss. At stage 1, we process the relevant secondaries in the chosen region and check for the rare interaction we want. If the event passes, we transport the rest of the shower. We can also stop once the accumulated ECAL (Electromagnetic Calorimeter) energy exceeds an upper bound, because further deposits will only increase it. This saves time on events that we already know will fail the selection.
+The generator-level filter runs during particle transportation, before we write the full event to disk. At stage 0, we process only the primary track and keep its secondaries waiting. We can then check the primary interaction or energy loss. At stage 1, we process the relevant secondaries in the chosen region and check for the rare interaction we want. If the event passes, we transport the rest of the shower. We can also stop once the accumulated ECAL (Electromagnetic Calorimeter) energy exceeds an upper bound, because further deposits will only increase it. This saves time on events that we already know will fail the selection.
 
-## 19. Rare-process biasing and physical normalisation
+## 18. Rare-process biasing and physical normalisation
 
 Biasing makes a chosen rare interaction happen more often in a specified region. We then correct the normalisation to recover the physical rate. For weighted event counting, the sum of weights gives the yield, and the sum of squared weights gives the Monte Carlo variance. A sample with many stored events can still have a much smaller effective event count. In the positron production, we use dedicated biasing studies and process cross sections for normalisation; we do not use the stored transport-weight field. Filtering also removes part of phase space. No weight can recover events we never generated, so the production cuts need to cover the phase space used in the analysis.
 
-## 20. Filtering changes the production cost
+## 19. Filtering changes the production cost
 
 This production example uses 4 GeV electrons and processes 10¹¹ incident particles on 12,800 cores. Filtering reduces the estimated elapsed time from about 4 days to 15 hours. Storage falls from roughly 3 petabytes to 2.5 terabytes, and the disk write rate also decreases. These are approximate figures for different resource costs. The general filters reject events with too much visible energy or too little missing momentum. Dedicated filters also check for a particular particle or interaction. We save the filter acceptance and retained phase-space range with the sample, since we need them to interpret the output.
 
-## 21. Parallel event simulation
+## 20. Parallel event simulation
 
 Geant4 can process several events in parallel within a single job. This required changes to thread-local allocation, singleton state, random-number handling and primary generation. In this benchmark, 1 job with 8 threads takes 15,328 seconds. Running 8 single-thread jobs takes 16,648 seconds. Both use 8 concurrent execution units, so the multi-thread job reduces elapsed time by about 8%. This is a comparison of job arrangements, rather than a scaling test from 1 core. We also compare inclusive and rare-process distributions to check that changing the worker count and scheduling preserves the physics.
 
-## 22. Optical response with a lookup table
+## 21. Optical response with a lookup table
 
 Tracking every optical photon takes time because a single interaction can produce many photons. The lookup table avoids repeating that transport. It stores the detection probability and transit-time distribution for the simulated optical response. In this study, an event takes about 200 seconds with full optical tracking, 4 seconds with the table and 2 seconds without optical photons. The detection efficiencies shown on the left agree within 5%. This tests the table for the geometry and optical properties used to build it. Electronics effects and changes to the geometry need their own checks. The optical-response and digitisation studies are collaboration contributions integrated into the framework.
 
-## 23. Digitisation connects deposits to observables
+## 22. Digitisation connects deposits to observables
 
 Digitisation converts simulated energy deposits into detector signals. Light production and collection determine how many photons reach the sensor. The SiPM (Silicon Photomultiplier) response accounts for finite pixel occupancy and recovery. The electronics model then adds the waveform, noise, finite range and digitisation. We also have a parameterised response for samples that do not need full optical information. The production configuration records which model is used. In the positron analysis, we cut on both total energy and the largest cell deposit, so the response of individual cells near those thresholds matters.
 
-## 24. Track finding and fitting
+## 23. Track finding and fitting
 
 Track finding decides which hits belong to the same track. The legacy algorithm for low-multiplicity events uses a quick circle pre-fit to rank candidates. Once it accepts a track, it removes those hits before looking for another. A full fit then calculates the track parameters using the magnetic field, material and measurement errors. The framework supports Kalman fitting with GenFit and an analytical Riemann fit. When checking momentum resolution, we compare the fitted and reference states at the same surface. We also use this convention when comparing tagging and recoil momenta across the target.
 
-## 25. ACTS integration in DarkSHINE
+## 24. ACTS integration in DarkSHINE
 
 We integrated ACTS (A Common Tracking Software) through an independent sequencer and optional adapters in the existing Tracking processor. The sequencer converts the detector geometry into tracking surfaces and strip-pair hits into measurements and source links. The geometry, momenta and magnetic field all use the same coordinate mapping. The reference chain starts with truth-smeared seeds, runs combinatorial Kalman track finding, converts the trajectories and finds vertices. We can extrapolate recoil tracks to seed ECAL (Electromagnetic Calorimeter) clusters. Since the seeds use truth information, this chain does not give the efficiency of seeding from hits alone. The alternative space-point route still needs work and validation. These later tracking developments were not included in the frozen positron-analysis production.
 
-## 26. Signal generation and validation
+## 25. Signal generation and validation
 
 In the generator study by Xiang Chen, we compared the production cross section across mediator masses and the recoil-electron energy distributions. The cross section sets the expected rate, while the kinematics affect detector acceptance. When predicting selected events, we use a consistent production and detector-response configuration.
 
-## 27. Positron-Beam-Mode Analysis
+## 26. Positron-Beam-Mode Analysis
 
-I will now explain how we used the simulation chain to study positron running. We keep the baseline 1 detector so that we can compare with the published electron-beam projection using the same detector design.
+I will now use this simulation chain to study positron running. I will start with the additional production mechanisms and then follow them through the detector selection. We keep the baseline 1 detector so that we can compare with the published electron-beam projection using the same detector design.
+
+## 27. Why a positron beam?
+
+A positron can undergo nuclear bremsstrahlung, just like an electron, and it can also annihilate with an atomic electron. Non-resonant annihilation produces a photon and a dark photon. In resonant annihilation, the electron and positron produce a dark photon that decays to a dark-matter pair, with no accompanying hard visible particle. For an electron initially at rest, an 8 GeV positron gives a centre-of-mass energy of about 90 MeV. This provides a mass scale that we do not have in the electron bremsstrahlung channel. To find the sensitivity gain, we also need to account for the visible final state, detector efficiency, migration between selections and positron backgrounds. I will compare the production rates and detector-level selections for these 3 mechanisms.
 
 ## 28. Production mechanisms at 8 GeV
 
@@ -132,7 +132,7 @@ For events with no recoil track, the largest ECAL (Electromagnetic Calorimeter) 
 
 ## 33. Signal efficiency across the mass scan
 
-These curves show the cutflow efficiency for each production mechanism in its primary region. Each curve is normalised to the generated sample at that mass. We apply the cross sections later to obtain the expected mixture of processes. The backups contain all 9 channel-to-region efficiency curves. An event can enter a different region if its recoil track is not reconstructed, or if its photon escapes detection or falls below threshold. For example, bremsstrahlung can enter the regions with no recoil track. Its efficiency in the low-activity region becomes substantial toward the upper end of the mass grid. We include these migrations when predicting the signal. The next slide gives the expected yields at 90 MeV.
+These curves show the cutflow efficiency for each production mechanism in its primary region. Each curve is normalised to the generated sample. We apply the cross sections later to obtain the expected mixture of processes. The backups contain all 9 channel-to-region efficiency curves. An event can enter a different region if its recoil track is not reconstructed, or if its photon escapes detection or falls below threshold. For example, bremsstrahlung can enter the regions with no recoil track. Its efficiency in the low-activity region becomes substantial toward the upper end of the mass grid. We include these migrations when predicting the signal. The next slide gives the expected yields at 90 MeV.
 
 ## 34. Signal migration at 90 MeV
 

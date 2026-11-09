@@ -14,21 +14,21 @@
 | 10 | Detector requirements for a missing-energy search | 60 | 08:25 |
 | 11 | Electron-mode signal and background rejection | 65 | 09:30 |
 | 12 | Standard Model background hierarchy | 55 | 10:25 |
-| 13 | Why a positron beam? | 70 | 11:35 |
-| 14 | Event Simulation and Reconstruction in DarkSHINE | 15 | 11:50 |
-| 15 | The DarkSHINE software framework | 65 | 12:55 |
-| 16 | A common event model: DEvent | 55 | 13:50 |
-| 17 | Geometry and event-record optimisation | 65 | 14:55 |
-| 18 | Generator-level filtering with staged transport | 70 | 16:05 |
-| 19 | Rare-process biasing and physical normalisation | 65 | 17:10 |
-| 20 | Filtering changes the production cost | 65 | 18:15 |
-| 21 | Parallel event simulation | 55 | 19:10 |
-| 22 | Optical response with a lookup table | 65 | 20:15 |
-| 23 | Digitisation connects deposits to observables | 60 | 21:15 |
-| 24 | Track finding and fitting | 55 | 22:10 |
-| 25 | ACTS integration in DarkSHINE | 70 | 23:20 |
-| 26 | Signal generation and validation | 60 | 24:20 |
-| 27 | Positron-Beam-Mode Analysis | 15 | 24:35 |
+| 13 | Event Simulation and Reconstruction in DarkSHINE | 15 | 10:40 |
+| 14 | The DarkSHINE software framework | 65 | 11:45 |
+| 15 | A common event model: DEvent | 55 | 12:40 |
+| 16 | Geometry and event-record optimisation | 65 | 13:45 |
+| 17 | Generator-level filtering with staged transport | 70 | 14:55 |
+| 18 | Rare-process biasing and physical normalisation | 65 | 16:00 |
+| 19 | Filtering changes the production cost | 65 | 17:05 |
+| 20 | Parallel event simulation | 55 | 18:00 |
+| 21 | Optical response with a lookup table | 65 | 19:05 |
+| 22 | Digitisation connects deposits to observables | 60 | 20:05 |
+| 23 | Track finding and fitting | 55 | 21:00 |
+| 24 | ACTS integration in DarkSHINE | 70 | 22:10 |
+| 25 | Signal generation and validation | 60 | 23:10 |
+| 26 | Positron-Beam-Mode Analysis | 15 | 23:25 |
+| 27 | Why a positron beam? | 70 | 24:35 |
 | 28 | Production mechanisms at 8 GeV | 70 | 25:45 |
 | 29 | Signal and background samples | 65 | 26:50 |
 | 30 | Three exclusive signal regions | 90 | 28:20 |

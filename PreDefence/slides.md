@@ -69,63 +69,63 @@ src: ./slides/12-background-hierarchy.md
 ---
 
 ---
-src: ./slides/13-why-positrons.md
+src: ./slides/13-software.md
 ---
 
 ---
-src: ./slides/14-software.md
+src: ./slides/14-workflow.md
 ---
 
 ---
-src: ./slides/15-workflow.md
+src: ./slides/15-event-model.md
 ---
 
 ---
-src: ./slides/16-event-model.md
+src: ./slides/16-geometry-speed.md
 ---
 
 ---
-src: ./slides/17-geometry-speed.md
+src: ./slides/17-staged-filter.md
 ---
 
 ---
-src: ./slides/18-staged-filter.md
+src: ./slides/18-biasing.md
 ---
 
 ---
-src: ./slides/19-biasing.md
+src: ./slides/19-filter-performance.md
 ---
 
 ---
-src: ./slides/20-filter-performance.md
+src: ./slides/20-parallelism.md
 ---
 
 ---
-src: ./slides/21-parallelism.md
+src: ./slides/21-optical-lut.md
 ---
 
 ---
-src: ./slides/22-optical-lut.md
+src: ./slides/22-digitisation.md
 ---
 
 ---
-src: ./slides/23-digitisation.md
+src: ./slides/23-tracking.md
 ---
 
 ---
-src: ./slides/24-tracking.md
+src: ./slides/24-acts.md
 ---
 
 ---
-src: ./slides/25-acts.md
+src: ./slides/25-generator-validation.md
 ---
 
 ---
-src: ./slides/26-generator-validation.md
+src: ./slides/26-positron.md
 ---
 
 ---
-src: ./slides/27-positron.md
+src: ./slides/27-why-positrons.md
 ---
 
 ---
