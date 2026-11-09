@@ -89,11 +89,11 @@ src: ./slides/17-staged-filter.md
 ---
 
 ---
-src: ./slides/18-biasing.md
+src: ./slides/18-filter-performance.md
 ---
 
 ---
-src: ./slides/19-filter-performance.md
+src: ./slides/19-biasing.md
 ---
 
 ---
@@ -117,89 +117,85 @@ src: ./slides/24-acts.md
 ---
 
 ---
-src: ./slides/25-generator-validation.md
+src: ./slides/25-positron.md
 ---
 
 ---
-src: ./slides/26-positron.md
+src: ./slides/26-why-positrons.md
 ---
 
 ---
-src: ./slides/27-why-positrons.md
+src: ./slides/27-cross-sections.md
 ---
 
 ---
-src: ./slides/28-cross-sections.md
+src: ./slides/28-samples.md
 ---
 
 ---
-src: ./slides/29-samples.md
+src: ./slides/29-signal-regions.md
 ---
 
 ---
-src: ./slides/30-signal-regions.md
+src: ./slides/30-kinematic-selection.md
 ---
 
 ---
-src: ./slides/31-kinematic-selection.md
+src: ./slides/31-maximum-cell.md
 ---
 
 ---
-src: ./slides/32-maximum-cell.md
+src: ./slides/32-efficiency.md
 ---
 
 ---
-src: ./slides/33-efficiency.md
+src: ./slides/33-migration.md
 ---
 
 ---
-src: ./slides/34-migration.md
+src: ./slides/34-rejection.md
 ---
 
 ---
-src: ./slides/35-rejection.md
+src: ./slides/35-background-validation.md
 ---
 
 ---
-src: ./slides/36-background-validation.md
+src: ./slides/36-background-tail.md
 ---
 
 ---
-src: ./slides/37-background-tail.md
+src: ./slides/37-likelihood.md
 ---
 
 ---
-src: ./slides/38-likelihood.md
+src: ./slides/38-mode-results.md
 ---
 
 ---
-src: ./slides/39-mode-results.md
+src: ./slides/39-reach.md
 ---
 
 ---
-src: ./slides/40-reach.md
+src: ./slides/40-thermal.md
 ---
 
 ---
-src: ./slides/41-thermal.md
+src: ./slides/41-scope.md
 ---
 
 ---
-src: ./slides/42-scope.md
+src: ./slides/42-summary.md
 ---
 
 ---
-src: ./slides/43-summary.md
+src: ./slides/43-conclusions.md
 ---
 
 ---
-src: ./slides/44-conclusions.md
+src: ./slides/44-outlook.md
 ---
 
 ---
-src: ./slides/45-outlook.md
----
-
----
-src: ./slides/46-achievements.md
+src: ./slides/45-achievements.md
 ---

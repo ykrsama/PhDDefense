@@ -19,32 +19,31 @@
 | 15 | A common event model: DEvent | 55 | 12:40 |
 | 16 | Geometry navigation and event-record optimisation | 65 | 13:45 |
 | 17 | Generator-level filtering with staged Geant4 tracking | 70 | 14:55 |
-| 18 | Rare-process biasing and physical normalisation | 65 | 16:00 |
-| 19 | Filtering changes the production cost | 65 | 17:05 |
-| 20 | Parallel event simulation | 55 | 18:00 |
-| 21 | Optical response with a lookup table | 65 | 19:05 |
-| 22 | Digitisation connects deposits to observables | 60 | 20:05 |
-| 23 | Track finding and fitting | 55 | 21:00 |
-| 24 | ACTS integration in DarkSHINE | 70 | 22:10 |
-| 25 | Signal generation and validation | 60 | 23:10 |
-| 26 | Positron-Beam-Mode Analysis | 15 | 23:25 |
-| 27 | Why a positron beam? | 70 | 24:35 |
-| 28 | Production mechanisms at 8 GeV | 70 | 25:45 |
-| 29 | Signal and background samples | 65 | 26:50 |
-| 30 | Three exclusive signal regions | 90 | 28:20 |
-| 31 | Momentum and total-energy discrimination | 65 | 29:25 |
-| 32 | Maximum-cell energy separates the zero-track sample | 60 | 30:25 |
-| 33 | Signal efficiency across the mass scan | 70 | 31:35 |
-| 34 | Signal migration at 90 MeV | 40 | 32:15 |
-| 35 | Background rejection in the available simulation | 65 | 33:20 |
-| 36 | Normalisation checked in populated sidebands | 65 | 34:25 |
-| 37 | Residual-background extrapolation | 75 | 35:40 |
-| 38 | Combined statistical interpretation | 70 | 36:50 |
-| 39 | Annihilation drives the gain near 90 MeV | 75 | 38:05 |
-| 40 | Projected reach in mediator mass and kinetic mixing | 80 | 39:25 |
-| 41 | Interpretation relative to thermal targets | 65 | 40:30 |
-| 42 | Scope of the positron projection | 60 | 41:30 |
-| 43 | Summary and Outlook | 15 | 41:45 |
-| 44 | Main results | 65 | 42:50 |
-| 45 | Outlook | 55 | 43:45 |
-| 46 | Research Achievements | 45 | 44:30 |
+| 18 | Generator-level filter performance | 90 | 16:25 |
+| 19 | Rare-process biasing and physical normalisation | 65 | 17:30 |
+| 20 | Parallel event simulation | 55 | 18:25 |
+| 21 | Optical response with a lookup table | 65 | 19:30 |
+| 22 | Digitisation connects deposits to observables | 60 | 20:30 |
+| 23 | Track finding and fitting | 55 | 21:25 |
+| 24 | ACTS integration in DarkSHINE | 70 | 22:35 |
+| 25 | Positron-Beam-Mode Analysis | 15 | 22:50 |
+| 26 | Why a positron beam? | 70 | 24:00 |
+| 27 | Production mechanisms at 8 GeV | 70 | 25:10 |
+| 28 | Signal and background samples | 65 | 26:15 |
+| 29 | Three exclusive signal regions | 90 | 27:45 |
+| 30 | Momentum and total-energy discrimination | 65 | 28:50 |
+| 31 | Maximum-cell energy separates the zero-track sample | 60 | 29:50 |
+| 32 | Signal efficiency across the mass scan | 70 | 31:00 |
+| 33 | Signal migration at 90 MeV | 40 | 31:40 |
+| 34 | Background rejection in the available simulation | 65 | 32:45 |
+| 35 | Normalisation checked in populated sidebands | 65 | 33:50 |
+| 36 | Residual-background extrapolation | 75 | 35:05 |
+| 37 | Combined statistical interpretation | 70 | 36:15 |
+| 38 | Annihilation drives the gain near 90 MeV | 75 | 37:30 |
+| 39 | Projected reach in mediator mass and kinetic mixing | 80 | 38:50 |
+| 40 | Interpretation relative to thermal targets | 65 | 39:55 |
+| 41 | Scope of the positron projection | 60 | 40:55 |
+| 42 | Summary and Outlook | 15 | 41:10 |
+| 43 | Main results | 65 | 42:15 |
+| 44 | Outlook | 55 | 43:10 |
+| 45 | Research Achievements | 45 | 43:55 |

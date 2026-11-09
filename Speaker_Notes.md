@@ -76,15 +76,15 @@ The storage optimisation starts from the physics information we need. Particle r
 
 The filter is organised around the physics of rare backgrounds. At stage zero, we run Geant4 tracking for the primary particle and defer its secondaries. We can inspect the primary energy loss and require a hard bremsstrahlung photon. At stage one, we release secondaries from the chosen longitudinal region. A process filter can require a photonuclear, electronuclear or muon-pair interaction and an energy transfer in the parent step. A particle filter instead checks the secondary species and its energy. Only when the requested conditions are met do we release the remaining tracks. There is also an early ECAL veto: once the accumulated deposited energy exceeds the production upper bound, subsequent shower development cannot reduce that accumulated energy. These decisions use Geant4 particle and energy-deposit information and define the generated sample. Reconstructed momentum and calibrated calorimeter selections are applied later.
 
-## 18. Rare-process biasing and physical normalisation
+## 18. Generator-level filter performance
+
+The main gain from this filter is at the storage stage. In the inclusive production test, we saved 270,310 events from twenty billion incident electrons. The filter efficiency, defined here as the fraction of beam events saved, is 0.0014 percent. We therefore write about 74,000 times fewer event records for the same simulated exposure: a storage-efficiency improvement of roughly five orders of magnitude. This makes large-exposure background production practical to store and analyse. The two plots show the physics behind the selection. On the left, only 0.11 percent of the prefiltered sample with a reconstructed recoil track has ECAL energy below 4 GeV. On the right, the blue histogram contains events with one reconstructed recoil track and reconstructed missing momentum above 4 GeV, plotted against truth missing momentum. Adding truth ECAL energy below 4 GeV leaves only six threshold-migration events in twenty million incident electrons. These distributions guide the production cuts. Next, rare-process biasing provides the statistics needed for specific background final states.
+
+## 19. Rare-process biasing and physical normalisation
 
 Biasing lets us study final states that are too rare to populate efficiently in inclusive simulation. We choose the interaction, the material region and an energy threshold, then enhance that interaction cross section. Geant4 then tracks the secondary particles and simulates their interactions, so we can study hadronic activity, muon tracks and leakage. Click once to show a muon-pair conversion scan in the ECAL. The interaction probability increases with the bias factor and eventually saturates. We fit this dependence and evaluate the physical probability at bias factor one. Multiplying by the fraction of incident events with an eligible particle gives the process rate per beam particle. This connects the enriched detector sample back to a physical exposure. The positron analysis uses its dedicated process-rate normalisations.
 
 Presenter cue: Explain which rare final states are enriched, then click once to connect sampling to the physical rate.
-
-## 19. What survives the production filter?
-
-Here is the physics output of a filter-development sample with 8 GeV electrons and two billion incident events. In this study, events were stopped if the primary electron reached the ECAL with more than 4 GeV or if the ECAL deposit exceeded 4 GeV. The plots show the events saved after filtering. Black includes every stored event; red requires a reconstructed recoil track. The difference between the curves shows where the recoil-track requirement removes stored events. The high-momentum component on the right also illustrates bremsstrahlung in the recoil region: energy can be lost after the reference recoil momentum is defined, leaving a smaller ECAL deposit. The filter therefore does more than reduce the file size: it makes the rare event topologies we need to inspect accessible for detector and reconstruction work. The resource benchmarks are in the backups.
 
 ## 20. Parallel event simulation
 
@@ -106,94 +106,90 @@ Track finding identifies which strip measurements belong to a common trajectory.
 
 ACTS needs the detector information in its own tracking representation. We convert the geometry into surfaces and strip-pair hits into measurements and source links, with consistent coordinates for the field and momentum. The reference sequencer then uses truth-smeared seeds, combinatorial Kalman finding, trajectory conversion and vertex reconstruction. Its outputs include fitted states and covariance, track quality information and impact states extrapolated to the ECAL. The plot is an earlier truth-assisted fitter integration test. It shows a track-parameter pull versus transverse momentum: the fitted-minus-truth residual divided by its estimated uncertainty. This illustrates how the integration produces a physical performance diagnostic, alongside the track objects needed by the analysis. My contributions are the sequencer and geometry, field and reconstruction interfaces. The later ACTS developments are separate from the frozen reconstruction used in the positron study.
 
-## 25. Signal generation and validation
-
-In the generator study by Xiang Chen, we compared the production cross section across mediator masses and the recoil-electron energy distributions. The cross section sets the expected rate, while the kinematics affect detector acceptance. When predicting selected events, we use a consistent production and detector-response configuration.
-
-## 26. Positron-Beam-Mode Analysis
+## 25. Positron-Beam-Mode Analysis
 
 I will now use this simulation chain to study positron running. I will start with the additional production mechanisms and then follow them through the detector selection. We keep the baseline 1 detector so that we can compare with the published electron-beam projection using the same detector design.
 
-## 27. Why a positron beam?
+## 26. Why a positron beam?
 
 A positron can undergo nuclear bremsstrahlung, just like an electron, and it can also annihilate with an atomic electron. Non-resonant annihilation produces a photon and a dark photon. In resonant annihilation, the electron and positron produce a dark photon that decays to a dark-matter pair, with no accompanying hard visible particle. For an electron initially at rest, an 8 GeV positron gives a centre-of-mass energy of about 90 MeV. This provides a mass scale that we do not have in the electron bremsstrahlung channel. To find the sensitivity gain, we also need to account for the visible final state, detector efficiency, migration between selections and positron backgrounds. I will compare the production rates and detector-level selections for these 3 mechanisms.
 
 Presenter cue: Click 0: introduce dark bremsstrahlung, which also occurs with an electron beam. Click 1: introduce non-resonant and resonant annihilation together, then explain the 90.4 MeV scale.
 
-## 28. Production mechanisms at 8 GeV
+## 27. Production mechanisms at 8 GeV
 
 Nuclear bremsstrahlung covers a broad range of mediator masses. Non-resonant annihilation is limited by the available centre-of-mass energy, and resonant production is enhanced near that energy. An 8 GeV positron annihilating with an electron at rest has a centre-of-mass energy of 90.4 MeV. Bound electrons are moving, which broadens this picture and allows the resonant samples to extend above the stationary-electron value. We generate on-shell mediators in this study. We do not include a separate off-shell dark-matter-pair calculation. We then apply the detector selection to find the accepted yield for each mechanism.
 
-## 29. Signal and background samples
+## 28. Signal and background samples
 
 We simulate 30 bremsstrahlung mass points, 18 non-resonant points and 23 resonant points, with 100,000 events at each point. We calculate efficiencies from these equal-sized samples and apply the physical rates afterwards. For backgrounds, we generate dedicated biased samples of photonuclear, positron-nuclear and muon-pair processes. Production in the target or tracker is separate from production in the ECAL (Electromagnetic Calorimeter). We use the EN (Electronuclear) label for the positron-nuclear sample in this campaign. We also generate ordinary annihilation in the target. An independent inclusive sample contains the equivalent of 2.5 × 10⁹ incident positrons. We use it to check the dedicated predictions without adding it to the background total. All sensitivity results use baseline 1.
 
-## 30. Three exclusive signal regions
+## 29. Three exclusive signal regions
 
 We assign events to reconstructed categories without using the generated process label. Every category requires exactly 1 tagging track. SR1 (Signal Region 1) requires 1 recoil track and missing momentum above 4 GeV. SR2 (Signal Region 2) and SR3 (Signal Region 3) require 0 recoil tracks and total ECAL (Electromagnetic Calorimeter) energy below 2 GeV. We divide these samples at a maximum-cell energy of 1 MeV, with events on the boundary assigned to region 2. Every region also requires low total HCAL (Hadronic Calorimeter) energy and no cell above 1 MeV. The selections do not overlap. Events with additional tracks or a failed veto are rejected.
 
-## 31. Momentum and total-energy discrimination
+## 30. Momentum and total-energy discrimination
 
 On the left is missing momentum. The background sample already passes the loose production filter at 1 GeV; the final analysis cut is 4 GeV. On the right is the total ECAL (Electromagnetic Calorimeter) energy for non-resonant annihilation. Near the mediator-mass endpoint, the accompanying photon is soft. The 90 MeV signal can therefore pass a low-energy cut even though a photon is produced. The detector response and acceptance determine the fraction that passes.
 
-## 32. Maximum-cell energy separates the zero-track sample
+## 31. Maximum-cell energy separates the zero-track sample
 
 For events with no recoil track, the largest ECAL (Electromagnetic Calorimeter) cell helps distinguish a photon deposit from a nearly empty calorimeter. The non-resonant distribution changes with mediator mass because the photon kinematics change. Resonant annihilation usually leaves little activity, although interactions in the tracker material can produce deposits. We also cut on total energy because many small deposits can add up. The 1 MeV cuts assume that the detector can operate at those thresholds; they are not measured noise levels. The campaign does not fully digitise HCAL (Hadronic Calorimeter) noise and pileup, so detector measurements are needed to test this assumption.
 
-## 33. Signal efficiency across the mass scan
+## 32. Signal efficiency across the mass scan
 
 These curves show the cutflow efficiency for each production mechanism in its primary region. Each curve is normalised to the generated sample. We apply the cross sections later to obtain the expected mixture of processes. The backups contain all 9 channel-to-region efficiency curves. An event can enter a different region if its recoil track is not reconstructed, or if its photon escapes detection or falls below threshold. For example, bremsstrahlung can enter the regions with no recoil track. Its efficiency in the low-activity region becomes substantial toward the upper end of the mass grid. We include these migrations when predicting the signal. The next slide gives the expected yields at 90 MeV.
 
-## 34. Signal migration at 90 MeV
+## 33. Signal migration at 90 MeV
 
 At 90 MeV, non-resonant annihilation supplies about 95% of SR2 (Signal Region 2), and resonant annihilation supplies about 84% of SR3 (Signal Region 3). Bremsstrahlung contributes very little at this mass. The matrix includes events that migrate away from the primary region of their production mechanism. The entries are expected event counts at a fixed reference coupling, after applying the rates and efficiencies. They are not raw simulation counts.
 
-## 35. Background rejection in the available simulation
+## 34. Background rejection in the available simulation
 
 This cutflow follows photonuclear interactions in the ECAL (Electromagnetic Calorimeter). The recoil-track cut first divides events into categories with 1 or 0 recoil tracks. The next cut uses momentum in SR1 (Signal Region 1), the maximum-cell lower bound in SR2 (Signal Region 2) and total electromagnetic energy in SR3 (Signal Region 3). The HCAL (Hadronic Calorimeter) veto reduces the samples further, and the final electromagnetic-energy cut removes the remaining simulated events. These bars are unweighted simulation counts, before scaling to the benchmark exposure. No event in the inclusive or dedicated samples passes a complete region selection. Because the samples are finite, this does not imply that the physical background is 0.
 
-## 36. Normalisation checked in populated sidebands
+## 35. Normalisation checked in populated sidebands
 
 We normalise each dedicated sample to its equivalent unbiased exposure using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This checks the rates and shapes in that region. It does not test the much smaller tails at the final cuts. We use the inclusive sample for this cross-check only, since adding it to the dedicated samples would count the same background twice.
 
-## 37. Residual-background extrapolation
+## 36. Residual-background extrapolation
 
 For SR1 (Signal Region 1) and SR2 (Signal Region 2), we fit the dedicated survival curves with a power law in the total-ECAL (Electromagnetic Calorimeter) threshold, expressed in MeV. The nominal predictions are 0.03 events for region 1 and 1.3 × 10⁻⁴ for region 2. SR3 (Signal Region 3) needs a 2-dimensional fit because total energy and maximum-cell energy are correlated. Its nominal prediction is 1.6 × 10⁻⁴ events. These estimates depend on the chosen fit function and the limited tail statistics. They also omit components with no surviving simulated events. The inclusive 1-dimensional comparison uses an exponential fit, so it does not provide a quantitative closure test at the final thresholds.
 
-## 38. Combined statistical interpretation
+## 37. Combined statistical interpretation
 
 At each mass, we sum the contributions from all 3 production mechanisms in every region. A common signal-strength parameter scales them because their rates depend on the same kinetic mixing. We use a binned profile likelihood with nuisance parameters to obtain expected 90% CL (Confidence Level) limits using CLs (the modified frequentist confidence-level method) under the background-only hypothesis. The reported construction treats shape uncertainties as uncorrelated between bins and uses a Poisson prescription for background normalisation. The regions do not share events, although detector uncertainties can be correlated between them.
 
 Presenter cue: Build the signal prediction and region model first. Click once to show the expected-limit construction.
 
-## 39. Annihilation drives the gain near 90 MeV
+## 38. Annihilation drives the gain near 90 MeV
 
 Each individual curve keeps 1 production mechanism but uses all 3 regions and the same background model. It therefore includes migration between regions. At 90 MeV, non-resonant annihilation gives the strongest individual expected limit, about 7.3 × 10⁻¹³ in epsilon squared. Resonant annihilation also contributes, and the combined limit is 5.33 × 10⁻¹³. Much of the gain comes from non-resonant annihilation near the radiative endpoint, where the accompanying photon can pass the selection.
 
-## 40. Projected reach in mediator mass and kinetic mixing
+## 39. Projected reach in mediator mass and kinetic mixing
 
 Here I compare the combined positron projection with the earlier electron-beam projection and other searches. Near 90 MeV, the expected limit on epsilon squared improves by about 2 orders of magnitude at matched integrated luminosity. The annihilation kinematics produce the sharp feature near this mass. Bremsstrahlung remains relevant at lower masses. The figure includes existing exclusions and future projections. Our curve is an expected detector-level sensitivity for the chosen exposure, baseline detector and background model.
 
-## 41. Interpretation relative to thermal targets
+## 40. Interpretation relative to thermal targets
 
 To compare with thermal dark-matter targets, we use a mediator-to-dark-matter mass ratio of 3 and a dark coupling alpha D of 0.5. A 90 MeV mediator then corresponds to a 30 MeV dark-matter particle. With these choices, the variable y equals epsilon squared divided by 162. This changes the coordinates of the result; the simulated selections and efficiencies stay the same. The scalar, Majorana and pseudo-Dirac targets use different spin and annihilation assumptions. Other models can give different predictions even at the same mass.
 
-## 42. Scope of the positron projection
+## 41. Scope of the positron projection
 
 This study gives detector-level efficiencies and migration between regions for the 3 production mechanisms in the benchmark setup. We use them to obtain the combined sensitivity. The largest remaining uncertainties are the small background tails and the assumed veto response. Larger rare-process samples would help constrain the extrapolation and the omitted components. Prototype measurements can test the thresholds with realistic noise and pileup. We also need toy Monte Carlo to check the statistical treatment at very low event counts. These studies will help assess how closely an experimental search can reach the projection.
 
-## 43. Summary and Outlook
+## 42. Summary and Outlook
 
 I will finish with the main software and physics results, then discuss the next steps toward an experimental search.
 
-## 44. Main results
+## 43. Main results
 
 We developed a configurable simulation framework and event model that connect simulated particle interactions to detector response and reconstruction. Geometry and event-record optimisation reduce the cost per event. Biasing and staged filters make rare-background production more practical, and parallel processing increases the production capacity. We also integrated ACTS (A Common Tracking Software) into the reconstruction framework. Using this simulation chain, we studied positron running with 3 exclusive regions and included migration between them. At 90 MeV, the combined expected limit is 5.33 × 10⁻¹³ in epsilon squared at the benchmark exposure. Annihilation gives most of the improvement, especially the non-resonant contribution near its endpoint, under the assumptions discussed earlier.
 
-## 45. Outlook
+## 44. Outlook
 
 Detector measurements will help constrain the response and veto thresholds. Larger rare-process samples will improve our estimate of the background tails and their dependence on the fit model. Toy Monte Carlo can test the statistical approximation when expected backgrounds are small. Another option is to vary the beam energy. The characteristic annihilation mass changes approximately with the square root of the beam energy, so an energy scan could probe other masses. Each energy would need a study of its kinematics, acceptance and backgrounds. The 8 GeV analysis and the simulation framework provide a starting point.
 
-## 46. Research Achievements
+## 45. Research Achievements
 
 Our work covers the positron study and the simulation framework. We also contributed to collaborative publications and reports on the CEPC (Circular Electron Positron Collider) exotic-Higgs study, DarkSHINE physics prospects and calorimeter design. The simulation and reconstruction manuscript is in preparation, and the baseline design report is preliminary. Thank you for your attention. I welcome your questions.

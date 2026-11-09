@@ -38,15 +38,18 @@
 .bias-scan{height:238px}
 .bias-normalisation{margin-top:12px;border-left:2px solid #77c9ff;padding-left:12px;color:#77c9ff;font-size:19px}
 .bias-normalisation>.math-explanation{display:block;font-size:10px;color:#b0bdcd;margin-top:7px}
-.sample-banner{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;font-size:12px}
-.sample-banner b{color:#70dcb2;font-weight:550}.sample-banner span{color:#96a7bb;font-size:11px}
-.filter-outputs{display:grid;grid-template-columns:1fr 1fr .8fr;gap:18px;height:278px}
-.filter-outputs .plot-mat{padding:5px}
-.filter-outputs .method-panel{padding:13px 14px!important}
-.filter-outputs .panel-kicker{font-size:10px;margin-bottom:8px}
-.slide-filter-performance .filter-outputs h2{font-size:16px;padding:7px;margin-bottom:10px!important}
-.slide-filter-performance .filter-outputs p{font-size:12px;line-height:1.4;margin-bottom:10px}
-.filter-outputs .rule{margin:10px 0}
+.filter-efficiency-line{display:flex;align-items:center;gap:24px;min-height:34px;margin-bottom:16px}
+.filter-efficiency-line>span:first-child{font-size:11px;color:#aebdce;white-space:nowrap}
+.filter-efficiency-line>.inline{font-size:17px;color:#e0e7ef}
+.filter-checks{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.filter-checks>section{border-top:2px solid var(--panel-accent);padding-top:9px;min-width:0}
+.filter-checks .panel-kicker{margin-bottom:5px}
+.slide-filter-performance .filter-checks h2{font-size:17px;line-height:1.25;margin-bottom:11px!important}
+.filter-check-plot{height:210px}
+.filter-check-plot .plot-mat{padding:5px}
+.filter-check-reading{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;border-top:1px solid #ffffff1b;margin-top:11px;padding-top:10px}
+.filter-check-reading>b{font-size:14px;line-height:1.4;font-weight:550;white-space:nowrap;color:#e0e7ef}
+.slide-filter-performance .filter-check-reading p{font-size:11px;line-height:1.45;margin:0;color:#b4c2d2}
 .observable-tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
 .observable-tags span{font-size:11px;color:var(--panel-accent);padding:5px 8px;background:rgba(var(--panel-rgb),.07);border:1px solid rgba(var(--panel-rgb),.22);border-radius:5px}
 .slide-parallelism .parallel-physics{height:auto;min-height:327px;padding:14px 17px!important}

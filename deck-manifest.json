@@ -170,20 +170,20 @@
     "cls": ""
   },
   {
+    "slug": "filter-performance",
+    "title": "Generator-level filter performance",
+    "body": "<div class=\"eyebrow\">Event simulation and reconstruction</div>\n\n# Generator-level filter performance\n\n<div class=\"filter-efficiency-line\"><span>8 GeV electron sample</span><LaTeX formula=\"\\epsilon_{\\rm filter}=\\frac{N_{\\rm stored}}{N_{\\rm EOT}}=\\frac{270310}{2\\times10^{10}}\\simeq \\textcolor{#f0c36e}{0.0014\\%}\"/></div>\n<div class=\"filter-checks\"><section class=\"tone-gold\"><div class=\"panel-kicker\">ECAL-energy selection</div><div class=\"filter-check-plot\"><Plot src=\"physics-output/generator-filter-ecal-cut.png\"/></div><div class=\"filter-check-reading\"><b>0.11%</b><p>Pass <LaTeX formula=\"E_{\\rm ECAL} &lt; 4~\\mathrm{GeV}\"/> in the prefiltered sample with a reconstructed recoil track.</p></div></section><section class=\"tone-blue\"><div class=\"panel-kicker\">Missing-momentum threshold migration</div><div class=\"filter-check-plot\"><Plot src=\"physics-output/generator-filter-tracker-missing-p-cut.png\"/></div><div class=\"filter-check-reading\"><b>6 / <LaTeX formula=\"2\\times10^7\"/> EOT</b><p>Cross the 4 GeV threshold after reconstruction and also pass the truth ECAL-energy cut.</p></div></section></div>\n<div class=\"takeaway\">About five orders of magnitude fewer stored event records for the same simulated exposure.</div>",
+    "notes": "The main gain from this filter is at the storage stage. In the inclusive production test, we saved 270,310 events from twenty billion incident electrons. The filter efficiency, defined here as the fraction of beam events saved, is 0.0014 percent. We therefore write about 74,000 times fewer event records for the same simulated exposure: a storage-efficiency improvement of roughly five orders of magnitude. This makes large-exposure background production practical to store and analyse. The two plots show the physics behind the selection. On the left, only 0.11 percent of the prefiltered sample with a reconstructed recoil track has ECAL energy below 4 GeV. On the right, the blue histogram contains events with one reconstructed recoil track and reconstructed missing momentum above 4 GeV, plotted against truth missing momentum. Adding truth ECAL energy below 4 GeV leaves only six threshold-migration events in twenty million incident electrons. These distributions guide the production cuts. Next, rare-process biasing provides the statistics needed for specific background final states.",
+    "section": 2,
+    "seconds": 90,
+    "source": "inclusive_filter.key, slides 2 and 5; supplied generator_filter_tracker_missing_p_cut.png and generator_filter_ecal_cut.png. Statistical denominators confirmed by Xuliang Zhu.",
+    "cls": ""
+  },
+  {
     "slug": "biasing",
     "title": "Rare-process biasing and physical normalisation",
     "body": "<div class=\"eyebrow\">Event simulation and reconstruction</div>\n\n# Rare-process biasing and physical normalisation\n\n<div class=\"bias-physics\"><section class=\"method-panel tone-gold\"><div class=\"panel-kicker\">01 | Enrich the physics of interest</div><h2>Choose process, material and energy</h2><ul><li>PN, EN or muon-pair production in the target / ECAL</li><li>Increase the selected interaction cross section above an energy threshold</li><li>Simulate secondary interactions, energy deposits and leakage</li></ul><div class=\"formula-band\"><LaTeX formula=\"\\sigma_{\\rm rare}\\rightarrow b\\sigma_{\\rm rare}\"/></div></section><section class=\"chart-stage tone-blue\" v-click=\"1\"><div class=\"section-label blue\">02 | Measure the rate dependence on bias</div><div class=\"bias-scan\"><Plot src=\"physics-output/bias-gmm-ecal.png\" caption=\"Muon-pair conversion in ECAL: probability and fit ratio\" plain/></div><div class=\"bias-normalisation\"><LaTeX formula=\"R_{\\rm rare}=\\frac{N_{\\rm pool}}{N_{\\rm total}}P(b=1)\"/><span class=\"math-explanation\">Eligible beam events × physical interaction probability</span></div></section></div>\n<div class=\"takeaway\">Enrich rare final states for detector studies; recover their rate from the production normalisation.</div>",
     "notes": "Biasing lets us study final states that are too rare to populate efficiently in inclusive simulation. We choose the interaction, the material region and an energy threshold, then enhance that interaction cross section. Geant4 then tracks the secondary particles and simulates their interactions, so we can study hadronic activity, muon tracks and leakage. Click once to show a muon-pair conversion scan in the ECAL. The interaction probability increases with the bias factor and eventually saturates. We fit this dependence and evaluate the physical probability at bias factor one. Multiplying by the fraction of incident events with an eligible particle gives the process rate per beam particle. This connects the enriched detector sample back to a physical exposure. The positron analysis uses its dedicated process-rate normalisations.\n\nPresenter cue: Explain which rare final states are enriched, then click once to connect sampling to the physical rate.",
-    "section": 2,
-    "seconds": 65,
-    "source": "",
-    "cls": ""
-  },
-  {
-    "slug": "filter-performance",
-    "title": "What survives the production filter?",
-    "body": "<div class=\"eyebrow\">Event simulation and reconstruction</div>\n\n# What survives the production filter?\n\n<div class=\"sample-banner\"><b>8 GeV electron development sample</b><span>Baseline 1.6 | 2 × 10⁹ EOT</span></div><div class=\"filter-outputs\"><div class=\"chart-stage tone-blue\"><Plot src=\"physics-output/filter-ecal.png\" caption=\"Truth ECAL energy after the filter\"/></div><div class=\"chart-stage tone-gold\"><Plot src=\"physics-output/filter-recoil.png\" caption=\"Truth recoil momentum, before / after requiring a reconstructed recoil track\"/></div><section class=\"method-panel tone-mint\"><div class=\"panel-kicker\">Filtered sample</div><h2>Low visible energy</h2><p>Require the primary electron at ECAL entry and the ECAL deposit to stay below 4 GeV.</p><div class=\"rule\"></div><p><span class=\"blue\">Black:</span> all stored events<br/><span class=\"rose\">Red:</span> recoil track reconstructed</p><p class=\"small\">Recoil-region bremsstrahlung can move high-momentum events into the low-ECAL-energy sample.</p></section></div>",
-    "notes": "Here is the physics output of a filter-development sample with 8 GeV electrons and two billion incident events. In this study, events were stopped if the primary electron reached the ECAL with more than 4 GeV or if the ECAL deposit exceeded 4 GeV. The plots show the events saved after filtering. Black includes every stored event; red requires a reconstructed recoil track. The difference between the curves shows where the recoil-track requirement removes stored events. The high-momentum component on the right also illustrates bremsstrahlung in the recoil region: energy can be lost after the reference recoil momentum is defined, leaving a smaller ECAL deposit. The filter therefore does more than reduce the file size: it makes the rare event topologies we need to inspect accessible for detector and reconstruction work. The resource benchmarks are in the backups.",
     "section": 2,
     "seconds": 65,
     "source": "",
@@ -237,16 +237,6 @@
     "section": 2,
     "seconds": 70,
     "source": "Candidate contribution: ACTS sequencer, geometry/field adapters and reconstruction interfaces.",
-    "cls": ""
-  },
-  {
-    "slug": "generator-validation",
-    "title": "Signal generation and validation",
-    "body": "<div class=\"eyebrow\">Event simulation and reconstruction</div>\n\n# Signal generation and validation\n\n<div class=\"columns\"><div class=\"chart-stage tone-blue plot-mid\"><Plot src=\"figures/XC_xsection_plot.svg\" caption=\"Production cross sections\"/></div><div class=\"chart-stage tone-gold plot-mid\"><Plot src=\"figures/XC_dp_electron_energy.svg\" caption=\"Recoil-electron energy distributions\"/></div></div><div class=\"source\">Credit: Xiang Chen</div>",
-    "notes": "In the generator study by Xiang Chen, we compared the production cross section across mediator masses and the recoil-electron energy distributions. The cross section sets the expected rate, while the kinematics affect detector acceptance. When predicting selected events, we use a consistent production and detector-response configuration.",
-    "section": 2,
-    "seconds": 60,
-    "source": "Credit: Xiang Chen",
     "cls": ""
   },
   {
