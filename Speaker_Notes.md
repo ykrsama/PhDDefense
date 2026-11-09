@@ -28,6 +28,8 @@ Direct detection looks for interactions of Galactic dark matter in a detector. I
 
 This equation describes kinetic mixing between the photon and the dark photon. The parameter epsilon gives the dark photon a small coupling to the electromagnetic current. Its mass determines the kinematics, and epsilon squared approximately scales the production rate. We assume that the dark photon can decay to lighter dark-sector particles, with an invisible branching fraction close to 1. I therefore show the projected limits as a function of mediator mass and kinetic mixing. Later, when comparing with thermal relic targets, I will specify the dark coupling and the mass ratio. We do not need to choose a detailed ultraviolet model for this detector study.
 
+Presenter cue: Start with production through kinetic mixing. Click once to introduce invisible decay and the benchmark assumptions.
+
 ## 08. SHINE facility and DarkSHINE beamline
 
 SHINE (Shanghai High Repetition-Rate XFEL (X-ray Free-Electron Laser) and Extreme Light Facility) provides the accelerator for DarkSHINE. The electron programme uses a dedicated single-particle extraction branch alongside the FEL (Free-Electron Laser) beamlines. The reference beam energy is 8 GeV, and the benchmark exposure is 3 × 10¹⁴ incident particles. The nominal single-particle rate is 1 MHz. Actual running time depends on SHINE (Shanghai High Repetition-Rate XFEL (X-ray Free-Electron Laser) and Extreme Light Facility) operational inputs. A positron beamline is a proposed extension, and this study evaluates what it could add to the physics reach.
@@ -45,6 +47,8 @@ These requirements come from the ways an ordinary interaction can look like miss
 ## 11. Electron-mode signal and background rejection
 
 In electron mode, dark bremsstrahlung produces a dark photon that decays invisibly, together with a recoil electron. The recoil electron usually carries only part of the beam energy. Ordinary bremsstrahlung can also leave a soft electron, but the photon normally deposits its energy in the ECAL (Electromagnetic Calorimeter). The cases of concern are rare processes that transfer this energy to hadrons or muons, or send it outside the detector acceptance. We use the measured momentum, electromagnetic energy and HCAL (Hadronic Calorimeter) veto together to reject these events. The simulation needs to describe both the usual electromagnetic response and the rare shower tails that pass the cuts.
+
+Presenter cue: Start with the signal diagram. Click once to introduce the combined detector requirements and backgrounds.
 
 ## 12. Standard Model background hierarchy
 
@@ -73,6 +77,8 @@ The generator-level filter runs during particle transportation, before we write 
 ## 18. Rare-process biasing and physical normalisation
 
 Biasing makes a chosen rare interaction happen more often in a specified region. We then correct the normalisation to recover the physical rate. For weighted event counting, the sum of weights gives the yield, and the sum of squared weights gives the Monte Carlo variance. A sample with many stored events can still have a much smaller effective event count. In the positron production, we use dedicated biasing studies and process cross sections for normalisation; we do not use the stored transport-weight field. Filtering also removes part of phase space. No weight can recover events we never generated, so the production cuts need to cover the phase space used in the analysis.
+
+Presenter cue: Explain the biased sample first. Click once to show how the physical prediction is recovered.
 
 ## 19. Filtering changes the production cost
 
@@ -109,6 +115,8 @@ I will now use this simulation chain to study positron running. I will start wit
 ## 27. Why a positron beam?
 
 A positron can undergo nuclear bremsstrahlung, just like an electron, and it can also annihilate with an atomic electron. Non-resonant annihilation produces a photon and a dark photon. In resonant annihilation, the electron and positron produce a dark photon that decays to a dark-matter pair, with no accompanying hard visible particle. For an electron initially at rest, an 8 GeV positron gives a centre-of-mass energy of about 90 MeV. This provides a mass scale that we do not have in the electron bremsstrahlung channel. To find the sensitivity gain, we also need to account for the visible final state, detector efficiency, migration between selections and positron backgrounds. I will compare the production rates and detector-level selections for these 3 mechanisms.
+
+Presenter cue: Click 0: introduce dark bremsstrahlung, retained from electron running. Click 1: introduce non-resonant and resonant annihilation together, then explain the 90.4 MeV scale.
 
 ## 28. Production mechanisms at 8 GeV
 
@@ -153,6 +161,8 @@ For SR1 (Signal Region 1) and SR2 (Signal Region 2), we fit the dedicated surviv
 ## 38. Combined statistical interpretation
 
 At each mass, we sum the contributions from all 3 production mechanisms in every region. A common signal-strength parameter scales them because their rates depend on the same kinetic mixing. We use a binned profile likelihood with nuisance parameters to obtain expected 90% CL (Confidence Level) limits using CLs (the modified frequentist confidence-level method) under the background-only hypothesis. The reported construction treats shape uncertainties as uncorrelated between bins and uses a Poisson prescription for background normalisation. The regions do not share events, although detector uncertainties can be correlated between them.
+
+Presenter cue: Build the signal prediction and region model first. Click once to show the expected-limit construction.
 
 ## 39. Annihilation drives the gain near 90 MeV
 

@@ -21,3 +21,22 @@
 .qa-index .qa-nav section{padding-top:10px}
 .qa-index .qa-nav h2{font-size:17px;margin:0 0 8px}
 .qa-index .qa-nav a{font-size:13.5px;line-height:1.5;border-bottom:0!important;padding:1px 0}
+
+/* Supporting material uses the same grouped reasoning as the main report. */
+.qa-slide .qa-card{--qa-accent:#77c9ff;border:1px solid #77c9ff28;border-top:2px solid var(--qa-accent);border-radius:8px;padding:13px 16px 12px;background:linear-gradient(135deg,#77c9ff07,#20252c)}
+.qa-slide .qa-card:nth-child(2){--qa-accent:#f0c36e;border-color:#f0c36e28;border-top-color:var(--qa-accent);background:linear-gradient(135deg,#f0c36e06,#20252c)}
+.qa-slide .qa-card h2{color:#e7edf6;font-size:18px;font-weight:650;line-height:1.2;padding:8px 10px;background:#ffffff05;border-radius:5px;margin-bottom:13px}
+.qa-slide .qa-card p{font-size:14px;line-height:1.45;color:#b9c7d7;margin-bottom:10px}
+.qa-slide .qa-card p:last-child{margin-bottom:0}
+.qa-slide .qa-card .formula-band{color:var(--qa-accent);border-color:var(--qa-accent);background:#ffffff03;font-size:17px}
+.qa-slide>.formula-band{color:#baa5ff;border-color:#baa5ff;background:#baa5ff07;font-size:21px}
+.qa-slide .qa-number{font-size:43px;font-weight:600;color:var(--qa-accent)}
+.qa-slide .qa-plot{border-top:2px solid #77c9ff;padding-top:10px}
+.qa-slide .qa-plot:nth-child(2){border-top-color:#f0c36e}
+.qa-slide .qa-caption{font-size:12px;color:#94a5b8}
+.qa-slide table th{font-size:11px;color:#a6b8cd}
+.qa-slide .qa-card table td{font-size:12px;padding:7px 8px}
+.qa-slide .qa-stages{gap:15px}
+.qa-slide .qa-stages .qa-card{padding:12px}
+.qa-slide .qa-stages .qa-card h2{font-size:16px;padding:7px}
+.qa-slide .qa-stages .qa-card p{font-size:13px}

@@ -4,7 +4,7 @@
 Xuliang Zhu · Supervisor: Shu Li · Shanghai Jiao Tong University  
 10th Nov. 2026
 
-本项目包含英文正式报告 **46 页 / 44:30**，以及独立的 **14 页备份册**。正式报告最后一页为 **Research Achievements**。每页讲稿与配时已写入 Slidev presenter notes，同时提供 `Speaker_Notes.md` 和 `Timing.md`。
+本项目包含英文正式报告 **46 页 / 44:30**，以及独立的 **29 页备份册**。正式报告最后一页为 **Research Achievements**。每页讲稿与配时已写入 Slidev presenter notes，同时提供 `Speaker_Notes.md` 和 `Timing.md`。
 
 ## 交付文件
 
@@ -56,7 +56,7 @@ npm run preview
 ```sh
 npx playwright install chromium
 node scripts/export-pdf.mjs http://127.0.0.1:8800/predefence output/pdf/DarkSHINE_PhD_Defence.pdf 46
-node scripts/export-pdf.mjs http://127.0.0.1:8800/predefencebackup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 14
+node scripts/export-pdf.mjs http://127.0.0.1:8800/predefencebackup output/pdf/DarkSHINE_PhD_Defence_Backup.pdf 29
 npm run build:site
 ```
 
@@ -67,3 +67,5 @@ npm run build:site
 第 34、35 页矩阵可用鼠标悬停或键盘聚焦查看生成数与选后数；第 36 页可选择 SR 并悬停柱形读取精确计数。所有单元格与柱形默认完整显示，PDF 保留完整矩阵与直方图。第 10 页保留左表右图的原始结构。
 
 `output/`、`deliverables/` 均仅保留在本地并由 `.gitignore` 忽略。重新生成交付压缩包：`python3 scripts/package-deliverables.py`。
+
+排版更新：主报告按观测证据、方法步骤、性能比较和预期结果建立不同文字与图形层级。第 7、11、18、27、38 页各有一次分组点击；第 9 页保留探测器分步镜头。Presenter notes 内的提示与点击顺序一致。

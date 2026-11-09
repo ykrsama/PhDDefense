@@ -10,7 +10,7 @@ title: "ACTS integration in DarkSHINE"
 
 # ACTS integration in DarkSHINE
 
-<FlowDiagram kind="acts"/><div class="takeaway">The independent sequencer uses truth-smeared seeds in its reference configuration.</div>
+<div class="method-graphic"><FlowDiagram kind="acts"/></div><div class="takeaway">The independent sequencer uses truth-smeared seeds in its reference configuration.</div>
 <div class="source">My contributions: ACTS sequencer, geometry/field adapters and reconstruction interfaces.</div>
 
 <!--

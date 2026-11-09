@@ -10,7 +10,7 @@ title: "Track finding and fitting"
 
 # Track finding and fitting
 
-<div style="height:190px"><FlowDiagram kind="tracking" style="height:190px"/></div><div class="columns "><div><h2 class="blue">Finding</h2><p class="small">Associate hits across tracker layers.<br/>The legacy greedy finder ranks circle candidates and removes accepted hits.</p></div><div><h2 class="gold">Fitting</h2><p class="small">Estimate momentum and covariance with magnetic-field propagation, energy loss and multiple scattering.</p><p class="small muted">GenFit Kalman fitting and a Riemann alternative are available.</p></div></div><div class="takeaway">Momentum residuals must compare reconstructed and reference states at the same surface.</div>
+<div style="height:190px"><FlowDiagram kind="tracking" style="height:190px"/></div><div class="columns "><div class="method-panel tone-blue"><div class="panel-kicker"><span class="ordinal">01</span>Associate hits</div><h2 class="blue">Finding</h2><p class="small">Associate hits across tracker layers.<br/>The legacy greedy finder ranks circle candidates and removes accepted hits.</p></div><div class="method-panel tone-gold"><div class="panel-kicker"><span class="ordinal">02</span>Estimate track parameters</div><h2 class="gold">Fitting</h2><p class="small">Estimate momentum and covariance with magnetic-field propagation, energy loss and multiple scattering.</p><p class="small muted">GenFit Kalman fitting and a Riemann alternative are available.</p></div></div><div class="takeaway">Momentum residuals must compare reconstructed and reference states at the same surface.</div>
 
 <div class="source">Credit: Yifan Zhu</div>
 <!--

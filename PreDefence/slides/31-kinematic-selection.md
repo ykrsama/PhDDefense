@@ -10,7 +10,7 @@ title: "Momentum and total-energy discrimination"
 
 # Momentum and total-energy discrimination
 
-<div class="columns "><div><div class="plot-large"><Plot src="figures/missing-p.svg" caption="Missing momentum in SR1." /></div></div><div><div class="plot-large"><Plot src="figures/ecal-ann.svg" caption="Total ECAL energy for non-resonant annihilation." /></div></div></div><div class="takeaway">The production filter requires missing momentum &gt; 1 GeV. The final SR1 requirement is &gt; 4 GeV.</div>
+<div class="columns "><div class="chart-stage tone-blue"><div class="plot-large"><Plot src="figures/missing-p.svg" caption="Missing momentum in SR1." /></div></div><div class="chart-stage tone-gold"><div class="plot-large"><Plot src="figures/ecal-ann.svg" caption="Total ECAL energy for non-resonant annihilation." /></div></div></div><div class="takeaway">The production filter requires missing momentum &gt; 1 GeV. The final SR1 requirement is &gt; 4 GeV.</div>
 <div class="source">arXiv:2609.05900</div>
 
 <!--

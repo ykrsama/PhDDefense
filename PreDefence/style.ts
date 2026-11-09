@@ -5,3 +5,5 @@ import './styles/local.css'
 import './styles/graphite.css'
 import './styles/chapters.css'
 import './styles/defence.css'
+
+import './styles/hierarchy.css'

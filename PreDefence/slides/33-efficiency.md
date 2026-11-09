@@ -10,7 +10,7 @@ title: "Signal efficiency across the mass scan"
 
 # Signal efficiency across the mass scan
 
-<div class="columns thirds"><div><div class="plot-mid"><Plot src="figures/efficiency_brem_bremCut.svg" caption="Bremsstrahlung → SR1" /></div></div><div><div class="plot-mid"><Plot src="figures/efficiency_tch_tchCut.svg" caption="Non-resonant annihilation → SR2" /></div></div><div><div class="plot-mid"><Plot src="figures/efficiency_sch_schCut.svg" caption="Resonant annihilation → SR3" /></div></div></div><div class="formula-band"><LaTeX formula="\eta_{ic}=\frac{N_{\mathrm{selected\ in\ SR}\ i,c}}{N_{\mathrm{generated},c}}" /></div><div class="takeaway">All nine channel-to-region efficiencies enter the signal prediction.</div>
+<div class="columns thirds"><div class="chart-stage tone-blue"><div class="plot-mid"><Plot src="figures/efficiency_brem_bremCut.svg" caption="Bremsstrahlung → SR1" /></div></div><div class="chart-stage tone-gold"><div class="plot-mid"><Plot src="figures/efficiency_tch_tchCut.svg" caption="Non-resonant annihilation → SR2" /></div></div><div class="chart-stage tone-rose"><div class="plot-mid"><Plot src="figures/efficiency_sch_schCut.svg" caption="Resonant annihilation → SR3" /></div></div></div><div class="formula-band"><LaTeX formula="\eta_{ic}=\frac{N_{\mathrm{selected\ in\ SR}\ i,c}}{N_{\mathrm{generated},c}}" /></div><div class="takeaway">All nine channel-to-region efficiencies enter the signal prediction.</div>
 
 
 <!--
