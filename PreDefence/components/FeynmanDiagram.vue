@@ -51,44 +51,44 @@ function arrow(line) {
 // Connected segments of the same particle share one accent; boson lines stay static.
 const streams = computed(() => props.mode === 'brem'
   ? [
-      { d: 'M30 45 L110 75 L185 65 L290 30', color: '#77c9ff', direction: props.charge === '-' ? 1 : -1 },
-      { d: 'M30 167 L145 167 L290 167', color: '#77c9ff', direction: 1 },
+      { d: 'M30 45 L110 75 L185 65 L290 30', color: '#8bafe0', direction: props.charge === '-' ? 1 : -1 },
+      { d: 'M30 167 L145 167 L290 167', color: '#8bafe0', direction: 1 },
     ]
   : props.mode === 'radiative'
     ? [
-        { d: 'M30 170 L145 125 L145 75 L30 35', color: '#77c9ff', direction: 1 },
+        { d: 'M30 170 L145 125 L145 75 L30 35', color: '#8bafe0', direction: 1 },
       ]
     : [
-        { d: 'M30 170 L115 100 L30 35', color: '#77c9ff', direction: 1 },
-        { d: 'M290 170 L210 100 L290 35', color: '#baa5ff', direction: 1 },
+        { d: 'M30 170 L115 100 L30 35', color: '#8bafe0', direction: 1 },
+        { d: 'M290 170 L210 100 L290 35', color: '#bdbedd', direction: 1 },
       ])
 const streamOffset = (index, direction) => -100 * direction * (phase.cycle + index * 0.17)
 </script>
 <template>
   <svg viewBox="0 0 330 205" class="feynman">
     <g v-for="(line, index) in lines" :key="index">
-      <path :d="`M${line[0]} ${line[1]} L${line[2]} ${line[3]}`" fill="none" :stroke="mode === 'resonant' && index >= 2 ? '#baa5ff' : '#77c9ff'" stroke-width="1.5" />
+      <path :d="`M${line[0]} ${line[1]} L${line[2]} ${line[3]}`" fill="none" :stroke="mode === 'resonant' && index >= 2 ? '#bdbedd' : '#8bafe0'" stroke-width="1.5" />
 
-      <path d="M-5 -3.5 L5 0 L-5 3.5Z" :transform="arrow(line)" :fill="mode === 'resonant' && index >= 2 ? '#baa5ff' : '#77c9ff'" />
+      <path d="M-5 -3.5 L5 0 L-5 3.5Z" :transform="arrow(line)" :fill="mode === 'resonant' && index >= 2 ? '#bdbedd' : '#8bafe0'" />
     </g>
     <template v-if="mode === 'brem'">
-      <path :d="wave([110,75],[145,167])" stroke="#f0c36e" fill="none" stroke-width="1.4" />
+      <path :d="wave([110,75],[145,167])" stroke="#ceab6e" fill="none" stroke-width="1.4" />
 
-      <path d="M185 65 L285 112" stroke="#baa5ff" stroke-dasharray="6 4" stroke-width="1.5" />
+      <path d="M185 65 L285 112" stroke="#bdbedd" stroke-dasharray="6 4" stroke-width="1.5" />
 
       <text x="19" y="30">{{charge === '-' ? 'e⁻' : 'e⁺'}}</text><text x="290" y="21">{{charge === '-' ? 'e⁻' : 'e⁺'}}</text><text x="289" y="119">A′</text><text x="15" y="190">N</text><text x="289" y="190">N</text>
     </template>
     <template v-else>
       <text x="15" y="24">e⁺</text><text x="15" y="190">e⁻</text>
       <template v-if="mode === 'radiative'">
-        <path :d="wave([145,75],[285,35])" stroke="#f0c36e" fill="none" stroke-width="1.5" />
+        <path :d="wave([145,75],[285,35])" stroke="#ceab6e" fill="none" stroke-width="1.5" />
 
-        <path d="M145 125 L285 170" stroke="#baa5ff" stroke-width="1.5" stroke-dasharray="6 4" />
+        <path d="M145 125 L285 170" stroke="#bdbedd" stroke-width="1.5" stroke-dasharray="6 4" />
 
         <text x="292" y="39">γ</text><text x="290" y="178">A′</text>
       </template>
       <template v-else>
-        <path d="M115 100 H210" stroke="#baa5ff" stroke-width="1.5" stroke-dasharray="6 4" />
+        <path d="M115 100 H210" stroke="#bdbedd" stroke-width="1.5" stroke-dasharray="6 4" />
 
         <text x="152" y="87">A′</text>
         <text x="294" y="36">χ</text><text x="294" y="183">χ̄</text>

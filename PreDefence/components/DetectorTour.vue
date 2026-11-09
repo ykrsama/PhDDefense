@@ -23,8 +23,8 @@ const focus = computed(() => stages[Math.min($clicks.value, 3)] || '')
 .detector-tour-card p { margin:0 }
 .has-focus .detector-tour-card { opacity:.38; transform:translateY(0) }
 .has-focus .detector-tour-card.active { opacity:1; transform:translateY(-20px); border-color:currentColor }
-.has-focus .detector-tour-card.active:nth-child(1) { color:#77c9ff }
-.has-focus .detector-tour-card.active:nth-child(2) { color:#70dcb2 }
-.has-focus .detector-tour-card.active:nth-child(3) { color:#baa5ff }
+.has-focus .detector-tour-card.active:nth-child(1) { color:#8bafe0 }
+.has-focus .detector-tour-card.active:nth-child(2) { color:#a5c2d1 }
+.has-focus .detector-tour-card.active:nth-child(3) { color:#bdbedd }
 @media (prefers-reduced-motion: reduce) { .detector-tour-card { transition:none } }
 </style>

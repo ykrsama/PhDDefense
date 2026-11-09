@@ -81,17 +81,17 @@ function detectorCallout(s:string,p:P,dx:number,dy:number){
 }
 function trackerPlane(x:number,width:number,height:number,thickness:number){
  // Local z is the magnetic bending direction; local y is the narrower vertical axis.
- box(x,-height/2,-width/2,thickness,height,width,'rgba(119,201,255,.46)','rgba(77,149,195,.08)')
- for(let k=1;k<8;k++)path([[x,-height/2,-width/2+k*width/8],[x,height/2,-width/2+k*width/8]],'rgba(119,201,255,.23)',.5)
+ box(x,-height/2,-width/2,thickness,height,width,'rgba(139,175,224,.46)','rgba(77,149,195,.08)')
+ for(let k=1;k<8;k++)path([[x,-height/2,-width/2+k*width/8],[x,height/2,-width/2+k*width/8]],'rgba(139,175,224,.23)',.5)
 }
 // Temporary model-coordinate guide while tuning the recoil direction.
 const showDetectorAxes=false
 function detectorAxes(){
  const origin:P=[geometry.targetX,0,0],start=proj(origin),axisLength=.45
  const axes:{name:string;end:P;color:string}[]=[
-  {name:'+X',end:[geometry.targetX+axisLength,0,0],color:'#f69cab'},
-  {name:'+Y',end:[geometry.targetX,axisLength,0],color:'#70dcb2'},
-  {name:'+Z',end:[geometry.targetX,0,axisLength],color:'#77c9ff'},
+  {name:'+X',end:[geometry.targetX+axisLength,0,0],color:'#e58b91'},
+  {name:'+Y',end:[geometry.targetX,axisLength,0],color:'#a5c2d1'},
+  {name:'+Z',end:[geometry.targetX,0,axisLength],color:'#8bafe0'},
  ]
  for(const axis of axes){
   path([origin,axis.end],axis.color,2)
@@ -110,22 +110,22 @@ function detector(){
  // Reference geometry with a visual 1.5x longitudinal stretch of the tracking assembly.
  const {ecalWidth,targetWidth,targetHeight}=geometry
  const hcalHalf=geometry.hcalWidth/2
- box(geometry.hcalFront,-hcalHalf,-hcalHalf,geometry.hcalLength,geometry.hcalWidth,geometry.hcalWidth,'rgba(186,165,255,.3)','rgba(62,58,85,.12)',24,true)
- box(geometry.ecalFront,-ecalWidth/2,-ecalWidth/2,geometry.ecalLength,ecalWidth,ecalWidth,'rgba(112,220,178,.68)','rgba(50,115,97,.15)',10)
+ box(geometry.hcalFront,-hcalHalf,-hcalHalf,geometry.hcalLength,geometry.hcalWidth,geometry.hcalWidth,'rgba(189,190,221,.3)','rgba(62,58,85,.12)',24,true)
+ box(geometry.ecalFront,-ecalWidth/2,-ecalWidth/2,geometry.ecalLength,ecalWidth,ecalWidth,'rgba(165,194,209,.68)','rgba(50,115,97,.15)',10)
  // Magnet open bore; tracker planes use single-direction strip segmentation.
- if(props.compact||props.magnet)for(let y of [-.48,.34])box(geometry.magnetFront,y,-.42,geometry.magnetBack-geometry.magnetFront,.14,.84,'rgba(240,195,110,.36)','rgba(125,93,40,.10)')
+ if(props.compact||props.magnet)for(let y of [-.48,.34])box(geometry.magnetFront,y,-.42,geometry.magnetBack-geometry.magnetFront,.14,.84,'rgba(206,171,110,.36)','rgba(125,93,40,.10)')
  for(const x of geometry.tagPlanes)trackerPlane(x,targetWidth,geometry.trackerHeight,geometry.tagThickness)
- box(geometry.targetX-geometry.targetThickness/2,-targetHeight/2,-targetWidth/2,geometry.targetThickness,targetHeight,targetWidth,'rgba(246,156,171,.95)','rgba(246,156,171,.2)')
+ box(geometry.targetX-geometry.targetThickness/2,-targetHeight/2,-targetWidth/2,geometry.targetThickness,targetHeight,targetWidth,'rgba(229,139,145,.95)','rgba(229,139,145,.2)')
  geometry.recoilPlanes.forEach((x,i)=>{
   const width=ecalWidth*geometry.recoilWidthFractions[i],height=geometry.recoilHeights[i]
   trackerPlane(x,width,height,geometry.recoilThickness)
  })
  const incoming=geometry.incoming as P[],recoil=geometry.recoil as P[],dark=geometry.dark as P[]
- path(incoming,'#77c9ff',2);path(recoil,'#77c9ff',2.2);path(dark,'#baa5ff',1.7,[7,6])
+ path(incoming,'#8bafe0',2);path(recoil,'#8bafe0',2.2);path(dark,'#bdbedd',1.7,[7,6])
  const particles=particleTimeline(state.t,incoming,recoil,dark,isStatic())
  if(particles.blue)dot(particles.blue as P,3,'#d2eeff')
- if(particles.yellow)dot(particles.yellow as P,2.8,'#77c9ff')
- if(particles.red)dot(particles.red as P,2.2,'#baa5ff')
+ if(particles.yellow)dot(particles.yellow as P,2.8,'#8bafe0')
+ if(particles.red)dot(particles.red as P,2.2,'#bdbedd')
  const showerStart=recoil[recoil.length-1]
  if(particles.showerAge>=0){
   // Keep the developed shower visible until the outgoing tracks finish this cycle.
@@ -133,7 +133,7 @@ function detector(){
   for(let k=0;k<11;k++){
    const u=progress*(.65+.35*(k%4)/3)
    const end:P=[showerStart[0]+geometry.ecalLength*.9*u,showerStart[1]+(k-5)*.012*u,showerStart[2]+(k%3-1)*.04*u]
-   const showerColor=k%2===0?'240,195,110':'119,201,255'
+   const showerColor=k%2===0?'206,171,110':'139,175,224'
    path([showerStart,end],`rgba(${showerColor},${.55*fade})`,.9)
   }
  }
@@ -161,16 +161,16 @@ function clusters(){
  const slowed=.42*Math.tanh(separation*1.3)
  for(const side of [-1,1]){
   const cx=side*slowed,cz=side*.13,center:P=[cx,side*.16,cz]
-  sphere(center,.82,'rgba(119,201,255,.22)',state.t*.025)
+  sphere(center,.82,'rgba(139,175,224,.22)',state.t*.025)
   for(let i=0;i<170;i++){
    const a=i*2.39996,b=Math.acos(1-2*(i+.5)/170),r=.74*Math.pow((i*29%170)/170,.5)
-   dot([cx+r*Math.sin(b)*Math.cos(a),side*.16+r*Math.cos(b),cz+r*Math.sin(b)*Math.sin(a)],i%7?1.1:2,'rgba(119,201,255,.7)')
+   dot([cx+r*Math.sin(b)*Math.cos(a),side*.16+r*Math.cos(b),cz+r*Math.sin(b)*Math.sin(a)],i%7?1.1:2,'rgba(139,175,224,.7)')
   }
   // The red component passes through and separates farther and faster.
   const rx=side*separation
   for(let j=0;j<15;j++){
    const rr=.22+j*.025
-   path(Array.from({length:70},(_,i):P=>[rx+rr*1.4*Math.cos(i/69*Math.PI*2),side*.1+rr*Math.sin(i/69*Math.PI*2),side*.1]),'rgba(246,156,171,.25)',1.7)
+   path(Array.from({length:70},(_,i):P=>[rx+rr*1.4*Math.cos(i/69*Math.PI*2),side*.1+rr*Math.sin(i/69*Math.PI*2),side*.1]),'rgba(229,139,145,.25)',1.7)
   }
  }
 }
@@ -182,7 +182,7 @@ function atom(){
  // Only the nucleus recoils in the nuclear encounter; the displacement is small.
  const recoil=mode===2?Math.min(after*.045,.09)*frame.recoilReturn:0
  const nucleus:P=[.65+recoil,-recoil*.3,0]
- sphere(nucleus,.19,'rgba(240,195,110,.42)',t*ORBIT_SPEED)
+ sphere(nucleus,.19,'rgba(206,171,110,.42)',t*ORBIT_SPEED)
  for(let i=0;i<35;i++){
   const a=i*2.4,b=Math.acos(1-2*(i+.5)/35)
   dot([nucleus[0]+.16*Math.sin(b)*Math.cos(a),nucleus[1]+.16*Math.cos(b),.16*Math.sin(b)*Math.sin(a)],3.5,i%2?'#d6b372':'#8da8c0')
@@ -192,12 +192,12 @@ function atom(){
   const orbit=(a:number):P=>k===4
    ?outerElectronPosition(COLLISION_TIME+a/ORBIT_SPEED,0) as P
    :[.65+r*Math.cos(a),r*Math.sin(a)*Math.cos(k*.54),r*Math.sin(a)*Math.sin(k*.54)]
-  path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(119,201,255,.25)',.8)
-  if(k<4)for(let j=0;j<3;j++)dot(orbit(t*ORBIT_SPEED+k+j*2*Math.PI/3),2.5,'#77c9ff')
+  path(Array.from({length:121},(_,i)=>orbit(i/120*Math.PI*2)),'rgba(139,175,224,.25)',.8)
+  if(k<4)for(let j=0;j<3;j++)dot(orbit(t*ORBIT_SPEED+k+j*2*Math.PI/3),2.5,'#8bafe0')
  }
- for(const i of frame.electrons)dot(outerElectronPosition(t,i) as P,3,'#77c9ff')
+ for(const i of frame.electrons)dot(outerElectronPosition(t,i) as P,3,'#8bafe0')
  if(frame.returningElectronsOpacity>0)for(const i of [0,2])
-  dot(outerElectronPosition(t,i) as P,3,`rgba(119,201,255,${frame.returningElectronsOpacity})`)
+  dot(outerElectronPosition(t,i) as P,3,`rgba(139,175,224,${frame.returningElectronsOpacity})`)
  // The incoming positron meets the existing orbiting electron at the vertex.
  const beamGuide:P=[-2.6,vertex[1],vertex[2]],alpha=frame.eventOpacity
  const color=(rgb:string,a=1)=>`rgba(${rgb},${a*alpha})`
@@ -214,8 +214,8 @@ function atom(){
  const outgoingLength=PARTICLE_SPEED*OUTGOING_DURATION
  const start=beamPoint(incomingLength),incoming=beamPoint(incomingLength*(1-frame.incoming))
  let positronLabelPoint:P|undefined=frame.collided?undefined:incoming
- path([start,frame.collided?vertex:incoming],color('246,156,171',.52),1.5)
- if(!frame.collided)dot(incoming,3.5,color('246,156,171'))
+ path([start,frame.collided?vertex:incoming],color('229,139,145',.52),1.5)
+ if(!frame.collided)dot(incoming,3.5,color('229,139,145'))
  // Match the incoming speed, then hold all final-state particles together.
  // Every final-state particle shares the same length and progress.
  const emit=(end:P,rgb:string,name:string,dashed=false,photon=false)=>{
@@ -239,11 +239,11 @@ function atom(){
    emit([2.45,1.12,.28],'194,175,233','χ',true)
    emit([2.30,-.72,-.20],'194,175,233','χ̄',true)
   }else if(mode===1){
-   emit([2.45,1.12,.28],'186,165,255','A′',true)
-   emit([2.30,-.72,-.20],'240,195,110','γ',false,true)
+   emit([2.45,1.12,.28],'189,190,221','A′',true)
+   emit([2.30,-.72,-.20],'206,171,110','γ',false,true)
   }else{
-   emit([2.34,-.19,0],'186,165,255','A′',true)
-   emit([2.34,1.61,.35],'246,156,171','e⁺')
+   emit([2.34,-.19,0],'189,190,221','A′',true)
+   emit([2.34,1.61,.35],'229,139,145','e⁺')
   }
  }
  // One label follows the positron through the vertex with the same offset and opacity.
@@ -305,5 +305,5 @@ onBeforeUnmount(()=>{loop?.pause();camera?.pause()})
 </script>
 <template><div class="physics-scene" :class="{compact}"><canvas ref="canvas"/><div v-if="!compact" class="physics-scene-shade"/></div></template>
 <style scoped>
-.physics-scene{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1;background:#0c0d0f}.physics-scene canvas{width:100%;height:100%;object-fit:fill;opacity:.95}.physics-scene-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.98) 0%,rgba(12,13,15,.84) 31%,rgba(12,13,15,.34) 55%,transparent 83%),linear-gradient(0deg,rgba(12,13,15,.78),transparent 23%)}.compact{position:relative;z-index:0;background:transparent;width:100%;height:100%}.compact canvas{opacity:1}
+.physics-scene{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1;background:#0d1829}.physics-scene canvas{width:100%;height:100%;object-fit:fill;opacity:.95}.physics-scene-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.98) 0%,rgba(12,13,15,.84) 31%,rgba(12,13,15,.34) 55%,transparent 83%),linear-gradient(0deg,rgba(12,13,15,.78),transparent 23%)}.compact{position:relative;z-index:0;background:transparent;width:100%;height:100%}.compact canvas{opacity:1}
 </style>

@@ -5,7 +5,7 @@ addons:
   - slidev-addon-evenet
 title: Design of DarkSHINE Simulation Framework and Prospective Study of Positron-Beam Mode
 info: PhD Dissertation Pre-Defence — Xuliang Zhu — Shanghai Jiao Tong University
-colorSchema: dark
+colorSchema: auto
 transition: fade
 mdc: true
 routerMode: hash
@@ -16,7 +16,7 @@ fonts:
   local: DM Sans
   provider: none
 glowSeed: 229
-glowOpacity: 0
+glowOpacity: 0.14
 preload: false
 drawings:
   persist: false

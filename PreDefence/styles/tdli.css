@@ -1,0 +1,12 @@
+/* Official TDLI blue-template colors, adapted for a dark scientific presentation. */
+:root{--tdli-blue:#004098;--tdli-red:#c9151e;--tdli-gold:#ceab6e;--tdli-gray:#768395;--bg-0:#111e31;--bg-1:#1b2c43;--fg-0:#f0f1f3;--fg-1:#bcc2cb;--fg-2:#aeb6c1;--nju-line:#76839540}
+.slidev-layout{background:#111e31!important}
+.slidev-layout::before{background:radial-gradient(ellipse at 82% 18%,#00409820,transparent 60%),radial-gradient(ellipse at 12% 90%,#7683950b,transparent 60%)}
+.slidev-layout.section-slide{background:#0d1829!important}
+.brandbar{min-height:55px}
+.cover-head .accent-title{background:linear-gradient(90deg,#ceab6e,#eee0c5,#ceab6e)!important;background-clip:text!important;color:transparent}
+.chapter-number,.outline-row b{color:#ceab6e}
+.plot-mat{box-shadow:0 0 0 1px #76839520}
+html.dark{--presentation-canvas:#111e31}
+html.light{--presentation-canvas:#f5f7fb}
+html,body,#app,.slidev-slide-container,.slidev-slide-content,#slide-content{background:var(--presentation-canvas)!important;--slidev-slide-container-background:var(--presentation-canvas)}

@@ -1,7 +1,7 @@
 /* NJU-only Graphite & Gold. Scientific plot assets and series are untouched. */
-:root { --bg-0:#17191c; --bg-1:#23262b; --fg-0:#f0f1f3; --fg-1:#bcc2cb; --fg-2:#aeb6c1; --nju-accent:#77c9ff; --nju-blue:#77c9ff; --nju-amber:#f0c36e; --nju-violet:#baa5ff; --nju-mint:#70dcb2; --nju-coral:#f69cab; --nju-line:rgba(190,201,214,.18); --c-cyan:#77c9ff; --c-magenta:#f69cab; --c-violet:#baa5ff; --card-bg:rgba(201,210,221,.045); --card-border:var(--nju-line); --accent:linear-gradient(90deg,#ffbd59 0%,#fff0ba 32%,#ff91b5 68%,#ffbd59 100%); }
-.slidev-layout { background:#17191c!important; isolation:isolate; font-family:'DM Sans',sans-serif; color:var(--fg-0); }
-.slidev-layout::before { content:''; position:absolute; inset:-18%; z-index:-1; pointer-events:none; background:radial-gradient(ellipse at 75% 25%,rgba(94,159,222,.15),transparent 58%),radial-gradient(ellipse at 15% 85%,rgba(163,132,203,.09),transparent 55%); animation:nju-graphite-drift 28s ease-in-out infinite alternate; }
+:root { --bg-0:#111e31; --bg-1:#1b2c43; --fg-0:#f0f1f3; --fg-1:#bcc2cb; --fg-2:#aeb6c1; --nju-accent:#8bafe0; --nju-blue:#8bafe0; --nju-amber:#ceab6e; --nju-violet:#bdbedd; --nju-mint:#a5c2d1; --nju-coral:#e58b91; --nju-line:rgba(190,201,214,.18); --c-cyan:#8bafe0; --c-magenta:#e58b91; --c-violet:#bdbedd; --card-bg:rgba(201,210,221,.045); --card-border:var(--nju-line); --accent:linear-gradient(90deg,#ceab6e 0%,#eee0c5 32%,#e58b91 68%,#ceab6e 100%); }
+.slidev-layout { background:#111e31!important; isolation:isolate; font-family:'DM Sans',sans-serif; color:var(--fg-0); }
+.slidev-layout::before { content:''; position:absolute; inset:-18%; z-index:-1; pointer-events:none; background:radial-gradient(ellipse at 75% 25%,rgba(0,64,152,.15),transparent 58%),radial-gradient(ellipse at 15% 85%,rgba(118,131,149,.09),transparent 55%); animation:nju-graphite-drift 28s ease-in-out infinite alternate; }
 @keyframes nju-graphite-drift { from{transform:translate3d(-2%,-1%,0) scale(1)} to{transform:translate3d(3%,2%,0) scale(1.04)} }
 .slidev-layout h1 { font-size:36px!important; line-height:1.14!important; font-weight:550!important; letter-spacing:-.035em!important; color:var(--fg-0)!important; }
 .slidev-layout.nju-architecture h1 { font-size:36px!important; }
@@ -11,7 +11,7 @@
 .slidev-layout :is(.evenet-power,.model-name-highlight)::before,.slidev-layout .evenet-power::after { display:none!important; }
 .slidev-layout :is(.nju-source,.nju-caption,.njua-note) { color:var(--fg-1)!important; opacity:1!important; }
 .slidev-layout .nju-takeaway { border-left:1px solid var(--nju-line); }
-.slidev-layout .njua svg .housing,.slidev-layout .njua svg .socket { fill:#23262b!important; stroke:#9aa7b8; }
+.slidev-layout .njua svg .housing,.slidev-layout .njua svg .socket { fill:#1b2c43!important; stroke:#9aa7b8; }
 .slidev-layout .njua svg :is(.small,.tiny,.label) { fill:var(--fg-1); }
 .slidev-layout .njua svg .strong { fill:var(--fg-0); }
 .slidev-layout .njua-footer { border-color:var(--nju-line); }
@@ -289,7 +289,7 @@
 .slidev-layout .rough-annotation path { stroke:var(--nju-accent)!important; }
 .slidev-layout .evenet-energy { background:conic-gradient(from 210deg,transparent 0 16%,rgba(195,206,218,.7) 22%,transparent 31% 58%,rgba(240,243,246,.8) 69%,transparent 77%)!important; }
 .slidev-layout .evenet-lock-flash { background:radial-gradient(circle,rgba(240,243,246,.9) 0 4%,rgba(195,206,218,.7) 16%,rgba(150,163,180,.3) 43%,transparent 73%)!important; }
-.slidev-layout.cinema-bridge-layout { background:#17191c!important; }
+.slidev-layout.cinema-bridge-layout { background:#111e31!important; }
 .slidev-layout .cinema-bridge { background:transparent!important; }
 .slidev-layout .cinema-bg { display:none; }
 
@@ -369,15 +369,15 @@
 .slidev-layout [text*="red-"],
 .slidev-layout [class*="text-fuchsia-"],
 .slidev-layout [text*="fuchsia-"] { color:var(--nju-coral)!important; }
-.slidev-layout .paradigm-card--disc,.slidev-layout .evidence-card--performance,.slidev-layout .align-node--dgpo { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-blue) 10%,#1b1e23),#1b1e23)!important; border-color:color-mix(in srgb,var(--nju-blue) 32%,transparent)!important; }
-.slidev-layout .evidence-card--efficiency { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-amber) 10%,#1b1e23),#1b1e23)!important; border-color:color-mix(in srgb,var(--nju-amber) 32%,transparent)!important; }
-.slidev-layout .evidence-card--transfer,.slidev-layout .group-good { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-mint) 10%,#1b1e23),#1b1e23)!important; border-color:color-mix(in srgb,var(--nju-mint) 32%,transparent)!important; }
-.slidev-layout .paradigm-card--gen,.slidev-layout .group-bad { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-coral) 10%,#1b1e23),#1b1e23)!important; border-color:color-mix(in srgb,var(--nju-coral) 32%,transparent)!important; }
-.slidev-layout .align-node--cpo { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-violet) 10%,#1b1e23),#1b1e23)!important; border-color:color-mix(in srgb,var(--nju-violet) 32%,transparent)!important; }
-.slidev-layout .task-lane--disc .task-pill { color:var(--nju-blue)!important; border-color:rgba(119,201,255,.35)!important; }
-.slidev-layout .task-lane--gen .task-pill { color:var(--nju-coral)!important; border-color:rgba(246,156,171,.35)!important; }
+.slidev-layout .paradigm-card--disc,.slidev-layout .evidence-card--performance,.slidev-layout .align-node--dgpo { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-blue) 10%,#17263c),#17263c)!important; border-color:color-mix(in srgb,var(--nju-blue) 32%,transparent)!important; }
+.slidev-layout .evidence-card--efficiency { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-amber) 10%,#17263c),#17263c)!important; border-color:color-mix(in srgb,var(--nju-amber) 32%,transparent)!important; }
+.slidev-layout .evidence-card--transfer,.slidev-layout .group-good { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-mint) 10%,#17263c),#17263c)!important; border-color:color-mix(in srgb,var(--nju-mint) 32%,transparent)!important; }
+.slidev-layout .paradigm-card--gen,.slidev-layout .group-bad { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-coral) 10%,#17263c),#17263c)!important; border-color:color-mix(in srgb,var(--nju-coral) 32%,transparent)!important; }
+.slidev-layout .align-node--cpo { background:linear-gradient(135deg,color-mix(in srgb,var(--nju-violet) 10%,#17263c),#17263c)!important; border-color:color-mix(in srgb,var(--nju-violet) 32%,transparent)!important; }
+.slidev-layout .task-lane--disc .task-pill { color:var(--nju-blue)!important; border-color:rgba(139,175,224,.35)!important; }
+.slidev-layout .task-lane--gen .task-pill { color:var(--nju-coral)!important; border-color:rgba(229,139,145,.35)!important; }
 .slidev-layout .nju-takeaway { border-color:var(--nju-blue); }
-.slidev-layout ::selection { background:#77c9ff; color:#17191c; }
+.slidev-layout ::selection { background:#8bafe0; color:#111e31; }
 .slidev-layout :focus-visible { outline:2px solid var(--nju-blue); outline-offset:4px; }
 /* Keep EveNet branding gold even when nested in an accent-colored phrase. */
 
@@ -389,7 +389,7 @@
 .slidev-layout .group-good .group-dot { background:var(--nju-mint)!important; }
 .slidev-layout .batch-card--pred .mini-cloud i,.slidev-layout .latent-card--pred .latent { background:var(--nju-blue)!important; }
 .slidev-layout .ad-network i { background:var(--nju-violet)!important; }
-.slidev-layout .truth-dot,.slidev-layout .truth-anchor { outline:1px solid #fff0ba; outline-offset:3px; }
+.slidev-layout .truth-dot,.slidev-layout .truth-anchor { outline:1px solid #eee0c5; outline-offset:3px; }
 .slidev-layout .align-subtitle { color:var(--fg-1)!important; }
 
 .slidev-layout .hub-z { background:none!important; color:var(--nju-blue)!important; -webkit-text-fill-color:var(--nju-blue); font-style:italic; }

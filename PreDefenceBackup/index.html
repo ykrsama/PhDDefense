@@ -1,0 +1,9 @@
+<body>
+  <script>
+    // Start new visitors in light mode, keeping Slidev's native saved preference.
+    try {
+      if (localStorage.getItem('slidev-color-schema') === null)
+        localStorage.setItem('slidev-color-schema', 'light')
+    } catch {}
+  </script>
+</body>

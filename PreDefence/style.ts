@@ -9,3 +9,6 @@ import './styles/defence.css'
 import './styles/hierarchy.css'
 
 import './styles/physics-output.css'
+import './styles/tdli.css'
+
+import './styles/tdli-light.css'

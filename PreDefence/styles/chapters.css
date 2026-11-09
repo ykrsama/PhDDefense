@@ -12,7 +12,7 @@
 .nju-chapter-bridge .access-note svg { width:16px; height:16px; }
 .nju-chapter-bridge .chapter-copy p { opacity:1; }
 /* A distinct, still interlude between the animated graphite content slides. */
-.slidev-layout.nju-chapter-bridge { background:#0c0d0f!important; }
-.slidev-layout.nju-chapter-bridge::before { inset:0; background:linear-gradient(115deg,transparent 48%,rgba(240,195,110,.035) 100%); animation:none; transform:none; }
+.slidev-layout.nju-chapter-bridge { background:#0d1829!important; }
+.slidev-layout.nju-chapter-bridge::before { inset:0; background:linear-gradient(115deg,transparent 48%,rgba(206,171,110,.035) 100%); animation:none; transform:none; }
 
 .slidev-layout.nju-chapter-bridge::before { display:none; }

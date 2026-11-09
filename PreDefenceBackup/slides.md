@@ -4,7 +4,7 @@ favicon: ./branding/sjtu.png
 addons:
   - slidev-addon-evenet
 title: DarkSHINE PhD Dissertation Pre-Defence — Backup
-colorSchema: dark
+colorSchema: auto
 transition: fade
 mdc: true
 routerMode: hash
@@ -14,7 +14,7 @@ fonts:
   sans: DM Sans
   local: DM Sans
   provider: none
-glowOpacity: 0
+glowOpacity: 0.14
 exportFilename: DarkSHINE_PhD_Defence_Backup
 src: ./slides/01-index.md
 ---

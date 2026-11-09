@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNav } from '@slidev/client'
+import { useNav, useDarkMode } from '@slidev/client'
 import seedrandom from 'seedrandom'
 /**
  * A new glow effect system powered by blured polygons
@@ -15,6 +15,7 @@ import seedrandom from 'seedrandom'
 import { computed, ref, watch } from 'vue'
 
 const { currentSlideRoute } = useNav()
+const { isDark } = useDarkMode()
 
 export type Range = [number, number]
 
@@ -33,7 +34,7 @@ export type Distribution =
 
 const formatter = computed(() => (currentSlideRoute.value.meta?.slide as any)?.frontmatter || {})
 const distribution = computed(() => (formatter.value.glow || 'full') as Distribution)
-const opacity = computed<number>(() => +(formatter.value.glowOpacity ?? 0.4))
+const opacity = computed<number>(() => +(formatter.value.glowOpacity ?? 0.14))
 const hue = computed<number>(() => +(formatter.value.glowHue || 0))
 const seed = computed<string>(() => (formatter.value.glowSeed === 'false' || formatter.value.glowSeed === false)
   ? Date.now().toString()
@@ -152,6 +153,7 @@ const poly3 = usePloy(3)
 <template>
   <div>
     <div
+      v-if="isDark && opacity > 0"
       class="bg transform-gpu overflow-hidden pointer-events-none"
       :style="{ filter: `blur(70px) hue-rotate(${hue}deg)` }"
       aria-hidden="true"
@@ -166,7 +168,7 @@ const poly3 = usePloy(3)
       />
       <div
         class="clip bg-gradient-to-t from-[#01b6d1] to-[#aaf7ff]"
-        :style="{ 'clip-path': `polygon(${poly3})`, 'opacity': 0.2 }"
+        :style="{ 'clip-path': `polygon(${poly3})`, 'opacity': opacity * 0.5 }"
       />
     </div>
   </div>
