@@ -6,8 +6,10 @@ import { animate } from 'animejs'
 import { particleTimeline } from '../utils/particleTimeline.js'
 import { detectorGeometry as geometry } from '../utils/detectorGeometry.js'
 import { atomTimeline, outerElectronPosition, COLLISION_TIME, OUTGOING_DURATION, PARTICLE_SPEED, ORBIT_SPEED } from '../utils/atomTimeline.js'
-import { useNav, useSlideContext } from '@slidev/client'
+import { useNav, useSlideContext, useDarkMode } from '@slidev/client'
+import { clusterTimeline, CLUSTER_PERIOD } from '../utils/clusterTimeline.js'
 const props=withDefaults(defineProps<{scene?:string; persistent?:boolean; compact?:boolean; labels?:boolean; magnet?:boolean; original?:boolean; narrow?:boolean; focus?:string}>(),{scene:'detector',persistent:false,compact:false,labels:false,magnet:false,original:false,narrow:false,focus:''})
+const { isDark } = useDarkMode()
 const canvas=ref<HTMLCanvasElement>()
 const nav=useNav(); const state={t:5,yaw:-.56,pitch:.28,roll:.20,zoom:1,cx:620,cy:328};let ctx:CanvasRenderingContext2D|null=null,loop:any,camera:any
 const page=computed(()=>nav.currentPage.value)
@@ -155,24 +157,83 @@ function detector(){
  if(showDetectorAxes)detectorAxes()
 }
 function sphere(center:P,r:number,col:string,turn=0){for(let j=1;j<12;j++){let b=-Math.PI/2+j*Math.PI/12;path(Array.from({length:65},(_,i):P=>[center[0]+r*Math.cos(b)*Math.cos(i/64*Math.PI*2+turn),center[1]+r*Math.sin(b),center[2]+r*Math.cos(b)*Math.sin(i/64*Math.PI*2+turn)]),col,.6)}for(let j=0;j<12;j++)path(Array.from({length:65},(_,i):P=>{let a=i/64*Math.PI*2,b=j*Math.PI/6+turn;return[center[0]+r*Math.cos(a)*Math.cos(b),center[1]+r*Math.sin(a),center[2]+r*Math.cos(a)*Math.sin(b)]}),col,.6)}
+// Soft projected kernels, not opaque spheres or latitude/longitude meshes.
+const clusterHash=(n:number)=>{const a=Math.sin(n*127.1+311.7)*43758.5453;return a-Math.floor(a)}
+const clusterNormal=(n:number)=>Math.sqrt(-2*Math.log(Math.max(.005,clusterHash(n))))*Math.cos(2*Math.PI*clusterHash(n+57))
+function clusterCloud(center:P,radii:P,rgb:number[],alpha:number){
+ if(!ctx||alpha<=0)return
+ const p=proj(center)
+ const axes=radii.map((r,i)=>{const point=[...center] as P;point[i]+=r;const q=proj(point);return[q[0]-p[0],q[1]-p[1]]})
+ // Project the covariance of a 3D ellipsoid, preserving its soft depth extent.
+ const xx=axes.reduce((v,a)=>v+a[0]*a[0],0),yy=axes.reduce((v,a)=>v+a[1]*a[1],0),xy=axes.reduce((v,a)=>v+a[0]*a[1],0)
+ const spread=Math.hypot(xx-yy,2*xy),rx=Math.max(1,Math.sqrt((xx+yy+spread)/2)),ry=Math.max(1,Math.sqrt((xx+yy-spread)/2))
+ ctx.save();ctx.translate(p[0],p[1]);ctx.rotate(.5*Math.atan2(2*xy,xx-yy));ctx.scale(rx,ry)
+ const g=ctx.createRadialGradient(0,0,0,0,0,1)
+ const rgba=(v:number)=>`rgba(${rgb.join(',')},${v})`
+ g.addColorStop(0,rgba(alpha));g.addColorStop(.25,rgba(alpha*.74));g.addColorStop(.58,rgba(alpha*.26));g.addColorStop(1,rgba(0))
+ ctx.fillStyle=g;ctx.fillRect(-1,-1,2,2);ctx.restore()
+}
+function clusterGalaxy(p:P,size:number,opacity:number,angle:number){
+ if(!ctx||opacity<=0)return
+ const q=proj(p),dark=isDark.value
+ ctx.save();ctx.translate(q[0],q[1]);ctx.rotate(angle);ctx.scale(1.8,1)
+ const r=size*4,g=ctx.createRadialGradient(0,0,0,0,0,r)
+ const rgb=dark?'244,220,177':'110,115,140'
+ g.addColorStop(0,`rgba(${rgb},${opacity*.8})`);g.addColorStop(.25,`rgba(${rgb},${opacity*.32})`);g.addColorStop(1,`rgba(${rgb},0)`)
+ ctx.fillStyle=g;ctx.fillRect(-r,-r,2*r,2*r);ctx.restore()
+ ctx.save();ctx.fillStyle=dark?`rgba(255,245,220,${opacity})`:`rgba(46,66,95,${opacity*.8})`;ctx.beginPath();ctx.arc(q[0],q[1],Math.max(.45,size*.5),0,Math.PI*2);ctx.fill();ctx.restore()
+}
 function clusters(){
- const phase=(state.t%22)/22, separation=1.55*Math.cos(phase*Math.PI*2)
- // Keep the original visual identities: blue star-filled spheres lag at the collision.
- const slowed=.42*Math.tanh(separation*1.3)
- for(const side of [-1,1]){
-  const cx=side*slowed,cz=side*.13,center:P=[cx,side*.16,cz]
-  sphere(center,.82,'rgba(139,175,224,.22)',state.t*.025)
-  for(let i=0;i<170;i++){
-   const a=i*2.39996,b=Math.acos(1-2*(i+.5)/170),r=.74*Math.pow((i*29%170)/170,.5)
-   dot([cx+r*Math.sin(b)*Math.cos(a),side*.16+r*Math.cos(b),cz+r*Math.sin(b)*Math.sin(a)],i%7?1.1:2,'rgba(139,175,224,.7)')
-  }
-  // The red component passes through and separates farther and faster.
-  const rx=side*separation
-  for(let j=0;j<15;j++){
-   const rr=.22+j*.025
-   path(Array.from({length:70},(_,i):P=>[rx+rr*1.4*Math.cos(i/69*Math.PI*2),side*.1+rr*Math.sin(i/69*Math.PI*2),side*.1]),'rgba(229,139,145,.25)',1.7)
+ if(!ctx||!canvas.value)return
+ const scene=clusterTimeline(state.t),{alpha,after,impact,compression,members}=scene
+ canvas.value.dataset.cluster=JSON.stringify({t:scene.t,after,members:members.map(m=>({massX:m.massX,gasX:m.gasX}))})
+ ctx.save()
+ // A quiet depth field makes the moving cluster galaxies readable as a group.
+ for(let i=0;i<68;i++){
+  const p:P=[(clusterHash(i+900)-.5)*5.3,(clusterHash(i+1000)-.5)*2.05,(clusterHash(i+1100)-.5)*1.5]
+  const q=proj(p);ctx.fillStyle=isDark.value?`rgba(205,215,235,${.10+clusterHash(i)*.18})`:`rgba(78,99,130,${.12+clusterHash(i)*.14})`;ctx.beginPath();ctx.arc(q[0],q[1],i%13===0?1:.55,0,Math.PI*2);ctx.fill()
+ }
+ const blue=isDark.value?[71,111,244]:[72,100,220]
+ const pink=isDark.value?[242,65,119]:[220,55,107]
+ // Lensing mass halos keep their broad, diffuse shape through the encounter.
+ ctx.globalCompositeOperation=isDark.value?'screen':'source-over'
+ for(const m of members){
+  const center:P=[m.massX,m.y,m.z]
+  clusterCloud(center,[m.size*1.34,m.size*.91,m.size*.7],blue,alpha*(isDark.value?.55:.49))
+  for(let j=0;j<9;j++){
+   const p:P=[center[0]+clusterNormal(j+11)*m.size*.24,center[1]+clusterNormal(j+81)*m.size*.20,center[2]+clusterNormal(j+151)*m.size*.28]
+   clusterCloud(p,[m.size*.65,m.size*.5,m.size*.45],blue,alpha*.075)
   }
  }
+ // Gas piles up and broadens transversely; a faint bridge links the two wakes.
+ clusterCloud([0,0,0],[.87,.43,.32],pink,alpha*impact*.19)
+ for(const [index,m] of members.entries()){
+  const center:P=[m.gasX,m.y-.015,m.z+.05],r=m.size*(index===0?.92:.84)
+  const width=r*(1-.42*compression),height=r*(.70+.22*compression)
+  clusterCloud(center,[width*1.2,height,.55*r],pink,alpha*(isDark.value?.69:.47))
+  for(let j=0;j<8;j++){
+   const tail=impact*(j/7)*r*.68
+   const p:P=[center[0]-m.direction*tail,center[1]+clusterNormal(j+230)*r*.15,center[2]+clusterNormal(j+270)*r*.16]
+   clusterCloud(p,[width*.64,height*.62,r*.38],pink,alpha*(.10-.045*j/7))
+  }
+  // A short, soft bow front supports the gas deformation without wireframe shells.
+  if(after>.2){
+   const front=Array.from({length:39},(_,i):P=>{const u=(i-19)/19;return[center[0]+m.direction*(width*.73+.20*r*(1-u*u)),center[1]+u*height*.72,center[2]]})
+   ctx.save();ctx.shadowColor=`rgba(${pink.join(',')},.25)`;ctx.shadowBlur=5
+   path(front,`rgba(${pink.join(',')},${alpha*impact*.22})`,.85);ctx.restore()
+  }
+ }
+ ctx.globalCompositeOperation='source-over'
+ // The visible galaxy tracers remain attached to their collisionless mass peaks.
+ for(const [index,m] of members.entries()){
+  const n=index===0?60:35
+  for(let i=0;i<n;i++){
+   const seed=i+index*401,p:P=[m.massX+clusterNormal(seed+330)*m.size*.42,m.y+clusterNormal(seed+410)*m.size*.34,m.z+clusterNormal(seed+490)*m.size*.32]
+   clusterGalaxy(p,i%17===0?1.8:.65+clusterHash(seed+530)*.65,alpha*(.35+clusterHash(seed+610)*.57),clusterHash(seed+710)*Math.PI)
+  }
+  clusterGalaxy([m.massX,m.y,m.z],index===0?2.6:2.0,alpha,.12+index*.7)
+ }
+ ctx.restore()
 }
 function atom(){
  if(!ctx||!canvas.value)return
@@ -259,7 +320,7 @@ function setCamera(){
   ? props.narrow?{yaw:-.43,pitch:.28,roll:.20,zoom:.58,cx:220,cy:150}
    : props.original?{yaw:-.43,pitch:.433,roll:0,zoom:.88,cx:421,cy:134}
    :{yaw:-.43,pitch:.28,roll:.20,zoom:.86,cx:421,cy:160}
-  : props.scene==='cluster'?{yaw:-.56,pitch:.28,roll:.20,zoom:1.12,cx:665,cy:320}
+  : props.scene==='cluster'?{yaw:-.18,pitch:.14,roll:.12,zoom:.82,cx:715,cy:325}
   : props.scene==='atom'?{yaw:-.56,pitch:.28,roll:.20,zoom:1.05,cx:660,cy:320}
   : props.persistent&&n===2?{yaw:-.95,pitch:.20,roll:.85,zoom:2.80,cx:750,cy:265}
   :{yaw:-.58,pitch:.20,roll:.72,zoom:2.40,cx:720,cy:275}
@@ -298,12 +359,13 @@ function setCamera(){
  if(!props.persistent||n===1)Object.assign(state,{...target,yaw:.12,pitch:.10,roll:-.08,zoom:target.zoom*.55})
  camera=animate(state,{...target,duration:2800,ease:'outCubic',onUpdate:draw})
 }
-function syncLoop(){loop?.pause();setCamera();if(active.value&&!isStatic())loop=animate(state,{t:[state.t,state.t+360],duration:360000,ease:'linear',loop:true,onUpdate:draw})}
-onMounted(()=>{const c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster')state.t=2;if(props.scene==='atom')state.t=isStatic()?3.8:0;syncLoop();watch([page,active],syncLoop)})
+function syncLoop(){loop?.pause();setCamera();if(active.value&&!isStatic()){const span=props.scene==='cluster'?CLUSTER_PERIOD:360;loop=animate(state,{t:[state.t,state.t+span],duration:span*1000,ease:'linear',loop:true,onUpdate:draw})}}
+onMounted(()=>{const c=canvas.value!;c.width=props.narrow?980:1960;c.height=props.compact?620:1103;ctx=c.getContext('2d');ctx?.scale(2,2);if(props.scene==='cluster'){const requested=new URLSearchParams(location.search).get('clusterTime');state.t=requested!==null?Number(requested):isStatic()?10.2:0;}if(props.scene==='atom')state.t=isStatic()?3.8:0;syncLoop();watch([page,active],syncLoop)})
 watch(()=>props.focus,()=>setCamera())
+watch(isDark,()=>{if(props.scene==='cluster')draw()})
 onBeforeUnmount(()=>{loop?.pause();camera?.pause()})
 </script>
-<template><div class="physics-scene" :class="{compact}"><canvas ref="canvas"/><div v-if="!compact" class="physics-scene-shade"/></div></template>
+<template><div class="physics-scene" :class="{compact}" :data-scene="scene"><canvas ref="canvas"/><div v-if="!compact" class="physics-scene-shade"/></div></template>
 <style scoped>
 .physics-scene{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1;background:#0d1829}.physics-scene canvas{width:100%;height:100%;object-fit:fill;opacity:.95}.physics-scene-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,13,15,.98) 0%,rgba(12,13,15,.84) 31%,rgba(12,13,15,.34) 55%,transparent 83%),linear-gradient(0deg,rgba(12,13,15,.78),transparent 23%)}.compact{position:relative;z-index:0;background:transparent;width:100%;height:100%}.compact canvas{opacity:1}
 </style>

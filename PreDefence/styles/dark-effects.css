@@ -27,3 +27,6 @@ html.dark .slidev-layout :is(.accent-title,.gradient-animated-logo-color,.gold,.
   html.dark .bg .clip,
   html.dark .slidev-layout :is(.accent-title,.gradient-animated-logo-color,.gold,.big-number,.chapter-number,.outline-row b,.cover-date){animation:none!important}
 }
+
+/* Cluster clouds have their own light palette; do not apply the detector's darkening filter. */
+html.light .physics-scene[data-scene="cluster"] canvas{filter:none!important}
