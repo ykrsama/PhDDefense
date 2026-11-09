@@ -1,0 +1,29 @@
+/* Restore EveNet's polygon glow and gradient-shift animation in dark mode only. */
+html.dark .slidev-slide-container{isolation:isolate}
+html.dark .slidev-slide-content,
+html.dark .slidev-layout,
+html.dark .slidev-layout.section-slide{background:transparent!important}
+
+/* Keep the canvas behind the global polygons, rather than painting over them. */
+html.dark .bg .clip{animation:nju-graphite-drift 28s ease-in-out infinite alternate}
+html.dark .bg .clip:nth-child(2){animation-delay:-10s;animation-direction:alternate-reverse}
+html.dark .bg .clip:nth-child(3){animation-delay:-20s}
+html.dark .slidev-layout::before{background:radial-gradient(ellipse at 75% 25%,rgba(94,159,222,.15),transparent 58%),radial-gradient(ellipse at 15% 85%,rgba(163,132,203,.09),transparent 55%)}
+
+html.dark .physics-scene{background:transparent!important}
+html.dark .physics-scene-shade{background:linear-gradient(90deg,rgba(17,30,49,.72) 0%,rgba(17,30,49,.5) 31%,rgba(17,30,49,.18) 55%,transparent 83%),linear-gradient(0deg,rgba(17,30,49,.45),transparent 23%)!important}
+
+/* The background shorthand in the palette layer had reset background-size. */
+html.dark .slidev-layout :is(.accent-title,.gradient-animated-logo-color,.gold,.big-number,.chapter-number,.outline-row b,.cover-date){
+  background-image:linear-gradient(90deg,#ceab6e 0%,#f1d59c 30%,#fff0ba 48%,#d6a047 70%,#ceab6e 100%)!important;
+  background-size:200% 200%!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+  animation:gradient-shift 6s ease-in-out infinite;
+}
+
+@media(prefers-reduced-motion:reduce){
+  html.dark .bg .clip,
+  html.dark .slidev-layout :is(.accent-title,.gradient-animated-logo-color,.gold,.big-number,.chapter-number,.outline-row b,.cover-date){animation:none!important}
+}

@@ -14,3 +14,5 @@ import './styles/tdli.css'
 import './styles/tdli-light.css'
 
 import './styles/figures.css'
+
+import './styles/dark-effects.css'

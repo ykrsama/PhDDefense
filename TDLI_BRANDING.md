@@ -26,3 +26,5 @@ The home page follows the operating-system theme on first visit, with a manual t
 Scientific SVG display variants are generated automatically by the build/dev wrappers into ignored `public/themed/{light,dark}/` folders. Original SVGs remain unchanged. White paper/panel fills become transparent; dark-mode axes, labels and dim curves gain readable ink. Geometry, glyph positions, opacities, masks, clipping and data paths are preserved. The plot mat and enlarged viewer follow the selected presentation theme. `npm test` checks the geometry invariant for all source SVGs.
 
 The page counter shares the top identity row, with a reserved gap after the theme button.
+
+Dark mode restores the reference EveNet polygon glow (blue/teal at 0.4/0.2 opacity), its 2.5-second slide-to-slide morph, and the reference's slow graphite drift. Transparent dark slide layers allow the glow to show behind content. Gold emphasis uses the existing `gradient-shift` animation with a gold/cream gradient; light mode keeps its existing solid colors and no glow. Reduced-motion preferences disable the continuous drift and text gradient motion.

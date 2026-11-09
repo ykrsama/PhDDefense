@@ -14,7 +14,7 @@ fonts:
   sans: DM Sans
   local: DM Sans
   provider: none
-glowOpacity: 0.14
+glowOpacity: 0.4
 exportFilename: DarkSHINE_PhD_Defence_Backup
 src: ./slides/01-index.md
 ---

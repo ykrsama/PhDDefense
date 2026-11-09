@@ -34,7 +34,7 @@ export type Distribution =
 
 const formatter = computed(() => (currentSlideRoute.value.meta?.slide as any)?.frontmatter || {})
 const distribution = computed(() => (formatter.value.glow || 'full') as Distribution)
-const opacity = computed<number>(() => +(formatter.value.glowOpacity ?? 0.14))
+const opacity = computed<number>(() => +(formatter.value.glowOpacity ?? 0.4))
 const hue = computed<number>(() => +(formatter.value.glowHue || 0))
 const seed = computed<string>(() => (formatter.value.glowSeed === 'false' || formatter.value.glowSeed === false)
   ? Date.now().toString()

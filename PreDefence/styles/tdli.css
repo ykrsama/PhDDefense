@@ -4,7 +4,7 @@
 .slidev-layout::before{background:radial-gradient(ellipse at 82% 18%,#00409820,transparent 60%),radial-gradient(ellipse at 12% 90%,#7683950b,transparent 60%)}
 .slidev-layout.section-slide{background:#0d1829!important}
 .brandbar{min-height:55px}
-.cover-head .accent-title{background:linear-gradient(90deg,#ceab6e,#eee0c5,#ceab6e)!important;background-clip:text!important;color:transparent}
+.cover-head .accent-title{background-image:linear-gradient(90deg,#ceab6e,#eee0c5,#ceab6e)!important;background-clip:text!important;color:transparent}
 .chapter-number,.outline-row b{color:#ceab6e}
 .plot-mat{box-shadow:0 0 0 1px #76839520}
 html.dark{--presentation-canvas:#111e31}

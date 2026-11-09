@@ -16,7 +16,7 @@ fonts:
   local: DM Sans
   provider: none
 glowSeed: 229
-glowOpacity: 0.14
+glowOpacity: 0.4
 preload: false
 drawings:
   persist: false
