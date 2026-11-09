@@ -1,17 +1,20 @@
 <script setup>
-import { useDarkMode } from '@slidev/client'
+import { useDarkMode, useNav } from '@slidev/client'
+import DarkshineLogo from './DarkshineLogo.vue'
+const { currentPage } = useNav()
 const base = import.meta.env.BASE_URL
 const { isDark, toggleDark } = useDarkMode()
 </script>
 <template>
   <header class="defence-identity" aria-label="Shanghai Jiao Tong University, Tsung-Dao Lee Institute; Xuliang Zhu, PhD Dissertation Pre-Defence">
-    <img :src="base+'branding/tdli-sjtu-'+(isDark?'white':'blue')+'.png'" alt="SJTU / Tsung-Dao Lee Institute"/>
+    <div class="defence-logos"><img :src="base+'branding/tdli-sjtu-'+(isDark?'white':'blue')+'.png'" alt="SJTU / Tsung-Dao Lee Institute"/><DarkshineLogo v-if="currentPage > 1" compact/></div>
     <span>Xuliang Zhu <i/> PhD Dissertation Pre-Defence <button class="theme-toggle" :aria-label="isDark?'Switch to light theme':'Switch to dark theme'" :title="isDark?'Light theme':'Dark theme'" @click.stop="toggleDark()">{{ isDark?'☀':'☾' }}</button></span>
   </header>
 </template>
 <style scoped>
 .defence-identity{position:absolute;z-index:90;left:48px;right:48px;top:6px;height:25px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;border-bottom:1px solid #76839535;padding-bottom:4px;box-sizing:content-box}
 .defence-identity::after{content:'';position:absolute;bottom:-1px;left:0;width:34px;height:1px;background:#c9151e}
+.defence-logos{display:flex;align-items:center;gap:11px;height:24px}
 .defence-identity img{height:24px;width:auto;object-fit:contain}
 .defence-identity>span{font:500 9px/1.3 'DM Sans',sans-serif;color:#b7c3d4;display:flex;align-items:center;gap:10px;letter-spacing:.025em;margin-right:62px}
 .defence-identity i{height:9px;width:1px;background:#76839588}

@@ -1,6 +1,6 @@
 # DarkSHINE logo motion
 
-Workflow: [Pixel2Motion](https://github.com/nolangz/pixel2motion), downloaded 2026-11-10. The presentation cover is the only integration point; the website entrance remains unchanged.
+Workflow: [Pixel2Motion](https://github.com/nolangz/pixel2motion), downloaded 2026-11-10. The presentation cover keeps the larger logo. From page 2 onward, a compact 24 px version sits immediately to the right of the TDLI/SJTU header logo; the website entrance remains unchanged.
 
 Source: `public/branding/darkshine.png`, 470 × 450 RGBA. The PNG already has transparency; the visible white tile is CSS on `.brandbar .dark-logo`. Ink is near black, SHINE is blue (#4372F7), and particle holes are white negative space. The silhouette consists of a rounded open left frame, two smooth right lobes separated by an S-shaped channel, a two-line condensed wordmark, and small particle holes.
 
@@ -36,3 +36,5 @@ The PNG's original white particle dots become actual transparent holes in an SVG
 Pixel2Motion's generated standalone showcase exposes its standard Replay/Slow/Speed controls and `?t=` / `?static=1` hooks. Twelve deterministic frames were captured at 0–1800 ms and assembled into `output/darkshine-logo/motion_strip.png`. The applied frame-draw easing was probed at 450 / 630 / 900 ms: dash offsets 0.632704 / 0.224439 / 0.0247325, confirming the intended non-linear pacing. The same-browser static and t=1800 captures match exactly (0 pixel difference). The reference image was also rendered at 2× for smoothness inspection. Cover integration checks include both themes, a transparent button/background, replay, and reduced-motion behavior.
 
 Cross-scale static-render comparison (470 px source render resampled to the 330 × 316 showcase capture): mean absolute RGB difference 4.9571 / 255, with 6235 pixels exceeding a 12-level maximum-channel difference. This is resampling/antialias residue; the decisive same-pipeline final/static check is exactly equal. Runtime preference changes explicitly cancel the Web Animations playback handles in addition to the reduced-motion CSS, so a previously replayed animation cannot continue after the user enables reduced motion.
+
+Each inline instance namespaces its SVG ids and mask URLs, while semantic part classes share the same choreography. This keeps the cached cover and persistent header from referencing each other’s masks. The compact header logo is 24 px high, matching the TDLI/SJTU graphic; its animation continues across page changes instead of restarting on every slide.
