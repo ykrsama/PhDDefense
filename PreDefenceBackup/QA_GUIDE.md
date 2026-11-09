@@ -64,9 +64,9 @@ The original rate table is useful because it also shows the discrepancies. GMM (
 
 ### 20. 给一个带数值的 effective POT 和归一化例子？
 
-[How is a biased sample scaled to the exposure?](slides/20-normalisation-example.md)
+[How is a biased sample normalised to POT?](slides/20-normalisation-example.md)
 
-For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives 1.48 × 10¹¹ effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of 0.2738 and a process branching ratio of 1.85 × 10⁻⁴. The benchmark exposure is about 2,030 times larger. That exposure factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
+For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives 1.48 × 10¹¹ effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of 0.2738 and a process branching ratio of 1.85 × 10⁻⁴. The 3 × 10¹⁴ POT benchmark is about 2,030 times this effective POT. The POT normalisation factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
 
 证据：X. Zhu et al., arXiv:2609.05900; campaign normalisation table.
 
@@ -74,9 +74,9 @@ For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the 
 
 [Does zero survival prove a background-free search?](slides/21-empty-samples.md)
 
-No surviving simulated event is not enough to claim a background-free search. As a simple counting illustration, 0 observed events corresponds to an upper Poisson mean of 2.30 at 90% confidence. Scaling the inclusive exposure to the benchmark gives a very weak bound of about 2.76 × 10⁵ events. This calculation assumes an ideal unweighted Poisson sample with known exposure. It is not a substitute for the profile-likelihood construction or a bound to apply blindly to weighted samples. It explains why the study uses sideband extrapolation for its nominal prediction.
+No surviving simulated event is not enough to claim a background-free search. As a simple counting illustration, 0 observed events corresponds to an upper Poisson mean of 2.30 at 90% confidence. Scaling from 2.5 × 10⁹ to 3 × 10¹⁴ POT gives a very weak bound of about 2.76 × 10⁵ events. This calculation assumes an ideal unweighted Poisson sample with known equivalent POT. It is not a substitute for the profile-likelihood construction or a bound to apply blindly to weighted samples. It explains why the study uses sideband extrapolation for its nominal prediction.
 
-证据：Campaign exposure: arXiv:2609.05900. Poisson illustration calculated here.
+证据：Campaign POT: arXiv:2609.05900. Poisson illustration calculated here.
 
 ### 22. generator-level filter 是否会偏置最终 selection 或漏掉 signal-like events？
 

@@ -14,5 +14,5 @@ title: "Normalisation checked in populated sidebands"
 
 
 <!--
-We normalise each dedicated sample to its equivalent unbiased exposure using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This checks the rates and shapes in that region. It does not test the much smaller tails at the final cuts. We use the inclusive sample for this cross-check only, since adding it to the dedicated samples would count the same background twice.
+We normalise each dedicated sample to its equivalent unbiased POT using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This checks the rates and shapes in that region. It does not test the much smaller tails at the final cuts. We use the inclusive sample for this cross-check only, since adding it to the dedicated samples would count the same background twice.
 -->

@@ -2,9 +2,9 @@
 
 The scientific source is the supplied dissertation and collaboration material. Main slides intentionally do not display dissertation chapter references. The formal report is 45 minutes; questions are outside that duration. Research Achievements is the final main slide. The backup deck is independent.
 
-## Adopted beam and exposure convention
+## Adopted beam rate and EOT/POT benchmarks
 
-The candidate explicitly selected **10 MHz** to match the nominal **3 × 10^14 incident particles** exposure. At one particle per delivery this is 3 × 10^7 seconds, approximately a calendar year of continuous operation. It is an exposure benchmark, with operational duty factor separate. EOT refers to electrons and POT to positrons. The original 1 MHz versus annual-exposure inconsistency is not propagated into the presentation.
+The candidate confirmed **1 MHz** as the nominal single-particle beam rate. The sensitivity benchmark uses **3 × 10^14 EOT/POT**. EOT refers to electrons and POT to positrons. Running-time estimates depend on the beam rate and operational duty factor.
 
 ## Detector and signal interpretation
 

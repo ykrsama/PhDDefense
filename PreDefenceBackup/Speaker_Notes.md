@@ -36,13 +36,13 @@ PN (photonuclear) interactions show the same rise and saturation. We compare the
 
 The original rate table is useful because it also shows the discrepancies. GMM (photon conversion to a muon pair), PN (photonuclear) and EN (electronuclear) rates were compared with an inclusive sample of about 10⁷ events. Some ratios differ substantially from 1. A zero observed count in the rarest sample does not measure a zero rate. We do not turn these historical ratios into a systematic uncertainty for the later positron campaign. The campaign uses its own normalisation and inclusive checks, shown in the main report and the other backups.
 
-## 20. How is a biased sample scaled to the exposure?
+## 20. How is a biased sample normalised to POT?
 
-For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives 1.48 × 10¹¹ effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of 0.2738 and a process branching ratio of 1.85 × 10⁻⁴. The benchmark exposure is about 2,030 times larger. That exposure factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
+For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives 1.48 × 10¹¹ effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of 0.2738 and a process branching ratio of 1.85 × 10⁻⁴. The 3 × 10¹⁴ POT benchmark is about 2,030 times this effective POT. The POT normalisation factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
 
 ## 21. Does zero survival prove a background-free search?
 
-No surviving simulated event is not enough to claim a background-free search. As a simple counting illustration, 0 observed events corresponds to an upper Poisson mean of 2.30 at 90% confidence. Scaling the inclusive exposure to the benchmark gives a very weak bound of about 2.76 × 10⁵ events. This calculation assumes an ideal unweighted Poisson sample with known exposure. It is not a substitute for the profile-likelihood construction or a bound to apply blindly to weighted samples. It explains why the study uses sideband extrapolation for its nominal prediction.
+No surviving simulated event is not enough to claim a background-free search. As a simple counting illustration, 0 observed events corresponds to an upper Poisson mean of 2.30 at 90% confidence. Scaling from 2.5 × 10⁹ to 3 × 10¹⁴ POT gives a very weak bound of about 2.76 × 10⁵ events. This calculation assumes an ideal unweighted Poisson sample with known equivalent POT. It is not a substitute for the profile-likelihood construction or a bound to apply blindly to weighted samples. It explains why the study uses sideband extrapolation for its nominal prediction.
 
 ## 22. Can the production filters remove useful events?
 
