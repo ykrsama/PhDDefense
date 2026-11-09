@@ -11,7 +11,6 @@ title: "Digitisation connects deposits to observables"
 # Digitisation connects deposits to observables
 
 <div class="digit-flow"><FlowDiagram kind="digitCompact"/></div><div class="digit-results"><section class="method-panel tone-violet"><div class="panel-kicker">Physics response model</div><h2>From photons to cell energy</h2><p>SiPM saturation and recovery, electronic noise, finite dynamic range and ADC sampling.</p><div class="observable-tags"><span>Pulse amplitude / integral</span><span>Cell energy</span><span>Timing</span></div><p class="small">Cell energies feed the ECAL total-energy and maximum-cell selections.</p></section><div class="chart-stage tone-mint"><Plot src="physics-output/single-pe-pulse.png" caption="Single-photoelectron response"/></div><div class="chart-stage tone-gold"><Plot src="figures/waveform.svg" caption="Digitised waveforms in ECAL cells"/></div></div>
-<div class="takeaway">The response model connects a Geant4 deposit to the cell observables used by the analysis.</div>
 <div class="source">Credit: Qibin Liu</div>
 
 <!--
