@@ -56,14 +56,11 @@ const streams = computed(() => props.mode === 'brem'
     ]
   : props.mode === 'radiative'
     ? [
-        { d: 'M30 35 L145 75 L145 125', color: '#77c9ff', direction: -1 },
-        { d: 'M30 170 L145 125', color: '#77c9ff', direction: 1 },
+        { d: 'M30 170 L145 125 L145 75 L30 35', color: '#77c9ff', direction: 1 },
       ]
     : [
-        { d: 'M30 35 L115 100', color: '#77c9ff', direction: -1 },
-        { d: 'M30 170 L115 100', color: '#77c9ff', direction: 1 },
-        { d: 'M210 100 L290 35', color: '#baa5ff', direction: 1 },
-        { d: 'M210 100 L290 170', color: '#baa5ff', direction: -1 },
+        { d: 'M30 170 L115 100 L30 35', color: '#77c9ff', direction: 1 },
+        { d: 'M290 170 L210 100 L290 35', color: '#baa5ff', direction: 1 },
       ])
 const streamOffset = (index, direction) => -100 * direction * (phase.cycle + index * 0.17)
 </script>
