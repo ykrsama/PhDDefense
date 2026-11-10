@@ -15,5 +15,5 @@ title: "How is a biased sample normalised to POT?"
 <div class="source">X. Zhu et al., arXiv:2609.05900; campaign normalisation table.</div>
 
 <!--
-For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives 1.48 × 10¹¹ effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of 0.2738 and a process branching ratio of 1.85 × 10⁻⁴. The 3 × 10¹⁴ POT benchmark is about 2,030 times this effective POT. The POT normalisation factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
+For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives about one hundred and fifty billion effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of about twenty-seven percent and a process branching ratio of roughly two in ten thousand. The 3 × 10¹⁴ POT benchmark is about two thousand times this effective POT. The POT normalisation factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
 -->

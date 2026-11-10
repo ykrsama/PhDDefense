@@ -15,5 +15,5 @@ title: "When does the signal scale with epsilon squared?"
 <div class="source">Vector-portal benchmark and thermal-target definition, arXiv:2609.05900.</div>
 
 <!--
-At fixed mass and with the invisible branching fraction close to 1, the benchmark production rates scale approximately with epsilon squared. We can therefore use a common signal-strength parameter. For the thermal comparison, we choose alpha D = 0.5 and a mediator-to-dark-matter mass ratio of 3, which gives y equal to epsilon squared divided by 162. These are benchmark assumptions. A change in the decay branching fraction or lifetime can change the visible signature and the acceptance. A separate off-shell model should not be inferred from the on-shell efficiency samples.
+At fixed mass and with the invisible branching fraction close to 1, the benchmark production rates scale approximately with epsilon squared. We can therefore use a common signal-strength parameter. For the thermal comparison, we choose alpha D = 0.5 and a mediator-to-dark-matter mass ratio of 3, which gives y approximately equal to epsilon squared divided by one hundred and sixty. These are benchmark assumptions. A change in the decay branching fraction or lifetime can change the visible signature and the acceptance. A separate off-shell model should not be inferred from the on-shell efficiency samples.
 -->

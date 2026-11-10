@@ -15,5 +15,7 @@ title: "Optical response with a lookup table"
 <div class="source">Credit: Qibin Liu</div>
 
 <!--
-The LUT replaces repeated optical-photon propagation with a detector-response model. It is indexed by the photon emission position and direction. We need two outputs: the detection probability, which controls the collected light, and the transit-time distribution, which controls when it reaches the sensor. The middle plot compares the LUT detection efficiency with full optical-photon tracking over depth and angle; the difference stays within five percent in the tested configuration. The right plot compares the transit-time spectra. Most populated bins lie near one, while late photons have larger statistical uncertainty. In the complete-event benchmark, this reduces the time from about 200 seconds to four seconds. This optical-response work is Qibin Liu's collaboration contribution, integrated into the framework.
+The lookup table replaces repeated optical-photon propagation. It is indexed by emission position and direction and provides the detection probability and photon transit-time distribution. These determine the collected light and its arrival time at the sensor.
+
+The detection-efficiency comparison with full optical tracking agrees within five percent over the tested depth and angle range. The right plot compares the transit-time spectra. The complete-event runtime decreases from about 200 seconds to four seconds. This optical-response work was contributed by Qibin Liu.
 -->

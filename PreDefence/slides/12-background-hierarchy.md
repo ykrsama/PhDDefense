@@ -14,7 +14,7 @@ title: "Standard Model background hierarchy"
 <div class="source">J. Chen et al., Sci. China Phys. Mech. Astron. 66, 211062 (2023); Baseline Design Report, <a href="https://arxiv.org/abs/2411.09345" target="_blank" rel="noopener noreferrer">arXiv:2411.09345</a>.</div>
 
 <!--
-Most beam electrons pass through the thin target. Hard bremsstrahlung produces a recoil electron and an energetic photon. Electron–positron conversion is frequent, and tracking and the ECAL can identify those particles. The rarer photonuclear and muon-pair branches put energy into hadrons or muons, making the HCAL veto essential. Electronuclear reactions provide another hadronic source.
+Most beam electrons pass through the thin target with bremstrulung process. Hard bremsstrahlung produces a recoil electron and an energetic photon. The rarer photonuclear and muon-pair branches put energy into hadrons or muons, making the HCAL veto essential.
 
-After applying the veto, the paper finds muon pairs effectively rejected by HCAL. PN and EN require residual-background estimates in the signal region. This is where the low-energy tails matter and inclusive statistics become insufficient. We therefore simulate six dedicated samples: PN, EN and muon-pair production, each in the target and ECAL, alongside 2.5 billion inclusive events. The rare-process samples are normalised by their branching ratios and used to study rejection and extrapolate the nuclear-background tails. This motivates a framework that can populate and inspect these rare sub-processes efficiently.
+Muon pairs are effectively rejected by HCAL. The surviving PN and EN tails determine the main background in the signal region.
 -->

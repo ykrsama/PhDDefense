@@ -10,7 +10,7 @@ The positron analysis uses the same baseline detector as the published electron 
 
 ## 10. SR3: joint ECAL-threshold extrapolation
 
-We evaluate the fit at x = 1 and y = 2000. The 2-dimensional fit accounts for the correlation between total energy and maximum-cell energy. Multiplying independent 1-dimensional efficiencies would miss this correlation.
+We evaluate the fit at a maximum-cell threshold of 1 MeV and a total-energy threshold of 2 GeV. The 2-dimensional fit accounts for the correlation between total energy and maximum-cell energy. Multiplying independent 1-dimensional efficiencies would miss this correlation.
 
 ## 11. Inclusive comparisons and tail-model dependence
 
@@ -38,11 +38,11 @@ The original rate table is useful because it also shows the discrepancies. GMM (
 
 ## 20. How is a biased sample normalised to POT?
 
-For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives 1.48 × 10¹¹ effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of 0.2738 and a process branching ratio of 1.85 × 10⁻⁴. The 3 × 10¹⁴ POT benchmark is about 2,030 times this effective POT. The POT normalisation factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
+For PN (photonuclear) production in the ECAL (Electromagnetic Calorimeter), the campaign convention gives about one hundred and fifty billion effective POT (Positrons On Target). We obtain it from 10⁸ generation attempts, an acceptance of about twenty-seven percent and a process branching ratio of roughly two in ten thousand. The 3 × 10¹⁴ POT benchmark is about two thousand times this effective POT. The POT normalisation factor scales the selected prediction. It does not recover a tail from a sample with no surviving events, and it is not the cross-section bias factor. The full process table is on backup 3.
 
 ## 21. Does zero survival prove a background-free search?
 
-No surviving simulated event is not enough to claim a background-free search. As a simple counting illustration, 0 observed events corresponds to an upper Poisson mean of 2.30 at 90% confidence. Scaling from 2.5 × 10⁹ to 3 × 10¹⁴ POT gives a very weak bound of about 2.76 × 10⁵ events. This calculation assumes an ideal unweighted Poisson sample with known equivalent POT. It is not a substitute for the profile-likelihood construction or a bound to apply blindly to weighted samples. It explains why the study uses sideband extrapolation for its nominal prediction.
+No surviving simulated event is not enough to claim a background-free search. As a simple counting illustration, 0 observed events corresponds to an upper Poisson mean of about 2.3 at 90% confidence. Scaling from 2.5 × 10⁹ to 3 × 10¹⁴ POT gives a very weak bound of roughly three hundred thousand events. This calculation assumes an ideal unweighted Poisson sample with known equivalent POT. It is not a substitute for the profile-likelihood construction or a bound to apply blindly to weighted samples. It explains why the study uses sideband extrapolation for its nominal prediction.
 
 ## 22. Can the production filters remove useful events?
 
@@ -62,7 +62,7 @@ The ECAL (Electromagnetic Calorimeter) high-gain model gives an equivalent elect
 
 ## 26. When does the signal scale with epsilon squared?
 
-At fixed mass and with the invisible branching fraction close to 1, the benchmark production rates scale approximately with epsilon squared. We can therefore use a common signal-strength parameter. For the thermal comparison, we choose alpha D = 0.5 and a mediator-to-dark-matter mass ratio of 3, which gives y equal to epsilon squared divided by 162. These are benchmark assumptions. A change in the decay branching fraction or lifetime can change the visible signature and the acceptance. A separate off-shell model should not be inferred from the on-shell efficiency samples.
+At fixed mass and with the invisible branching fraction close to 1, the benchmark production rates scale approximately with epsilon squared. We can therefore use a common signal-strength parameter. For the thermal comparison, we choose alpha D = 0.5 and a mediator-to-dark-matter mass ratio of 3, which gives y approximately equal to epsilon squared divided by one hundred and sixty. These are benchmark assumptions. A change in the decay branching fraction or lifetime can change the visible signature and the acceptance. A separate off-shell model should not be inferred from the on-shell efficiency samples.
 
 ## 27. Can the software speed-up factors be multiplied?
 

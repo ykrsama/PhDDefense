@@ -13,5 +13,5 @@ title: "SR3: joint ECAL-threshold extrapolation"
 
 
 <!--
-We evaluate the fit at x = 1 and y = 2000. The 2-dimensional fit accounts for the correlation between total energy and maximum-cell energy. Multiplying independent 1-dimensional efficiencies would miss this correlation.
+We evaluate the fit at a maximum-cell threshold of 1 MeV and a total-energy threshold of 2 GeV. The 2-dimensional fit accounts for the correlation between total energy and maximum-cell energy. Multiplying independent 1-dimensional efficiencies would miss this correlation.
 -->

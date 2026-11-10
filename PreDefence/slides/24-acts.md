@@ -15,5 +15,7 @@ title: "ACTS integration in DarkSHINE"
 <div class="source">My contributions: ACTS sequencer, geometry/field adapters and reconstruction interfaces.</div>
 
 <!--
-ACTS needs the detector information in its own tracking representation. We convert the geometry into surfaces and strip-pair hits into measurements and source links, with consistent coordinates for the field and momentum. The reference sequencer then uses truth-smeared seeds, combinatorial Kalman finding, trajectory conversion and vertex reconstruction. Its outputs include fitted states and covariance, track quality information and impact states extrapolated to the ECAL. The plot is an earlier truth-assisted fitter integration test. It shows a track-parameter pull versus transverse momentum: the fitted-minus-truth residual divided by its estimated uncertainty. This illustrates how the integration produces a physical performance diagnostic, alongside the track objects needed by the analysis. My contributions are the sequencer and geometry, field and reconstruction interfaces. The later ACTS developments are separate from the frozen reconstruction used in the positron study.
+We convert the detector geometry into ACTS surfaces and strip-pair hits into measurements and source links. The sequencer runs truth-smeared seeding, combinatorial Kalman finding, track conversion and vertex reconstruction. Fitted tracks are extrapolated to the ECAL to provide impact positions.
+
+The 2023 truth-assisted fitter test shows the track-parameter pull versus transverse momentum. The pull is the fitted-minus-truth residual divided by its estimated uncertainty. The distribution is concentrated near zero. My contributions are the ACTS sequencer and the geometry, magnetic-field and reconstruction interfaces.
 -->

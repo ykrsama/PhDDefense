@@ -15,9 +15,9 @@ title: "The DarkSHINE software framework"
 
 
 <!--
-The framework connects the incident beam to a physics prediction. DSimu generates particles and simulates their detector interactions. DEvent carries the truth and hit collections. DAna runs digitisation, reconstruction and analysis, and DDis lets us inspect individual events.
+Generation defines the beam or signal process. DSimu simulates the detector interactions with Geant4, DEvent stores truth and hit collections, and DAna performs digitisation and reconstruction. DDis displays individual events, and the analysis uses the reconstructed observables to select events and calculate limits.
 
-The four plots on the right are physical outputs from the CDR electron-mode simulation. The coloured curves correspond to different dark-photon masses. The dark distributions in the energy, transverse-momentum and angle panels show the inclusive background. The recoil-energy plot separates the softer signal electrons from the background concentrated near the beam energy. The transverse-momentum plot gives a complementary discriminant; this panel requires recoil energy between 50 MeV and 4 GeV. Larger recoil angles and the transverse separation at the detector surface connect these kinematics to the tracker acceptance. The separation panel shows the signal mass dependence. These are the observables we need the framework to produce for detector design and event selection.
+The four plots show recoil kinematics from the 8 GeV CDR electron-mode simulation. Signal electrons have lower energies than the background concentrated near the beam energy. Transverse momentum provides further discrimination; that panel selects recoil energies between 50 MeV and 4 GeV. The recoil angle and transverse separation describe how the signal spreads across the tracking detector and how that spread changes with dark-photon mass.
 
-I contributed to the general framework design and developed the simulation software, DSimu, the event data structure, DEvent, rare-process biasing and filtering, and ACTS integration. I will now explain how we made large simulation samples more practical to produce and store.
+My contributions are the general framework design, DSimu, DEvent, rare-process biasing and filtering, and ACTS integration.
 -->

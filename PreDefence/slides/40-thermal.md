@@ -14,5 +14,5 @@ title: "Interpretation relative to thermal targets"
 
 
 <!--
-To compare with thermal dark-matter targets, we use a mediator-to-dark-matter mass ratio of 3 and a dark coupling alpha D of 0.5. A 90 MeV mediator then corresponds to a 30 MeV dark-matter particle. With these choices, the variable y equals epsilon squared divided by 162. This changes the coordinates of the result; the simulated selections and efficiencies stay the same. The scalar, Majorana and pseudo-Dirac targets use different spin and annihilation assumptions. Other models can give different predictions even at the same mass.
+For the thermal-target comparison, we use a mediator-to-dark-matter mass ratio of three and alpha D of 0.5. A 90 MeV mediator corresponds to a 30 MeV dark-matter particle, and y is approximately epsilon squared divided by one hundred and sixty. The scalar, Majorana and pseudo-Dirac candidates have different spin and annihilation properties, giving the distinct thermal targets shown in the plot.
 -->

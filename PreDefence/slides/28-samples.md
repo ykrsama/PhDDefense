@@ -14,5 +14,7 @@ title: "Signal and background samples"
 <div class="source">arXiv:2609.05900</div>
 
 <!--
-We simulate 30 bremsstrahlung mass points, 18 non-resonant points and 23 resonant points, with 100,000 events at each point. We calculate efficiencies from these equal-sized samples and apply the physical rates afterwards. For backgrounds, we generate dedicated biased samples of photonuclear, positron-nuclear and muon-pair processes. Production in the target or tracker is separate from production in the ECAL (Electromagnetic Calorimeter). We use the EN (Electronuclear) label for the positron-nuclear sample in this campaign. We also generate ordinary annihilation in the target. POT denotes positrons on target. An independent inclusive sample contains the equivalent of 2.5 × 10⁹ incident positrons. We use it to check the dedicated predictions without adding it to the background total. All sensitivity results use baseline 1.
+We simulate 30 bremsstrahlung mass points, 18 non-resonant points and 23 resonant points, with a hundred thousand events at each channel–mass point. CalcHEP provides the signal kinematics, followed by Geant4 detector simulation. These samples determine the selection efficiencies; cross sections set the relative production rates.
+
+Dedicated background samples cover photonuclear, positron-nuclear and muon-pair processes in the target or tracker and in the ECAL, plus ordinary target annihilation. The positron-nuclear sample uses the EN label. An independent inclusive sample contains 2.5 billion POT for background validation. The sensitivity benchmark is 8 GeV, 3 × 10¹⁴ POT and Baseline 1.
 -->

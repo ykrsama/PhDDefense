@@ -14,7 +14,7 @@ title: "Track finding and fitting"
 <div class="source">DarkSHINE Collaboration, Baseline Design Report, <a href="https://arxiv.org/abs/2411.09345" target="_blank" rel="noopener noreferrer">arXiv:2411.09345</a></div>
 
 <!--
-Track finding identifies which strip measurements belong to a common trajectory. The legacy finder ranks circle candidates and removes accepted hits before continuing. Track fitting estimates momentum and covariance while accounting for the magnetic field, material, measurement errors, energy loss and multiple scattering.
+Track finding associates strip measurements with a common trajectory. The finder ranks circle candidates and removes accepted hits before continuing. Track fitting estimates momentum and covariance using the magnetic field, material, measurement errors, energy loss and multiple scattering.
 
-The CDR plot shows the recoil tracker's relative momentum resolution as a function of beam energy, for four to ten tracker layers. It is a detector-performance study. At low energies, multiple scattering affects the measurement; at high energies, the small curvature and available lever arm limit the resolution. Six layers provide the Baseline 1 balance between tracking information and material. The reconstructed momentum and track multiplicity then enter the missing-momentum selection. The framework also supports the GenFit and Riemann fitting implementations described in the software study.
+The CDR plot shows relative momentum resolution versus beam energy for four to ten recoil-tracker layers. Multiple scattering worsens the resolution at low energies; small curvature and the available lever arm limit it at high energies. Six layers provide the Baseline 1 balance between tracking performance and material. The reconstructed momentum and track multiplicity enter the missing-momentum selection.
 -->

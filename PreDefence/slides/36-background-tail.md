@@ -14,5 +14,5 @@ title: "Residual-background extrapolation"
 
 
 <!--
-For SR1 (Signal Region 1) and SR2 (Signal Region 2), we fit the dedicated survival curves with a power law in the total-ECAL (Electromagnetic Calorimeter) threshold, expressed in MeV. The nominal predictions are 0.03 events for region 1 and 1.3 × 10⁻⁴ for region 2. SR3 (Signal Region 3) needs a 2-dimensional fit because total energy and maximum-cell energy are correlated. Its nominal prediction is 1.6 × 10⁻⁴ events. These are predictions from fitted survival trends, extrapolated from populated sidebands to the final ECAL thresholds. The joint fit in SR3 includes the correlation between the two ECAL observables.
+For SR1 and SR2, we fit the dedicated survival curves with a power law in the total-ECAL-energy threshold. SR3 uses a two-dimensional fit to account for the correlation between total energy and maximum-cell energy. Summing the process contributions gives about three hundredths of an event in SR1, and of order ten to the minus four events in each zero-track region. These fits extrapolate the populated sidebands to the final selection thresholds.
 -->

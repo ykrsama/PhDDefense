@@ -14,5 +14,5 @@ title: "Normalisation checked in populated sidebands"
 
 
 <!--
-We normalise each dedicated sample to its equivalent unbiased POT using the number of generation attempts, generator acceptance and physical branching ratio. The number of attempts differs from the number of stored events, so we keep track of both. We then compare the sum of the dedicated samples, including target annihilation, with the independent inclusive sample where enough events are available. This comparison checks the normalisation and shapes in the populated sidebands. The dedicated samples provide the residual-background prediction through the extrapolation on the next page. The inclusive sample remains an independent cross-check of that prediction.
+We normalise each dedicated sample to its equivalent unbiased POT using the generation attempts, generator acceptance and physical branching ratio. The plot compares the sum of these normalised samples, including target annihilation, with the independent inclusive sample. Their survival trends agree in the populated sidebands, validating the dedicated-sample normalisation used for background estimation.
 -->

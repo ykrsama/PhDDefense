@@ -14,5 +14,5 @@ title: "Momentum and total-energy discrimination"
 <div class="source">arXiv:2609.05900</div>
 
 <!--
-On the left is missing momentum. The background sample already passes the loose production filter at 1 GeV; the final analysis cut is 4 GeV. On the right is the total ECAL (Electromagnetic Calorimeter) energy for non-resonant annihilation. Near the mediator-mass endpoint, the accompanying photon is soft. The 90 MeV signal can therefore pass a low-energy cut even though a photon is produced. The detector response and acceptance determine the fraction that passes.
+The missing-momentum distribution separates soft-recoil signal events from background. The background sample passes a loose production filter at 1 GeV; the final SR1 selection requires more than 4 GeV. For non-resonant annihilation, the accompanying photon becomes soft near the mediator-mass endpoint. This produces the low total-ECAL-energy signal distribution near 90 MeV.
 -->

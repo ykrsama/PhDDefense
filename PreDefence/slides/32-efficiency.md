@@ -14,5 +14,7 @@ title: "Signal efficiency across the mass scan"
 
 
 <!--
-These curves show the cutflow efficiency for each production mechanism in its primary region. Each curve is normalised to the generated sample. We apply the cross sections later to obtain the expected mixture of processes. The backups contain all 9 channel-to-region efficiency curves. An event can enter a different region if its recoil track is not reconstructed, or if its photon escapes detection or falls below threshold. For example, bremsstrahlung can enter the regions with no recoil track. Its efficiency in the low-activity region becomes substantial toward the upper end of the mass grid. We include these migrations when predicting the signal. The next slide gives the expected yields at 90 MeV.
+These curves show the cutflow efficiencies for each production mechanism in its primary signal region, normalised to the generated sample. We combine the efficiencies with production cross sections to predict the signal yields.
+
+Track reconstruction and photon detection can move events between regions. A missed recoil track can put a bremsstrahlung event into a zero-track category; a soft or undetected photon can put a non-resonant event into the low-activity category. All nine channel-to-region efficiencies enter the signal prediction.
 -->

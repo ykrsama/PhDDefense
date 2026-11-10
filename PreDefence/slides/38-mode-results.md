@@ -14,5 +14,5 @@ title: "Annihilation drives the gain near 90 MeV"
 
 
 <!--
-Each individual curve keeps 1 production mechanism but uses all 3 regions and the same background model. It therefore includes migration between regions. At 90 MeV, non-resonant annihilation gives the strongest individual expected limit, about 7.3 × 10⁻¹³ in epsilon squared. Resonant annihilation also contributes, and the combined limit is 5.33 × 10⁻¹³. Much of the gain comes from non-resonant annihilation near the radiative endpoint, where the accompanying photon can pass the selection.
+Each individual curve keeps 1 production mechanism but uses all 3 regions and the same background model. It therefore includes migration between regions. At 90 MeV, non-resonant annihilation gives the strongest individual expected limit, roughly seven times ten to the minus thirteen in epsilon squared. Resonant annihilation also contributes, and the combined limit is about five times ten to the minus thirteen. Much of the gain comes from non-resonant annihilation near the radiative endpoint, where the accompanying photon can pass the selection.
 -->

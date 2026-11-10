@@ -14,7 +14,7 @@ title: "Rare-process biasing and physical normalisation"
 <div class="takeaway">Enrich rare final states for detector studies; recover their rate from the production normalisation.</div>
 
 <!--
-Biasing lets us study final states that are too rare to populate efficiently in inclusive simulation. We choose the interaction, the material region and an energy threshold, then enhance that interaction cross section. Geant4 then tracks the secondary particles and simulates their interactions, so we can study hadronic activity, muon tracks and leakage. Click once to show a muon-pair conversion scan in the ECAL. The interaction probability increases with the bias factor and eventually saturates. We fit this dependence and evaluate the physical probability at bias factor one. Multiplying by the fraction of incident events with an eligible particle gives the process rate per beam particle. This gives the expected rare-process event count for a specified EOT or POT. The positron analysis uses its dedicated process-rate normalisations.
+Biasing increases the statistics for rare photonuclear, electronuclear and muon-pair final states. We select the process, material region and energy threshold, then enhance its interaction cross section. Geant4 simulates the secondary interactions, energy deposits and leakage.
 
-Presenter cue: Explain which rare final states are enriched, then click once to connect sampling to the physical rate.
+The ECAL muon-pair scan shows the interaction probability increasing with the bias factor and eventually saturating. We fit this dependence and evaluate the physical probability at bias factor one. Multiplying by the fraction of beam events containing an eligible particle gives the process rate per incident particle, which sets the expected event count at a given EOT or POT.
 -->

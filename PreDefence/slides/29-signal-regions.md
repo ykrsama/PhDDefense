@@ -14,5 +14,5 @@ title: "Three exclusive signal regions"
 
 
 <!--
-We assign events to reconstructed categories without using the generated process label. Every category requires exactly 1 tagging track. SR1 (Signal Region 1) requires 1 recoil track and missing momentum above 4 GeV. SR2 (Signal Region 2) and SR3 (Signal Region 3) require 0 recoil tracks and total ECAL (Electromagnetic Calorimeter) energy below 2 GeV. We divide these samples at a maximum-cell energy of 1 MeV, with events on the boundary assigned to region 2. Every region also requires low total HCAL (Hadronic Calorimeter) energy and no cell above 1 MeV. The selections do not overlap. Events with additional tracks or a failed veto are rejected.
+Every signal region requires exactly one tagging track. SR1 requires one recoil track, missing momentum above 4 GeV and total ECAL energy below 2.5 GeV. SR2 and SR3 require no recoil track and total ECAL energy below 2 GeV. A maximum-cell energy of at least 1 MeV defines SR2; below 1 MeV defines SR3. All three regions require HCAL total energy below 100 MeV and maximum-cell energy below 1 MeV. These selections form three exclusive categories.
 -->

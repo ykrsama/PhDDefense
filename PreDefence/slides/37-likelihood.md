@@ -14,7 +14,5 @@ title: "Combined statistical interpretation"
 <div class="source">arXiv:2609.05900</div>
 
 <!--
-At each mass, we sum the contributions from all 3 production mechanisms in every region. A common signal-strength parameter scales them because their rates depend on the same kinetic mixing. We use a binned profile likelihood with nuisance parameters to obtain expected 90% CL (Confidence Level) limits using CLs (the modified frequentist confidence-level method) under the background-only hypothesis. The reported construction treats shape uncertainties as uncorrelated between bins and uses a Poisson prescription for background normalisation. The regions do not share events, although detector uncertainties can be correlated between them.
-
-Presenter cue: Build the signal prediction and region model first. Click once to show the expected-limit construction.
+At each mass, we sum all three production mechanisms in every signal region, including migration. A common signal-strength parameter scales their rates through the kinetic mixing. We combine the three exclusive regions in a binned profile likelihood and profile the nuisance parameters. The expected 90 percent confidence-level limit uses CLs and the asymptotic profile likelihood under the background-only hypothesis. Background-shape uncertainties are uncorrelated between bins.
 -->
