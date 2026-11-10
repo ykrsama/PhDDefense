@@ -14,5 +14,9 @@ title: "What observations constrain"
 <!--
 However, the particle identity of dark matter and its coupling to ordinary matter remain unknown.
 
-The candidate masses span about 10⁻²¹ eV to PeV. Ultralight candidates behave as coherent fields; their wavelength must fit inside the galactic halos we observe. For heavier particle candidates, the relic abundance depends on how they were produced. WIMPs freeze out from thermal equilibrium when annihilation becomes too slow. Freeze-in candidates are produced through interactions too weak to establish equilibrium.
+The candidate masses span about 10⁻²¹ eV to PeV. Cosmological observations tell us how much dark matter exists today. Ultralight candidates behave as coherent fields; their wavelength must fit inside the galactic halos we observe. And for a proposed particle, we can ask whether its mass and interaction strength would produce the right abundance.
+
+For thermal WIMPs, stronger annihilation removes more dark matter in the early universe, leaving less today. The measured abundance therefore sets a target annihilation rate that experiments can test. For freeze-in, the interaction is so weak that dark matter never reaches equilibrium. Rare reactions gradually produce it, so a stronger interaction produces more dark matter.
+
+These mechanisms motivate searches across different coupling strengths. By measuring or constraining those interactions, experiments test whether a candidate could account for the observed abundance.
 -->
